@@ -80,4 +80,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/sony-rx10-v-superzoom-4k-120p-review.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
