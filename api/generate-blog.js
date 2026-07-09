@@ -75,7 +75,7 @@ CRITICAL — avoid sounding like AI-generated filler:
 SEO / AEO / GEO rules:
 - Title: under 60 characters, front-load the main keyword, specific (not generic clickbait).
 - meta_description: exactly 150-160 characters, includes the main keyword naturally, written to earn clicks.
-- Content: 1300-1800 words of full HTML using ONLY <h2>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>). Use at least 4 <h2> subheadings phrased as real questions or subtopics readers search for. Every paragraph must add real, non-repeated information — no padding.
+- Content: 900-1300 words of full HTML using ONLY <h2>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>). Use at least 3 <h2> subheadings phrased as real questions or subtopics readers search for. Every paragraph must add real, non-repeated information — no padding.
 - Include one short paragraph near the end that directly and plainly answers the core question the headline raises, phrased so it could stand alone as a correct answer in an AI search summary (AEO/GEO).
 - takeaway: a single 1-2 sentence "key takeaway" that captures the single most useful insight from the article (used for a highlighted callout box — must add real value, not restate the title).
 - tags: exactly 5 relevant, specific tags (not generic single words like "news").
@@ -361,26 +361,28 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
 </body>
 </html>`;
 
-    // ---------- 5. PUSH NEW POST FILE TO GITHUB ----------
+    // ---------- 5. PUSH NEW POST FILE + FETCH index.html/sitemap.xml IN PARALLEL ----------
     const githubApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/blog/${slug}.html`;
+    const indexApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/blog/index.html`;
+    const sitemapApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/sitemap.xml`;
 
-    await fetch(githubApi, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: `Auto blog: ${post.title}`,
-        content: Buffer.from(htmlPage).toString("base64"),
+    const [, indexGet, sitemapGet] = await Promise.all([
+      fetch(githubApi, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `Auto blog: ${post.title}`,
+          content: Buffer.from(htmlPage).toString("base64"),
+        }),
       }),
-    });
+      fetch(indexApi, { headers: { Authorization: `Bearer ${GITHUB_TOKEN}` } }),
+      fetch(sitemapApi, { headers: { Authorization: `Bearer ${GITHUB_TOKEN}` } }),
+    ]);
 
     // ---------- 6. UPDATE blog/index.html WITH A MATCHING CARD ----------
-    const indexApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/blog/index.html`;
-    const indexGet = await fetch(indexApi, {
-      headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
-    });
     const indexData = await indexGet.json();
     let indexHtml = Buffer.from(indexData.content, "base64").toString("utf-8");
 
@@ -397,25 +399,9 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
 
     indexHtml = indexHtml.replace("<!--POSTS_MARKER-->", newCard);
 
-    await fetch(indexApi, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: `Update blog index: ${post.title}`,
-        content: Buffer.from(indexHtml).toString("base64"),
-        sha: indexData.sha,
-      }),
-    });
-
-    // ---------- 7. ADD NEW URL TO sitemap.xml ----------
+    // ---------- 7. BUILD SITEMAP UPDATE ----------
+    let sitemapPut = Promise.resolve();
     try {
-      const sitemapApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/sitemap.xml`;
-      const sitemapGet = await fetch(sitemapApi, {
-        headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
-      });
       const sitemapData = await sitemapGet.json();
       let sitemapXml = Buffer.from(sitemapData.content, "base64").toString("utf-8");
 
@@ -427,7 +413,7 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
 </urlset>`;
       sitemapXml = sitemapXml.replace("</urlset>", newUrlEntry);
 
-      await fetch(sitemapApi, {
+      sitemapPut = fetch(sitemapApi, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${GITHUB_TOKEN}`,
@@ -442,6 +428,23 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
     } catch (e) {
       // Non-fatal — sitemap update failing shouldn't block the post from publishing
     }
+
+    // ---------- 8. FIRE OFF index.html + sitemap.xml UPDATES IN PARALLEL ----------
+    await Promise.all([
+      fetch(indexApi, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `Update blog index: ${post.title}`,
+          content: Buffer.from(indexHtml).toString("base64"),
+          sha: indexData.sha,
+        }),
+      }),
+      sitemapPut,
+    ]);
 
     return res.status(200).json({
       success: true,
