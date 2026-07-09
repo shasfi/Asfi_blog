@@ -49,24 +49,41 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "Could not fetch trending topics" });
     }
 
-    const trendingHeadline = titles[Math.floor(Math.random() * Math.min(10, titles.length))];
+    // Give the model several real, currently-trending headlines instead of just one —
+    // it picks the strongest angle itself and can cross-reference for accuracy/context.
+    const topHeadlines = titles.slice(0, 8);
+    const trendingHeadline = topHeadlines[Math.floor(Math.random() * Math.min(10, topHeadlines.length))];
 
     // ---------- 2. GENERATE SEO + AEO + GEO OPTIMIZED CONTENT (OpenRouter FREE model) ----------
     const imageCount = 2 + Math.floor(Math.random() * 3); // 2, 3, or 4 images
 
-    const prompt = `You are a professional SEO editor for "AsfiBlog", a trending news publication. Write a detailed, 100% original, SEO-optimized, answer-engine-optimized (AEO) blog article based on this trending news headline: "${trendingHeadline}"
+    const prompt = `You are a senior editorial writer for "AsfiBlog", a trending news and analysis publication. Your job is to write content that reads as if a real, experienced human journalist wrote it after researching the topic — not a generic AI summary.
+
+Primary headline to cover: "${trendingHeadline}"
+Other currently-trending headlines in the same category (for context/cross-reference only, do not copy wording from them): ${JSON.stringify(topHeadlines.filter((t) => t !== trendingHeadline).slice(0, 5))}
 
 Category: ${category}
 
-Rules:
-- Title: under 60 characters, front-load the main keyword, no clickbait.
-- meta_description: exactly 150-160 characters, includes the main keyword naturally, written to earn clicks in search results.
-- Content: 1300-1800 words of full HTML using ONLY <h2>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>). Use at least 4 <h2> subheadings that read like the questions or subtopics a reader would search for. Write in a clear, human, editorial tone. Do not pad with filler. Every paragraph must add real information.
-- Include one short concluding paragraph that directly and plainly answers the core question the headline raises, phrased so it could be lifted as a direct answer by an AI search summary (this is for AEO/GEO — answer and generative engines).
-- tags: exactly 5 relevant, specific tags (not single generic words like "news").
+CRITICAL — avoid sounding like AI-generated filler:
+- Never use these overused AI phrases or their variants: "In today's fast-paced world", "In the ever-evolving landscape", "In conclusion", "It's important to note", "Dive into", "Unlock the power of", "Navigating the world of", "In this article, we will".
+- Open with a specific, concrete detail or fact from the story — not a broad generalization.
+- Vary sentence length naturally (mix short punchy sentences with longer explanatory ones). Avoid a repetitive rhythm where every paragraph is the same length.
+- Include specific numbers, names, dates, or examples wherever possible instead of vague statements like "many experts believe" or "studies show".
+- Add a genuine point of view or analysis in at least one section — what this actually means for the reader, not just a restatement of facts.
+- Write like you're explaining this to a smart friend, not writing a corporate press release.
+
+SEO / AEO / GEO rules:
+- Title: under 60 characters, front-load the main keyword, specific (not generic clickbait).
+- meta_description: exactly 150-160 characters, includes the main keyword naturally, written to earn clicks.
+- Content: 1300-1800 words of full HTML using ONLY <h2>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>). Use at least 4 <h2> subheadings phrased as real questions or subtopics readers search for. Every paragraph must add real, non-repeated information — no padding.
+- Include one short paragraph near the end that directly and plainly answers the core question the headline raises, phrased so it could stand alone as a correct answer in an AI search summary (AEO/GEO).
+- takeaway: a single 1-2 sentence "key takeaway" that captures the single most useful insight from the article (used for a highlighted callout box — must add real value, not restate the title).
+- tags: exactly 5 relevant, specific tags (not generic single words like "news").
 - image_keyword: one simple, safe-for-work English keyword phrase to search stock photography for this topic.
 - image_alts: an array of exactly ${imageCount} descriptive, SEO-friendly alt text strings (each under 125 characters, each describing a distinct relevant visual for this story, no keyword stuffing).
-- faq: an array of exactly 3 objects, each with "q" (a real question a reader would type into Google or ask an AI assistant about this topic) and "a" (a direct, complete, 1-3 sentence answer written so it stands alone as a correct answer without needing the rest of the article).
+- faq: an array of exactly 3 objects, each with "q" (a real question a reader would type into Google or ask an AI assistant about this topic) and "a" (a direct, complete, 1-3 sentence answer written so it stands alone as a correct answer).
+
+Originality requirement: do not lift phrasing from any news source. Every sentence must be written fresh, in your own words, based on the general facts of the story.
 
 Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTLY these keys:
 {
@@ -74,11 +91,13 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
   "meta_description": "...",
   "slug": "url-friendly-slug-no-spaces",
   "content": "...",
+  "takeaway": "...",
   "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"],
   "image_keyword": "...",
   "image_alts": ["...", "..."],
   "faq": [{"q": "...", "a": "..."}, {"q": "...", "a": "..."}, {"q": "...", "a": "..."}]
 }`;
+
 
     const aiRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
@@ -255,6 +274,7 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
     <h1>${post.title}</h1>
     <p class="timestamp">Filed ${dateLabel} · ${readMins} min read</p>
     ${imagesHtml}
+    ${post.takeaway ? `<div class="takeaway-box" style="background:var(--surface-2,#f4f4f4); border-left:4px solid var(--accent,#c97f00); padding:16px 20px; margin:24px 0; border-radius:6px;"><strong>Key takeaway:</strong> ${post.takeaway}</div>` : ""}
     <div class="content">
       ${post.content}
     </div>
