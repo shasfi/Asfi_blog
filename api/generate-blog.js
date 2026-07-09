@@ -76,32 +76,50 @@ export default async function handler(req, res) {
     console.log("STEP 1 done: RSS length", rssText.length);
 
     const itemBlocks = rssText.split("<item>").slice(1);
-    const titles = itemBlocks
+    const items = itemBlocks
       .map((block) => {
-        const match = block.match(/<title>(.*?)<\/title>/s);
-        return match ? match[1].replace(/<!\[CDATA\[|\]\]>/g, "").trim() : null;
+        const titleMatch = block.match(/<title>(.*?)<\/title>/s);
+        const descMatch = block.match(/<description>(.*?)<\/description>/s);
+        const clean = (s) =>
+          s
+            ? s.replace(/<!\[CDATA\[|\]\]>/g, "").replace(/<[^>]+>/g, "").trim()
+            : "";
+        return {
+          title: titleMatch ? clean(titleMatch[1]) : null,
+          description: descMatch ? clean(descMatch[1]) : "",
+        };
       })
-      .filter(Boolean);
+      .filter((i) => i.title);
 
-    if (titles.length === 0) {
+    if (items.length === 0) {
       return res.status(500).json({ error: "Could not fetch trending topics" });
     }
 
-    const trendingHeadline = titles[Math.floor(Math.random() * Math.min(10, titles.length))];
+    const chosen = items[Math.floor(Math.random() * Math.min(10, items.length))];
+    const trendingHeadline = chosen.title;
+    const trendingContext = chosen.description || "No additional summary available.";
 
     // ---------- 2. GENERATE CONTENT WITH AI (OpenRouter FREE model) ----------
-    const prompt = `You are a professional blog writer for "Pulsewire", a trending news publication. Write a detailed, original, SEO-optimized blog article based on this trending news headline: "${trendingHeadline}"
+    const prompt = `You are a professional blog writer for "AsfiBlog", a trending news publication. Write a blog article based on this real, currently trending news item.
 
+Headline: "${trendingHeadline}"
+Source summary: "${trendingContext}"
 Category: ${category}
+
+IMPORTANT RULES:
+- Base the article ONLY on the headline and summary given above. Do not invent specific product names, features, statistics, dates, or quotes that are not implied by the given information.
+- If the summary is thin, write more generally about the topic and its context/implications rather than making up specifics.
+- Do NOT use inline CSS, style attributes, <div> tags, or any custom colors/backgrounds in the content. Use ONLY plain <h2> and <p> tags (and <strong>/<em> if needed). This is critical — the site has its own theme and custom styling will break it.
+- For "image_keyword", give a GENERIC visual search term related to the general subject (e.g. "artificial intelligence", "stock market", "laptop coding", "hospital research") — never a specific company/product/brand name, since stock photo results for brand names are often wrong or mismatched.
 
 Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTLY these keys:
 {
   "title": "catchy SEO title, max 70 characters",
   "meta_description": "150-160 character meta description",
   "slug": "url-friendly-slug-no-spaces",
-  "content": "Full HTML article, 900-1300 words, using <h2> subheadings and <p> paragraphs. Do not include <html>, <head>, or <body> tags. Write in a clear, human, engaging tone.",
+  "content": "Full HTML article, 700-1100 words, using ONLY <h2> and <p> tags, no styles or divs. Write in a clear, human, engaging tone, grounded strictly in the given headline and summary.",
   "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"],
-  "image_keyword": "one simple English keyword or phrase to search stock photos for this topic"
+  "image_keyword": "one generic English keyword or phrase, no brand names"
 }`;
 
     console.log("STEP 2: generating content for headline:", trendingHeadline);
@@ -137,6 +155,15 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-|-$)/g, "");
+
+    // Safety net: strip any inline styles / div wrappers the AI might have added anyway,
+    // so it can never break the site's light/dark theme
+    if (post.content) {
+      post.content = post.content
+        .replace(/style="[^"]*"/gi, "")
+        .replace(/<div[^>]*>/gi, "<p>")
+        .replace(/<\/div>/gi, "</p>");
+    }
 
     // ---------- 3. FETCH FREE IMAGES (Pexels) ----------
     console.log("STEP 3: fetching Pexels images for", post.image_keyword || category);
