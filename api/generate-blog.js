@@ -107,10 +107,11 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
     console.log("STEP 2: generating content for headline:", trendingHeadline);
 
     // Try a list of models in order until one gives valid JSON
-    // Free tier models first, then cheap paid fallbacks (need a small OpenRouter balance)
+    // openrouter/free auto-selects a working free model (most reliable as of mid-2026,
+    // since Gemini/Mistral/DeepSeek no longer have free tiers on OpenRouter)
     const modelsToTry = [
+      "openrouter/free",
       "meta-llama/llama-3.1-8b-instruct:free",
-      "meta-llama/llama-3.1-70b-instruct:free",
       "deepseek/deepseek-chat",
       "openai/gpt-4o-mini",
     ];
