@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AsfiBlog — What the World's Talking About, Right Now</title>
+<meta name="description" content="AsfiBlog tracks the day's most-discussed stories in technology, business, science, and health, and breaks them down in plain English." />
+<meta name="keywords" content="trending news, technology, business, science, health, asfiblog" />
+<link rel="canonical" href="https://asfiblog.vercel.app/" />
+
+<meta property="og:title" content="AsfiBlog — What the World's Talking About, Right Now" />
+<meta property="og:description" content="The day's most-discussed stories in technology, business, science, and health, broken down in plain English." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://asfiblog.vercel.app/" />
+<meta property="og:site_name" content="AsfiBlog" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AsfiBlog — What the World's Talking About, Right Now" />
+<meta name="twitter:description" content="The day's most-discussed stories in technology, business, science, and health, broken down in plain English." />
+<meta name="robots" content="index, follow" />
+
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/assets/css/style.css" />
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/chatbot.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "name": "AsfiBlog",
+  "url": "https://asfiblog.vercel.app/",
+  "description": "AsfiBlog tracks the day's most-discussed stories in technology, business, science, and health, and breaks them down in plain English.",
+  "sameAs": ["https://twitter.com", "https://linkedin.com", "https://facebook.com"]
+}
+</script>
+</head>
+<body>
+
+<div class="ticker">
+  <span class="ticker__live">LIVE</span>
+  <div class="ticker__track">
+    <span>TECHNOLOGY — new stories filed daily</span>
+    <span>BUSINESS — markets, moves, and money</span>
+    <span>SCIENCE — what researchers found this week</span>
+    <span>HEALTH — plain-English explainers</span>
+    <span>ASFIBLOG — filed around the clock</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="/" class="logo">Asfi<span>Blog</span></a>
+    <nav class="nav__links">
+      <a href="/" class="active">Home</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+      <button class="nav__toggle-btn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+
+<main class="wrap">
+  <section class="hero">
+    <span class="stamp">Filed continuously</span>
+    <h1>What the <span class="grad">world's talking about</span>, right now.</h1>
+    <p class="lede">AsfiBlog tracks the day's most-discussed stories across technology, business, science, and health — and breaks each one down in plain English, fast.</p>
+    <div class="hero-cta">
+      <a href="/blog/index.html" class="btn">Read the latest dispatches</a>
+      <a href="/about.html" class="btn btn--ghost">Why AsfiBlog</a>
+    </div>
+  </section>
+
+  <section class="stat-strip">
+    <div><span class="stat-num" data-count="4">0</span><span class="stat-label">Desks covered</span></div>
+    <div><span class="stat-num" data-count="3" data-suffix="x">0</span><span class="stat-label">Filed daily</span></div>
+    <div><span class="stat-num" data-count="100" data-suffix="%">0</span><span class="stat-label">Plain English</span></div>
+    <div><span class="stat-num" data-count="0" data-suffix="ads" style="display:none"></span><span class="stat-label" style="display:none"></span></div>
+  </section>
+
+  <section style="padding-bottom:8px;">
+    <div class="section-head">
+      <h2>Trending right now</h2>
+      <a href="/blog/index.html" class="see-all">All dispatches →</a>
+    </div>
+
+    <a href="/blog/ai-agents-replacing-apps.html" class="featured">
+      <div class="featured__img">
+        <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="AI agent interface replacing traditional mobile apps" loading="lazy" />
+      </div>
+      <div class="featured__body">
+        <span class="stamp">Technology</span>
+        <h3>AI Agents Are Quietly Replacing the Apps You Use Every Day</h3>
+        <p class="card__excerpt">Booking, shopping, and scheduling are moving from taps to typed requests. Here's what's actually changing under the hood — and what it means for you.</p>
+        <p class="timestamp">6 min read</p>
+      </div>
+    </a>
+  </section>
+
+  <section style="padding-bottom:64px;">
+    <div class="section-head">
+      <h2>Desks we cover</h2>
+    </div>
+    <div class="grid">
+      <a href="/blog/four-day-work-week-2026.html" class="card">
+        <div class="card__img-wrap">
+          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Team discussing flexible work schedule in modern office" loading="lazy" />
+        </div>
+        <div class="card__body">
+          <span class="stamp">Business</span>
+          <div class="card__title">Why the 4-Day Work Week Is Back in the Conversation</div>
+          <p class="card__excerpt">New pilot data is reviving the debate. Here's what's actually driving it in 2026.</p>
+          <p class="timestamp">5 min read</p>
+        </div>
+      </a>
+      <a href="/blog/plastic-eating-bacteria-breakthrough.html" class="card">
+        <div class="card__img-wrap">
+          <img src="https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Laboratory researcher examining plastic waste samples" loading="lazy" />
+        </div>
+        <div class="card__body">
+          <span class="stamp">Science</span>
+          <div class="card__title">Scientists Found a Bacteria That Eats Plastic — Here's What That Means</div>
+          <p class="card__excerpt">A lab breakthrough is being called a possible fix for one of recycling's biggest problems.</p>
+          <p class="timestamp">6 min read</p>
+        </div>
+      </a>
+      <a href="/blog/sleep-banking-trend-explained.html" class="card">
+        <div class="card__img-wrap">
+          <img src="https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Person sleeping peacefully in a well-lit bedroom" loading="lazy" />
+        </div>
+        <div class="card__body">
+          <span class="stamp stamp--teal">Health</span>
+          <div class="card__title">"Sleep Banking" Is Trending — Does It Actually Work?</div>
+          <p class="card__excerpt">The idea of stockpiling rest before a big week sounds appealing. Here's what sleep science says.</p>
+          <p class="timestamp">5 min read</p>
+        </div>
+      </a>
+      <a href="/blog/ai-agents-replacing-apps.html" class="card">
+        <div class="card__img-wrap">
+          <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AI agent interface replacing traditional mobile apps" loading="lazy" />
+        </div>
+        <div class="card__body">
+          <span class="stamp">Technology</span>
+          <div class="card__title">AI Agents Are Quietly Replacing the Apps You Use Every Day</div>
+          <p class="card__excerpt">Booking, shopping, and scheduling are moving from taps to typed requests.</p>
+          <p class="timestamp">6 min read</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="trust-grid fade-up">
+    <div class="trust-card">
+      <div class="icon">✓</div>
+      <h3>Original, fact-checked</h3>
+      <p>Every dispatch is written from primary sources and reviewed before it's filed — no copy-paste aggregation.</p>
+    </div>
+    <div class="trust-card">
+      <div class="icon">⚡</div>
+      <h3>Filed continuously</h3>
+      <p>New stories go up multiple times a day, so what you're reading reflects what's happening right now.</p>
+    </div>
+    <div class="trust-card">
+      <div class="icon">🗣</div>
+      <h3>Plain English, always</h3>
+      <p>No jargon walls. Every story is written so a first-time reader on the topic can follow it end to end.</p>
+    </div>
+  </section>
+
+  <section class="newsletter fade-up">
+    <div class="newsletter__copy">
+      <h2>Get the day's biggest story, once a day.</h2>
+      <p>One email, one story, zero spam. Unsubscribe anytime with one click.</p>
+    </div>
+    <form id="newsletter-form">
+      <input type="email" required placeholder="you@email.com" aria-label="Email address" />
+      <button type="submit" class="btn">Subscribe free</button>
+    </form>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <a href="/" class="logo">Asfi<span>Blog</span></a>
+      <p>Independent coverage of what the world's talking about — technology, business, science, and health, filed in plain English, around the clock.</p>
+      <div class="footer__social">
+        <a href="https://twitter.com" aria-label="AsfiBlog on X" target="_blank" rel="noopener">𝕏</a>
+        <a href="https://linkedin.com" aria-label="AsfiBlog on LinkedIn" target="_blank" rel="noopener">in</a>
+        <a href="https://facebook.com" aria-label="AsfiBlog on Facebook" target="_blank" rel="noopener">f</a>
+        <a href="/blog/index.html" aria-label="AsfiBlog RSS">RSS</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>Desks</h4>
+      <ul>
+        <li><a href="/blog/index.html#technology">Technology</a></li>
+        <li><a href="/blog/index.html#business">Business</a></li>
+        <li><a href="/blog/index.html#science">Science</a></li>
+        <li><a href="/blog/index.html#health">Health</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about.html">About AsfiBlog</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/blog/index.html">All Dispatches</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span class="footer__fine">© <span id="year"></span> AsfiBlog. All rights reserved.</span>
+    <span class="footer__fine">Filed daily from a small, independent newsroom.</span>
+  </div>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+<button id="pw-chat-toggle" aria-label="Open chat">💬</button>
+<div id="pw-chat-panel">
+  <div class="pw-chat__head">
+    <span>Ask The Desk</span>
+    <button id="pw-chat-close" aria-label="Close chat">✕</button>
+  </div>
+  <div class="pw-chat__body" id="pw-chat-body">
+    <div class="pw-msg bot">Hi, I'm The Desk. Ask me about anything trending in tech, business, science, or health.</div>
+  </div>
+  <form class="pw-chat__input" id="pw-chat-form">
+    <input id="pw-chat-input" type="text" placeholder="Type a message..." autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+
+</body>
+</html>

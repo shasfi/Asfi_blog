@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Disclaimer — AsfiBlog</title>
+<meta name="description" content="AsfiBlog's disclaimer covering AI-assisted content, accuracy, and use of information on this site." />
+<link rel="canonical" href="https://asfiblog.vercel.app/disclaimer.html" />
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/assets/css/style.css" />
+<script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+
+<div class="ticker">
+  <span class="ticker__live">LIVE</span>
+  <div class="ticker__track">
+    <span>TECHNOLOGY — new stories filed daily</span>
+    <span>BUSINESS — markets, moves, and money</span>
+    <span>SCIENCE — what researchers found this week</span>
+    <span>HEALTH — plain-English explainers</span>
+    <span>ASFIBLOG — filed around the clock</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="/" class="logo">Asfi<span>Blog</span></a>
+    <nav class="nav__links">
+      <a href="/">Home</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+      <button class="nav__toggle-btn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+
+<main class="wrap page-content">
+  <span class="stamp">Disclaimer</span>
+  <h1>Disclaimer</h1>
+  <p class="timestamp">Last updated: <span id="today"></span></p>
+
+  <h2>General information only</h2>
+  <p>The content published on AsfiBlog is provided for general informational purposes only. It does not constitute professional advice of any kind, including but not limited to medical, financial, legal, or investment advice. Always consult a qualified professional before making decisions based on information found here.</p>
+
+  <h2>AI-assisted content</h2>
+  <p>AsfiBlog uses AI language models as part of its editorial process to help summarize and explain trending topics. Articles are generated based on publicly available news headlines and may be reviewed or edited by our editorial team. While we aim for accuracy, AI-assisted content can occasionally contain errors or become outdated quickly, especially for fast-moving stories. We encourage readers to verify important information against original news sources, which we link to or reference where possible.</p>
+
+  <h2>No guarantee of accuracy</h2>
+  <p>While we strive to keep information accurate and up to date, we make no representations or warranties of any kind about the completeness, accuracy, reliability, or availability of the content on this site.</p>
+
+  <h2>External links</h2>
+  <p>This site may contain links to external websites not provided or maintained by us. We do not guarantee the accuracy or reliability of any information on these external sites.</p>
+
+  <h2>Health and medical content</h2>
+  <p>Any health-related articles on this site are for general informational purposes only and are not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a physician or other qualified health provider with any questions regarding a medical condition.</p>
+
+  <h2>Advertising</h2>
+  <p>AsfiBlog may display third-party advertisements, including through Google AdSense. We do not endorse products or services advertised on this site.</p>
+
+  <h2>Questions</h2>
+  <p>If you have questions about this disclaimer, please contact us via our <a href="/contact.html">Contact page</a>.</p>
+</main>
+
+<footer class="site">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <a href="/" class="logo">Asfi<span>Blog</span></a>
+      <p>Independent coverage of what the world's talking about — technology, business, science, and health, filed in plain English, around the clock.</p>
+      <div class="footer__social">
+        <a href="https://twitter.com" aria-label="AsfiBlog on X" target="_blank" rel="noopener">𝕏</a>
+        <a href="https://linkedin.com" aria-label="AsfiBlog on LinkedIn" target="_blank" rel="noopener">in</a>
+        <a href="https://facebook.com" aria-label="AsfiBlog on Facebook" target="_blank" rel="noopener">f</a>
+        <a href="/blog/index.html" aria-label="AsfiBlog RSS">RSS</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>Desks</h4>
+      <ul>
+        <li><a href="/blog/index.html#technology">Technology</a></li>
+        <li><a href="/blog/index.html#business">Business</a></li>
+        <li><a href="/blog/index.html#science">Science</a></li>
+        <li><a href="/blog/index.html#health">Health</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about.html">About AsfiBlog</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/blog/index.html">All Dispatches</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span class="footer__fine">© <span id="year"></span> AsfiBlog. All rights reserved.</span>
+    <span class="footer__fine">Filed daily from a small, independent newsroom.</span>
+  </div>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+<button id="pw-chat-toggle" aria-label="Open chat">💬</button>
+<div id="pw-chat-panel">
+  <div class="pw-chat__head">
+    <span>Ask The Desk</span>
+    <button id="pw-chat-close" aria-label="Close chat">✕</button>
+  </div>
+  <div class="pw-chat__body" id="pw-chat-body">
+    <div class="pw-msg bot">Hi, I'm The Desk. Ask me about anything trending in tech, business, science, or health.</div>
+  </div>
+  <form class="pw-chat__input" id="pw-chat-form">
+    <input id="pw-chat-input" type="text" placeholder="Type a message..." autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+
+<script>
+  document.getElementById("today").textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+</script>
+
+</body>
+</html>
