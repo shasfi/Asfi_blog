@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "api/generate-blog.js": {
+      "maxDuration": 60
+    },
+    "api/chat.js": {
+      "maxDuration": 30
+    },
+    "api/send-email.js": {
+      "maxDuration": 30
+    }
+  }
+}
