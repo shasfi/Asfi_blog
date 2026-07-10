@@ -1,32 +1,23 @@
 // assets/js/blog-render.js — reads window.ASFIBLOG_POSTS (posts-data.js)
 // and renders: (1) the "Trending right now" section on the homepage,
-// (2) the categories + search/filter bar + paginated grid on /blog/index.html.
-//
-// View counts = baseline (post.views, seeded by generate-blog.js) + real
-// cross-visitor count fetched from /api/views (backed by Vercel KV). The
-// actual "+1" on a real visit is recorded in assets/js/main.js (runs on
-// every page, including individual post pages) so this file only needs to
-// READ the live counts to display them here and on the homepage.
+// (2) the categories + search/filter bar + grid on /blog/index.html,
+// (3) increments a lightweight view counter on individual post pages.
 
 (function () {
   const POSTS = window.ASFIBLOG_POSTS || [];
-  const VIEWS_KEY = "asfiblog_view_deltas"; // legacy local fallback, used only if API fails
-  const DEFAULT_PAGE_SIZE = 10;
-  let REAL_VIEWS = {}; // slug -> live count from /api/views
+  const VIEWS_KEY = "asfiblog_view_deltas";
+  const SEEN_KEY = "asfiblog_seen_session";
+  const PAGE_SIZE = 6;
 
   // ---------- shared helpers ----------
 
-  function getLocalDeltas() {
+  function getViewDeltas() {
     try { return JSON.parse(localStorage.getItem(VIEWS_KEY)) || {}; }
     catch (e) { return {}; }
   }
 
   function displayViews(post) {
-    if (REAL_VIEWS && Object.prototype.hasOwnProperty.call(REAL_VIEWS, post.slug)) {
-      return post.views + REAL_VIEWS[post.slug];
-    }
-    // fallback: pre-KV local-only estimate, so numbers aren't empty before first fetch/if API is down
-    const deltas = getLocalDeltas();
+    const deltas = getViewDeltas();
     return post.views + (deltas[post.slug] || 0);
   }
 
@@ -38,6 +29,15 @@
   function formatDate(iso) {
     const d = new Date(iso + "T00:00:00");
     return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  }
+
+  function daysAgo(iso) {
+    const d = new Date(iso + "T00:00:00");
+    const diff = Math.floor((Date.now() - d.getTime()) / 86400000);
+    if (diff <= 0) return "Today";
+    if (diff === 1) return "Yesterday";
+    if (diff < 7) return diff + " days ago";
+    return formatDate(iso);
   }
 
   function stampClass(category) {
@@ -88,7 +88,7 @@
 
   // ---------- homepage: trending section ----------
 
-  function renderHomeTrending() {
+  function initHomeTrending() {
     const featuredEl = document.getElementById("trending-featured");
     const gridEl = document.getElementById("trending-grid");
     if (!featuredEl || !gridEl || !POSTS.length) return;
@@ -112,23 +112,18 @@
     const searchEl = document.getElementById("blog-search");
     const categorySelectEl = document.getElementById("filter-category");
     const sortEl = document.getElementById("filter-sort");
-    const pageSizeEl = document.getElementById("filter-pagesize");
     const emptyEl = document.getElementById("posts-empty");
     const countEl = document.getElementById("results-count");
-    const paginationEl = document.getElementById("pagination");
 
     const categories = [...new Set(POSTS.map((p) => p.category))].sort();
 
-    const params = new URLSearchParams(window.location.search);
-    const allowedPageSizes = [10, 20, 30, 40, 50, 100];
-    let requestedPageSize = parseInt(params.get("per"), 10) || DEFAULT_PAGE_SIZE;
-    if (!allowedPageSizes.includes(requestedPageSize)) requestedPageSize = DEFAULT_PAGE_SIZE;
+    const paginationEl = document.getElementById("pagination");
 
+    const params = new URLSearchParams(window.location.search);
     const state = {
       category: params.get("category") || "all",
       q: params.get("q") || "",
       sort: params.get("sort") || "newest",
-      perPage: requestedPageSize,
       page: Math.max(1, parseInt(params.get("page"), 10) || 1)
     };
 
@@ -150,14 +145,12 @@
     }
     if (sortEl) sortEl.value = state.sort;
     if (searchEl) searchEl.value = state.q;
-    if (pageSizeEl) pageSizeEl.value = String(state.perPage);
 
     function syncUrl() {
       const p = new URLSearchParams();
       if (state.category !== "all") p.set("category", state.category);
       if (state.q) p.set("q", state.q);
       if (state.sort !== "newest") p.set("sort", state.sort);
-      if (state.perPage !== DEFAULT_PAGE_SIZE) p.set("per", state.perPage);
       if (state.page > 1) p.set("page", state.page);
       const qs = p.toString();
       history.replaceState(null, "", qs ? `?${qs}` : window.location.pathname);
@@ -217,18 +210,17 @@
       else if (state.sort === "trending") list.sort((a, b) => displayViews(b) - displayViews(a));
       else list.sort((a, b) => b.date.localeCompare(a.date)); // newest
 
-      const perPage = state.perPage;
-      const totalPages = Math.max(1, Math.ceil(list.length / perPage));
+      const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
       if (state.page > totalPages) state.page = totalPages;
-      const pageList = list.slice((state.page - 1) * perPage, state.page * perPage);
+      const pageList = list.slice((state.page - 1) * PAGE_SIZE, state.page * PAGE_SIZE);
 
       gridEl.innerHTML = pageList.map((p) => cardHtml(p)).join("");
       [...gridEl.querySelectorAll(".card")].forEach((el) => el.classList.add("in-view"));
 
       if (emptyEl) emptyEl.style.display = list.length ? "none" : "block";
       if (countEl) {
-        const startNum = list.length ? (state.page - 1) * perPage + 1 : 0;
-        const endNum = Math.min(state.page * perPage, list.length);
+        const startNum = list.length ? (state.page - 1) * PAGE_SIZE + 1 : 0;
+        const endNum = Math.min(state.page * PAGE_SIZE, list.length);
         countEl.textContent = list.length
           ? `Showing ${startNum}–${endNum} of ${list.length} ${list.length === 1 ? "story" : "stories"}`
           : "0 stories";
@@ -287,14 +279,6 @@
         render();
       });
     }
-    if (pageSizeEl) {
-      pageSizeEl.addEventListener("change", () => {
-        const n = parseInt(pageSizeEl.value, 10);
-        state.perPage = allowedPageSizes.includes(n) ? n : DEFAULT_PAGE_SIZE;
-        state.page = 1;
-        render();
-      });
-    }
     if (pillsEl) {
       pillsEl.addEventListener("click", (e) => {
         const btn = e.target.closest(".pill");
@@ -318,18 +302,31 @@
     render();
   }
 
-  // ---------- fetch real cross-visitor view counts, then render ----------
+  // ---------- individual post pages: view counter ----------
 
-  async function loadRealViewsAndRender() {
-    try {
-      const res = await fetch("/api/views");
-      if (res.ok) REAL_VIEWS = await res.json();
-    } catch (e) {
-      // API unreachable — displayViews() falls back to local estimate automatically
-    }
-    renderHomeTrending();
-    initBlogListing();
+  function trackView() {
+    const article = document.querySelector("article.post");
+    if (!article) return;
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) return;
+    const match = canonical.href.match(/\/blog\/([^/]+)\.html/);
+    if (!match) return;
+    const slug = match[1];
+
+    let seen = [];
+    try { seen = JSON.parse(sessionStorage.getItem(SEEN_KEY)) || []; } catch (e) {}
+    if (seen.includes(slug)) return;
+    seen.push(slug);
+    sessionStorage.setItem(SEEN_KEY, JSON.stringify(seen));
+
+    const deltas = getViewDeltas();
+    deltas[slug] = (deltas[slug] || 0) + 1;
+    localStorage.setItem(VIEWS_KEY, JSON.stringify(deltas));
   }
 
-  document.addEventListener("DOMContentLoaded", loadRealViewsAndRender);
+  document.addEventListener("DOMContentLoaded", () => {
+    trackView();
+    initHomeTrending();
+    initBlogListing();
+  });
 })();

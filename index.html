@@ -20,6 +20,8 @@
 
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="/assets/css/style.css" />
+<script src="/assets/js/posts-data.js" defer></script>
+<script src="/assets/js/blog-render.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/chatbot.js" defer></script>
 <script type="application/ld+json">
@@ -89,67 +91,35 @@
       <a href="/blog/index.html" class="see-all">All dispatches →</a>
     </div>
 
-    <a href="/blog/ai-agents-replacing-apps.html" class="featured">
-      <div class="featured__img">
-        <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="AI agent interface replacing traditional mobile apps" loading="lazy" />
-      </div>
-      <div class="featured__body">
-        <span class="stamp">Technology</span>
-        <h3>AI Agents Are Quietly Replacing the Apps You Use Every Day</h3>
-        <p class="card__excerpt">Booking, shopping, and scheduling are moving from taps to typed requests. Here's what's actually changing under the hood — and what it means for you.</p>
-        <p class="timestamp">6 min read</p>
-      </div>
-    </a>
+    <!-- Rendered by assets/js/blog-render.js from posts-data.js, ranked by views -->
+    <div id="trending-featured"></div>
+    <div class="grid grid--trending" id="trending-grid"></div>
   </section>
 
   <section style="padding-bottom:64px;">
     <div class="section-head">
       <h2>Desks we cover</h2>
     </div>
-    <div class="grid">
-      <a href="/blog/four-day-work-week-2026.html" class="card">
-        <div class="card__img-wrap">
-          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Team discussing flexible work schedule in modern office" loading="lazy" />
-        </div>
-        <div class="card__body">
-          <span class="stamp">Business</span>
-          <div class="card__title">Why the 4-Day Work Week Is Back in the Conversation</div>
-          <p class="card__excerpt">New pilot data is reviving the debate. Here's what's actually driving it in 2026.</p>
-          <p class="timestamp">5 min read</p>
-        </div>
+    <div class="desk-grid">
+      <a href="/blog/index.html?category=technology" class="desk-tile">
+        <span class="desk-tile__icon">💻</span>
+        <span class="desk-tile__name">Technology</span>
+        <span class="desk-tile__desc">AI, apps, and the tools reshaping how we work.</span>
       </a>
-      <a href="/blog/plastic-eating-bacteria-breakthrough.html" class="card">
-        <div class="card__img-wrap">
-          <img src="https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Laboratory researcher examining plastic waste samples" loading="lazy" />
-        </div>
-        <div class="card__body">
-          <span class="stamp">Science</span>
-          <div class="card__title">Scientists Found a Bacteria That Eats Plastic — Here's What That Means</div>
-          <p class="card__excerpt">A lab breakthrough is being called a possible fix for one of recycling's biggest problems.</p>
-          <p class="timestamp">6 min read</p>
-        </div>
+      <a href="/blog/index.html?category=business" class="desk-tile">
+        <span class="desk-tile__icon">📈</span>
+        <span class="desk-tile__name">Business</span>
+        <span class="desk-tile__desc">Markets, moves, and money — plainly explained.</span>
       </a>
-      <a href="/blog/sleep-banking-trend-explained.html" class="card">
-        <div class="card__img-wrap">
-          <img src="https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Person sleeping peacefully in a well-lit bedroom" loading="lazy" />
-        </div>
-        <div class="card__body">
-          <span class="stamp stamp--teal">Health</span>
-          <div class="card__title">"Sleep Banking" Is Trending — Does It Actually Work?</div>
-          <p class="card__excerpt">The idea of stockpiling rest before a big week sounds appealing. Here's what sleep science says.</p>
-          <p class="timestamp">5 min read</p>
-        </div>
+      <a href="/blog/index.html?category=science" class="desk-tile">
+        <span class="desk-tile__icon">🔬</span>
+        <span class="desk-tile__name">Science</span>
+        <span class="desk-tile__desc">What researchers actually found this week.</span>
       </a>
-      <a href="/blog/ai-agents-replacing-apps.html" class="card">
-        <div class="card__img-wrap">
-          <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AI agent interface replacing traditional mobile apps" loading="lazy" />
-        </div>
-        <div class="card__body">
-          <span class="stamp">Technology</span>
-          <div class="card__title">AI Agents Are Quietly Replacing the Apps You Use Every Day</div>
-          <p class="card__excerpt">Booking, shopping, and scheduling are moving from taps to typed requests.</p>
-          <p class="timestamp">6 min read</p>
-        </div>
+      <a href="/blog/index.html?category=health" class="desk-tile">
+        <span class="desk-tile__icon">🩺</span>
+        <span class="desk-tile__name">Health</span>
+        <span class="desk-tile__desc">Plain-English explainers you can act on.</span>
       </a>
     </div>
   </section>
@@ -199,10 +169,10 @@
     <div class="footer__col">
       <h4>Desks</h4>
       <ul>
-        <li><a href="/blog/index.html#technology">Technology</a></li>
-        <li><a href="/blog/index.html#business">Business</a></li>
-        <li><a href="/blog/index.html#science">Science</a></li>
-        <li><a href="/blog/index.html#health">Health</a></li>
+        <li><a href="/blog/index.html?category=technology">Technology</a></li>
+        <li><a href="/blog/index.html?category=business">Business</a></li>
+        <li><a href="/blog/index.html?category=science">Science</a></li>
+        <li><a href="/blog/index.html?category=health">Health</a></li>
       </ul>
     </div>
     <div class="footer__col">

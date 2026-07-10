@@ -133,3 +133,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2500);
   });
 });
+
+// ---------- REAL-TIME VIEW TRACKING (runs on every page, incl. post pages) ----------
+// Records one "view" per visitor per post per browser session, via /api/views
+// (Vercel KV backed). blog-render.js reads these counts back on home/blog pages.
+(function () {
+  const SEEN_KEY = "asfiblog_seen_session";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const article = document.querySelector("article.post");
+    if (!article) return; // only track on individual post pages
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) return;
+    const match = canonical.href.match(/\/blog\/([^/]+)\.html/);
+    if (!match) return;
+    const slug = match[1];
+
+    let seen = [];
+    try { seen = JSON.parse(sessionStorage.getItem(SEEN_KEY)) || []; } catch (e) {}
+    if (seen.includes(slug)) return;
+    seen.push(slug);
+    try { sessionStorage.setItem(SEEN_KEY, JSON.stringify(seen)); } catch (e) {}
+
+    fetch("/api/views", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug })
+    }).catch(() => {}); // fail silently, never break the page
+  });
+})();

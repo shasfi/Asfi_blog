@@ -13,6 +13,8 @@
 <meta name="robots" content="index, follow" />
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="/assets/css/style.css" />
+<script src="/assets/js/posts-data.js" defer></script>
+<script src="/assets/js/blog-render.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/chatbot.js" defer></script>
 <script type="application/ld+json">
@@ -64,124 +66,40 @@
     <p class="lede">Freshest stories first. New dispatches are filed automatically throughout the day across technology, business, science, and health.</p>
   </section>
 
-  <a href="/blog/ai-agents-replacing-apps.html" class="featured">
-    <div class="featured__img">
-      <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="AI agent interface replacing traditional mobile apps" loading="lazy" />
+  <!-- Categories first -->
+  <div class="category-pills" id="category-pills"></div>
+
+  <!-- Search + dropdown filters -->
+  <section class="filter-bar">
+    <div class="filter-bar__search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" id="blog-search" placeholder="Search dispatches..." aria-label="Search articles" />
     </div>
-    <div class="featured__body">
-      <span class="stamp">Technology · Featured</span>
-      <h3>AI Agents Are Quietly Replacing the Apps You Use Every Day</h3>
-      <p class="card__excerpt">Booking, shopping, and scheduling are moving from taps to typed requests. Here's what's actually changing under the hood — and what it means for you.</p>
-      <p class="timestamp">6 min read</p>
+    <div class="filter-bar__selects">
+      <select id="filter-category" aria-label="Filter by category"></select>
+      <select id="filter-sort" aria-label="Sort by">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="trending">Most viewed</option>
+      </select>
+      <select id="filter-pagesize" aria-label="Posts per page">
+        <option value="10">10 / page</option>
+        <option value="20">20 / page</option>
+        <option value="30">30 / page</option>
+        <option value="40">40 / page</option>
+        <option value="50">50 / page</option>
+        <option value="100">100 / page</option>
+      </select>
     </div>
-  </a>
+  </section>
 
-  <div class="grid" id="posts-grid">
+  <p class="results-count" id="results-count"></p>
 
-    <a href="/blog/four-day-work-week-2026.html" class="card">
-      <div class="card__img-wrap">
-        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Team discussing flexible work schedule in a modern office" loading="lazy" />
-      </div>
-      <div class="card__body">
-        <span class="stamp" id="business">Business</span>
-        <div class="card__title">Why the 4-Day Work Week Is Back in the Conversation</div>
-        <p class="card__excerpt">New pilot data is reviving the debate. Here's what's actually driving it in 2026 — and where it's stalling.</p>
-        <p class="timestamp">5 min read</p>
-      </div>
-    </a>
+  <div class="grid" id="posts-grid"></div>
+  <p class="empty-state" id="posts-empty" style="display:none;">No dispatches match those filters yet. Try a different category or search term.</p>
 
-    <a href="/blog/plastic-eating-bacteria-breakthrough.html" class="card">
-      <div class="card__img-wrap">
-        <img src="https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Laboratory researcher examining plastic waste samples" loading="lazy" />
-      </div>
-      <div class="card__body">
-        <span class="stamp" id="science">Science</span>
-        <div class="card__title">Scientists Found a Bacteria That Eats Plastic — Here's What That Means</div>
-        <p class="card__excerpt">A lab breakthrough is being called a possible fix for one of recycling's biggest problems. We separate the hype from the timeline.</p>
-        <p class="timestamp">6 min read</p>
-      </div>
-    </a>
+  <nav class="pagination" id="pagination" aria-label="Blog pagination"></nav>
 
-    <a href="/blog/sleep-banking-trend-explained.html" class="card">
-      <div class="card__img-wrap">
-        <img src="https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Person sleeping peacefully in a well-lit bedroom" loading="lazy" />
-      </div>
-      <div class="card__body">
-        <span class="stamp stamp--teal" id="health">Health</span>
-        <div class="card__title">"Sleep Banking" Is Trending — Does It Actually Work?</div>
-        <p class="card__excerpt">The idea of stockpiling rest before a big week sounds appealing. Here's what sleep science actually says about it.</p>
-        <p class="timestamp">5 min read</p>
-      </div>
-    </a>
-
-    <a href="/blog/ai-agents-replacing-apps.html" class="card">
-      <div class="card__img-wrap">
-        <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AI agent interface replacing traditional mobile apps" loading="lazy" />
-      </div>
-      <div class="card__body">
-        <span class="stamp" id="technology">Technology</span>
-        <div class="card__title">AI Agents Are Quietly Replacing the Apps You Use Every Day</div>
-        <p class="card__excerpt">Booking, shopping, and scheduling are moving from taps to typed requests. Here's what's actually changing.</p>
-        <p class="timestamp">6 min read</p>
-      </div>
-    </a>
-
-<a href="/blog/us-home-prices-all-time-high-mortgage-rates.html" class="card">
-      <div class="card__img-wrap"><img src="https://images.pexels.com/photos/8293714/pexels-photo-8293714.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Line graph showing US home price index climbing to all-time high in 2024" loading="lazy" /></div>
-      <div class="card__body">
-        <span class="stamp">Business</span>
-        <div class="card__title">US Home Prices Reach All-Time High Amid Rising Mortgage Rates</div>
-        <p class="card__excerpt">Despite higher borrowing costs and fewer sales, US home prices hit record levels. Explore the factors driving this paradox in the housing market.</p>
-        <p class="timestamp" style="margin-top:10px;">2026-07-09 · 4 min read</p>
-      </div>
-    </a>
-<a href="/blog/measles-exposure-map-central-ios.html" class="card">
-      <div class="card__img-wrap"><img src="https://images.pexels.com/photos/8830479/pexels-photo-8830479.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Interactive map highlighting red/yellow zones in central Iowa" loading="lazy" /></div>
-      <div class="card__body">
-        <span class="stamp">Health</span>
-        <div class="card__title">Measles Exposure Map Reveals High-Risk Zones in Central Iowa</div>
-        <p class="card__excerpt">A new map from KCCI identifies central Iowa locations with potential measles exposure. Learn which areas pose risks and how to protect yourself now.</p>
-        <p class="timestamp" style="margin-top:10px;">2026-07-09 · 4 min read</p>
-      </div>
-    </a>
-<a href="/blog/ladera-ranch-children-rare-cancer-concerns.html" class="card">
-      <div class="card__img-wrap"><img src="https://images.pexels.com/photos/34166164/pexels-photo-34166164.png?auto=compress&cs=tinysrgb&h=650&w=940" alt="Worried parents standing outside a school building with children playing in background" loading="lazy" /></div>
-      <div class="card__body">
-        <span class="stamp">Health</span>
-        <div class="card__title">Ladera Ranch Families Worry Over Children's Rare Cancer Cases</div>
-        <p class="card__excerpt">Families in Ladera Ranch express concern after multiple children diagnosed with rare cancer, raising questions about environmental factors and medical oversight.</p>
-        <p class="timestamp" style="margin-top:10px;">2026-07-09 · 4 min read</p>
-      </div>
-    </a>
-<a href="/blog/grocery-price-war-consumer-spending-cuts-2024.html" class="card">
-      <div class="card__img-wrap"><img src="https://images.pexels.com/photos/5498233/pexels-photo-5498233.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Grocery Price Wars Heat Up as Shoppers Tighten Belts" loading="lazy" /></div>
-      <div class="card__body">
-        <span class="stamp">Business</span>
-        <div class="card__title">Grocery Price Wars Heat Up as Shoppers Tighten Belts</div>
-        <p class="card__excerpt">Grocery stores slash prices as consumers cut spending. Discover why retailers are racing to the bottom and how to maximize savings on your weekly shop.</p>
-        <p class="timestamp" style="margin-top:10px;">2026-07-09</p>
-      </div>
-    </a>
-<a href="/blog/james-webb-telescope-galaxy-mystery.html" class="card">
-      <div class="card__img-wrap"><img src="https://images.pexels.com/photos/30238187/pexels-photo-30238187.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="James Webb Telescope Reveals Mysteries of Galaxy 11 Million Light-Years Away" loading="lazy" /></div>
-      <div class="card__body">
-        <span class="stamp">Science</span>
-        <div class="card__title">James Webb Telescope Reveals Mysteries of Galaxy 11 Million Light-Years Away</div>
-        <p class="card__excerpt">Astronomers are baffled by new James Webb Space Telescope images uncovering secrets of a distant galaxy. Discover the latest cosmic revelations here.</p>
-        <p class="timestamp" style="margin-top:10px;">2026-07-09</p>
-      </div>
-    </a>
-<a href="/blog/nasdaq-rally-chip-ai-spacex-oil-gains.html" class="card">
-      <div class="card__img-wrap"><img src="https://images.pexels.com/photos/7947742/pexels-photo-7947742.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Nasdaq Rally Leads Market Surge as Chip and AI Stocks Shine" loading="lazy" /></div>
-      <div class="card__body">
-        <span class="stamp">Business</span>
-        <div class="card__title">Nasdaq Rally Leads Market Surge as Chip and AI Stocks Shine</div>
-        <p class="card__excerpt">Nasdaq rallies as chip and AI stocks surge, SpaceX steadies after a three‑day dip, while oil climbs and market futures adjust amid geopolitical tension.</p>
-        <p class="timestamp" style="margin-top:10px;">2026-07-09</p>
-      </div>
-    </a>
-<!--POSTS_MARKER-->
-  </div>
 </main>
 
 <footer class="site">
@@ -199,10 +117,10 @@
     <div class="footer__col">
       <h4>Desks</h4>
       <ul>
-        <li><a href="/blog/index.html#technology">Technology</a></li>
-        <li><a href="/blog/index.html#business">Business</a></li>
-        <li><a href="/blog/index.html#science">Science</a></li>
-        <li><a href="/blog/index.html#health">Health</a></li>
+        <li><a href="/blog/index.html?category=technology">Technology</a></li>
+        <li><a href="/blog/index.html?category=business">Business</a></li>
+        <li><a href="/blog/index.html?category=science">Science</a></li>
+        <li><a href="/blog/index.html?category=health">Health</a></li>
       </ul>
     </div>
     <div class="footer__col">
