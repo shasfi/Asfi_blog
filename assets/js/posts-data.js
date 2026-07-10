@@ -22,9 +22,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "Booking, shopping, and scheduling are moving from taps to typed requests. Here's what's actually changing under the hood — and what it means for you.",
     category: "Technology",
     image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
-    date: "2026-06-18",
+    date: "2026-07-09",
     readMins: 6,
-    views: 15400
+    views: 0
   },
   {
     slug: "nasdaq-rally-chip-ai-spacex-oil-gains",
@@ -32,9 +32,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "Nasdaq rallies as chip and AI stocks surge, SpaceX steadies after a three-day dip, while oil climbs and market futures adjust amid geopolitical tension.",
     category: "Business",
     image: "https://images.pexels.com/photos/7947742/pexels-photo-7947742.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    date: "2026-07-09",
+    date: "2026-07-10",
     readMins: 4,
-    views: 12800
+    views: 0
   },
   {
     slug: "measles-exposure-map-central-ios",
@@ -42,9 +42,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "A new map from KCCI identifies central Iowa locations with potential measles exposure. Learn which areas pose risks and how to protect yourself now.",
     category: "Health",
     image: "https://images.pexels.com/photos/8830479/pexels-photo-8830479.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    date: "2026-07-09",
+    date: "2026-07-10",
     readMins: 4,
-    views: 11200
+    views: 0
   },
   {
     slug: "dairy-intake-may-slow-biological-aging-study",
@@ -52,9 +52,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "Study ties daily dairy intake to slower biological aging, with lower cellular wear markers in regular consumers. Learn what it means for health and longevity.",
     category: "Health",
     image: "https://images.pexels.com/photos/37377280/pexels-photo-37377280.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    date: "2026-07-09",
+    date: "2026-07-10",
     readMins: 7,
-    views: 9800
+    views: 0
   },
   {
     slug: "us-home-prices-all-time-high-mortgage-rates",
@@ -62,9 +62,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "Despite higher borrowing costs and fewer sales, US home prices hit record levels. Explore the factors driving this paradox in the housing market.",
     category: "Business",
     image: "https://images.pexels.com/photos/8293714/pexels-photo-8293714.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    date: "2026-07-09",
+    date: "2026-07-10",
     readMins: 4,
-    views: 9100
+    views: 0
   },
   {
     slug: "sony-rx10-v-superzoom-4k-120p-review",
@@ -72,9 +72,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "Sony RX10 V superzoom arrives with new design and 4K 120p video. We break down specs, key upgrades, and if it beats the RX10 IV for photo and video creators.",
     category: "Technology",
     image: "https://images.pexels.com/photos/29531886/pexels-photo-29531886.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    date: "2026-07-09",
+    date: "2026-07-10",
     readMins: 4,
-    views: 8700
+    views: 0
   },
   {
     slug: "four-day-work-week-2026",
@@ -82,9 +82,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "New pilot data is reviving the debate. Here's what's actually driving it in 2026 — and where it's stalling.",
     category: "Business",
     image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-    date: "2026-06-20",
+    date: "2026-07-09",
     readMins: 5,
-    views: 7600
+    views: 0
   },
   {
     slug: "plastic-eating-bacteria-breakthrough",
@@ -92,9 +92,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "A lab breakthrough is being called a possible fix for one of recycling's biggest problems. We separate the hype from the timeline.",
     category: "Science",
     image: "https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg?auto=compress&cs=tinysrgb&w=800",
-    date: "2026-06-22",
+    date: "2026-07-09",
     readMins: 6,
-    views: 7100
+    views: 0
   },
   {
     slug: "james-webb-telescope-galaxy-mystery",
@@ -102,9 +102,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "Astronomers are baffled by new James Webb Space Telescope images uncovering secrets of a distant galaxy. Discover the latest cosmic revelations here.",
     category: "Science",
     image: "https://images.pexels.com/photos/30238187/pexels-photo-30238187.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    date: "2026-07-09",
+    date: "2026-07-10",
     readMins: 4,
-    views: 6800
+    views: 0
   },
   {
     slug: "sleep-banking-trend-explained",
@@ -112,9 +112,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "The idea of stockpiling rest before a big week sounds appealing. Here's what sleep science actually says about it.",
     category: "Health",
     image: "https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=800",
-    date: "2026-06-24",
+    date: "2026-07-09",
     readMins: 5,
-    views: 6200
+    views: 0
   },
   {
     slug: "grocery-price-war-consumer-spending-cuts-2024",
@@ -122,9 +122,9 @@ window.ASFIBLOG_POSTS = [
     excerpt: "Grocery stores slash prices as consumers cut spending. Discover why retailers are racing to the bottom and how to maximize savings on your weekly shop.",
     category: "Business",
     image: "https://images.pexels.com/photos/5498233/pexels-photo-5498233.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    date: "2026-07-09",
+    date: "2026-07-10",
     readMins: 4,
-    views: 5900
+    views: 0
   },
   {
     slug: "ladera-ranch-children-rare-cancer-concerns",
@@ -132,8 +132,8 @@ window.ASFIBLOG_POSTS = [
     excerpt: "Families in Ladera Ranch express concern after multiple children diagnosed with rare cancer, raising questions about environmental factors and medical oversight.",
     category: "Health",
     image: "https://images.pexels.com/photos/34166164/pexels-photo-34166164.png?auto=compress&cs=tinysrgb&h=650&w=940",
-    date: "2026-07-09",
+    date: "2026-07-10",
     readMins: 4,
-    views: 5400
+    views: 0
   }
 ];

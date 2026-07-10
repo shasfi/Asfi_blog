@@ -1,335 +1,530 @@
-// assets/js/blog-render.js — reads window.ASFIBLOG_POSTS (posts-data.js)
-// and renders: (1) the "Trending right now" section on the homepage,
-// (2) the categories + search/filter bar + paginated grid on /blog/index.html.
+// api/generate-blog.js
+// Vercel Serverless Function
+// URL after deploy: https://yourproject.vercel.app/api/generate-blog?secret=YOUR_SECRET
 //
-// View counts = baseline (post.views, seeded by generate-blog.js) + real
-// cross-visitor count fetched from /api/views (backed by Vercel KV). The
-// actual "+1" on a real visit is recorded in assets/js/main.js (runs on
-// every page, including individual post pages) so this file only needs to
-// READ the live counts to display them here and on the homepage.
+// Full pipeline (100% free):
+// 1. Fetch REAL trending searches from Google Trends RSS (free, no API key)
+// 2. Generate a full SEO + AEO + GEO optimized article using OpenRouter FREE model
+//    (title, meta description, 1300-1800 word body, tags, FAQ block, image alt text)
+// 3. Fetch 2-4 relevant free images from Pexels
+// 4. Build a static HTML blog post page matching the site design, with:
+//    - meta description, canonical, Open Graph, Twitter Card tags
+//    - Article + BreadcrumbList + FAQPage JSON-LD structured data
+//    - a visible FAQ section (answer-engine friendly)
+//    - images distributed through the article, not stacked at the top
+// 5. Push the new file to GitHub -> Vercel auto-deploys it
+// 6. Add a matching card to blog/index.html
+// 7. Add the new URL to sitemap.xml
 
-(function () {
-  const POSTS = window.ASFIBLOG_POSTS || [];
-  const VIEWS_KEY = "asfiblog_view_deltas"; // legacy local fallback, used only if API fails
-  const DEFAULT_PAGE_SIZE = 10;
-  let REAL_VIEWS = {}; // slug -> live count from /api/views
+export default async function handler(req, res) {
+  // Splits article HTML into an intro + h2-sections, and weaves extra images
+  // between sections (roughly evenly spaced) instead of stacking them all up top.
+  function distributeImages(contentHtml, images, alts) {
+    if (!images || images.length <= 1) return contentHtml;
 
-  // ---------- shared helpers ----------
+    const extraImages = images.slice(1);
+    const extraAlts = alts.slice(1);
+    const figure = (url, alt) =>
+      `<figure class="post-figure"><img src="${url}" alt="${alt || ""}" loading="lazy" /></figure>`;
 
-  function getLocalDeltas() {
-    try { return JSON.parse(localStorage.getItem(VIEWS_KEY)) || {}; }
-    catch (e) { return {}; }
-  }
-
-  function displayViews(post) {
-    if (REAL_VIEWS && Object.prototype.hasOwnProperty.call(REAL_VIEWS, post.slug)) {
-      return post.views + REAL_VIEWS[post.slug];
+    const sections = contentHtml.split(/(?=<h2>)/);
+    if (sections.length <= 1) {
+      return contentHtml + extraImages.map((url, i) => figure(url, extraAlts[i])).join("\n");
     }
-    // fallback: pre-KV local-only estimate, so numbers aren't empty before first fetch/if API is down
-    const deltas = getLocalDeltas();
-    return post.views + (deltas[post.slug] || 0);
+
+    const gap = Math.max(1, Math.floor(sections.length / (extraImages.length + 1)));
+    let result = sections[0];
+    let imgIdx = 0;
+    for (let i = 1; i < sections.length; i++) {
+      result += sections[i];
+      if (imgIdx < extraImages.length && i % gap === 0) {
+        result += figure(extraImages[imgIdx], extraAlts[imgIdx]);
+        imgIdx++;
+      }
+    }
+    while (imgIdx < extraImages.length) {
+      result += figure(extraImages[imgIdx], extraAlts[imgIdx]);
+      imgIdx++;
+    }
+    return result;
   }
 
-  function formatViews(n) {
-    if (n >= 1000) return (n / 1000).toFixed(n % 1000 >= 100 ? 1 : 1).replace(/\.0$/, "") + "K";
-    return String(n);
+  function extractJSON(text) {
+    const match = text.match(/\{[\s\S]*\}/);
+    return match ? match[0] : text;
   }
 
-  function formatDate(iso) {
-    const d = new Date(iso + "T00:00:00");
-    return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-  }
+  try {
+    if (req.query.secret !== process.env.CRON_SECRET) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
 
-  function stampClass(category) {
-    return category === "Health" ? "stamp stamp--teal" : "stamp";
-  }
+    const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY;
+    const PEXELS_KEY = process.env.PEXELS_API_KEY;
+    const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+    const GITHUB_OWNER = process.env.GITHUB_OWNER;
+    const GITHUB_REPO = process.env.GITHUB_REPO;
+    const SITE_URL = process.env.SITE_URL;
 
-  function eyeIcon() {
-    return '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:3px;"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>';
-  }
+    console.log("STEP 1: fetching Google Trends trending searches");
+    const rssUrl = `https://trends.google.com/trending/rss?geo=US`;
+    const rssRes = await fetch(rssUrl);
+    const rssText = await rssRes.text();
+    console.log("STEP 1 done: RSS length", rssText.length);
 
-  function cardHtml(post, opts) {
-    opts = opts || {};
-    const views = displayViews(post);
-    const badge = opts.rank
-      ? `<span class="trend-badge">#${opts.rank} Trending</span>`
+    const itemBlocks = rssText.split("<item>").slice(1);
+    const items = itemBlocks
+      .map((block) => {
+        const titleMatch = block.match(/<title>(.*?)<\/title>/s);
+        const snippetMatch = block.match(/<ht:news_item_snippet>(.*?)<\/ht:news_item_snippet>/s);
+        const newsTitleMatch = block.match(/<ht:news_item_title>(.*?)<\/ht:news_item_title>/s);
+        const clean = (s) =>
+          s ? s.replace(/<!\[CDATA\[|\]\]>/g, "").replace(/<[^>]+>/g, "").trim() : "";
+        return {
+          title: titleMatch ? clean(titleMatch[1]) : null,
+          description: clean(snippetMatch?.[1] || newsTitleMatch?.[1] || ""),
+        };
+      })
+      .filter((i) => i.title);
+
+    if (items.length === 0) {
+      return res.status(500).json({ error: "Could not fetch trending topics" });
+    }
+
+    const chosen = items[Math.floor(Math.random() * Math.min(15, items.length))];
+    const trendingHeadline = chosen.title;
+    const trendingContext = chosen.description || "No additional summary available.";
+
+    const imageCount = 2 + Math.floor(Math.random() * 3);
+
+    const prompt = `You are a professional SEO editor for "AsfiBlog", a trending news publication. Write a detailed, 100% original, SEO-optimized, answer-engine-optimized (AEO) blog article based on this real, currently trending search topic.
+
+Trending term: "${trendingHeadline}"
+Related news context: "${trendingContext}"
+
+IMPORTANT RULES:
+- Base the article ONLY on the trending term and context given above. Do not invent specific product names, features, statistics, dates, or quotes that are not implied by the given information. If the context is thin, write more generally about the topic and why it might be trending, rather than making up specifics.
+- Pick the single best-fitting "category" for this topic: one of Technology, Business, Science, Health, Entertainment, Sports, Politics, or General.
+- Title: under 60 characters, front-load the main keyword, no clickbait.
+- meta_description: exactly 150-160 characters, includes the main keyword naturally.
+- Content: 1300-1800 words of full HTML using ONLY <h2>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>, no inline styles, no <div>). Use at least 4 <h2> subheadings. Write in a clear, human, editorial tone grounded strictly in the given information. Every paragraph must add real information.
+- Include one short concluding paragraph that directly and plainly answers the core question the topic raises, phrased so it could be lifted as a direct answer by an AI search summary.
+- tags: exactly 5 relevant, specific tags (not single generic words like "news").
+- image_keyword: one GENERIC, safe-for-work English keyword phrase to search stock photography for this topic — never a specific brand/company/product name, since stock photos for brand names are often wrong or mismatched.
+- image_alts: an array of exactly ${imageCount} descriptive, SEO-friendly alt text strings (each under 125 characters, each describing a distinct relevant visual for this story, no keyword stuffing).
+- faq: an array of exactly 3 objects, each with "q" (a real question a reader would type into Google or ask an AI assistant about this topic) and "a" (a direct, complete, 1-3 sentence answer written so it stands alone as a correct answer).
+
+Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTLY these keys:
+{
+  "title": "...",
+  "meta_description": "...",
+  "slug": "url-friendly-slug-no-spaces",
+  "category": "...",
+  "content": "...",
+  "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"],
+  "image_keyword": "...",
+  "image_alts": ["...", "..."],
+  "faq": [{"q": "...", "a": "..."}, {"q": "...", "a": "..."}, {"q": "...", "a": "..."}]
+}`;
+
+    async function tryGenerate(model) {
+      const aiRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${OPENROUTER_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model,
+          messages: [{ role: "user", content: prompt }],
+          temperature: 0.7,
+        }),
+      });
+      console.log(`OpenRouter [${model}] status:`, aiRes.status);
+      const aiData = await aiRes.json();
+      let rawText = aiData.choices?.[0]?.message?.content || "";
+      rawText = extractJSON(rawText.replace(/```json|```/g, "").trim());
+      try {
+        return JSON.parse(rawText);
+      } catch (e) {
+        console.log(`OpenRouter [${model}] gave unparseable output:`, rawText.slice(0, 300));
+        return null;
+      }
+    }
+
+    const modelsToTry = [
+      "openrouter/free",
+      "meta-llama/llama-3.1-8b-instruct:free",
+      "deepseek/deepseek-chat",
+      "openai/gpt-4o-mini",
+    ];
+
+    let post = null;
+    for (const model of modelsToTry) {
+      post = await tryGenerate(model);
+      if (post && post.title && post.content) {
+        console.log(`STEP 2 done: got valid content from ${model}`);
+        break;
+      }
+    }
+
+    if (!post) {
+      return res.status(500).json({
+        error: "All AI models failed to return valid content. Try again in a moment.",
+      });
+    }
+
+    const slug =
+      post.slug ||
+      post.title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+
+    const category = post.category || "General";
+    const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+
+    if (post.content) {
+      post.content = post.content
+        .replace(/style="[^"]*"/gi, "")
+        .replace(/<div[^>]*>/gi, "<p>")
+        .replace(/<\/div>/gi, "</p>");
+    }
+
+    const imgQuery = encodeURIComponent(post.image_keyword || category);
+    const pexelsRes = await fetch(
+      `https://api.pexels.com/v1/search?query=${imgQuery}&per_page=${imageCount}`,
+      { headers: { Authorization: PEXELS_KEY } }
+    );
+    const pexelsData = await pexelsRes.json();
+    const images = (pexelsData.photos || []).map((p) => p.src.large);
+    const thumbnail = images[0] || "";
+    const imageAlts =
+      post.image_alts && post.image_alts.length === images.length
+        ? post.image_alts
+        : images.map((_, i) => `${post.title} — illustration ${i + 1}`);
+
+    const heroImageHtml = thumbnail
+      ? `<figure class="post-figure post-figure--hero"><img src="${thumbnail}" alt="${imageAlts[0]}" loading="lazy" /></figure>`
       : "";
-    return `<a href="/blog/${post.slug}.html" class="card" data-category="${post.category}" data-date="${post.date}" data-views="${views}">
-      <div class="card__img-wrap">
-        ${badge}
-        <img src="${post.image}" alt="${post.title}" loading="lazy" />
+    const bodyWithImages = distributeImages(post.content, images, imageAlts);
+
+    const publishDate = new Date();
+    const dateLabel = publishDate.toISOString().split("T")[0];
+    const readMins = Math.max(4, Math.round((post.content || "").split(" ").length / 200));
+
+    const faqSchema = (post.faq || [])
+      .map(
+        (item) => `{
+      "@type": "Question",
+      "name": ${JSON.stringify(item.q)},
+      "acceptedAnswer": { "@type": "Answer", "text": ${JSON.stringify(item.a)} }
+    }`
+      )
+      .join(",\n    ");
+
+    const faqHtml = (post.faq || [])
+      .map(
+        (item) => `<details class="faq-item">
+        <summary>${item.q}</summary>
+        <p class="faq-a">${item.a}</p>
+      </details>`
+      )
+      .join("\n      ");
+
+    const tagsHtml = (post.tags || []).map((t) => `<span>${t}</span>`).join(" ");
+
+    const htmlPage = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${post.title} — AsfiBlog</title>
+<meta name="description" content="${post.meta_description}" />
+<meta name="keywords" content="${(post.tags || []).join(", ")}" />
+<link rel="canonical" href="${SITE_URL}/blog/${slug}.html" />
+
+<meta property="og:title" content="${post.title}" />
+<meta property="og:description" content="${post.meta_description}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="${SITE_URL}/blog/${slug}.html" />
+${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
+<meta property="article:published_time" content="${dateLabel}" />
+<meta property="article:section" content="${categoryLabel}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${post.title}" />
+<meta name="twitter:description" content="${post.meta_description}" />
+<meta name="robots" content="index, follow" />
+
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/assets/css/style.css" />
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/chatbot.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": ${JSON.stringify(post.title)},
+  "description": ${JSON.stringify(post.meta_description)},
+  "image": ${JSON.stringify(images)},
+  "datePublished": "${dateLabel}",
+  "dateModified": "${dateLabel}",
+  "author": { "@type": "Person", "name": "Sheikh Asfi" },
+  "publisher": { "@type": "Organization", "name": "AsfiBlog" },
+  "mainEntityOfPage": "${SITE_URL}/blog/${slug}.html",
+  "articleSection": "${categoryLabel}"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "${SITE_URL}/blog/index.html" },
+    { "@type": "ListItem", "position": 3, "name": ${JSON.stringify(post.title)} }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    ${faqSchema}
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="ticker">
+  <span class="ticker__live">LIVE</span>
+  <div class="ticker__track">
+    <span>${categoryLabel.toUpperCase()} — filed ${dateLabel}</span>
+    <span>ASFIBLOG — filed around the clock</span>
+    <span>TECHNOLOGY — new stories filed daily</span>
+    <span>BUSINESS — markets, moves, and money</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="/" class="logo">Asfi<span>Blog</span></a>
+    <nav class="nav__links">
+      <a href="/">Home</a>
+      <a href="/blog/index.html" class="active">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+      <button class="nav__toggle-btn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap breadcrumb">
+  <a href="/">Home</a> / <a href="/blog/index.html">Blog</a> / <span>${categoryLabel}</span>
+</div>
+
+<main class="wrap">
+  <article class="post">
+    <span class="stamp">${categoryLabel}</span>
+    <h1>${post.title}</h1>
+    <p class="timestamp">Filed ${dateLabel} · ${readMins} min read</p>
+    ${heroImageHtml}
+    <div class="content">
+      ${bodyWithImages}
+    </div>
+    <div class="tags">
+      ${tagsHtml}
+    </div>
+
+    <div class="faq">
+      <h2>Frequently asked questions</h2>
+      ${faqHtml}
+    </div>
+
+    <div class="author-box">
+      <div class="avatar">SA</div>
+      <div>
+        <div class="name">Sheikh Asfi</div>
+        <div class="bio">Founder & Editor, AsfiBlog.</div>
       </div>
-      <div class="card__body">
-        <span class="${stampClass(post.category)}">${post.category}</span>
-        <div class="card__title">${post.title}</div>
-        <p class="card__excerpt">${post.excerpt}</p>
-        <p class="timestamp">${formatDate(post.date)} · ${post.readMins} min read</p>
-        <p class="card__views">${eyeIcon()}${formatViews(views)} views</p>
+    </div>
+
+    <a class="back-link" href="/blog/index.html">&larr; Back to all dispatches</a>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <a href="/" class="logo">Asfi<span>Blog</span></a>
+      <p>Independent coverage of what the world's talking about — technology, business, science, and health, filed in plain English, around the clock.</p>
+      <div class="footer__social">
+        <a href="https://twitter.com" aria-label="AsfiBlog on X" target="_blank" rel="noopener">𝕏</a>
+        <a href="https://linkedin.com" aria-label="AsfiBlog on LinkedIn" target="_blank" rel="noopener">in</a>
+        <a href="https://facebook.com" aria-label="AsfiBlog on Facebook" target="_blank" rel="noopener">f</a>
+        <a href="/blog/index.html" aria-label="AsfiBlog RSS">RSS</a>
       </div>
-    </a>`;
-  }
+    </div>
+    <div class="footer__col">
+      <h4>Desks</h4>
+      <ul>
+        <li><a href="/blog/index.html#technology">Technology</a></li>
+        <li><a href="/blog/index.html#business">Business</a></li>
+        <li><a href="/blog/index.html#science">Science</a></li>
+        <li><a href="/blog/index.html#health">Health</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about.html">About AsfiBlog</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/blog/index.html">All Dispatches</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span class="footer__fine">© <span id="year"></span> AsfiBlog. All rights reserved.</span>
+    <span class="footer__fine">Filed daily from a small, independent newsroom.</span>
+  </div>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 
-  function featuredHtml(post) {
-    const views = displayViews(post);
-    return `<a href="/blog/${post.slug}.html" class="featured">
-      <div class="featured__img">
-        <span class="trend-badge trend-badge--lg">🔥 #1 Trending</span>
-        <img src="${post.image}" alt="${post.title}" loading="lazy" />
-      </div>
-      <div class="featured__body">
-        <span class="${stampClass(post.category)}">${post.category}</span>
-        <h3>${post.title}</h3>
-        <p class="card__excerpt">${post.excerpt}</p>
-        <p class="timestamp">${formatDate(post.date)} · ${post.readMins} min read</p>
-        <p class="card__views">${eyeIcon()}${formatViews(views)} views this week</p>
-      </div>
-    </a>`;
-  }
+<button id="pw-chat-toggle" aria-label="Open chat">💬</button>
+<div id="pw-chat-panel">
+  <div class="pw-chat__head">
+    <span>Ask The Desk</span>
+    <button id="pw-chat-close" aria-label="Close chat">✕</button>
+  </div>
+  <div class="pw-chat__body" id="pw-chat-body">
+    <div class="pw-msg bot">Hi, I'm The Desk. Ask me anything about this story or other trending topics.</div>
+  </div>
+  <form class="pw-chat__input" id="pw-chat-form">
+    <input id="pw-chat-input" type="text" placeholder="Type a message..." autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
 
-  // ---------- homepage: trending section ----------
+</body>
+</html>`;
 
-  function renderHomeTrending() {
-    const featuredEl = document.getElementById("trending-featured");
-    const gridEl = document.getElementById("trending-grid");
-    if (!featuredEl || !gridEl || !POSTS.length) return;
+    const githubApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/blog/${slug}.html`;
 
-    const sorted = [...POSTS].sort((a, b) => displayViews(b) - displayViews(a));
-    const top4 = sorted.slice(0, 4);
-
-    featuredEl.innerHTML = featuredHtml(top4[0]);
-    gridEl.innerHTML = top4.slice(1).map((p, i) => cardHtml(p, { rank: i + 2 })).join("");
-
-    [...gridEl.querySelectorAll(".card")].forEach((el) => el.classList.add("in-view"));
-  }
-
-  // ---------- blog listing page: categories + filters + grid ----------
-
-  function initBlogListing() {
-    const gridEl = document.getElementById("posts-grid");
-    const pillsEl = document.getElementById("category-pills");
-    if (!gridEl || !POSTS.length) return;
-
-    const searchEl = document.getElementById("blog-search");
-    const categorySelectEl = document.getElementById("filter-category");
-    const sortEl = document.getElementById("filter-sort");
-    const pageSizeEl = document.getElementById("filter-pagesize");
-    const emptyEl = document.getElementById("posts-empty");
-    const countEl = document.getElementById("results-count");
-    const paginationEl = document.getElementById("pagination");
-
-    const categories = [...new Set(POSTS.map((p) => p.category))].sort();
-
-    const params = new URLSearchParams(window.location.search);
-    const allowedPageSizes = [10, 20, 30, 40, 50, 100];
-    let requestedPageSize = parseInt(params.get("per"), 10) || DEFAULT_PAGE_SIZE;
-    if (!allowedPageSizes.includes(requestedPageSize)) requestedPageSize = DEFAULT_PAGE_SIZE;
-
-    const state = {
-      category: params.get("category") || "all",
-      q: params.get("q") || "",
-      sort: params.get("sort") || "newest",
-      perPage: requestedPageSize,
-      page: Math.max(1, parseInt(params.get("page"), 10) || 1)
-    };
-
-    // build category pills
-    if (pillsEl) {
-      const pillHtml = (val, label) =>
-        `<button type="button" class="pill${state.category === val ? " active" : ""}" data-category="${val}">${label}</button>`;
-      pillsEl.innerHTML =
-        pillHtml("all", "All") +
-        categories.map((c) => pillHtml(c.toLowerCase(), c)).join("");
+    const putPostRes = await fetch(githubApi, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: `Auto blog: ${post.title}`,
+        content: Buffer.from(htmlPage).toString("base64"),
+      }),
+    });
+    if (!putPostRes.ok) {
+      const errText = await putPostRes.text();
+      return res.status(500).json({ error: "GitHub push failed for post file", detail: errText });
     }
 
-    // build category dropdown
-    if (categorySelectEl) {
-      categorySelectEl.innerHTML =
-        `<option value="all">All categories</option>` +
-        categories.map((c) => `<option value="${c.toLowerCase()}">${c}</option>`).join("");
-      categorySelectEl.value = state.category;
+    // The site now reads every post from assets/js/posts-data.js (window.ASFIBLOG_POSTS)
+    // instead of static cards in blog/index.html, so the new post gets prepended there.
+    // views starts at 0 — it's a REAL count (backed by Vercel KV via /api/views), not a
+    // seeded/demo number, so it should only ever grow from actual visits.
+    const postsDataApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/assets/js/posts-data.js`;
+    const postsDataGet = await fetch(postsDataApi, {
+      headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
+    });
+    if (!postsDataGet.ok) {
+      const errText = await postsDataGet.text();
+      return res.status(500).json({ error: "Could not fetch posts-data.js from GitHub", detail: errText });
     }
-    if (sortEl) sortEl.value = state.sort;
-    if (searchEl) searchEl.value = state.q;
-    if (pageSizeEl) pageSizeEl.value = String(state.perPage);
+    const postsDataFile = await postsDataGet.json();
+    let postsDataJs = Buffer.from(postsDataFile.content, "base64").toString("utf-8");
 
-    function syncUrl() {
-      const p = new URLSearchParams();
-      if (state.category !== "all") p.set("category", state.category);
-      if (state.q) p.set("q", state.q);
-      if (state.sort !== "newest") p.set("sort", state.sort);
-      if (state.perPage !== DEFAULT_PAGE_SIZE) p.set("per", state.perPage);
-      if (state.page > 1) p.set("page", state.page);
-      const qs = p.toString();
-      history.replaceState(null, "", qs ? `?${qs}` : window.location.pathname);
-    }
+    const newEntry = `  {
+    slug: ${JSON.stringify(slug)},
+    title: ${JSON.stringify(post.title)},
+    excerpt: ${JSON.stringify(post.meta_description)},
+    category: ${JSON.stringify(categoryLabel)},
+    image: ${JSON.stringify(thumbnail)},
+    date: ${JSON.stringify(dateLabel)},
+    readMins: ${readMins},
+    views: 0
+  },
+`;
 
-    function goToPage(n) {
-      state.page = n;
-      render();
-      const grid = document.getElementById("posts-grid");
-      if (grid && typeof grid.scrollIntoView === "function") {
-        grid.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
+    postsDataJs = postsDataJs.replace(
+      "window.ASFIBLOG_POSTS = [",
+      `window.ASFIBLOG_POSTS = [\n${newEntry}`
+    );
 
-    function renderPagination(totalPages) {
-      if (!paginationEl) return;
-      if (totalPages <= 1) {
-        paginationEl.innerHTML = "";
-        return;
-      }
+    await fetch(postsDataApi, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: `Add post to posts-data.js: ${post.title}`,
+        content: Buffer.from(postsDataJs).toString("base64"),
+        sha: postsDataFile.sha,
+      }),
+    });
 
-      const btn = (label, page, opts) => {
-        opts = opts || {};
-        const disabled = opts.disabled ? " disabled" : "";
-        const active = opts.active ? " active" : "";
-        return `<button type="button" class="page-btn${active}"${disabled} data-page="${page}">${label}</button>`;
-      };
-
-      let pages = [];
-      pages.push(btn("‹ Prev", state.page - 1, { disabled: state.page === 1 }));
-
-      const addNum = (n) => pages.push(btn(String(n), n, { active: n === state.page }));
-      const addDots = () => pages.push(`<span class="page-dots">…</span>`);
-
-      addNum(1);
-      if (state.page > 3) addDots();
-      for (let n = Math.max(2, state.page - 1); n <= Math.min(totalPages - 1, state.page + 1); n++) addNum(n);
-      if (state.page < totalPages - 2) addDots();
-      if (totalPages > 1) addNum(totalPages);
-
-      pages.push(btn("Next ›", state.page + 1, { disabled: state.page === totalPages }));
-
-      paginationEl.innerHTML = pages.join("");
-    }
-
-    function render() {
-      let list = POSTS.filter((p) => {
-        const matchesCategory = state.category === "all" || p.category.toLowerCase() === state.category;
-        const matchesQuery =
-          !state.q ||
-          p.title.toLowerCase().includes(state.q.toLowerCase()) ||
-          p.excerpt.toLowerCase().includes(state.q.toLowerCase());
-        return matchesCategory && matchesQuery;
-      });
-
-      if (state.sort === "oldest") list.sort((a, b) => a.date.localeCompare(b.date));
-      else if (state.sort === "trending") list.sort((a, b) => displayViews(b) - displayViews(a));
-      else list.sort((a, b) => b.date.localeCompare(a.date)); // newest
-
-      const perPage = state.perPage;
-      const totalPages = Math.max(1, Math.ceil(list.length / perPage));
-      if (state.page > totalPages) state.page = totalPages;
-      const pageList = list.slice((state.page - 1) * perPage, state.page * perPage);
-
-      gridEl.innerHTML = pageList.map((p) => cardHtml(p)).join("");
-      [...gridEl.querySelectorAll(".card")].forEach((el) => el.classList.add("in-view"));
-
-      if (emptyEl) emptyEl.style.display = list.length ? "none" : "block";
-      if (countEl) {
-        const startNum = list.length ? (state.page - 1) * perPage + 1 : 0;
-        const endNum = Math.min(state.page * perPage, list.length);
-        countEl.textContent = list.length
-          ? `Showing ${startNum}–${endNum} of ${list.length} ${list.length === 1 ? "story" : "stories"}`
-          : "0 stories";
-      }
-      renderPagination(totalPages);
-
-      if (pillsEl) {
-        [...pillsEl.querySelectorAll(".pill")].forEach((btn) =>
-          btn.classList.toggle("active", btn.dataset.category === state.category)
-        );
-      }
-
-      // Lightweight ItemList schema for freshness/AEO signal on the listing
-      const existing = document.getElementById("itemlist-schema");
-      if (existing) existing.remove();
-      const schema = document.createElement("script");
-      schema.type = "application/ld+json";
-      schema.id = "itemlist-schema";
-      schema.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        itemListElement: list.slice(0, 20).map((p, i) => ({
-          "@type": "ListItem",
-          position: i + 1,
-          url: `https://asfiblog.vercel.app/blog/${p.slug}.html`,
-          name: p.title
-        }))
-      });
-      document.head.appendChild(schema);
-
-      syncUrl();
-    }
-
-    let debounceTimer;
-    if (searchEl) {
-      searchEl.addEventListener("input", () => {
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(() => {
-          state.q = searchEl.value.trim();
-          state.page = 1;
-          render();
-        }, 250);
-      });
-    }
-    if (categorySelectEl) {
-      categorySelectEl.addEventListener("change", () => {
-        state.category = categorySelectEl.value;
-        state.page = 1;
-        render();
-      });
-    }
-    if (sortEl) {
-      sortEl.addEventListener("change", () => {
-        state.sort = sortEl.value;
-        state.page = 1;
-        render();
-      });
-    }
-    if (pageSizeEl) {
-      pageSizeEl.addEventListener("change", () => {
-        const n = parseInt(pageSizeEl.value, 10);
-        state.perPage = allowedPageSizes.includes(n) ? n : DEFAULT_PAGE_SIZE;
-        state.page = 1;
-        render();
-      });
-    }
-    if (pillsEl) {
-      pillsEl.addEventListener("click", (e) => {
-        const btn = e.target.closest(".pill");
-        if (!btn) return;
-        state.category = btn.dataset.category;
-        state.page = 1;
-        if (categorySelectEl) categorySelectEl.value = state.category;
-        render();
-      });
-    }
-
-    if (paginationEl) {
-      paginationEl.addEventListener("click", (e) => {
-        const btn = e.target.closest(".page-btn");
-        if (!btn || btn.disabled) return;
-        const n = parseInt(btn.dataset.page, 10);
-        if (!isNaN(n)) goToPage(n);
-      });
-    }
-
-    render();
-  }
-
-  // ---------- fetch real cross-visitor view counts, then render ----------
-
-  async function loadRealViewsAndRender() {
     try {
-      const res = await fetch("/api/views");
-      if (res.ok) REAL_VIEWS = await res.json();
-    } catch (e) {
-      // API unreachable — displayViews() falls back to local estimate automatically
-    }
-    renderHomeTrending();
-    initBlogListing();
-  }
+      const sitemapApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/sitemap.xml`;
+      const sitemapGet = await fetch(sitemapApi, {
+        headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
+      });
+      const sitemapData = await sitemapGet.json();
+      let sitemapXml = Buffer.from(sitemapData.content, "base64").toString("utf-8");
 
-  document.addEventListener("DOMContentLoaded", loadRealViewsAndRender);
-})();
+      const newUrlEntry = `  <url>
+    <loc>${SITE_URL}/blog/${slug}.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>`;
+      sitemapXml = sitemapXml.replace("</urlset>", newUrlEntry);
+
+      await fetch(sitemapApi, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `Update sitemap: ${post.title}`,
+          content: Buffer.from(sitemapXml).toString("base64"),
+          sha: sitemapData.sha,
+        }),
+      });
+    } catch (e) {
+      // Non-fatal
+    }
+
+    return res.status(200).json({
+      success: true,
+      title: post.title,
+      slug,
+      category: categoryLabel,
+      images: images.length,
+      url: `${SITE_URL}/blog/${slug}.html`,
+    });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+}
