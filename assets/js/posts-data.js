@@ -17,6 +17,17 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "netflix-stock-live-tv-bundles-retention-struggles",
+    title: "Netflix Stock: Live TV and Bundles Explored Amid Retention Struggles",
+    excerpt: "Netflix stock focus shifts as the streaming giant explores live TV and bundles to combat viewer retention struggles. What this strategic pivot means for investors.",
+    category: "Business",
+    image: "https://images.pexels.com/photos/6770609/pexels-photo-6770609.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-10",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "ai-agents-replacing-apps",
     title: "AI Agents Are Quietly Replacing the Apps You Use Every Day",
     excerpt: "Booking, shopping, and scheduling are moving from taps to typed requests. Here's what's actually changing under the hood — and what it means for you.",
