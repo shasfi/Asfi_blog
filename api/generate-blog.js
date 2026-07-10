@@ -67,9 +67,14 @@ export default async function handler(req, res) {
     const SITE_URL = process.env.SITE_URL;
 
     console.log("STEP 1: fetching Google Trends trending searches");
-    const rssUrl = `https://trends.google.com/trending/rss?geo=US`;
-    const rssRes = await fetch(rssUrl);
-    const rssText = await rssRes.text();
+    const geos = ["US", "AU", "GB", "CA"]; 
+    const rssPromises = geos.map(geo => 
+      fetch(`https://trends.google.com/trending/rss?geo=${geo}`) 
+      .then(r => r.text()) 
+      .catch(() => "")
+     ); 
+    const rssTexts = await Promise.all(rssPromises); 
+    const rssText = rssTexts.join("");
     console.log("STEP 1 done: RSS length", rssText.length);
 
     const itemBlocks = rssText.split("<item>").slice(1);
@@ -495,6 +500,7 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
 
       const newUrlEntry = `  <url>
     <loc>${SITE_URL}/blog/${slug}.html</loc>
+    <lastmod>${dateLabel}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

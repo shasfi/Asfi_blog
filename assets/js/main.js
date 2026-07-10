@@ -5,7 +5,7 @@
   const root = document.documentElement;
   const saved = localStorage.getItem("pw-theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const initial = saved || (prefersDark ? "dark" : "light");
+  const initial = saved || "light";
   if (initial === "dark") root.setAttribute("data-theme", "dark");
 
   document.addEventListener("DOMContentLoaded", () => {

@@ -885,7 +885,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-family: var(--font-body); font-size: 0.92rem; cursor: pointer;
 }
 @media (max-width: 640px) {
-  .filter-bar { flex-direction: column; align-items: stretch; }
+  .filter-bar { flex-direction: column; align-items: stretch; padding: 12px; gap: 10px; }
+  .filter-bar__search { flex: none; width: 100%; padding: 8px 12px; }
+  .filter-bar__search input { font-size: 15px; }
   .filter-bar__selects { flex-direction: column; }
   .filter-bar select { width: 100%; }
 }
