@@ -255,6 +255,7 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
 <meta name="twitter:title" content="${post.title}" />
 <meta name="twitter:description" content="${post.meta_description}" />
 <meta name="robots" content="index, follow" />
+<meta name="google-site-verification" content="PpUxcguGEAURplqDhmyFXEu5TRZI382yGwo-MM1Pkkc" />
 
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="/assets/css/style.css" />

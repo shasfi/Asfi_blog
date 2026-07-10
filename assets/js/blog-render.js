@@ -11,7 +11,7 @@
 (function () {
   const POSTS = window.ASFIBLOG_POSTS || [];
   const VIEWS_KEY = "asfiblog_view_deltas"; // legacy local fallback, used only if API fails
-  const DEFAULT_PAGE_SIZE = 10;
+  const DEFAULT_PAGE_SIZE = 9;
   let REAL_VIEWS = {}; // slug -> live count from /api/views
 
   // ---------- shared helpers ----------
@@ -120,7 +120,7 @@
     const categories = [...new Set(POSTS.map((p) => p.category))].sort();
 
     const params = new URLSearchParams(window.location.search);
-    const allowedPageSizes = [10, 20, 30, 40, 50, 100];
+    const allowedPageSizes = [9, 12, 18, 24, 30, 99];
     let requestedPageSize = parseInt(params.get("per"), 10) || DEFAULT_PAGE_SIZE;
     if (!allowedPageSizes.includes(requestedPageSize)) requestedPageSize = DEFAULT_PAGE_SIZE;
 
