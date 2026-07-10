@@ -58,10 +58,16 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
 
 body {
   margin: 0;
+  width: 100%;
+  min-width: 0;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
@@ -76,9 +82,18 @@ img { max-width: 100%; display: block; }
 ::selection { background: var(--amber); color: #14171A; }
 
 .wrap {
+  width: 100%;
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* Every direct child of .wrap must never exceed its own width — this is
+   what was letting a couple of elements (newsletter form/input, cards
+   grid) push wider than the screen and cause sideways drag / uneven
+   side-space on small phones. */
+.wrap > * {
+  max-width: 100%;
 }
 
 @media (max-width: 640px) {
@@ -88,7 +103,7 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 400px) {
   .wrap {
-    padding: 0 18px;
+    padding: 0 16px;
   }
 }
 
@@ -97,9 +112,9 @@ img { max-width: 100%; display: block; }
   .hero { padding: 56px 0 40px; }
   .hero h1 { max-width: 100%; font-size: clamp(2rem, 8vw, 2.8rem); }
   .hero p.lede { max-width: 100%; }
-  .page-content { padding: 36px 0 60px; }
+  .page-content { padding-top: 36px; padding-bottom: 60px; }
   .page-content h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
-  article.post { padding: 16px 0 60px; }
+  article.post { padding-top: 16px; padding-bottom: 60px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -238,7 +253,12 @@ header.site {
     position: absolute; top: 100%; left: 0; right: 0;
     background: var(--bg); border-bottom: 1px solid var(--border);
     padding: 16px 24px; gap: 16px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
+}
+@media (max-width: 360px) {
+  .logo { font-size: 1.25rem; }
 }
 
 /* ---------------- EYEBROW / STAMP BADGE ---------------- */
@@ -370,9 +390,12 @@ header.site {
 /* ---------------- CARDS / GRID ---------------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 28px;
   padding: 8px 0 64px;
+}
+@media (max-width: 400px) {
+  .grid { gap: 20px; }
 }
 .card {
   background: var(--bg-elevated);
@@ -485,6 +508,12 @@ header.site {
 }
 .newsletter input[type="email"]:focus { outline: 2px solid var(--amber); }
 @media (max-width: 720px) { .newsletter { padding: 32px 24px; } }
+@media (max-width: 480px) {
+  .newsletter { padding: 28px 20px; }
+  .newsletter form { flex-direction: column; width: 100%; }
+  .newsletter input[type="email"] { min-width: 0; width: 100%; }
+  .newsletter .btn { width: 100%; justify-content: center; }
+}
 
 /* ---------------- ARTICLE PAGE ---------------- */
 .breadcrumb {
@@ -513,6 +542,23 @@ article.post .content ul, article.post .content ol { padding-left: 22px; }
 article.post .content li { margin: 8px 0; }
 article.post img { border-radius: 12px; margin: 24px 0; width: 100%; }
 article.post figcaption { font-size: 0.82rem; color: var(--ink-faint); text-align: center; margin-top: -14px; margin-bottom: 24px; }
+
+/* Images woven through the article body (hero + in-content figures) —
+   keeps every image centered within the 740px article column instead of
+   several images stacking edge-to-edge with no breathing room. */
+.post-figure {
+  margin: 36px auto;
+  text-align: center;
+}
+.post-figure img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0;
+}
+.post-figure--hero {
+  margin-top: 20px;
+}
+
 article.post .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
 article.post .tags span {
   font-family: var(--font-mono);
@@ -579,7 +625,7 @@ article.post .tags span {
 .toc a:hover { color: var(--teal); }
 
 /* ---------------- STATIC PAGES ---------------- */
-.page-content { padding: 48px 0 80px; max-width: 740px; margin: 0 auto; }
+.page-content { padding-top: 48px; padding-bottom: 80px; max-width: 740px; margin: 0 auto; }
 .page-content h1 {
   font-family: var(--font-display);
   font-size: clamp(1.9rem, 4.4vw, 2.7rem);
