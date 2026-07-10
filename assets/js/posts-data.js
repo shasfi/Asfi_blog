@@ -17,6 +17,28 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "kristi-noem-divorce-details-split-cross-dressing",
+    title: "Kristi Noem Divorce: Details on Split After Cross-Dressing Bombshell",
+    excerpt: "Kristi Noem is reportedly divorcing her husband Bryon following a cross-dressing bombshell revealed by her mother. Explore the details and implications here.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/15470133/pexels-photo-15470133.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-10",
+    readMins: 4,
+    views: 0
+  },
+
+  {
+    slug: "netflix-stock-live-tv-bundles-retention-struggles",
+    title: "Netflix Stock: Live TV and Bundles Explored Amid Retention Struggles",
+    excerpt: "Netflix stock focus shifts as the streaming giant explores live TV and bundles to combat viewer retention struggles. What this strategic pivot means for investors.",
+    category: "Business",
+    image: "https://images.pexels.com/photos/6770609/pexels-photo-6770609.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-10",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "ai-agents-replacing-apps",
     title: "AI Agents Are Quietly Replacing the Apps You Use Every Day",
     excerpt: "Booking, shopping, and scheduling are moving from taps to typed requests. Here's what's actually changing under the hood — and what it means for you.",
