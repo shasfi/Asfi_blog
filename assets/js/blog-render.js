@@ -102,6 +102,50 @@
     [...gridEl.querySelectorAll(".card")].forEach((el) => el.classList.add("in-view"));
   }
 
+  // ---------- individual post pages: related-posts internal links ----------
+
+  function currentSlugFromCanonical() {
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) return null;
+    const match = canonical.href.match(/\/blog\/([^/]+)\.html/);
+    return match ? match[1] : null;
+  }
+
+  function renderRelatedPosts() {
+    const el = document.getElementById("related-posts");
+    if (!el || !POSTS.length) return;
+
+    const slug = currentSlugFromCanonical();
+    const current = POSTS.find((p) => p.slug === slug);
+    const others = POSTS.filter((p) => p.slug !== slug);
+    if (!others.length) {
+      const section = document.getElementById("related-posts-section");
+      if (section) section.style.display = "none";
+      return;
+    }
+
+    let related = current
+      ? others.filter((p) => p.category === current.category)
+      : [];
+
+    // Fill up to 3 with the most recent other posts if same-category isn't enough.
+    if (related.length < 3) {
+      const seen = new Set(related.map((p) => p.slug));
+      const fillers = [...others]
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .filter((p) => !seen.has(p.slug));
+      for (const p of fillers) {
+        if (related.length >= 3) break;
+        related.push(p);
+      }
+    } else {
+      related = [...related].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+    }
+
+    el.innerHTML = related.map((p) => cardHtml(p)).join("");
+    [...el.querySelectorAll(".card")].forEach((c) => c.classList.add("in-view"));
+  }
+
   // ---------- blog listing page: categories + filters + grid ----------
 
   function initBlogListing() {
@@ -318,9 +362,17 @@
     render();
   }
 
+  // ---------- homepage: auto-counted "stories filed" stat ----------
+
+  function setStoriesStat() {
+    const el = document.querySelector('.stat-num[data-dynamic="posts-count"]');
+    if (el && POSTS.length) el.setAttribute("data-count", String(POSTS.length));
+  }
+
   // ---------- fetch real cross-visitor view counts, then render ----------
 
   async function loadRealViewsAndRender() {
+    setStoriesStat(); // set before main.js's stat-counter animation reads data-count
     try {
       const res = await fetch("/api/views");
       if (res.ok) REAL_VIEWS = await res.json();
@@ -329,6 +381,7 @@
     }
     renderHomeTrending();
     initBlogListing();
+    renderRelatedPosts();
   }
 
   document.addEventListener("DOMContentLoaded", loadRealViewsAndRender);

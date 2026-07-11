@@ -66,43 +66,167 @@ export default async function handler(req, res) {
     const GITHUB_REPO = process.env.GITHUB_REPO;
     const SITE_URL = process.env.SITE_URL;
 
-    console.log("STEP 1: fetching Google Trends trending searches");
-    const geos = ["US", "AU", "GB", "CA"]; 
-    const rssPromises = geos.map(geo => 
-      fetch(`https://trends.google.com/trending/rss?geo=${geo}`) 
-      .then(r => r.text()) 
-      .catch(() => "")
-     ); 
-    const rssTexts = await Promise.all(rssPromises); 
-    const rssText = rssTexts.join("");
-    console.log("STEP 1 done: RSS length", rssText.length);
+    console.log("STEP 1: fetching real-time trending topics (Google Trends + Google News)");
 
-    const itemBlocks = rssText.split("<item>").slice(1);
-    const items = itemBlocks
-      .map((block) => {
-        const titleMatch = block.match(/<title>(.*?)<\/title>/s);
-        const snippetMatch = block.match(/<ht:news_item_snippet>(.*?)<\/ht:news_item_snippet>/s);
-        const newsTitleMatch = block.match(/<ht:news_item_title>(.*?)<\/ht:news_item_title>/s);
-        const clean = (s) =>
-          s ? s.replace(/<!\[CDATA\[|\]\]>/g, "").replace(/<[^>]+>/g, "").trim() : "";
-        return {
-          title: titleMatch ? clean(titleMatch[1]) : null,
-          description: clean(snippetMatch?.[1] || newsTitleMatch?.[1] || ""),
-        };
-      })
-      .filter((i) => i.title);
+    // Google Trends daily/realtime RSS — good for fast-moving search terms.
+    const trendsGeos = ["US", "AU", "GB", "CA"];
+    const trendsPromises = trendsGeos.map(geo =>
+      fetch(`https://trends.google.com/trending/rss?geo=${geo}`)
+        .then(r => r.text())
+        .catch(() => "")
+    );
 
-    if (items.length === 0) {
+    // Google News RSS, topic by topic — this is what actually surfaces big
+    // real-world stories (wars, sports results/scandals, celebrity news,
+    // tech launches) that plain "trending searches" often miss because those
+    // are just short, generic queries.
+    const newsFeeds = [
+      "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",
+      "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-US&gl=US&ceid=US:en",
+      "https://news.google.com/rss/headlines/section/topic/SPORTS?hl=en-US&gl=US&ceid=US:en",
+      "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en",
+      "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=en-US&gl=US&ceid=US:en",
+      "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en",
+    ];
+    const newsPromises = newsFeeds.map(url =>
+      fetch(url).then(r => r.text()).catch(() => "")
+    );
+
+    const [trendsTexts, newsTexts] = await Promise.all([
+      Promise.all(trendsPromises),
+      Promise.all(newsPromises),
+    ]);
+    console.log("STEP 1 done: trends+news feeds fetched");
+
+    const clean = (s) =>
+      s ? s.replace(/<!\[CDATA\[|\]\]>/g, "").replace(/<[^>]+>/g, "").trim() : "";
+
+    function parseTrendsRss(text) {
+      return text
+        .split("<item>")
+        .slice(1)
+        .map((block) => {
+          const titleMatch = block.match(/<title>(.*?)<\/title>/s);
+          const snippetMatch = block.match(/<ht:news_item_snippet>(.*?)<\/ht:news_item_snippet>/s);
+          const newsTitleMatch = block.match(/<ht:news_item_title>(.*?)<\/ht:news_item_title>/s);
+          return {
+            title: titleMatch ? clean(titleMatch[1]) : null,
+            description: clean(snippetMatch?.[1] || newsTitleMatch?.[1] || ""),
+          };
+        })
+        .filter((i) => i.title);
+    }
+
+    function parseNewsRss(text) {
+      return text
+        .split("<item>")
+        .slice(1)
+        .map((block) => {
+          const titleMatch = block.match(/<title>(.*?)<\/title>/s);
+          const descMatch = block.match(/<description>([\s\S]*?)<\/description>/s);
+          let title = titleMatch ? clean(titleMatch[1]) : null;
+          if (title) {
+            // Google News titles look like "Headline text - Source Name" —
+            // strip the trailing " - Source" so we're left with the headline.
+            const dashIdx = title.lastIndexOf(" - ");
+            if (dashIdx > 15) title = title.slice(0, dashIdx).trim();
+          }
+          return { title, description: clean(descMatch?.[1] || "") };
+        })
+        .filter((i) => i.title);
+    }
+
+    const trendItems = trendsTexts.flatMap(parseTrendsRss);
+    const newsItems = newsTexts.flatMap(parseNewsRss);
+
+    if (trendItems.length === 0 && newsItems.length === 0) {
       return res.status(500).json({ error: "Could not fetch trending topics" });
     }
 
-    const chosen = items[Math.floor(Math.random() * Math.min(15, items.length))];
+    // Prefer real news headlines (war/politics/sports/entertainment/tech)
+    // most of the time, since they're what people actually mean by
+    // "trending" — fall back to Trends search terms for freshness/variety.
+    const useNewsPool = newsItems.length > 0 && (trendItems.length === 0 || Math.random() < 0.7);
+    const pool = useNewsPool ? newsItems : trendItems;
+    const chosen = pool[Math.floor(Math.random() * Math.min(15, pool.length))];
     const trendingHeadline = chosen.title;
     const trendingContext = chosen.description || "No additional summary available.";
 
     const imageCount = 2 + Math.floor(Math.random() * 3);
 
-    const prompt = `You are a professional SEO editor for "AsfiBlog", a trending news publication. Write a detailed, 100% original, SEO-optimized, answer-engine-optimized (AEO) blog article based on this real, currently trending search topic.
+    console.log("STEP 1.5: checking whether to run an evergreen listicle instead");
+    const postsDataApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/assets/js/posts-data.js`;
+    const postsDataGet = await fetch(postsDataApi, {
+      headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
+    });
+    if (!postsDataGet.ok) {
+      const errText = await postsDataGet.text();
+      return res.status(500).json({ error: "Could not fetch posts-data.js from GitHub", detail: errText });
+    }
+    const postsDataFile = await postsDataGet.json();
+    let postsDataJs = Buffer.from(postsDataFile.content, "base64").toString("utf-8");
+
+    // Evergreen "best of" listicle topics, aimed at AsfiBlog's AI/programming/
+    // web-dev audience. Mixed in occasionally alongside real trending news so
+    // the blog also covers things like "Top 10 Free AI Tools for Students".
+    const EVERGREEN_TOPICS = [
+      "Top 10 Free AI Tools for Students in 2026",
+      "Best AI Coding Assistants for Developers in 2026",
+      "Top 10 Free AI Image Generators in 2026",
+      "Best AI Resume and Cover Letter Builders in 2026",
+      "Top AI Chatbots Compared: Which One Should You Use in 2026",
+      "Best Free AI Writing and Grammar Tools for Students",
+      "Top 10 AI Productivity Apps for Remote Work in 2026",
+      "Best AI Video Editing Tools for Content Creators in 2026",
+      "Top Free AI Note-Taking and Study Apps in 2026",
+      "Best AI Tools for Freelancers and Agencies in 2026",
+      "Top 10 AI Presentation and Slide-Deck Generators in 2026",
+      "Best Free Websites to Learn Web Development in 2026",
+      "Top 10 VS Code Extensions Every Developer Should Use in 2026",
+      "Best AI Tools for Building a Portfolio Website in 2026",
+    ];
+    const usedTitles = [...postsDataJs.matchAll(/title:\s*"((?:[^"\\]|\\.)*)"/g)].map((m) =>
+      m[1].toLowerCase()
+    );
+    const availableTopics = EVERGREEN_TOPICS.filter(
+      (t) => !usedTitles.some((u) => u.includes(t.toLowerCase().split(" in 2026")[0].slice(0, 18)))
+    );
+    const isListicle = availableTopics.length > 0 && Math.random() < 0.3;
+    const listicleTopic = isListicle
+      ? availableTopics[Math.floor(Math.random() * availableTopics.length)]
+      : null;
+    console.log("STEP 1.5 done: mode =", isListicle ? `listicle (${listicleTopic})` : "trending");
+
+    const prompt = isListicle
+      ? `You are a professional SEO editor for "AsfiBlog", a technology and student-productivity publication. Write a detailed, 100% original, SEO-optimized, answer-engine-optimized (AEO) evergreen listicle article on this topic.
+
+Topic: "${listicleTopic}"
+
+IMPORTANT RULES:
+- This is an evergreen "best of" guide, not breaking news — do not claim it is based on a trending search or cite a publish date as the reason it matters.
+- category must be "Technology".
+- Title: under 60 characters, front-load the main keyword, no clickbait.
+- meta_description: exactly 150-160 characters, includes the main keyword naturally.
+- Content: 1400-1900 words of full HTML using ONLY <h2>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>, no inline styles, no <div>). Structure it as a numbered list: one <h2> per item, formatted like "1. Tool or Item Name — short descriptor", covering at least 8 items if the topic implies a "Top 10". Each item needs a substantive paragraph on what it does, who it's best for, and one standout feature. Do NOT invent specific prices, version numbers, or benchmark stats you can't verify — describe capabilities in general, accurate terms instead.
+- Include one short concluding paragraph that directly and plainly answers the core question the topic raises (e.g. "which one should I pick"), phrased so it could be lifted as a direct answer by an AI search summary.
+- tags: exactly 5 relevant, specific tags (not single generic words like "AI").
+- image_keyword: one GENERIC, safe-for-work English keyword phrase to search stock photography for this topic — never a specific brand/product name.
+- image_alts: an array of exactly ${imageCount} descriptive, SEO-friendly alt text strings (each under 125 characters, each describing a distinct relevant visual, no keyword stuffing).
+- faq: an array of exactly 3 objects, each with "q" (a real question a student/developer would type into Google or ask an AI assistant about this topic) and "a" (a direct, complete, 1-3 sentence answer written so it stands alone as a correct answer).
+
+Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTLY these keys:
+{
+  "title": "...",
+  "meta_description": "...",
+  "slug": "url-friendly-slug-no-spaces",
+  "category": "Technology",
+  "content": "...",
+  "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"],
+  "image_keyword": "...",
+  "image_alts": ["...", "..."],
+  "faq": [{"q": "...", "a": "..."}, {"q": "...", "a": "..."}, {"q": "...", "a": "..."}]
+}`
+      : `You are a professional SEO editor for "AsfiBlog", a trending news publication. Write a detailed, 100% original, SEO-optimized, answer-engine-optimized (AEO) blog article based on this real, currently trending topic.
 
 Trending term: "${trendingHeadline}"
 Related news context: "${trendingContext}"
@@ -157,11 +281,14 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
       }
     }
 
+    // Fast/reliable paid models pehle — free models sabse slow/unreliable
+    // hote hain aur retry loop me time waste karte hain jo 30s cron timeout
+    // cross kar deta hai. Free models ko sirf last-resort fallback rakha hai.
     const modelsToTry = [
-      "openrouter/free",
-      "meta-llama/llama-3.1-8b-instruct:free",
       "deepseek/deepseek-chat",
       "openai/gpt-4o-mini",
+      "meta-llama/llama-3.1-8b-instruct:free",
+      "openrouter/free",
     ];
 
     let post = null;
@@ -264,6 +391,8 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
 
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="/assets/css/style.css" />
+<script src="/assets/js/posts-data.js" defer></script>
+<script src="/assets/js/blog-render.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/chatbot.js" defer></script>
 
@@ -323,6 +452,8 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
       <a href="/blog/index.html" class="active">Blog</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/disclaimer.html">Disclaimer</a>
     </nav>
     <div style="display:flex; align-items:center; gap:16px;">
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
@@ -363,6 +494,14 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
 
     <a class="back-link" href="/blog/index.html">&larr; Back to all dispatches</a>
   </article>
+
+  <section style="padding-top:16px; padding-bottom:24px;" id="related-posts-section">
+    <div class="section-head">
+      <h2>Related dispatches</h2>
+      <a href="/blog/index.html" class="see-all">All dispatches →</a>
+    </div>
+    <div class="grid grid--trending" id="related-posts"></div>
+  </section>
 </main>
 
 <footer class="site">
@@ -449,16 +588,8 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
     // instead of static cards in blog/index.html, so the new post gets prepended there.
     // views starts at 0 — it's a REAL count (backed by Vercel KV via /api/views), not a
     // seeded/demo number, so it should only ever grow from actual visits.
-    const postsDataApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/assets/js/posts-data.js`;
-    const postsDataGet = await fetch(postsDataApi, {
-      headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
-    });
-    if (!postsDataGet.ok) {
-      const errText = await postsDataGet.text();
-      return res.status(500).json({ error: "Could not fetch posts-data.js from GitHub", detail: errText });
-    }
-    const postsDataFile = await postsDataGet.json();
-    let postsDataJs = Buffer.from(postsDataFile.content, "base64").toString("utf-8");
+    // (postsDataApi / postsDataFile / postsDataJs were already fetched in STEP 1.5 above,
+    // reused here so we don't hit the GitHub API for the same file twice.)
 
     const newEntry = `  {
     slug: ${JSON.stringify(slug)},
