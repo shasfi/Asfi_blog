@@ -17,6 +17,17 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "best-free-websites-learn-web-development-2026",
+    title: "Best Free Websites to Learn Web Development in 2026",
+    excerpt: "Discover the top free websites to master web development in 2026. Learn coding, design, and frameworks with these expert-curated resources for beginners and pros.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/1181703/pexels-photo-1181703.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-12",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "apple-openai-trade-secrets-lawsuit-experts-analysis",
     title: "Apple vs OpenAI: Experts Weigh In on Trade Secrets Lawsuit",
     excerpt: "Legal and tech experts analyze Apple's lawsuit accusing OpenAI of stealing trade secrets, including alleged recruitment tactics and the broader AI industry implications.",
