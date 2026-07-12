@@ -59,10 +59,10 @@ export default async function handler(req, res) {
     });
 
     await transporter.sendMail({
-      from: `"AsfiBlog Contact Form" <${process.env.GMAIL_USER}>`,
+      from: `"Asfi Blog Contact Form" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER,
       replyTo: email,
-      subject: `New AsfiBlog contact message from ${name}`,
+      subject: `New Asfi Blog contact message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
       html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, "<br>")}</p>`,
     });

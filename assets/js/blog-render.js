@@ -146,6 +146,16 @@
     [...el.querySelectorAll(".card")].forEach((c) => c.classList.add("in-view"));
   }
 
+  // ---------- author page: latest articles by Sheikh Asfi ----------
+
+  function renderAuthorPosts() {
+    const el = document.getElementById("author-posts-grid");
+    if (!el || !POSTS.length) return;
+    const latest = [...POSTS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 6);
+    el.innerHTML = latest.map((p) => cardHtml(p)).join("");
+    [...el.querySelectorAll(".card")].forEach((c) => c.classList.add("in-view"));
+  }
+
   // ---------- blog listing page: categories + filters + grid ----------
 
   function initBlogListing() {
@@ -362,6 +372,32 @@
     render();
   }
 
+  // ---------- homepage: "Desks we cover" tiles ----------
+
+  const DESK_META = {
+    technology: { icon: "💻", desc: "AI, apps, and the tools reshaping how we work." },
+    business: { icon: "📈", desc: "Markets, moves, and money — plainly explained." },
+    science: { icon: "🔬", desc: "What researchers actually found this week." },
+    health: { icon: "🩺", desc: "Plain-English explainers you can act on." },
+    politics: { icon: "🏛", desc: "Policy and power moves, without the spin." }
+  };
+  const DEFAULT_DESK_META = { icon: "📰", desc: "The latest dispatches from this desk." };
+
+  function renderDeskGrid() {
+    const el = document.getElementById("desk-grid");
+    if (!el || !POSTS.length) return;
+
+    const categories = [...new Set(POSTS.map((p) => p.category))].sort();
+    el.innerHTML = categories.map((c) => {
+      const meta = DESK_META[c.toLowerCase()] || DEFAULT_DESK_META;
+      return `<a href="/blog/index.html?category=${c.toLowerCase()}" class="desk-tile">
+        <span class="desk-tile__icon">${meta.icon}</span>
+        <span class="desk-tile__name">${c}</span>
+        <span class="desk-tile__desc">${meta.desc}</span>
+      </a>`;
+    }).join("");
+  }
+
   // ---------- homepage: auto-counted "stories filed" stat ----------
 
   function setStoriesStat() {
@@ -369,10 +405,18 @@
     if (el && POSTS.length) el.setAttribute("data-count", String(POSTS.length));
   }
 
+  function setDesksStat() {
+    const el = document.querySelector('.stat-num[data-dynamic="desks-count"]');
+    if (!el || !POSTS.length) return;
+    const desks = new Set(POSTS.map((p) => p.category));
+    el.setAttribute("data-count", String(desks.size));
+  }
+
   // ---------- fetch real cross-visitor view counts, then render ----------
 
   async function loadRealViewsAndRender() {
     setStoriesStat(); // set before main.js's stat-counter animation reads data-count
+    setDesksStat();
     try {
       const res = await fetch("/api/views");
       if (res.ok) REAL_VIEWS = await res.json();
@@ -380,8 +424,10 @@
       // API unreachable — displayViews() falls back to local estimate automatically
     }
     renderHomeTrending();
+    renderDeskGrid();
     initBlogListing();
     renderRelatedPosts();
+    renderAuthorPosts();
   }
 
   document.addEventListener("DOMContentLoaded", loadRealViewsAndRender);

@@ -172,7 +172,7 @@ export default async function handler(req, res) {
     const postsDataFile = await postsDataGet.json();
     let postsDataJs = Buffer.from(postsDataFile.content, "base64").toString("utf-8");
 
-    // Evergreen "best of" listicle topics, aimed at AsfiBlog's AI/programming/
+    // Evergreen "best of" listicle topics, aimed at Asfi Blog's AI/programming/
     // web-dev audience. Mixed in occasionally alongside real trending news so
     // the blog also covers things like "Top 10 Free AI Tools for Students".
     const EVERGREEN_TOPICS = [
@@ -204,7 +204,7 @@ export default async function handler(req, res) {
     console.log("STEP 1.5 done: mode =", isListicle ? `listicle (${listicleTopic})` : "trending");
 
     const prompt = isListicle
-      ? `You are a professional SEO editor for "AsfiBlog", a technology and student-productivity publication. Write a detailed, 100% original, SEO-optimized, answer-engine-optimized (AEO) evergreen listicle article on this topic.
+      ? `You are a professional SEO editor for "Asfi Blog", a technology and student-productivity publication. Write a detailed, 100% original, SEO-optimized, answer-engine-optimized (AEO) evergreen listicle article on this topic.
 
 Topic: "${listicleTopic}"
 
@@ -232,7 +232,7 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
   "image_alts": ["...", "..."],
   "faq": [{"q": "...", "a": "..."}, {"q": "...", "a": "..."}, {"q": "...", "a": "..."}]
 }`
-      : `You are a professional SEO editor for "AsfiBlog", a trending news publication. Write a detailed, 100% original, SEO-optimized, answer-engine-optimized (AEO) blog article based on this real, currently trending topic.
+      : `You are a professional SEO editor for "Asfi Blog", a trending news publication. Write a detailed, 100% original, SEO-optimized, answer-engine-optimized (AEO) blog article based on this real, currently trending topic.
 
 Trending term: "${trendingHeadline}"
 Related news context: "${trendingContext}"
@@ -377,7 +377,7 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>${post.title} — AsfiBlog</title>
+<title>${post.title} — Asfi Blog</title>
 <meta name="description" content="${post.meta_description}" />
 <meta name="keywords" content="${(post.tags || []).join(", ")}" />
 <link rel="canonical" href="${SITE_URL}/blog/${slug}.html" />
@@ -395,7 +395,9 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
 <meta name="robots" content="index, follow" />
 <meta name="google-site-verification" content="PpUxcguGEAURplqDhmyFXEu5TRZI382yGwo-MM1Pkkc" />
 
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/css/style.css" />
 <script src="/assets/js/posts-data.js" defer></script>
 <script src="/assets/js/blog-render.js" defer></script>
@@ -416,7 +418,7 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
   "name": "Sheikh Asfi",
   "url": "https://asfiblog.vercel.app/author/asfi"
 },
-  "publisher": { "@type": "Organization", "name": "AsfiBlog" },
+  "publisher": { "@type": "Organization", "name": "Asfi Blog" },
   "mainEntityOfPage": "${SITE_URL}/blog/${slug}.html",
   "articleSection": "${categoryLabel}"
 }
@@ -448,7 +450,7 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
   <span class="ticker__live">LIVE</span>
   <div class="ticker__track">
     <span>${categoryLabel.toUpperCase()} — filed ${dateLabel}</span>
-    <span>ASFIBLOG — filed around the clock</span>
+    <span>ASFI BLOG — filed around the clock</span>
     <span>TECHNOLOGY — new stories filed daily</span>
     <span>BUSINESS — markets, moves, and money</span>
   </div>
@@ -498,7 +500,7 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
       <div class="avatar">SA</div>
       <div>
         <div class="name">Sheikh Asfi</div>
-        <div class="bio">Founder & Editor, AsfiBlog.</div>
+        <div class="bio">Founder & Editor, Asfi Blog.</div>
       </div>
     </div>
 
@@ -520,25 +522,25 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
       <a href="/" class="logo">Asfi<span>Blog</span></a>
       <p>Independent coverage of what the world's talking about — technology, business, science, and health, filed in plain English, around the clock.</p>
       <div class="footer__social">
-        <a href="https://twitter.com" aria-label="AsfiBlog on X" target="_blank" rel="noopener">𝕏</a>
-        <a href="https://linkedin.com" aria-label="AsfiBlog on LinkedIn" target="_blank" rel="noopener">in</a>
-        <a href="https://facebook.com" aria-label="AsfiBlog on Facebook" target="_blank" rel="noopener">f</a>
-        <a href="/blog/index.html" aria-label="AsfiBlog RSS">RSS</a>
+        <a href="https://www.linkedin.com/in/asfand-yar-ali-1466b6373/" aria-label="Asfi Blog on LinkedIn" target="_blank" rel="noopener">in</a>
+        <a href="/blog/index.html" aria-label="Asfi Blog RSS">RSS</a>
       </div>
     </div>
     <div class="footer__col">
       <h4>Desks</h4>
       <ul>
-        <li><a href="/blog/index.html#technology">Technology</a></li>
-        <li><a href="/blog/index.html#business">Business</a></li>
-        <li><a href="/blog/index.html#science">Science</a></li>
-        <li><a href="/blog/index.html#health">Health</a></li>
+        <li><a href="/blog/index.html?category=technology">Technology</a></li>
+        <li><a href="/blog/index.html?category=business">Business</a></li>
+        <li><a href="/blog/index.html?category=science">Science</a></li>
+        <li><a href="/blog/index.html?category=health">Health</a></li>
+        <li><a href="/blog/index.html?category=politics">Politics</a></li>
       </ul>
     </div>
     <div class="footer__col">
       <h4>Company</h4>
       <ul>
-        <li><a href="/about.html">About AsfiBlog</a></li>
+        <li><a href="/about.html">About Asfi Blog</a></li>
+        <li><a href="/author/asfi">About Sheikh Asfi</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/blog/index.html">All Dispatches</a></li>
       </ul>
@@ -552,7 +554,7 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
     </div>
   </div>
   <div class="wrap footer__bottom">
-    <span class="footer__fine">© <span id="year"></span> AsfiBlog. All rights reserved.</span>
+    <span class="footer__fine">© <span id="year"></span> Asfi Blog. All rights reserved.</span>
     <span class="footer__fine">Filed daily from a small, independent newsroom.</span>
   </div>
 </footer>
@@ -613,6 +615,16 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
   },
 `;
 
+    // De-dupe: if a post with this exact slug already exists in
+    // posts-data.js (e.g. the same trending story comes up again on a later
+    // run), strip the old object out first so we never end up with two
+    // entries for the same slug — which would show the same post twice on
+    // the homepage/blog listing.
+    const existingEntryRe = new RegExp(
+      `\\s*\\{\\s*slug:\\s*${JSON.stringify(slug)}[\\s\\S]*?\\},?\\n`
+    );
+    postsDataJs = postsDataJs.replace(existingEntryRe, "\n");
+
     postsDataJs = postsDataJs.replace(
       "window.ASFIBLOG_POSTS = [",
       `window.ASFIBLOG_POSTS = [\n${newEntry}`
@@ -639,6 +651,13 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
       const sitemapData = await sitemapGet.json();
       let sitemapXml = Buffer.from(sitemapData.content, "base64").toString("utf-8");
 
+      // Remove any existing <url> block for this exact slug first so a
+      // repeat run never creates a duplicate sitemap entry.
+      const existingUrlRe = new RegExp(
+        `\\s*<url>\\s*<loc>${SITE_URL.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/blog/${slug}\\.html</loc>[\\s\\S]*?</url>\\n?`
+      );
+      sitemapXml = sitemapXml.replace(existingUrlRe, "\n");
+
       const newUrlEntry = `  <url>
     <loc>${SITE_URL}/blog/${slug}.html</loc>
     <lastmod>${dateLabel}</lastmod>
@@ -658,6 +677,54 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
           message: `Update sitemap: ${post.title}`,
           content: Buffer.from(sitemapXml).toString("base64"),
           sha: sitemapData.sha,
+        }),
+      });
+    } catch (e) {
+      // Non-fatal
+    }
+
+    try {
+      const rssApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/rss.xml`;
+      const rssGet = await fetch(rssApi, {
+        headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
+      });
+      const rssData = await rssGet.json();
+      let rssXml = Buffer.from(rssData.content, "base64").toString("utf-8");
+
+      const escapeXml = (s) =>
+        String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/'/g, "&#x27;")
+          .replace(/"/g, "&quot;");
+
+      const newItem = `    <item>
+      <title>${escapeXml(post.title)}</title>
+      <link>${SITE_URL}/blog/${slug}.html</link>
+      <guid>${SITE_URL}/blog/${slug}.html</guid>
+      <pubDate>${dateLabel} 00:00:00 GMT</pubDate>
+      <description>${escapeXml(post.meta_description)}</description>
+    </item>
+`;
+      // Remove any existing <item> for this exact slug first so a repeat
+      // run never creates a duplicate feed entry.
+      const existingItemRe = new RegExp(
+        `\\s*<item>\\s*<title>[\\s\\S]*?<guid>${SITE_URL.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/blog/${slug}\\.html</guid>[\\s\\S]*?</item>\\n?`
+      );
+      rssXml = rssXml.replace(existingItemRe, "\n");
+      rssXml = rssXml.replace(/(<language>[^<]*<\/language>\s*\n)/, `$1${newItem}`);
+
+      await fetch(rssApi, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `Update rss.xml: ${post.title}`,
+          content: Buffer.from(rssXml).toString("base64"),
+          sha: rssData.sha,
         }),
       });
     } catch (e) {
