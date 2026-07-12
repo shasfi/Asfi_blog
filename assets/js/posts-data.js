@@ -17,6 +17,17 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "lindsey-graham-dies-sudden-illness-trump-reaction",
+    title: "Lindsey Graham dies after sudden illness; Trump reacts",
+    excerpt: "Senator Lindsey Graham has died at 71 after a sudden illness. Donald Trump called Graham 'like family,' while analysts weigh the political impact of his death.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/20417783/pexels-photo-20417783.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-12",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "top-free-ai-note-taking-study-apps-2026",
     title: "Top Free AI Note-Taking and Study Apps in 2026",
     excerpt: "Discover the best free AI note-taking and study apps in 2026 for students and professionals. Boost productivity with smart tools for organizing, summarizing, and learning.",
