@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "best-ai-coding-assistants-for-developers-2026",
+    title: "Best AI Coding Assistants for Developers in 2026",
+    excerpt: "Discover the best AI coding assistants for developers in 2026, featuring tools that boost productivity, accuracy, and efficiency for coders at all levels.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/34804018/pexels-photo-34804018.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-12",
+    timestamp: "2026-07-12T23:01:18.822Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "mardy-fish-leads-celebrity-golf-event-edgewood-tahoe",
     title: "Mardy Fish leads celebrity golf event at Edgewood Tahoe",
     excerpt: "Former tennis star Mardy Fish takes the lead at the celebrity golf tournament held at Edgewood Tahoe, showcasing his transition to competitive golf.",
