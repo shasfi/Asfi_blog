@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Category — Asfi Blog</title>
+<meta name="description" content="Browse Asfi Blog dispatches by category." />
+<link rel="canonical" href="https://asfiblog.vercel.app/category.html" />
+<meta name="robots" content="index, follow" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/css/style.css" />
+<script src="/assets/js/posts-data.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var cat = new URLSearchParams(location.search).get('cat') || 'Technology';
+  document.title = cat + ' — Asfi Blog';
+  var h = document.getElementById('cat-title'); if(h) h.textContent = cat;
+  var posts = (window.ASFIBLOG_POSTS||[]).filter(function(p){return (p.category||'').toLowerCase()===cat.toLowerCase();});
+  var grid = document.getElementById('cat-grid');
+  grid.innerHTML = posts.map(function(p){
+    return '<a href="/blog/'+p.slug+'.html" class="card"><div class="card__img-wrap"><img src="'+p.image+'" alt="'+p.title+'" loading="lazy"/></div><div class="card__body"><span class="stamp">'+p.category+'</span><h3>'+p.title+'</h3><p>'+p.excerpt+'</p></div></a>';
+  }).join('') || '<p>No posts yet in this category.</p>';
+});
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav"><a href="/" class="logo">Asfi<span>Blog</span></a>
+<nav class="nav__links"><a href="/">Home</a><a href="/blog/index.html">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="wrap">
+  <nav aria-label="Breadcrumb" style="font-size:13px;color:#666;margin:16px 0;">
+    <a href="/" style="color:inherit;">Home</a> › <a href="/blog/index.html" style="color:inherit;">Blog</a> › <span id="cat-title">Category</span>
+  </nav>
+  <h1>Category: <span id="cat-title">Category</span></h1>
+  <div class="grid" id="cat-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:24px;"></div>
+</main>
+</body>
+</html>
