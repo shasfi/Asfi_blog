@@ -1,101 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://asfiblog.vercel.app/</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://asfiblog.vercel.app/blog/index.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/ai-agents-replacing-apps.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/four-day-work-week-2026.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/plastic-eating-bacteria-breakthrough.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/sleep-banking-trend-explained.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://asfiblog.vercel.app/about.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/author.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <url>
     <loc>https://asfiblog.vercel.app/contact.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
+
   <url>
     <loc>https://asfiblog.vercel.app/privacy-policy.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+
   <url>
     <loc>https://asfiblog.vercel.app/disclaimer.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
-  
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/us-home-prices-all-time-high-mortgage-rates.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/measles-exposure-map-central-ios.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/ladera-ranch-children-rare-cancer-concerns.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/dairy-intake-may-slow-biological-aging-study.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/sony-rx10-v-superzoom-4k-120p-review.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/netflix-stock-live-tv-bundles-retention-struggles.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://asfiblog.vercel.app/blog/kristi-noem-divorce-details-split-cross-dressing.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://asfiblog.vercel.app/blog/iran-tests-trump-after-leaders-funeral-risking-renewed-war.html</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://asfiblog.vercel.app/blog/apple-openai-trade-secrets-lawsuit-experts-analysis.html</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/kristi-noem-divorce-details-split-cross-dressing.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/netflix-stock-live-tv-bundles-retention-struggles.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/ai-agents-replacing-apps.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/nasdaq-rally-chip-ai-spacex-oil-gains.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/measles-exposure-map-central-ios.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/dairy-intake-may-slow-biological-aging-study.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/us-home-prices-all-time-high-mortgage-rates.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/sony-rx10-v-superzoom-4k-120p-review.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/four-day-work-week-2026.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/plastic-eating-bacteria-breakthrough.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/james-webb-telescope-galaxy-mystery.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/sleep-banking-trend-explained.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/grocery-price-war-consumer-spending-cuts-2024.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/ladera-ranch-children-rare-cancer-concerns.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
