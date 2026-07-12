@@ -17,6 +17,17 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "apple-openai-trade-secrets-lawsuit-experts-analysis",
+    title: "Apple vs OpenAI: Experts Weigh In on Trade Secrets Lawsuit",
+    excerpt: "Legal and tech experts analyze Apple's lawsuit accusing OpenAI of stealing trade secrets, including alleged recruitment tactics and the broader AI industry implications.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/7876047/pexels-photo-7876047.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-12",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "iran-tests-trump-after-leaders-funeral-risking-renewed-war",
     title: "Iran Tests Trump After Leader’s Funeral, Risking Renewed War",
     excerpt: "Following the funeral of Iran's leader, tensions escalate as Iran tests Trump's resolve, raising fears of renewed conflict. Explore the latest developments and risks.",
