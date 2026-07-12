@@ -28,7 +28,6 @@ window.ASFIBLOG_POSTS = [
   },
 
   {
-
     slug: "lindsey-graham-dies-sudden-illness-trump-reaction",
     title: "Lindsey Graham dies after sudden illness; Trump reacts",
     excerpt: "Senator Lindsey Graham has died at 71 after a sudden illness. Donald Trump called Graham 'like family,' while analysts weigh the political impact of his death.",
