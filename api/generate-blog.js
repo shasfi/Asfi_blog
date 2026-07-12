@@ -78,8 +78,12 @@ export default async function handler(req, res) {
   }
   function sanitizeHtmlBlock(html) {
     if (!html) return html;
-    // Same cleanup but safe to run on HTML: only touches text, never inside tags.
-    return html.replace(/>([^<]+)</g, (m, text) => `>${sanitizeSymbols(text)}<`);
+    // Same cleanup but safe to run on HTML: only touches real text, never
+    // touches tags/attrs, and leaves pure whitespace between tags alone.
+    return html.replace(/>([^<]+)</g, (m, text) => {
+      if (text.trim() === "") return m;
+      return `>${sanitizeSymbols(text)}<`;
+    });
   }
 
   // Turns every <h2>/<h3> in the article into an anchor target and builds a
