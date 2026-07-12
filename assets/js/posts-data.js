@@ -17,6 +17,17 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "iran-tests-trump-after-leaders-funeral-risking-renewed-war",
+    title: "Iran Tests Trump After Leader’s Funeral, Risking Renewed War",
+    excerpt: "Following the funeral of Iran's leader, tensions escalate as Iran tests Trump's resolve, raising fears of renewed conflict. Explore the latest developments and risks.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/19488937/pexels-photo-19488937.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-12",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "kristi-noem-divorce-details-split-cross-dressing",
     title: "Kristi Noem Divorce: Details on Split After Cross-Dressing Bombshell",
     excerpt: "Kristi Noem is reportedly divorcing her husband Bryon following a cross-dressing bombshell revealed by her mother. Explore the details and implications here.",
