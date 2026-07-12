@@ -86,6 +86,14 @@ export default async function handler(req, res) {
     });
   }
 
+  function formatFiledLabel(d) {
+    // Real publish date + time (UTC), e.g. "Jul 13, 2026, 2:31 PM UTC" —
+    // previously this only showed the date, with no actual time of posting.
+    const datePart = d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+    const timePart = d.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "UTC" });
+    return `${datePart}, ${timePart} UTC`;
+  }
+
   // Turns every <h2>/<h3> in the article into an anchor target and builds a
   // matching Table of Contents. Uses the site's existing .toc CSS (already in
   // assets/css/style.css) so no style changes are needed.
@@ -519,6 +527,7 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
 
     const publishDate = new Date();
     const dateLabel = publishDate.toISOString().split("T")[0];
+    const timestampLabel = publishDate.toISOString(); // full real-time UTC timestamp, e.g. 2026-07-13T14:02:11.000Z
     const wordCount = (post.content || "").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
     const readMins = Math.max(4, Math.round(wordCount / 200));
 
@@ -561,8 +570,8 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
 <meta property="og:url" content="${SITE_URL}/blog/${slug}.html" />
 <meta property="og:site_name" content="Asfi Blog" />
 ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />\n<meta property="og:image:alt" content="${imageAlts[0]}" />` : ""}
-<meta property="article:published_time" content="${dateLabel}" />
-<meta property="article:modified_time" content="${dateLabel}" />
+<meta property="article:published_time" content="${timestampLabel}" />
+<meta property="article:modified_time" content="${timestampLabel}" />
 <meta property="article:section" content="${categoryLabel}" />
 <meta property="article:author" content="Sheikh Asfi" />
 ${tagKeywordsMeta}
@@ -589,8 +598,8 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
   "headline": ${JSON.stringify(post.title)},
   "description": ${JSON.stringify(post.meta_description)},
   "image": ${JSON.stringify(images)},
-  "datePublished": "${dateLabel}",
-  "dateModified": "${dateLabel}",
+  "datePublished": "${timestampLabel}",
+  "dateModified": "${timestampLabel}",
   "wordCount": ${wordCount},
   "keywords": ${JSON.stringify((post.tags || []).join(", "))},
   "author": {
@@ -666,7 +675,7 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
   <article class="post">
     <span class="stamp">${categoryLabel}</span>
     <h1>${post.title}</h1>
-    <p class="timestamp">Filed ${dateLabel} · ${readMins} min read</p>
+    <p class="timestamp" data-published="${timestampLabel}">Filed ${formatFiledLabel(publishDate)} · ${readMins} min read</p>
     ${heroImageHtml}
     ${tocHtml}
     <div class="content">
@@ -744,6 +753,24 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
   </div>
 </footer>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script>
+// Upgrade the static "Filed <date>, <time> UTC" line to a live relative time
+// ("Just now", "14m ago", "3h ago") for the first ~2 days after publishing,
+// so readers can see how recently this was actually posted, not just the date.
+(function () {
+  var el = document.querySelector(".timestamp[data-published]");
+  if (!el) return;
+  var then = new Date(el.getAttribute("data-published")).getTime();
+  if (isNaN(then)) return;
+  var diffMin = Math.floor((Date.now() - then) / 60000);
+  var rel = null;
+  if (diffMin < 1) rel = "Just now";
+  else if (diffMin < 60) rel = diffMin + "m ago";
+  else if (diffMin < 1440) rel = Math.floor(diffMin / 60) + "h ago";
+  else if (diffMin < 2880) rel = Math.floor(diffMin / 1440) + "d ago";
+  if (rel) el.innerHTML = el.innerHTML.replace(/^Filed [^·]+/, "Filed " + rel + " ");
+})();
+</script>
 
 <button id="pw-chat-toggle" aria-label="Open chat">💬</button>
 <div id="pw-chat-panel">
@@ -795,6 +822,7 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
     category: ${JSON.stringify(categoryLabel)},
     image: ${JSON.stringify(thumbnail)},
     date: ${JSON.stringify(dateLabel)},
+    timestamp: ${JSON.stringify(timestampLabel)},
     readMins: ${readMins},
     views: 0
   },

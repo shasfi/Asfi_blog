@@ -40,6 +40,26 @@
     return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
   }
 
+  // Real-time display: if a post has a full `timestamp` (ISO datetime, added
+  // by generate-blog.js), show a live relative time for the first ~2 days
+  // ("Just now", "14m ago", "3h ago") so it's clear exactly when something
+  // was actually posted, then fall back to the plain date after that.
+  // Older posts (or any without `timestamp`) just use formatDate as before.
+  function formatWhen(post) {
+    if (!post.timestamp) return formatDate(post.date);
+    const then = new Date(post.timestamp).getTime();
+    if (Number.isNaN(then)) return formatDate(post.date);
+    const diffMs = Date.now() - then;
+    const diffMin = Math.floor(diffMs / 60000);
+    if (diffMin < 1) return "Just now";
+    if (diffMin < 60) return `${diffMin}m ago`;
+    const diffHr = Math.floor(diffMin / 60);
+    if (diffHr < 24) return `${diffHr}h ago`;
+    const diffDay = Math.floor(diffHr / 24);
+    if (diffDay < 2) return `${diffDay}d ago`;
+    return formatDate(post.date);
+  }
+
   function stampClass(category) {
     return category === "Health" ? "stamp stamp--teal" : "stamp";
   }
@@ -63,7 +83,7 @@
         <span class="${stampClass(post.category)}">${post.category}</span>
         <div class="card__title">${post.title}</div>
         <p class="card__excerpt">${post.excerpt}</p>
-        <p class="timestamp">${formatDate(post.date)} · ${post.readMins} min read</p>
+        <p class="timestamp">${formatWhen(post)} · ${post.readMins} min read</p>
         <p class="card__views">${eyeIcon()}${formatViews(views)} views</p>
       </div>
     </a>`;
@@ -80,7 +100,7 @@
         <span class="${stampClass(post.category)}">${post.category}</span>
         <h3>${post.title}</h3>
         <p class="card__excerpt">${post.excerpt}</p>
-        <p class="timestamp">${formatDate(post.date)} · ${post.readMins} min read</p>
+        <p class="timestamp">${formatWhen(post)} · ${post.readMins} min read</p>
         <p class="card__views">${eyeIcon()}${formatViews(views)} views this week</p>
       </div>
     </a>`;
