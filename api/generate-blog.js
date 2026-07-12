@@ -55,7 +55,13 @@ export default async function handler(req, res) {
   }
 
   try {
-    if (req.query.secret !== process.env.CRON_SECRET) {
+    // Vercel Cron sends "Authorization: Bearer <CRON_SECRET>" automatically.
+    // Keep accepting the old ?secret= query param too, so manual runs and
+    // cron-job.org (kept as an optional backup trigger) still work.
+    const authHeader = req.headers.authorization || "";
+    const headerOk = authHeader === `Bearer ${process.env.CRON_SECRET}`;
+    const queryOk = req.query.secret === process.env.CRON_SECRET;
+    if (!headerOk && !queryOk) {
       return res.status(401).json({ error: "Unauthorized" });
     }
 

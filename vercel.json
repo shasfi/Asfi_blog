@@ -7,6 +7,24 @@
       "maxDuration": 30
     }
   },
+  "crons": [
+    {
+      "path": "/api/generate-blog",
+      "schedule": "0 23 * * *"
+    },
+    {
+      "path": "/api/generate-blog",
+      "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/generate-blog",
+      "schedule": "0 12 * * *"
+    },
+    {
+      "path": "/api/generate-blog",
+      "schedule": "0 17 * * *"
+    }
+  ],
   "routes": [
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/404.html", "status": 404 }
