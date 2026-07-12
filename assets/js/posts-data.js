@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "world-cup-games-today-semifinal-schedule",
+    title: "World Cup Games Today: Semifinal Schedule France vs Spain, England vs Argentina",
+    excerpt: "Find out if there are World Cup games today with the semifinal schedule featuring France vs Spain and England vs Argentina. Get match details, predictions, and key players.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/38401511/pexels-photo-38401511.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-12",
+    readMins: 2,
+    views: 0
+  },
+
+  {
+
     slug: "lindsey-graham-dies-sudden-illness-trump-reaction",
     title: "Lindsey Graham dies after sudden illness; Trump reacts",
     excerpt: "Senator Lindsey Graham has died at 71 after a sudden illness. Donald Trump called Graham 'like family,' while analysts weigh the political impact of his death.",

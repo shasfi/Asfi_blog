@@ -6,7 +6,7 @@
 // 1. Fetch REAL trending searches from Google Trends RSS (free, no API key)
 //    -- OR use a custom topic passed in by you (see "CUSTOM TOPIC" below)
 // 2. Generate a full SEO + AEO + GEO optimized article using OpenRouter FREE model
-//    (title, meta description, 1500-2200 word body, tags, FAQ block, image alt text)
+//    (title, meta description, 1600-2200 word body, tags, FAQ block, image alt text)
 // 3. Fetch 2-4 relevant free images from Pexels
 // 4. Build a static HTML blog post page matching the site design, with:
 //    - meta description, canonical, Open Graph, Twitter Card tags
@@ -112,16 +112,33 @@ export default async function handler(req, res) {
 
     let tocHtml = "";
     if (tocItems.length > 1) {
-      const items = tocItems
-        .map(
-          (t) =>
-            `<li${t.level === 3 ? ' style="margin-left:16px; list-style:circle;"' : ""}><a href="#${t.id}">${t.text}</a></li>`
-        )
-        .join("\n        ");
+      // Build a properly nested list: h2s get their own <ol> counter, and any
+      // h3s that follow are grouped into a nested <ul> under that h2 so they
+      // don't consume/skip numbers in the h2 counter (previously all items
+      // shared one flat <ol>, which made the visible h2 numbers jump, e.g.
+      // 1, 2, 5, 8... because hidden h3 <li>s were still counted).
+      let items = "";
+      let subOpen = false;
+      for (const t of tocItems) {
+        if (t.level === 3) {
+          if (!subOpen) {
+            items += `\n        <ul class="toc-sub">`;
+            subOpen = true;
+          }
+          items += `\n          <li><a href="#${t.id}">${t.text}</a></li>`;
+        } else {
+          if (subOpen) {
+            items += `\n        </ul>`;
+            subOpen = false;
+          }
+          items += `\n        <li><a href="#${t.id}">${t.text}</a></li>`;
+        }
+      }
+      if (subOpen) items += `\n        </ul>`;
+
       tocHtml = `<nav class="toc" aria-label="Table of contents">
       <p class="toc-title">In this article</p>
-      <ol>
-        ${items}
+      <ol>${items}
       </ol>
     </nav>`;
     }
@@ -365,7 +382,7 @@ ${customCategory ? `- category must be "${customCategory}".` : "- Pick the singl
 - Prioritize depth and quality over brevity: it is fine, and preferred, for the article to run long if that makes it more useful, more authoritative, and better for SEO.
 - Title: under 60 characters, front-load the main keyword, no clickbait, no symbols besides normal punctuation.
 - meta_description: exactly 150-160 characters, includes the main keyword naturally near the start.
-- Content: 1500-2200 words of full HTML using ONLY <h2>, <h3>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>, no inline styles, no <div>). Use at least 5 <h2> subheadings, and add <h3> sub-subheadings under any <h2> that covers more than one distinct point (this both improves readability and gives search engines a clearer content outline for the Table of Contents). Write in a clear, human, editorial tone grounded strictly in the given information. Every paragraph must add real information — no filler, no repeating the same sentence in different words.
+- Content: 1600-2200 words of full HTML using ONLY <h2>, <h3>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>, no inline styles, no <div>). Use at least 5 <h2> subheadings, and add <h3> sub-subheadings under any <h2> that covers more than one distinct point (this both improves readability and gives search engines a clearer content outline for the Table of Contents). Write in a clear, human, editorial tone grounded strictly in the given information — never generic AI filler phrasing ("in today's fast-paced world", "it is important to note that", etc.). Every paragraph must add real information — no filler, no repeating the same sentence in different words. This is for a real publication and must read like it was written by an experienced human journalist: concrete details, specific attributions, varied sentence rhythm.
 - Include one short concluding <h2> section that directly and plainly answers the core question the topic raises, phrased so it could be lifted as a direct answer by an AI search summary.
 - tags: exactly 6 relevant, specific tags (not single generic words like "news").
 - image_keyword: one GENERIC, safe-for-work English keyword phrase to search stock photography for this topic — never a specific brand/company/product name, since stock photos for brand names are often wrong or mismatched.
@@ -798,18 +815,59 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
       `window.ASFIBLOG_POSTS = [\n${newEntry}`
     );
 
-    await fetch(postsDataApi, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: `Add post to posts-data.js: ${post.title}`,
-        content: Buffer.from(postsDataJs).toString("base64"),
-        sha: postsDataFile.sha,
-      }),
-    });
+    // This write is what actually makes the new post show up on the blog
+    // listing / homepage. Previously it wasn't checked for success at all —
+    // if the commit failed (most commonly a stale `sha` because something
+    // else touched posts-data.js between our initial GET and this PUT), the
+    // post file itself was already live on GitHub (so the direct URL
+    // worked), but the listing silently never updated and the API still
+    // reported success:true. Now we check the response and retry once with
+    // a freshly-fetched sha before giving up.
+    async function putPostsData(shaToUse) {
+      return fetch(postsDataApi, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `Add post to posts-data.js: ${post.title}`,
+          content: Buffer.from(postsDataJs).toString("base64"),
+          sha: shaToUse,
+        }),
+      });
+    }
+
+    let postsDataPutRes = await putPostsData(postsDataFile.sha);
+
+    if (!postsDataPutRes.ok) {
+      // Likely a 409 from a stale sha — re-fetch the current file, re-apply
+      // our dedupe + prepend against the fresh content, and try once more.
+      const retryGet = await fetch(postsDataApi, {
+        headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
+      });
+      const retryFile = await retryGet.json();
+      let freshJs = Buffer.from(retryFile.content, "base64").toString("utf-8");
+      freshJs = freshJs.replace(existingEntryRe, "\n");
+      freshJs = freshJs.replace(
+        "window.ASFIBLOG_POSTS = [",
+        `window.ASFIBLOG_POSTS = [\n${newEntry}`
+      );
+      postsDataJs = freshJs;
+      postsDataPutRes = await putPostsData(retryFile.sha);
+    }
+
+    if (!postsDataPutRes.ok) {
+      const errText = await postsDataPutRes.text();
+      // The post file is already live at this point, so don't claim total
+      // failure — but do surface that the listing wasn't updated, since
+      // that's the part that actually makes it visible on the site.
+      return res.status(500).json({
+        error: "Post published but blog listing (posts-data.js) update failed — it won't show on /blog until this is fixed.",
+        detail: errText,
+        postUrl: `${SITE_URL}/blog/${slug}.html`,
+      });
+    }
 
     try {
       const sitemapApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/sitemap.xml`;
