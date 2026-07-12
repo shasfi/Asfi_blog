@@ -411,7 +411,11 @@ ${thumbnail ? `<meta property="og:image" content="${thumbnail}" />` : ""}
   "image": ${JSON.stringify(images)},
   "datePublished": "${dateLabel}",
   "dateModified": "${dateLabel}",
-  "author": { "@type": "Person", "name": "Sheikh Asfi" },
+  "author": {
+  "@type": "Person",
+  "name": "Sheikh Asfi",
+  "url": "https://asfiblog.vercel.app/author/asfi"
+},
   "publisher": { "@type": "Organization", "name": "AsfiBlog" },
   "mainEntityOfPage": "${SITE_URL}/blog/${slug}.html",
   "articleSection": "${categoryLabel}"
