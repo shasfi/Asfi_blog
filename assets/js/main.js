@@ -1,10 +1,14 @@
 // assets/js/main.js — shared across every page
 
 // ---------- THEME TOGGLE (light/dark, persisted) ----------
+// Default is always LIGHT. The only way a visitor ever sees dark mode is if
+// they previously clicked the theme toggle button in THIS browser — their
+// choice is remembered in localStorage on that one browser only. System/OS
+// dark-mode preference is intentionally ignored so every new visitor, on
+// every device, always starts on the light theme.
 (function () {
   const root = document.documentElement;
   const saved = localStorage.getItem("pw-theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const initial = saved || "light";
   if (initial === "dark") root.setAttribute("data-theme", "dark");
 
