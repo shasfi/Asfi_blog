@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "mardy-fish-leads-celebrity-golf-event-edgewood-tahoe",
+    title: "Mardy Fish leads celebrity golf event at Edgewood Tahoe",
+    excerpt: "Former tennis star Mardy Fish takes the lead at the celebrity golf tournament held at Edgewood Tahoe, showcasing his transition to competitive golf.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/36818362/pexels-photo-36818362.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-12",
+    timestamp: "2026-07-12T19:49:49.867Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "top-ai-productivity-apps-remote-work-2026",
     title: "Top 10 AI Productivity Apps for Remote Work in 2026",
     excerpt: "Discover the top 10 AI productivity apps for remote work in 2026, designed to streamline tasks, enhance collaboration, and boost efficiency for professionals and students.",
