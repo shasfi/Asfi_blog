@@ -17,6 +17,17 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "top-free-ai-note-taking-study-apps-2026",
+    title: "Top Free AI Note-Taking and Study Apps in 2026",
+    excerpt: "Discover the best free AI note-taking and study apps in 2026 for students and professionals. Boost productivity with smart tools for organizing, summarizing, and learning.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/4841628/pexels-photo-4841628.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-12",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "sen-lindsey-graham-dies-after-brief-illness",
     title: "Sen. Lindsey Graham Dies After Brief Illness",
     excerpt: "Sen. Lindsey Graham, a close Trump ally and foreign policy hawk, has died after a brief illness. Explore his legacy, political impact, and the GOP scramble for his Senate seat.",
