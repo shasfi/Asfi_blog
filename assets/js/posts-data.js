@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "top-ai-productivity-apps-remote-work-2026",
+    title: "Top 10 AI Productivity Apps for Remote Work in 2026",
+    excerpt: "Discover the top 10 AI productivity apps for remote work in 2026, designed to streamline tasks, enhance collaboration, and boost efficiency for professionals and students.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/8117408/pexels-photo-8117408.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-12",
+    timestamp: "2026-07-12T19:49:41.995Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "world-cup-games-today-semifinal-schedule",
     title: "World Cup Games Today: Semifinal Schedule France vs Spain, England vs Argentina",
     excerpt: "Find out if there are World Cup games today with the semifinal schedule featuring France vs Spain and England vs Argentina. Get match details, predictions, and key players.",
