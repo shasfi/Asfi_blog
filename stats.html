@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Stats — Asfi Blog</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script src="/assets/js/posts-data.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+  <style>
+    .stats-wrap { padding: 40px 0 80px; }
+    .stats-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 24px 0 40px; }
+    .stats-card { border: 1px solid var(--line, #e4e4e4); border-radius: 10px; padding: 20px; }
+    .stats-card .num { font-size: 2rem; font-weight: 800; line-height: 1.1; }
+    .stats-card .label { font-size: 0.85rem; color: var(--ink-soft, #666); text-transform: uppercase; letter-spacing: .04em; margin-top: 6px; }
+    table.stats-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    table.stats-table th, table.stats-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line, #e4e4e4); }
+    table.stats-table th { cursor: pointer; user-select: none; white-space: nowrap; }
+    table.stats-table th.sorted::after { content: " \25BC"; font-size: 0.7em; }
+    table.stats-table td.num-col { text-align: right; font-variant-numeric: tabular-nums; }
+    table.stats-table tr:hover td { background: rgba(0,0,0,0.02); }
+    .stats-loading, .stats-empty { padding: 24px 0; color: var(--ink-soft, #666); }
+    .refresh-btn { margin-left: 12px; }
+  </style>
+</head>
+
+<body>
+
+  <header class="site">
+    <div class="wrap nav">
+      <a href="/" class="logo">Asfi<span>Blog</span></a>
+      <nav class="nav__links">
+        <a href="/">Home</a>
+        <a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy-policy.html">Privacy</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+        <button class="nav__toggle-btn" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap stats-wrap">
+    <span class="stamp">Internal</span>
+    <h1>Site stats</h1>
+    <p>Total views across every post, pulled live from the same counter each post page increments. Not indexed — this page is for you, not readers or search engines.
+      <button class="refresh-btn" id="refresh-btn">Refresh</button>
+    </p>
+
+    <div id="summary" class="stats-summary"></div>
+    <div id="table-wrap">
+      <p class="stats-loading" id="loading">Loading view counts…</p>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap footer__bottom">
+      <span class="footer__fine">© <span id="year"></span> Asfi Blog. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const POSTS = window.ASFIBLOG_POSTS || [];
+      let sortKey = "total";
+      let sortDir = -1; // descending by default
+      let rows = [];
+
+      function formatNum(n) {
+        return n.toLocaleString("en-US");
+      }
+
+      async function loadCounts() {
+        document.getElementById("loading").textContent = "Loading view counts…";
+        let liveCounts = {};
+        try {
+          const r = await fetch("/api/views");
+          if (r.ok) liveCounts = await r.json();
+        } catch (e) {
+          // /api/views not reachable — still show baseline counts below
+        }
+
+        rows = POSTS.map((p) => {
+          const baseline = p.views || 0;
+          const live = liveCounts[p.slug] || 0;
+          return {
+            slug: p.slug,
+            title: p.title,
+            category: p.category,
+            date: p.date,
+            baseline,
+            live,
+            total: baseline + live,
+          };
+        });
+
+        render();
+      }
+
+      function render() {
+        const totalViews = rows.reduce((sum, r) => sum + r.total, 0);
+        const totalPosts = rows.length;
+        const avg = totalPosts ? Math.round(totalViews / totalPosts) : 0;
+        const top = rows.slice().sort((a, b) => b.total - a.total)[0];
+
+        document.getElementById("summary").innerHTML = `
+          <div class="stats-card"><div class="num">${formatNum(totalViews)}</div><div class="label">Total views (all posts)</div></div>
+          <div class="stats-card"><div class="num">${totalPosts}</div><div class="label">Published posts</div></div>
+          <div class="stats-card"><div class="num">${formatNum(avg)}</div><div class="label">Avg. views / post</div></div>
+          <div class="stats-card"><div class="num" style="font-size:1.1rem;">${top ? top.title.slice(0, 40) + (top.title.length > 40 ? "…" : "") : "—"}</div><div class="label">Top post (${top ? formatNum(top.total) : 0} views)</div></div>
+        `;
+
+        const sorted = rows.slice().sort((a, b) => {
+          if (sortKey === "title" || sortKey === "category") {
+            return sortDir * String(a[sortKey]).localeCompare(String(b[sortKey]));
+          }
+          return sortDir * ((a[sortKey] || 0) - (b[sortKey] || 0) || String(a.title).localeCompare(b.title));
+        });
+
+        if (!sorted.length) {
+          document.getElementById("table-wrap").innerHTML = '<p class="stats-empty">No posts found in posts-data.js yet.</p>';
+          return;
+        }
+
+        const col = (key, label) => `<th data-key="${key}" class="${sortKey === key ? "sorted" : ""}">${label}</th>`;
+
+        document.getElementById("table-wrap").innerHTML = `
+          <table class="stats-table">
+            <thead>
+              <tr>
+                ${col("title", "Post")}
+                ${col("category", "Category")}
+                ${col("date", "Date")}
+                ${col("total", "Total views")}
+              </tr>
+            </thead>
+            <tbody>
+              ${sorted.map((r) => `
+                <tr>
+                  <td><a href="/blog/${r.slug}.html">${r.title}</a></td>
+                  <td>${r.category}</td>
+                  <td>${r.date}</td>
+                  <td class="num-col">${formatNum(r.total)}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        `;
+
+        document.querySelectorAll("th[data-key]").forEach((th) => {
+          th.addEventListener("click", () => {
+            const key = th.getAttribute("data-key");
+            if (sortKey === key) sortDir *= -1;
+            else { sortKey = key; sortDir = -1; }
+            render();
+          });
+        });
+      }
+
+      document.getElementById("refresh-btn").addEventListener("click", loadCounts);
+      document.addEventListener("DOMContentLoaded", loadCounts);
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+</body>
+
+</html>
