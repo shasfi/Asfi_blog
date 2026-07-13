@@ -70,7 +70,6 @@
 
   <script>
     (function () {
-      const POSTS = window.ASFIBLOG_POSTS || [];
       let sortKey = "total";
       let sortDir = -1; // descending by default
       let rows = [];
@@ -80,6 +79,10 @@
       }
 
       async function loadCounts() {
+        // Read window.ASFIBLOG_POSTS here, not at script-parse time — posts-data.js
+        // loads with `defer`, so if we captured POSTS once at the top of this IIFE
+        // (which runs synchronously during parsing) it would always be empty/stale.
+        const POSTS = window.ASFIBLOG_POSTS || [];
         document.getElementById("loading").textContent = "Loading view counts…";
         let liveCounts = {};
         try {
