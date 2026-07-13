@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "us-iran-latest-diplomacy-strait-of-hormuz-tensions",
+    title: "U.S.-Iran Latest: Diplomacy Continues Amid Strait of Hormuz Tensions",
+    excerpt: "Latest updates on U.S.-Iran tensions over the Strait of Hormuz. Tehran insists diplomacy continues despite ongoing attacks and disputes over control of the critical waterway.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/32237794/pexels-photo-32237794.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-13",
+    timestamp: "2026-07-13T12:01:33.947Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "best-ai-tools-for-building-a-portfolio-website",
     title: "Best AI Tools for Building a Portfolio Website in 2026",
     excerpt: "Discover the best AI tools for building a portfolio website in 2026. Compare features, ease of use, and customization options for designers, developers, and creatives.",
