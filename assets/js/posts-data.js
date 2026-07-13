@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "mejores-peliculas-netflix-estrenos-clasicos-argentina",
+    title: "Mejores películas Netflix: estrenos y clásicos para ver ahora",
+    excerpt: "Descubre las mejores películas en Netflix esta semana, incluyendo estrenos en Argentina y clásicos imperdibles. Actualizado con las novedades del 13 al 19 de julio.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/9807998/pexels-photo-9807998.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-13",
+    timestamp: "2026-07-13T23:01:16.027Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "uk-counter-terror-police-ann-widdecombe-murder",
     title: "UK counter-terror police investigate Ann Widdecombe murder",
     excerpt: "UK counter-terrorism police lead the investigation into the suspected murder of former lawmaker Ann Widdecombe. A 28-year-old man has been arrested.",
