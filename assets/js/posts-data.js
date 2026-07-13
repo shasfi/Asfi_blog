@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "best-ai-tools-for-building-a-portfolio-website",
+    title: "Best AI Tools for Building a Portfolio Website in 2026",
+    excerpt: "Discover the best AI tools for building a portfolio website in 2026. Compare features, ease of use, and customization options for designers, developers, and creatives.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/7129654/pexels-photo-7129654.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-13",
+    timestamp: "2026-07-13T02:01:26.513Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "best-ai-coding-assistants-for-developers-2026",
     title: "Best AI Coding Assistants for Developers in 2026",
     excerpt: "Discover the best AI coding assistants for developers in 2026, featuring tools that boost productivity, accuracy, and efficiency for coders at all levels.",
