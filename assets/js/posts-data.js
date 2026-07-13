@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "uk-counter-terror-police-ann-widdecombe-murder",
+    title: "UK counter-terror police investigate Ann Widdecombe murder",
+    excerpt: "UK counter-terrorism police lead the investigation into the suspected murder of former lawmaker Ann Widdecombe. A 28-year-old man has been arrested.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/10464479/pexels-photo-10464479.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-13",
+    timestamp: "2026-07-13T17:01:14.997Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "us-iran-latest-diplomacy-strait-of-hormuz-tensions",
     title: "U.S.-Iran Latest: Diplomacy Continues Amid Strait of Hormuz Tensions",
     excerpt: "Latest updates on U.S.-Iran tensions over the Strait of Hormuz. Tehran insists diplomacy continues despite ongoing attacks and disputes over control of the critical waterway.",
