@@ -3,13 +3,9 @@
 // ---------- GOOGLE ANALYTICS 4 ----------
 // Loaded here (not per-page) so every page on the site reports automatically
 // since /assets/js/main.js is already included everywhere.
-// TODO: replace G-XXXXXXXXXX below with your real GA4 Measurement ID once
-// you've created the property (Analytics > Admin > Data Streams > Web).
-// Until you swap it in, this silently does nothing useful (GA will just
-// reject the placeholder ID) — it will NOT break the site either way.
 (function () {
-  const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
-  if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === "G-XXXXXXXXXX") return;
+  const GA_MEASUREMENT_ID = "G-QBFK40KM9C";
+  if (!GA_MEASUREMENT_ID) return;
 
   const s = document.createElement("script");
   s.async = true;
