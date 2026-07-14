@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "ranking-field-154th-open-royal-birkdale",
+    title: "Ranking the Field for the 154th Open at Royal Birkdale",
+    excerpt: "Discover the full list of 156 players competing in the 154th Open at Royal Birkdale. Get insights into rankings, conditions, and key contenders in this historic golf championship.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/8796519/pexels-photo-8796519.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-14",
+    timestamp: "2026-07-14T17:01:32.958Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "top-10-free-ai-tools-for-students-2026",
     title: "Top 10 Free AI Tools for Students in 2026",
     excerpt: "Discover the top 10 free AI tools for students in 2026, from note-taking to coding assistance. Boost productivity with these powerful, no-cost resources.",
