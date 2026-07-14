@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "kilmarnock-fc-vs-raith-rovers-standings-league-cup",
+    title: "Kilmarnock FC vs Raith Rovers standings and League Cup updates",
+    excerpt: "Latest Kilmarnock FC vs Raith Rovers standings, Scottish League Cup score updates, and key match stats. Analysis of team form, head-to-head records, and tournament implications.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/32190714/pexels-photo-32190714.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-14",
+    timestamp: "2026-07-14T23:01:13.764Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "ranking-field-154th-open-royal-birkdale",
     title: "Ranking the Field for the 154th Open at Royal Birkdale",
     excerpt: "Discover the full list of 156 players competing in the 154th Open at Royal Birkdale. Get insights into rankings, conditions, and key contenders in this historic golf championship.",
