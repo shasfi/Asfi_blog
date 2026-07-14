@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "inside-israels-secret-operation-ahmadinejad",
+    title: "Inside Israel’s Secret Operation to Install Ahmadinejad",
+    excerpt: "Explore Israel's covert operation to position Ahmadinejad, Iran's former president, as a leader amidst geopolitical tensions and intrigue.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/19488937/pexels-photo-19488937.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-14",
+    timestamp: "2026-07-14T02:01:05.766Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "mejores-peliculas-netflix-estrenos-clasicos-argentina",
     title: "Mejores películas Netflix: estrenos y clásicos para ver ahora",
     excerpt: "Descubre las mejores películas en Netflix esta semana, incluyendo estrenos en Argentina y clásicos imperdibles. Actualizado con las novedades del 13 al 19 de julio.",
