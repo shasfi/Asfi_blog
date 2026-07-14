@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "top-10-free-ai-tools-for-students-2026",
+    title: "Top 10 Free AI Tools for Students in 2026",
+    excerpt: "Discover the top 10 free AI tools for students in 2026, from note-taking to coding assistance. Boost productivity with these powerful, no-cost resources.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/7972331/pexels-photo-7972331.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-14",
+    timestamp: "2026-07-14T12:01:25.289Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "inside-israels-secret-operation-ahmadinejad",
     title: "Inside Israel’s Secret Operation to Install Ahmadinejad",
     excerpt: "Explore Israel's covert operation to position Ahmadinejad, Iran's former president, as a leader amidst geopolitical tensions and intrigue.",
