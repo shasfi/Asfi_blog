@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "odyssey-movie-imax-70mm-tickets-frenzy",
+    title: "Odyssey Movie Sparks Frenzy for IMAX 70mm Tickets",
+    excerpt: "The Odyssey movie has ignited a surge in demand for IMAX 70mm tickets, as film enthusiasts rush to experience its epic visuals in the highest-quality format available.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/31308374/pexels-photo-31308374.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-15",
+    timestamp: "2026-07-15T02:01:12.282Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "kilmarnock-fc-vs-raith-rovers-standings-league-cup",
     title: "Kilmarnock FC vs Raith Rovers standings and League Cup updates",
     excerpt: "Latest Kilmarnock FC vs Raith Rovers standings, Scottish League Cup score updates, and key match stats. Analysis of team form, head-to-head records, and tournament implications.",
