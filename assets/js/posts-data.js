@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "wildfire-smoke-canada-spread-midwest-east",
+    title: "Wildfire Smoke from Canada to Spread Across Midwest and East",
+    excerpt: "Wildfire smoke from Canada is expected to spread across the Midwest and East, posing health risks and reducing air quality. Learn how to stay safe and track updates.",
+    category: "Health",
+    image: "https://images.pexels.com/photos/12027855/pexels-photo-12027855.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-15",
+    timestamp: "2026-07-15T12:01:17.485Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "odyssey-movie-imax-70mm-tickets-frenzy",
     title: "Odyssey Movie Sparks Frenzy for IMAX 70mm Tickets",
     excerpt: "The Odyssey movie has ignited a surge in demand for IMAX 70mm tickets, as film enthusiasts rush to experience its epic visuals in the highest-quality format available.",
