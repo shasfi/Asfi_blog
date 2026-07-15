@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "top-10-free-ai-image-generators-2026",
+    title: "Top 10 Free AI Image Generators in 2026",
+    excerpt: "Discover the top 10 free AI image generators in 2026 for students and creators. Compare features, quality, and ease of use to find the best tool for your needs.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/18069856/pexels-photo-18069856.png?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-15",
+    timestamp: "2026-07-15T17:01:24.706Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "wildfire-smoke-canada-spread-midwest-east",
     title: "Wildfire Smoke from Canada to Spread Across Midwest and East",
     excerpt: "Wildfire smoke from Canada is expected to spread across the Midwest and East, posing health risks and reducing air quality. Learn how to stay safe and track updates.",
