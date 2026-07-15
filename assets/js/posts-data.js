@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "astros-trade-lance-mccullers-jr-to-brewers",
+    title: "Astros Trade Fan Favorite Lance McCullers Jr. to Brewers",
+    excerpt: "The Houston Astros are reportedly trading fan favorite Lance McCullers Jr. and Colton Gordon to the Milwaukee Brewers for pitching depth and prospect Jadyn Fielder.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/36780551/pexels-photo-36780551.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-15",
+    timestamp: "2026-07-15T23:01:16.534Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "top-10-free-ai-image-generators-2026",
     title: "Top 10 Free AI Image Generators in 2026",
     excerpt: "Discover the top 10 free AI image generators in 2026 for students and creators. Compare features, quality, and ease of use to find the best tool for your needs.",
