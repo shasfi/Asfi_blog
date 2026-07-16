@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "top-ai-chatbots-compared-2026",
+    title: "Top AI Chatbots Compared for 2026: Best Picks",
+    excerpt: "Explore the top AI chatbots for 2026, comparing features, use cases, and standout capabilities to help you choose the best tool for productivity and tech needs.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/30530412/pexels-photo-30530412.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-16",
+    timestamp: "2026-07-16T23:01:05.545Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "ontario-seeks-federal-aid-wildfires-evacuations",
     title: "Ontario seeks federal aid as wildfires force evacuations",
     excerpt: "Ontario requests federal support for evacuations amid devastating wildfires in remote towns. Officials warn of worsening conditions as blazes continue to spread.",
