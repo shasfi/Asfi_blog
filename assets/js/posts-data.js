@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "dylan-edwards-ku-football-offense",
+    title: "Dylan Edwards to bring new dimension to KU football offense",
+    excerpt: "Dylan Edwards, the dynamic running back, is set to add a new dimension to KU football's offense this season. Learn how his skills could transform the team's playbook.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/163449/american-football-football-match-sport-team-163449.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-16",
+    timestamp: "2026-07-16T12:01:53.543Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "pakistan-resists-uk-deportation-grooming-gang-leader",
     title: "Pakistan resists UK deportation of grooming gang leader",
     excerpt: "Pakistan refuses UK attempts to deport Shabir Ahmed, leader of a grooming gang, amid legal and diplomatic tensions. Learn the latest on this high-profile case.",
