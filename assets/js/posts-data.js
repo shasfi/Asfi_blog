@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "pakistan-resists-uk-deportation-grooming-gang-leader",
+    title: "Pakistan resists UK deportation of grooming gang leader",
+    excerpt: "Pakistan refuses UK attempts to deport Shabir Ahmed, leader of a grooming gang, amid legal and diplomatic tensions. Learn the latest on this high-profile case.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/37730955/pexels-photo-37730955.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-16",
+    timestamp: "2026-07-16T12:01:16.456Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "donald-trump-endorses-mike-lindell-minnesota-governor",
     title: "President Donald Trump Endorses Mike Lindell for Minnesota Governor",
     excerpt: "President Donald Trump has endorsed Mike Lindell, founder of MyPillow, for Minnesota governor. Learn what this means for the election and Lindell's political ambitions.",
