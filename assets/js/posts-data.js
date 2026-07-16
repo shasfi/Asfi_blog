@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "sony-playstation-all-digital-backlash-lawsuits",
+    title: "Sony faces backlash and lawsuits over PlayStation's all-digital future",
+    excerpt: "Sony faces growing backlash and legal challenges over PlayStation's shift to an all-digital future, with lawsuits and antitrust complaints mounting worldwide.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/9409819/pexels-photo-9409819.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-16",
+    timestamp: "2026-07-16T17:00:57.848Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "dylan-edwards-ku-football-offense",
     title: "Dylan Edwards to bring new dimension to KU football offense",
     excerpt: "Dylan Edwards, the dynamic running back, is set to add a new dimension to KU football's offense this season. Learn how his skills could transform the team's playbook.",
