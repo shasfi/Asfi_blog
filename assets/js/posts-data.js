@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "best-ai-resume-cover-letter-builders-2026",
+    title: "Best AI Resume and Cover Letter Builders in 2026",
+    excerpt: "Discover the best AI resume and cover letter builders in 2026 for students and professionals. Compare features, usability, and standout tools for job applications.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/270238/pexels-photo-270238.png?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-16",
+    timestamp: "2026-07-16T23:02:18.626Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "top-ai-chatbots-compared-2026",
     title: "Top AI Chatbots Compared for 2026: Best Picks",
     excerpt: "Explore the top AI chatbots for 2026, comparing features, use cases, and standout capabilities to help you choose the best tool for productivity and tech needs.",
