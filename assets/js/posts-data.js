@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "ontario-seeks-federal-aid-wildfires-evacuations",
+    title: "Ontario seeks federal aid as wildfires force evacuations",
+    excerpt: "Ontario requests federal support for evacuations amid devastating wildfires in remote towns. Officials warn of worsening conditions as blazes continue to spread.",
+    category: "General",
+    image: "https://images.pexels.com/photos/33622178/pexels-photo-33622178.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-16",
+    timestamp: "2026-07-16T21:36:37.447Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "sony-playstation-all-digital-backlash-lawsuits",
     title: "Sony faces backlash and lawsuits over PlayStation's all-digital future",
     excerpt: "Sony faces growing backlash and legal challenges over PlayStation's shift to an all-digital future, with lawsuits and antitrust complaints mounting worldwide.",
