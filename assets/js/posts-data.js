@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "donald-trump-endorses-mike-lindell-minnesota-governor",
+    title: "President Donald Trump Endorses Mike Lindell for Minnesota Governor",
+    excerpt: "President Donald Trump has endorsed Mike Lindell, founder of MyPillow, for Minnesota governor. Learn what this means for the election and Lindell's political ambitions.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/8850874/pexels-photo-8850874.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-16",
+    timestamp: "2026-07-16T02:01:25.965Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "astros-trade-lance-mccullers-jr-to-brewers",
     title: "Astros Trade Fan Favorite Lance McCullers Jr. to Brewers",
     excerpt: "The Houston Astros are reportedly trading fan favorite Lance McCullers Jr. and Colton Gordon to the Milwaukee Brewers for pitching depth and prospect Jadyn Fielder.",
