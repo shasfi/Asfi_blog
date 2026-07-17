@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "top-vs-code-extensions-developers-need-2026",
+    title: "Top 10 VS Code Extensions Developers Need in 2026",
+    excerpt: "Discover the top 10 VS Code extensions every developer should use in 2026 for productivity, debugging, and seamless coding. Essential tools for any tech stack.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/12902862/pexels-photo-12902862.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-17",
+    timestamp: "2026-07-17T17:01:05.675Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "royal-birkdale-course-record-history-and-key-facts",
     title: "Royal Birkdale Course Record: History and Key Facts",
     excerpt: "The Royal Birkdale course record is held by a professional golfer who shot a historic low round. Learn about the record, its significance, and past champions.",
