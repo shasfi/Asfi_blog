@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "nfc-west-training-camp-2026-preview",
+    title: "NFC West Training Camp 2026 Preview: Key Storylines",
+    excerpt: "Previewing the top NFC West training camp storylines for 2026, including updates on the 49ers, Cardinals, Rams, and Seahawks as they prepare for the NFL season.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/3102323/pexels-photo-3102323.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-17",
+    timestamp: "2026-07-17T02:01:01.700Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "best-ai-resume-cover-letter-builders-2026",
     title: "Best AI Resume and Cover Letter Builders in 2026",
     excerpt: "Discover the best AI resume and cover letter builders in 2026 for students and professionals. Compare features, usability, and standout tools for job applications.",
