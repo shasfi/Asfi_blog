@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "nba-summer-league-scouting-report-top-rookies",
+    title: "NBA Summer League Scouting Report: Top Rookies Show Star Potential",
+    excerpt: "Discover how the top rookies in the NBA Summer League are already showcasing stardom-bound potential. Insights and analysis on standout performances and future stars.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/32348571/pexels-photo-32348571.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-17",
+    timestamp: "2026-07-17T23:01:01.890Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "top-vs-code-extensions-developers-need-2026",
     title: "Top 10 VS Code Extensions Developers Need in 2026",
     excerpt: "Discover the top 10 VS Code extensions every developer should use in 2026 for productivity, debugging, and seamless coding. Essential tools for any tech stack.",
