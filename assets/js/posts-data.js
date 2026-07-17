@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "royal-birkdale-course-record-history-and-key-facts",
+    title: "Royal Birkdale Course Record: History and Key Facts",
+    excerpt: "The Royal Birkdale course record is held by a professional golfer who shot a historic low round. Learn about the record, its significance, and past champions.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/19333442/pexels-photo-19333442.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-17",
+    timestamp: "2026-07-17T12:00:59.660Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "nfc-west-training-camp-2026-preview",
     title: "NFC West Training Camp 2026 Preview: Key Storylines",
     excerpt: "Previewing the top NFC West training camp storylines for 2026, including updates on the 49ers, Cardinals, Rams, and Seahawks as they prepare for the NFL season.",
