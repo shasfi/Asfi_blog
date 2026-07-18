@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "sacramento-county-woman-identified-deadly-boat-incident",
+    title: "Sacramento County woman identified in deadly San Francisco Bay boat incident",
+    excerpt: "A Sacramento County woman has been identified as the second victim in the deadly San Francisco Bay boat sinking that claimed four lives. Authorities continue search efforts.",
+    category: "General",
+    image: "https://images.pexels.com/photos/17206206/pexels-photo-17206206.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-18",
+    timestamp: "2026-07-18T12:00:58.482Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "fever-score-caitlin-clark-wnba-history-200-3-pointers",
     title: "Fever Score: Caitlin Clark Makes WNBA History with 200 3-Pointers",
     excerpt: "Caitlin Clark sets a WNBA record for fastest to 200 career 3-pointers, redefining the Fever score in women's basketball. Learn how she's changing the game.",
