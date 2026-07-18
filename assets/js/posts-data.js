@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "fever-score-caitlin-clark-wnba-history-200-3-pointers",
+    title: "Fever Score: Caitlin Clark Makes WNBA History with 200 3-Pointers",
+    excerpt: "Caitlin Clark sets a WNBA record for fastest to 200 career 3-pointers, redefining the Fever score in women's basketball. Learn how she's changing the game.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/14060661/pexels-photo-14060661.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-18",
+    timestamp: "2026-07-18T02:01:00.831Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "nba-summer-league-scouting-report-top-rookies",
     title: "NBA Summer League Scouting Report: Top Rookies Show Star Potential",
     excerpt: "Discover how the top rookies in the NBA Summer League are already showcasing stardom-bound potential. Insights and analysis on standout performances and future stars.",
