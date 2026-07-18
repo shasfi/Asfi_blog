@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "lebron-james-praises-caitlin-clark-wnba-record",
+    title: "LeBron James praises Caitlin Clark after historic 45-point WNBA game",
+    excerpt: "LeBron James applauded Caitlin Clark on Instagram after her record-breaking 45-point, 10-assist performance for the Indiana Fever, marking a historic WNBA milestone.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/30049751/pexels-photo-30049751.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-18",
+    timestamp: "2026-07-18T23:00:57.672Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "evan-blass-leak-samsung-z-fold8-galaxy-watch9-specs",
     title: "Evan Blass Leak Reveals Samsung Z Fold8, Z Fold8 Ultra and Galaxy Watch9 Specs",
     excerpt: "New leaks by Evan Blass confirm Samsung Z Fold8, Z Fold8 Ultra, and Galaxy Watch9 specs ahead of Galaxy Unpacked. Details on design, display tech, and expected features.",
