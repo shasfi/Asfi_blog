@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "evan-blass-leak-samsung-z-fold8-galaxy-watch9-specs",
+    title: "Evan Blass Leak Reveals Samsung Z Fold8, Z Fold8 Ultra and Galaxy Watch9 Specs",
+    excerpt: "New leaks by Evan Blass confirm Samsung Z Fold8, Z Fold8 Ultra, and Galaxy Watch9 specs ahead of Galaxy Unpacked. Details on design, display tech, and expected features.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/19281807/pexels-photo-19281807.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-18",
+    timestamp: "2026-07-18T17:00:52.430Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "sacramento-county-woman-identified-deadly-boat-incident",
     title: "Sacramento County woman identified in deadly San Francisco Bay boat incident",
     excerpt: "A Sacramento County woman has been identified as the second victim in the deadly San Francisco Bay boat sinking that claimed four lives. Authorities continue search efforts.",
