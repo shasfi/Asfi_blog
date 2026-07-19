@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "us-iran-trade-strikes-tensions-escalate",
+    title: "US and Iran trade strikes as tensions escalate over troop deaths",
+    excerpt: "The US and Iran have exchanged military strikes after American troops were killed, escalating tensions in the Middle East. Read the latest on the conflict.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/33610644/pexels-photo-33610644.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-19",
+    timestamp: "2026-07-19T23:00:55.918Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "jonas-vingegaard-crashes-out-of-tour-de-france",
     title: "Jonas Vingegaard Crashes Out of Tour de France: What Happened",
     excerpt: "Jonas Vingegaard crashes out of Tour de France after a Stage 15 fall. Learn the details of the incident, its impact on the race, and what’s next for the Danish cyclist.",
