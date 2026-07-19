@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "amber-alert-washington-search-for-abducted-4-year-old",
+    title: "AMBER Alert Washington: Search for Abducted 4-Year-Old",
+    excerpt: "An AMBER Alert has been issued in Washington for a 4-year-old girl abducted in Kennewick. Learn the details and how to assist in the search.",
+    category: "General",
+    image: "https://images.pexels.com/photos/33645588/pexels-photo-33645588.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-19",
+    timestamp: "2026-07-19T02:00:53.447Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "lebron-james-praises-caitlin-clark-wnba-record",
     title: "LeBron James praises Caitlin Clark after historic 45-point WNBA game",
     excerpt: "LeBron James applauded Caitlin Clark on Instagram after her record-breaking 45-point, 10-assist performance for the Indiana Fever, marking a historic WNBA milestone.",
