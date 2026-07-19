@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "sam-burns-wife-caroline-open-championship",
+    title: "Sam Burns Wife Caroline: Meet the Woman Behind His Open Championship Run",
+    excerpt: "Sam Burns' wife Caroline has been a key supporter in his golf career. Learn about their relationship and her role in his Open Championship performance at Birkdale.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/6230144/pexels-photo-6230144.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-19",
+    timestamp: "2026-07-19T12:01:05.987Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "amber-alert-washington-search-for-abducted-4-year-old",
     title: "AMBER Alert Washington: Search for Abducted 4-Year-Old",
     excerpt: "An AMBER Alert has been issued in Washington for a 4-year-old girl abducted in Kennewick. Learn the details and how to assist in the search.",
