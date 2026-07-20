@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "best-free-ai-writing-grammar-tools-for-students",
+    title: "Best Free AI Writing and Grammar Tools for Students",
+    excerpt: "Discover the best free AI writing and grammar tools for students to enhance productivity, improve essays, and avoid mistakes. Perfect for academic success.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/5537938/pexels-photo-5537938.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-20",
+    timestamp: "2026-07-20T12:01:00.366Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "earthquake-in-peru-kills-6-displaces-hundreds",
     title: "Earthquake in Peru Kills 6 and Displaces Hundreds",
     excerpt: "A powerful earthquake in Peru's Andes region has killed at least 6 people and displaced hundreds. Authorities report collapsed buildings and ongoing rescue efforts.",
