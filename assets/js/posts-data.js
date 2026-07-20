@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "woman-trial-murder-children-no-criminal-responsibility",
+    title: "Woman on trial for killing 3 children claims no criminal responsibility",
+    excerpt: "A woman is on trial for the murder of her three children, with her defense arguing she may not be criminally responsible due to mental health issues. The case raises questions about postpartum mental health.",
+    category: "Health",
+    image: "https://images.pexels.com/photos/6077328/pexels-photo-6077328.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-20",
+    timestamp: "2026-07-20T23:00:51.462Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "spiderman-brand-new-day-mcu-timeline",
     title: "Spider-Man: Brand New Day Confirmed in MCU Timeline by Kevin Feige",
     excerpt: "Kevin Feige confirms 'Spider-Man: Brand New Day' is part of the MCU timeline. Learn how this storyline integrates into Marvel's cinematic universe.",
