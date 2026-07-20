@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "earthquake-in-peru-kills-6-displaces-hundreds",
+    title: "Earthquake in Peru Kills 6 and Displaces Hundreds",
+    excerpt: "A powerful earthquake in Peru's Andes region has killed at least 6 people and displaced hundreds. Authorities report collapsed buildings and ongoing rescue efforts.",
+    category: "General",
+    image: "https://images.pexels.com/photos/14000708/pexels-photo-14000708.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-20",
+    timestamp: "2026-07-20T02:00:55.249Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "us-iran-trade-strikes-tensions-escalate",
     title: "US and Iran trade strikes as tensions escalate over troop deaths",
     excerpt: "The US and Iran have exchanged military strikes after American troops were killed, escalating tensions in the Middle East. Read the latest on the conflict.",
