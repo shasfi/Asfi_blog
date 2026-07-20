@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "spiderman-brand-new-day-mcu-timeline",
+    title: "Spider-Man: Brand New Day Confirmed in MCU Timeline by Kevin Feige",
+    excerpt: "Kevin Feige confirms 'Spider-Man: Brand New Day' is part of the MCU timeline. Learn how this storyline integrates into Marvel's cinematic universe.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/7809123/pexels-photo-7809123.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-20",
+    timestamp: "2026-07-20T17:21:15.450Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "best-free-ai-writing-grammar-tools-for-students",
     title: "Best Free AI Writing and Grammar Tools for Students",
     excerpt: "Discover the best free AI writing and grammar tools for students to enhance productivity, improve essays, and avoid mistakes. Perfect for academic success.",
