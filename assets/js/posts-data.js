@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "ai-rise-universal-entertainment-app",
+    title: "AI and the Rise of the Universal Entertainment App",
+    excerpt: "AI is transforming entertainment with universal apps that combine streaming, gaming, and social media. Learn how this trend is reshaping digital experiences.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/8294791/pexels-photo-8294791.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-21",
+    timestamp: "2026-07-21T23:01:03.608Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "light-flip-phone-review-colorful-affordable-throwback",
     title: "Light Flip Phone Review: A Colorful, Affordable Throwback",
     excerpt: "The Light Flip phone combines retro design with modern minimalism at an affordable price. Discover why this colorful flip phone is trending in tech circles.",
