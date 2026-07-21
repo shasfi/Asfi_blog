@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "best-ai-video-editing-tools-2026",
+    title: "Best AI Video Editing Tools for Content Creators in 2026",
+    excerpt: "Discover the best AI video editing tools for content creators in 2026, featuring cutting-edge automation, intuitive interfaces, and professional-grade effects.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/31718971/pexels-photo-31718971.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-21",
+    timestamp: "2026-07-21T02:01:03.548Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "woman-trial-murder-children-no-criminal-responsibility",
     title: "Woman on trial for killing 3 children claims no criminal responsibility",
     excerpt: "A woman is on trial for the murder of her three children, with her defense arguing she may not be criminally responsible due to mental health issues. The case raises questions about postpartum mental health.",
