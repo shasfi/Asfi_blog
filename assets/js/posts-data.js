@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "light-flip-phone-review-colorful-affordable-throwback",
+    title: "Light Flip Phone Review: A Colorful, Affordable Throwback",
+    excerpt: "The Light Flip phone combines retro design with modern minimalism at an affordable price. Discover why this colorful flip phone is trending in tech circles.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/10609069/pexels-photo-10609069.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-21",
+    timestamp: "2026-07-21T17:00:55.190Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "us-troops-injured-iran-retaliation",
     title: "Nearly 100 US troops injured as Iran retaliates against allies",
     excerpt: "The Pentagon reports almost 100 US troops injured in recent weeks amid escalating tensions with Iran, which has launched reprisal attacks on American allies.",
