@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "us-troops-injured-iran-retaliation",
+    title: "Nearly 100 US troops injured as Iran retaliates against allies",
+    excerpt: "The Pentagon reports almost 100 US troops injured in recent weeks amid escalating tensions with Iran, which has launched reprisal attacks on American allies.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/3743542/pexels-photo-3743542.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-21",
+    timestamp: "2026-07-21T12:00:53.189Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "best-ai-video-editing-tools-2026",
     title: "Best AI Video Editing Tools for Content Creators in 2026",
     excerpt: "Discover the best AI video editing tools for content creators in 2026, featuring cutting-edge automation, intuitive interfaces, and professional-grade effects.",
