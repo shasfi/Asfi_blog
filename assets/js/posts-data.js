@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "top-ai-presentation-generators-2026",
+    title: "Top 10 AI Presentation Generators in 2026",
+    excerpt: "Discover the best AI presentation generators in 2026 for students and professionals. Compare features, ease of use, and standout tools for creating stunning slide decks.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/15863044/pexels-photo-15863044.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-22",
+    timestamp: "2026-07-22T17:01:04.275Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "iphone-18-rumors-ranked-by-likelihood",
     title: "iPhone 18 Rumors: 20 Claims Ranked by Likelihood",
     excerpt: "A reality check on iPhone 18 rumors: we rank 20 claims by likelihood based on Apple's history, leaks, and expert analysis. Get the latest on release date, Pro models, and camera upgrades.",
