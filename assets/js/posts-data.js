@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "iphone-18-rumors-ranked-by-likelihood",
+    title: "iPhone 18 Rumors: 20 Claims Ranked by Likelihood",
+    excerpt: "A reality check on iPhone 18 rumors: we rank 20 claims by likelihood based on Apple's history, leaks, and expert analysis. Get the latest on release date, Pro models, and camera upgrades.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/6913351/pexels-photo-6913351.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-22",
+    timestamp: "2026-07-22T12:26:44.619Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "world-cup-final-shatters-us-soccer-viewership-records",
     title: "World Cup Final Shatters U.S. Soccer Viewership Records",
     excerpt: "The World Cup final drew over 60 million viewers in the U.S., setting a new record for soccer viewership. Learn why this historic moment matters for sports broadcasting.",
