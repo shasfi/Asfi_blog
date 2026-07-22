@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "world-cup-final-shatters-us-soccer-viewership-records",
+    title: "World Cup Final Shatters U.S. Soccer Viewership Records",
+    excerpt: "The World Cup final drew over 60 million viewers in the U.S., setting a new record for soccer viewership. Learn why this historic moment matters for sports broadcasting.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/38109922/pexels-photo-38109922.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-22",
+    timestamp: "2026-07-22T02:00:59.724Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "ai-rise-universal-entertainment-app",
     title: "AI and the Rise of the Universal Entertainment App",
     excerpt: "AI is transforming entertainment with universal apps that combine streaming, gaming, and social media. Learn how this trend is reshaping digital experiences.",
