@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "houthi-red-sea-blockade-economic-impact",
+    title: "Houthi Red Sea Blockade Sparks Global Economic Concerns",
+    excerpt: "The Houthi blockade in the Red Sea disrupts shipping routes, raising fears of economic instability. Learn how this impacts global trade and oil markets.",
+    category: "Business",
+    image: "https://images.pexels.com/photos/13102530/pexels-photo-13102530.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-22",
+    timestamp: "2026-07-22T23:00:57.859Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "top-ai-presentation-generators-2026",
     title: "Top 10 AI Presentation Generators in 2026",
     excerpt: "Discover the best AI presentation generators in 2026 for students and professionals. Compare features, ease of use, and standout tools for creating stunning slide decks.",
