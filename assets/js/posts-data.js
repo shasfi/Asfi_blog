@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "tyreek-hill-no-power-left-leg",
+    title: "Tyreek Hill Reveals He Has No Power in Left Leg After Injury",
+    excerpt: "Tyreek Hill, the former Dolphins wide receiver, shared that he still has no power in his left leg 10 months after surgery. Learn more about his recovery and future.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/37234920/pexels-photo-37234920.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-23",
+    timestamp: "2026-07-23T21:36:51.587Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "ice-officer-vetting-scrutiny-hiring-push",
     title: "ICE Officer Vetting Under Scrutiny Amid Hiring Push",
     excerpt: "Amid a major hiring push, ICE officer vetting faces scrutiny as experts question training standards and oversight following deadly incidents involving agents.",
