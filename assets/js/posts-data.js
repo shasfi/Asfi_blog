@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "ukraine-new-military-chief-retaliation-russia",
+    title: "Ukraine’s new military chief vows stronger retaliation against Russia",
+    excerpt: "Ukraine’s new military chief pledges to escalate retaliation against Russia amid leadership shakeups and strategic shifts. Analysis of Zelensky’s latest moves.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/11834883/pexels-photo-11834883.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-23",
+    timestamp: "2026-07-23T23:00:57.127Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "tyreek-hill-no-power-left-leg",
     title: "Tyreek Hill Reveals He Has No Power in Left Leg After Injury",
     excerpt: "Tyreek Hill, the former Dolphins wide receiver, shared that he still has no power in his left leg 10 months after surgery. Learn more about his recovery and future.",
