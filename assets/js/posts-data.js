@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "darragh-macanthony-peterborough-united-defensive-injuries",
+    title: "Darragh MacAnthony responds to Peterborough United defensive injury concerns",
+    excerpt: "Peterborough United chairman Darragh MacAnthony addresses fan concerns over defensive injury issues, offering insight into the club's strategy moving forward.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/33317197/pexels-photo-33317197.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-23",
+    timestamp: "2026-07-23T12:33:24.292Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "jerusalem-holy-sites-nesting-swifts",
     title: "Jerusalem’s Holy Sites Host Ancient Colonies of Nesting Swifts",
     excerpt: "Discover how Jerusalem’s holy sites are home to some of the oldest colonies of nesting swifts, blending natural history with the city’s rich cultural heritage.",
