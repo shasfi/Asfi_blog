@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "ice-officer-vetting-scrutiny-hiring-push",
+    title: "ICE Officer Vetting Under Scrutiny Amid Hiring Push",
+    excerpt: "Amid a major hiring push, ICE officer vetting faces scrutiny as experts question training standards and oversight following deadly incidents involving agents.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/35986122/pexels-photo-35986122.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-23",
+    timestamp: "2026-07-23T17:00:54.231Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "darragh-macanthony-peterborough-united-defensive-injuries",
     title: "Darragh MacAnthony responds to Peterborough United defensive injury concerns",
     excerpt: "Peterborough United chairman Darragh MacAnthony addresses fan concerns over defensive injury issues, offering insight into the club's strategy moving forward.",
