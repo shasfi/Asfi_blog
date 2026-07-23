@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "jerusalem-holy-sites-nesting-swifts",
+    title: "Jerusalem’s Holy Sites Host Ancient Colonies of Nesting Swifts",
+    excerpt: "Discover how Jerusalem’s holy sites are home to some of the oldest colonies of nesting swifts, blending natural history with the city’s rich cultural heritage.",
+    category: "Science",
+    image: "https://images.pexels.com/photos/17633591/pexels-photo-17633591.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-23",
+    timestamp: "2026-07-23T02:01:08.869Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "houthi-red-sea-blockade-economic-impact",
     title: "Houthi Red Sea Blockade Sparks Global Economic Concerns",
     excerpt: "The Houthi blockade in the Red Sea disrupts shipping routes, raising fears of economic instability. Learn how this impacts global trade and oil markets.",
