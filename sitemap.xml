@@ -498,4 +498,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/tyreek-hill-no-power-left-leg.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
