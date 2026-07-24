@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "us-saudi-nuclear-deal-status",
+    title: "Is the US-Saudi Nuclear Deal On, or in Limbo?",
+    excerpt: "Explore the current status of the US-Saudi nuclear deal and factors influencing its future, including geopolitical tensions and normalization with Israel.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/16705829/pexels-photo-16705829.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-24",
+    timestamp: "2026-07-24T17:00:45.556Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "attacker-allahu-akbar-stabs-jewish-man-nyc",
     title: "Attacker shouting 'Allahu Akbar' stabs Jewish man in NYC",
     excerpt: "A man shouting 'Allahu Akbar' stabbed a Jewish man with a screwdriver in NYC, sparking a hate crime investigation. Latest updates on the Upper West Side attack.",
