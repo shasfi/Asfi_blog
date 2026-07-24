@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "the-odyssey-cast-and-what-to-know-before-watching",
+    title: "The Odyssey Cast and What to Know Before Watching",
+    excerpt: "Discover the cast of The Odyssey, key characters, and plot details to enhance your viewing experience before watching this trending adaptation.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/20290070/pexels-photo-20290070.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-24",
+    timestamp: "2026-07-24T23:00:51.766Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "us-saudi-nuclear-deal-status",
     title: "Is the US-Saudi Nuclear Deal On, or in Limbo?",
     excerpt: "Explore the current status of the US-Saudi nuclear deal and factors influencing its future, including geopolitical tensions and normalization with Israel.",
