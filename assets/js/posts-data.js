@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "giuliana-rancic-jerry-oconnell-breakup",
+    title: "Giuliana Rancic: Jerry O’Connell Addresses Past Breakup",
+    excerpt: "Giuliana Rancic's past with Jerry O’Connell resurfaces as he discusses their breakup over a decade later. Discover more about their history.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/6670155/pexels-photo-6670155.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-24",
+    timestamp: "2026-07-24T02:00:43.683Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "ukraine-new-military-chief-retaliation-russia",
     title: "Ukraine’s new military chief vows stronger retaliation against Russia",
     excerpt: "Ukraine’s new military chief pledges to escalate retaliation against Russia amid leadership shakeups and strategic shifts. Analysis of Zelensky’s latest moves.",
