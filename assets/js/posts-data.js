@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "attacker-allahu-akbar-stabs-jewish-man-nyc",
+    title: "Attacker shouting 'Allahu Akbar' stabs Jewish man in NYC",
+    excerpt: "A man shouting 'Allahu Akbar' stabbed a Jewish man with a screwdriver in NYC, sparking a hate crime investigation. Latest updates on the Upper West Side attack.",
+    category: "General",
+    image: "https://images.pexels.com/photos/38455472/pexels-photo-38455472.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-24",
+    timestamp: "2026-07-24T12:00:54.538Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "giuliana-rancic-jerry-oconnell-breakup",
     title: "Giuliana Rancic: Jerry O’Connell Addresses Past Breakup",
     excerpt: "Giuliana Rancic's past with Jerry O’Connell resurfaces as he discusses their breakup over a decade later. Discover more about their history.",
