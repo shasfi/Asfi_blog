@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "georgias-okefenokee-swamp-unesco-world-heritage-site",
+    title: "Georgia’s Okefenokee Swamp Named UNESCO World Heritage Site",
+    excerpt: "Georgia’s Okefenokee Swamp has been designated a UNESCO World Heritage site, recognizing its ecological importance and cultural significance. Learn more about this milestone.",
+    category: "General",
+    image: "https://images.pexels.com/photos/14603517/pexels-photo-14603517.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-25",
+    timestamp: "2026-07-25T17:00:56.955Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "jon-bon-jovi-ends-show-madison-square-garden",
     title: "Jon Bon Jovi Abruptly Ends Show at Madison Square Garden",
     excerpt: "Jon Bon Jovi shocked fans by abruptly ending his Madison Square Garden show. Learn why the rock icon cut his performance short and what it means for his legacy.",
