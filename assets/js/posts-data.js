@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "jon-bon-jovi-ends-show-madison-square-garden",
+    title: "Jon Bon Jovi Abruptly Ends Show at Madison Square Garden",
+    excerpt: "Jon Bon Jovi shocked fans by abruptly ending his Madison Square Garden show. Learn why the rock icon cut his performance short and what it means for his legacy.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/27817824/pexels-photo-27817824.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-25",
+    timestamp: "2026-07-25T12:01:16.746Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "pakistan-iran-us-talks-china-push",
     title: "Pakistan and Iran Seek US Talks Through China’s Diplomatic Push",
     excerpt: "Pakistan and Iran are exploring renewed talks with the US, facilitated by China’s diplomatic efforts. Sources reveal details of this geopolitical development.",
