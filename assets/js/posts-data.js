@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "pakistan-iran-us-talks-china-push",
+    title: "Pakistan and Iran Seek US Talks Through China’s Diplomatic Push",
+    excerpt: "Pakistan and Iran are exploring renewed talks with the US, facilitated by China’s diplomatic efforts. Sources reveal details of this geopolitical development.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/6949994/pexels-photo-6949994.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-25",
+    timestamp: "2026-07-25T02:01:18.242Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "the-odyssey-cast-and-what-to-know-before-watching",
     title: "The Odyssey Cast and What to Know Before Watching",
     excerpt: "Discover the cast of The Odyssey, key characters, and plot details to enhance your viewing experience before watching this trending adaptation.",
