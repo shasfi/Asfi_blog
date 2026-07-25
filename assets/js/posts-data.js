@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "usyk-team-challenges-anthony-joshua-comeback-fight",
+    title: "Usyk’s Team Challenges Anthony Joshua Ahead of Comeback Fight",
+    excerpt: "Oleksandr Usyk’s team has urged Anthony Joshua to ‘show greatness’ in his comeback fight against Kristian Prenga. Explore the latest updates and analysis.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/31403621/pexels-photo-31403621.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-25",
+    timestamp: "2026-07-25T23:01:17.442Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "georgias-okefenokee-swamp-unesco-world-heritage-site",
     title: "Georgia’s Okefenokee Swamp Named UNESCO World Heritage Site",
     excerpt: "Georgia’s Okefenokee Swamp has been designated a UNESCO World Heritage site, recognizing its ecological importance and cultural significance. Learn more about this milestone.",
