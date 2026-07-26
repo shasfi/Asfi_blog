@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "ff14-housing-updates-inspired-by-wow",
+    title: "FF14 to Receive Two Major Housing Updates Inspired by World of Warcraft",
+    excerpt: "Final Fantasy 14 is set to get two major housing updates after Yoshi-P was inspired by World of Warcraft. Learn what changes are coming and why they matter.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/32772105/pexels-photo-32772105.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-26",
+    timestamp: "2026-07-26T17:01:15.020Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "cook-islands-eez-mapped-scientific-deep-ocean-voyage",
     title: "Cook Islands EEZ mapped in scientific deep ocean voyage",
     excerpt: "A scientific expedition has mapped deep ocean changes across the Cook Islands Exclusive Economic Zone (EEZ), revealing critical insights into marine ecosystems.",
