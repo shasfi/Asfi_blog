@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "pentagon-removes-4-troops-from-iran-war-death-toll",
+    title: "Pentagon Removes 4 Troops From Iran War Death Toll Amid Renewed Fighting",
+    excerpt: "The Pentagon has quietly removed 4 troops from the official Iran war death toll during renewed fighting, sparking outrage among military families and raising transparency concerns.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/32407600/pexels-photo-32407600.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-26",
+    timestamp: "2026-07-26T23:01:03.161Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "ff14-housing-updates-inspired-by-wow",
     title: "FF14 to Receive Two Major Housing Updates Inspired by World of Warcraft",
     excerpt: "Final Fantasy 14 is set to get two major housing updates after Yoshi-P was inspired by World of Warcraft. Learn what changes are coming and why they matter.",
