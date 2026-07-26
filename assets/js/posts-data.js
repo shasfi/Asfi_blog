@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "cook-islands-eez-mapped-scientific-deep-ocean-voyage",
+    title: "Cook Islands EEZ mapped in scientific deep ocean voyage",
+    excerpt: "A scientific expedition has mapped deep ocean changes across the Cook Islands Exclusive Economic Zone (EEZ), revealing critical insights into marine ecosystems.",
+    category: "Science",
+    image: "https://images.pexels.com/photos/30620493/pexels-photo-30620493.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-26",
+    timestamp: "2026-07-26T12:00:52.353Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "down-the-tubes-new-york-times-analysis",
     title: "Down the Tubes: Analyzing The New York Times' Latest Coverage",
     excerpt: "Explore the trending topic 'Down the Tubes' and its connection to The New York Times' latest coverage. Discover insights into media trends and public discourse.",
