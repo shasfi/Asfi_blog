@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "down-the-tubes-new-york-times-analysis",
+    title: "Down the Tubes: Analyzing The New York Times' Latest Coverage",
+    excerpt: "Explore the trending topic 'Down the Tubes' and its connection to The New York Times' latest coverage. Discover insights into media trends and public discourse.",
+    category: "General",
+    image: "https://images.pexels.com/photos/35755252/pexels-photo-35755252.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-26",
+    timestamp: "2026-07-26T02:01:21.324Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "usyk-team-challenges-anthony-joshua-comeback-fight",
     title: "Usyk’s Team Challenges Anthony Joshua Ahead of Comeback Fight",
     excerpt: "Oleksandr Usyk’s team has urged Anthony Joshua to ‘show greatness’ in his comeback fight against Kristian Prenga. Explore the latest updates and analysis.",
