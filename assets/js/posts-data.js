@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "wildfire-nears-bordeaux-evacuations-france",
+    title: "Wildfire Nears Bordeaux as Thousands Evacuate in France",
+    excerpt: "A wildfire is now just nine miles from Bordeaux, France, prompting mass evacuations and health warnings. Officials warn of worsening conditions as Europe battles extreme heat.",
+    category: "General",
+    image: "https://images.pexels.com/photos/33344945/pexels-photo-33344945.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-27",
+    timestamp: "2026-07-27T23:00:48.737Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "why-new-war-yemen-different-houthis",
     title: "Why a New War in Yemen Could Be Different for the Houthis",
     excerpt: "Explore why a new war in Yemen could be different for the Houthis, including their military gains, regional alliances, and the impact on global shipping routes.",
