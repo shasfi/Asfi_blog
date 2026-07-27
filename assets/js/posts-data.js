@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "why-new-war-yemen-different-houthis",
+    title: "Why a New War in Yemen Could Be Different for the Houthis",
+    excerpt: "Explore why a new war in Yemen could be different for the Houthis, including their military gains, regional alliances, and the impact on global shipping routes.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/16907640/pexels-photo-16907640.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-27",
+    timestamp: "2026-07-27T17:01:03.595Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "pentagon-removes-4-troops-from-iran-war-death-toll",
     title: "Pentagon Removes 4 Troops From Iran War Death Toll Amid Renewed Fighting",
     excerpt: "The Pentagon has quietly removed 4 troops from the official Iran war death toll during renewed fighting, sparking outrage among military families and raising transparency concerns.",
