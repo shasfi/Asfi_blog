@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "claude-codex-ai-apple-security-updates",
+    title: "Claude and Codex AI tools credited in Apple security updates",
+    excerpt: "Apple's latest iOS and macOS security updates credit Claude, Codex, and other AI tools for enhancing protection. Learn how AI is shaping Apple's security strategy.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-28",
+    timestamp: "2026-07-28T12:01:01.473Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "playstation-5-gta-6-download-codes-region-locked-xbox-unaffected",
     title: "PlayStation 5 GTA 6 Download Codes Region Locked, Xbox Unaffected",
     excerpt: "PlayStation 5 GTA 6 download codes are now region locked, causing issues for importers, while Xbox buyers remain unaffected. Learn why this disparity exists and its implications.",
