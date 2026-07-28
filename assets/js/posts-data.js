@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "us-walks-out-un-security-council-france-remarks",
+    title: "US Walks Out of UN Security Council Meeting During France Remarks",
+    excerpt: "The US delegation walked out of a UN Security Council meeting during France's remarks, reportedly protesting criticism of America's human rights record. Details on the diplomatic rift.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/33984563/pexels-photo-33984563.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-28",
+    timestamp: "2026-07-28T17:00:59.249Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "claude-codex-ai-apple-security-updates",
     title: "Claude and Codex AI tools credited in Apple security updates",
     excerpt: "Apple's latest iOS and macOS security updates credit Claude, Codex, and other AI tools for enhancing protection. Learn how AI is shaping Apple's security strategy.",
