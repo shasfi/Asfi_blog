@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "france-spain-wildfires-heatwave",
+    title: "France and Spain battle wildfires as new heatwave looms",
+    excerpt: "France and Spain are struggling to contain devastating wildfires amid extreme heat, with evacuations and threats to critical infrastructure as another heatwave approaches.",
+    category: "General",
+    image: "https://images.pexels.com/photos/4902032/pexels-photo-4902032.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-28",
+    timestamp: "2026-07-28T23:00:53.874Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "us-walks-out-un-security-council-france-remarks",
     title: "US Walks Out of UN Security Council Meeting During France Remarks",
     excerpt: "The US delegation walked out of a UN Security Council meeting during France's remarks, reportedly protesting criticism of America's human rights record. Details on the diplomatic rift.",
