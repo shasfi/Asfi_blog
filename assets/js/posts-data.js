@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "playstation-5-gta-6-download-codes-region-locked-xbox-unaffected",
+    title: "PlayStation 5 GTA 6 Download Codes Region Locked, Xbox Unaffected",
+    excerpt: "PlayStation 5 GTA 6 download codes are now region locked, causing issues for importers, while Xbox buyers remain unaffected. Learn why this disparity exists and its implications.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/4511372/pexels-photo-4511372.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-28",
+    timestamp: "2026-07-28T02:01:03.358Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "wildfire-nears-bordeaux-evacuations-france",
     title: "Wildfire Nears Bordeaux as Thousands Evacuate in France",
     excerpt: "A wildfire is now just nine miles from Bordeaux, France, prompting mass evacuations and health warnings. Officials warn of worsening conditions as Europe battles extreme heat.",
