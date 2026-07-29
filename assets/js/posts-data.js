@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "deportation-overland-couple-shot-dead-guatemala",
+    title: "Deportation Impact: Overland Couple Shot Dead in Guatemala",
+    excerpt: "Deportation incidents lead to tragedies, like the Overland couple shot dead in Guatemala after an ICE stop. Understand the implications.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/36984942/pexels-photo-36984942.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-29",
+    timestamp: "2026-07-29T12:00:41.325Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "cpi-inflation-remains-high-above-rba-target",
     title: "CPI Inflation Remains High Above RBA Target",
     excerpt: "CPI inflation in Australia continues to outpace the RBA's target range, impacting household budgets and economic policy. Learn what this means for interest rates and prices.",
