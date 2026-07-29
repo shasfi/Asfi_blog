@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "whats-the-catch-with-the-apple-upgrade-program",
+    title: "What’s the Catch with the Apple Upgrade Program?",
+    excerpt: "Discover the catch with the Apple Upgrade program, including leasing options, costs, and partnership insights with Klarna.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/6913311/pexels-photo-6913311.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-29",
+    timestamp: "2026-07-29T23:00:46.368Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "tarik-skubal-trade-tier-rankings-mlb",
     title: "Tier Rankings For a Tigers Tarik Skubal Trade to Every MLB Team",
     excerpt: "Explore tier rankings for a Tarik Skubal trade to every MLB team amid latest rumors surrounding the Tigers ace pitcher.",
