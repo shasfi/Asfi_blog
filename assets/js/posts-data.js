@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "tarik-skubal-trade-tier-rankings-mlb",
+    title: "Tier Rankings For a Tigers Tarik Skubal Trade to Every MLB Team",
+    excerpt: "Explore tier rankings for a Tarik Skubal trade to every MLB team amid latest rumors surrounding the Tigers ace pitcher.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/11901406/pexels-photo-11901406.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-29",
+    timestamp: "2026-07-29T17:00:54.440Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "deportation-overland-couple-shot-dead-guatemala",
     title: "Deportation Impact: Overland Couple Shot Dead in Guatemala",
     excerpt: "Deportation incidents lead to tragedies, like the Overland couple shot dead in Guatemala after an ICE stop. Understand the implications.",
