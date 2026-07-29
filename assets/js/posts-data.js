@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "cpi-inflation-remains-high-above-rba-target",
+    title: "CPI Inflation Remains High Above RBA Target",
+    excerpt: "CPI inflation in Australia continues to outpace the RBA's target range, impacting household budgets and economic policy. Learn what this means for interest rates and prices.",
+    category: "Business",
+    image: "https://images.pexels.com/photos/29899905/pexels-photo-29899905.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-29",
+    timestamp: "2026-07-29T02:01:01.811Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "france-spain-wildfires-heatwave",
     title: "France and Spain battle wildfires as new heatwave looms",
     excerpt: "France and Spain are struggling to contain devastating wildfires amid extreme heat, with evacuations and threats to critical infrastructure as another heatwave approaches.",
