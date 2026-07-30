@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "grynspan-un-chief-poll",
+    title: "Informal Poll Indicates Costa Rica's Grynspan Leads UN Chief Race",
+    excerpt: "An informal poll shows Costa Rica's Grynspan ahead in the race to become the next UN chief, marking a significant shift in global leadership dynamics.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/16146279/pexels-photo-16146279.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-30",
+    timestamp: "2026-07-30T23:00:39.336Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "jake-paul-mvp-merges-with-pfl",
     title: "Jake Paul's MVP Merges with PFL in MMA Landscape Shift",
     excerpt: "Jake Paul's MVP merges with PFL, creating a seismic shift in the MMA landscape that redefines combat sports promotion and athlete opportunities.",
