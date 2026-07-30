@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "anthony-smith-released-bond-felony-charges",
+    title: "Anthony Smith Released on $500K Bond, Faces Felony Charges",
+    excerpt: "Anthony Smith was released on a $500K bond after facing three felony charges including terroristic threats and domestic violence.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/7785088/pexels-photo-7785088.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-30",
+    timestamp: "2026-07-30T02:00:38.673Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "whats-the-catch-with-the-apple-upgrade-program",
     title: "What’s the Catch with the Apple Upgrade Program?",
     excerpt: "Discover the catch with the Apple Upgrade program, including leasing options, costs, and partnership insights with Klarna.",
