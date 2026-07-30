@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "unc-bill-belichick-crisis-mode-decisions",
+    title: "UNC and Bill Belichick in Crisis Mode Require Tough Decisions",
+    excerpt: "UNC and Bill Belichick in crisis mode require difficult decisions to navigate their troubled paths in sports and leadership.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/6766999/pexels-photo-6766999.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-30",
+    timestamp: "2026-07-30T12:00:44.533Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "anthony-smith-released-bond-felony-charges",
     title: "Anthony Smith Released on $500K Bond, Faces Felony Charges",
     excerpt: "Anthony Smith was released on a $500K bond after facing three felony charges including terroristic threats and domestic violence.",
