@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "2026-mlb-trade-deadline-preview-passans-insights",
+    title: "2026 MLB Trade Deadline Preview: Passan's Insights for Every Team",
+    excerpt: "Explore Passan's insights in the 2026 MLB trade deadline preview, detailing team strategies and potential trade candidates.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/26890858/pexels-photo-26890858.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-30",
+    timestamp: "2026-07-30T17:00:47.326Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "unc-bill-belichick-crisis-mode-decisions",
     title: "UNC and Bill Belichick in Crisis Mode Require Tough Decisions",
     excerpt: "UNC and Bill Belichick in crisis mode require difficult decisions to navigate their troubled paths in sports and leadership.",
