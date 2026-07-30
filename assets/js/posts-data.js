@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "jake-paul-mvp-merges-with-pfl",
+    title: "Jake Paul's MVP Merges with PFL in MMA Landscape Shift",
+    excerpt: "Jake Paul's MVP merges with PFL, creating a seismic shift in the MMA landscape that redefines combat sports promotion and athlete opportunities.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/5424764/pexels-photo-5424764.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-30",
+    timestamp: "2026-07-30T21:36:23.719Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "2026-mlb-trade-deadline-preview-passans-insights",
     title: "2026 MLB Trade Deadline Preview: Passan's Insights for Every Team",
     excerpt: "Explore Passan's insights in the 2026 MLB trade deadline preview, detailing team strategies and potential trade candidates.",
