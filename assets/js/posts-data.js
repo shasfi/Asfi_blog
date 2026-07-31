@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "andy-burnham-regional-mayors-share-income-tax",
+    title: "Andy Burnham to Give Regional Mayors Share of Income Tax",
+    excerpt: "Andy Burnham plans to give regional mayors a share of income tax, enhancing financial autonomy and devolution efforts across the UK.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/38565876/pexels-photo-38565876.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-31",
+    timestamp: "2026-07-31T02:00:42.790Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "grynspan-un-chief-poll",
     title: "Informal Poll Indicates Costa Rica's Grynspan Leads UN Chief Race",
     excerpt: "An informal poll shows Costa Rica's Grynspan ahead in the race to become the next UN chief, marking a significant shift in global leadership dynamics.",
