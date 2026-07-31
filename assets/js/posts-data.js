@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "spain-migrants-returning-ceuta-border-tragedy",
+    title: "Spain Reports Migrants Returning From Ceuta After Tragedy",
+    excerpt: "Spain says migrants are returning from Ceuta after 57 die in border rush, highlighting the ongoing migrant crisis at the Spanish-Moroccan border.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/19264369/pexels-photo-19264369.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-31",
+    timestamp: "2026-07-31T23:00:39.338Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "father-son-new-charges-hostage-situation",
     title: "Father and Son Face New Charges for Hostage Situation",
     excerpt: "Father and son accused of zip-tying Forest Service workers face new charges in a troubling hostage case that highlights rising tensions.",
