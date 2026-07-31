@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "mlb-trade-deadline-dominoes-2026-market",
+    title: "MLB Trade Deadline Dominoes for 10 Biggest Names on 2026 Market",
+    excerpt: "Explore the MLB trade deadline dominoes for the 10 biggest names on the 2026 market and their potential impacts on teams and players.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/26890858/pexels-photo-26890858.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-31",
+    timestamp: "2026-07-31T12:00:46.190Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "andy-burnham-regional-mayors-share-income-tax",
     title: "Andy Burnham to Give Regional Mayors Share of Income Tax",
     excerpt: "Andy Burnham plans to give regional mayors a share of income tax, enhancing financial autonomy and devolution efforts across the UK.",
