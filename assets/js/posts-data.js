@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "father-son-new-charges-hostage-situation",
+    title: "Father and Son Face New Charges for Hostage Situation",
+    excerpt: "Father and son accused of zip-tying Forest Service workers face new charges in a troubling hostage case that highlights rising tensions.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/18326060/pexels-photo-18326060.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-07-31",
+    timestamp: "2026-07-31T17:00:43.495Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "mlb-trade-deadline-dominoes-2026-market",
     title: "MLB Trade Deadline Dominoes for 10 Biggest Names on 2026 Market",
     excerpt: "Explore the MLB trade deadline dominoes for the 10 biggest names on the 2026 market and their potential impacts on teams and players.",
