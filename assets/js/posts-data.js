@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "labour-burnham-bounce-opinion-polls",
+    title: "Labour Burnham Bounce Opinion Polls Explained",
+    excerpt: "Labour Burnham bounce opinion polls reveal significant insights into political trends and voter behavior. Discover more about this phenomenon.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/1464193/pexels-photo-1464193.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-01",
+    timestamp: "2026-08-01T12:00:45.914Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "russia-ukraine-casualties-trade-attacks",
     title: "Russia and Ukraine Report Casualties Amid Ongoing Attacks",
     excerpt: "Russia and Ukraine report casualties as attacks continue, highlighting the escalating conflict and its humanitarian impact.",
