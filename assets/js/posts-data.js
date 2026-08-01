@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "europes-wildfire-crisis-eases-west-danger-shifts-east-greece",
+    title: "Europe's Wildfire Crisis Eases as Danger Shifts to Greece",
+    excerpt: "Europe’s wildfire crisis eases in west as danger shifts east to Greece, with evacuations in France and blazes threatening Greek islands, tourism, and Athens.",
+    category: "General",
+    image: "https://images.pexels.com/photos/38369177/pexels-photo-38369177.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-01",
+    timestamp: "2026-08-01T23:01:03.603Z",
+    readMins: 8,
+    views: 0
+  },
+
+  {
     slug: "borislav-nikolic-ufc-belgrade-replacement",
     title: "Borislav Nikolic: Late-Notice Replacement in UFC Belgrade",
     excerpt: "Borislav Nikolic steps in as a late-notice replacement for UFC Belgrade, bringing excitement to the event with his Brave championship experience.",
