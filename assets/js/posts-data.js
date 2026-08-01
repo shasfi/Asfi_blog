@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "russia-ukraine-casualties-trade-attacks",
+    title: "Russia and Ukraine Report Casualties Amid Ongoing Attacks",
+    excerpt: "Russia and Ukraine report casualties as attacks continue, highlighting the escalating conflict and its humanitarian impact.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/11849395/pexels-photo-11849395.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-01",
+    timestamp: "2026-08-01T02:00:36.908Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "spain-migrants-returning-ceuta-border-tragedy",
     title: "Spain Reports Migrants Returning From Ceuta After Tragedy",
     excerpt: "Spain says migrants are returning from Ceuta after 57 die in border rush, highlighting the ongoing migrant crisis at the Spanish-Moroccan border.",
