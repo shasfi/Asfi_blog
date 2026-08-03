@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "matte-black-pixel-11-pro-revealed-gallery",
+    title: "Matte Black Pixel 11 Pro Revealed in Detailed Gallery",
+    excerpt: "Explore the detailed gallery of the matte black Pixel 11 Pro, design insights, camera updates, and market expectations from the latest leaks.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-03",
+    timestamp: "2026-08-03T17:33:36.387Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "europes-wildfire-crisis-eases-west-danger-shifts-east-greece",
     title: "Europe's Wildfire Crisis Eases as Danger Shifts to Greece",
     excerpt: "Europe’s wildfire crisis eases in west as danger shifts east to Greece, with evacuations in France and blazes threatening Greek islands, tourism, and Athens.",
