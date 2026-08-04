@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "scoop-jim-renacci-mulls-house-bid-if-max-miller-drops-out",
+    title: "Jim Renacci Considers a House Bid if Max Miller Steps Down",
+    excerpt: "Jim Renacci mulls a House bid if Max Miller drops out, as the Ohio GOP faces turmoil over misconduct allegations and a scramble for a replacement candidate.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/8847167/pexels-photo-8847167.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-04",
+    timestamp: "2026-08-04T12:01:20.839Z",
+    readMins: 9,
+    views: 0
+  },
+
+  {
     slug: "matte-black-pixel-11-pro-revealed-gallery",
     title: "Matte Black Pixel 11 Pro Revealed in Detailed Gallery",
     excerpt: "Explore the detailed gallery of the matte black Pixel 11 Pro, design insights, camera updates, and market expectations from the latest leaks.",
