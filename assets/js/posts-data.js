@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "gun-rights-devotion-disappeared-firearm-incident",
+    title: "Gun Rights Devotion Disappeared After Firearm Incident",
+    excerpt: "A trans woman brandished a firearm, and suddenly gun rights devotion disappeared. Explore how identity politics and firearm ownership intersect in recent debates.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/26856650/pexels-photo-26856650.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-06",
+    timestamp: "2026-08-06T12:01:13.136Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "scoop-jim-renacci-mulls-house-bid-if-max-miller-drops-out",
     title: "Jim Renacci Considers a House Bid if Max Miller Steps Down",
     excerpt: "Jim Renacci mulls a House bid if Max Miller drops out, as the Ohio GOP faces turmoil over misconduct allegations and a scramble for a replacement candidate.",
