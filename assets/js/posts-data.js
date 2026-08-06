@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "openais-hockey-puck-sized-device-over-300",
+    title: "OpenAI's Hockey Puck-Sized Device Over $300",
+    excerpt: "OpenAI's new hockey puck-sized device will reportedly cost over $300, sparking excitement in tech. Learn about its potential features and market impact.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/22307556/pexels-photo-22307556.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-06",
+    timestamp: "2026-08-06T23:17:16.244Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "gun-rights-devotion-disappeared-firearm-incident",
     title: "Gun Rights Devotion Disappeared After Firearm Incident",
     excerpt: "A trans woman brandished a firearm, and suddenly gun rights devotion disappeared. Explore how identity politics and firearm ownership intersect in recent debates.",
