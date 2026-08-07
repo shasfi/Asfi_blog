@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "trump-colombia-military-cooperation-fast-tracks",
+    title: "Trump Fast-Tracks Military Cooperation With Colombia",
+    excerpt: "Trump administration accelerates military collaboration with Colombia amid new president's security focus, reshaping regional alliances and challenges.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/2076824/pexels-photo-2076824.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-07",
+    timestamp: "2026-08-07T17:00:51.546Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "openais-hockey-puck-sized-device-over-300",
     title: "OpenAI's Hockey Puck-Sized Device Over $300",
     excerpt: "OpenAI's new hockey puck-sized device will reportedly cost over $300, sparking excitement in tech. Learn about its potential features and market impact.",
