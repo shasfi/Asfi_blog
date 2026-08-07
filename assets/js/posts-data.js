@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "puerto-rico-water-rationing-begins-amid-escalating-drought",
+    title: "Puerto Rico Water Rationing Begins Amid Escalating Drought",
+    excerpt: "Puerto Rico starts rationing water as drought conditions intensify, affecting thousands. Learn about the crisis, its causes, and impacts on daily life.",
+    category: "General",
+    image: "https://images.pexels.com/photos/37729212/pexels-photo-37729212.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-07",
+    timestamp: "2026-08-07T23:45:36.628Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "trump-colombia-military-cooperation-fast-tracks",
     title: "Trump Fast-Tracks Military Cooperation With Colombia",
     excerpt: "Trump administration accelerates military collaboration with Colombia amid new president's security focus, reshaping regional alliances and challenges.",
