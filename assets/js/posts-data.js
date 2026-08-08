@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "morgan-freeman-90-retirement-plans",
+    title: "Morgan Freeman at 90: Continuing His Legacy Without Retirement Plans",
+    excerpt: "Morgan Freeman, now approaching 90, continues working with no retirement plans. Discover how he maintains his career and passion for acting at this stage.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/37684401/pexels-photo-37684401.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-08",
+    timestamp: "2026-08-08T23:00:49.008Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "republicans-face-year-end-test-over-trump-spending-bill",
     title: "Republicans Face Year-End Test Over Trump Spending Bill",
     excerpt: "Republicans face likely year-end test after punting Trump spending bill, risking political fallout as Congress approaches deadline.",
