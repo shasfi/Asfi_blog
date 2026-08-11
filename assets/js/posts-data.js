@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "google-pixel-2026-hardware-launch-event-expectations",
+    title: "What to Expect from Google's 2026 Pixel Hardware Launch Event",
+    excerpt: "What to expect from Google's 2026 Pixel hardware launch event, including rumored devices, features, and launch details. Stay updated with the latest news.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/28936752/pexels-photo-28936752.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-11",
+    timestamp: "2026-08-11T17:01:25.127Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "morgan-freeman-90-retirement-plans",
     title: "Morgan Freeman at 90: Continuing His Legacy Without Retirement Plans",
     excerpt: "Morgan Freeman, now approaching 90, continues working with no retirement plans. Discover how he maintains his career and passion for acting at this stage.",
