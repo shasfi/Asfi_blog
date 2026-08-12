@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "man-united-vs-leeds-preview-predictions-lineups",
+    title: "Man United vs Leeds: Match Preview, Lineups and Predictions",
+    excerpt: "Get the latest Man United vs Leeds preview, team news, predicted lineups, and match predictions for the upcoming Premier League clash.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/36513047/pexels-photo-36513047.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-12",
+    timestamp: "2026-08-12T17:53:19.544Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "google-pixel-2026-hardware-launch-event-expectations",
     title: "What to Expect from Google's 2026 Pixel Hardware Launch Event",
     excerpt: "What to expect from Google's 2026 Pixel hardware launch event, including rumored devices, features, and launch details. Stay updated with the latest news.",
