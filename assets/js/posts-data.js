@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "google-pixel-11-cases-let-phone-colors-shine-through",
+    title: "Google Pixel 11 Cases Let Phone Colors Shine Through",
+    excerpt: "Discover how Google Pixel 11 cases are designed to showcase vibrant phone colors. Explore the latest trends in smartphone accessories that prioritize style and visibility.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/6913227/pexels-photo-6913227.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-13",
+    timestamp: "2026-08-13T17:32:00.418Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "man-united-vs-leeds-preview-predictions-lineups",
     title: "Man United vs Leeds: Match Preview, Lineups and Predictions",
     excerpt: "Get the latest Man United vs Leeds preview, team news, predicted lineups, and match predictions for the upcoming Premier League clash.",
