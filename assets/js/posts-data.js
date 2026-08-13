@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "train-derails-east-sussex-11-injured",
+    title: "Train Derails in East Sussex, 11 Injured in Southern England",
+    excerpt: "A passenger train derailed in East Sussex, southern England, leaving 11 injured. Here's the latest on the incident near Lewes.",
+    category: "General",
+    image: "https://images.pexels.com/photos/32487875/pexels-photo-32487875.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-13",
+    timestamp: "2026-08-13T23:01:14.307Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "google-pixel-11-cases-let-phone-colors-shine-through",
     title: "Google Pixel 11 Cases Let Phone Colors Shine Through",
     excerpt: "Discover how Google Pixel 11 cases are designed to showcase vibrant phone colors. Explore the latest trends in smartphone accessories that prioritize style and visibility.",
