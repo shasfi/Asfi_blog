@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "taliban-education-toll-afghanistan-girls-boys",
+    title: "Taliban Education Toll: Impact on Girls and Boys in Afghanistan",
+    excerpt: "The Taliban's takeover has severely impacted education for all Afghan students, particularly girls, with profound social and economic consequences.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/31093707/pexels-photo-31093707.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-14",
+    timestamp: "2026-08-14T17:36:18.750Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "darksiders-4-kingdom-come-game-launch-2028",
     title: "Darksiders 4 and New Kingdom Come Game Set for 2028 Launch",
     excerpt: "Darksiders 4 and Kingdom Come Deliverance 2 are confirmed to launch before March 2028, per Embracer Group's latest roadmap updates for upcoming titles.",
