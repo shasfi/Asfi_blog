@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "darksiders-4-kingdom-come-game-launch-2028",
+    title: "Darksiders 4 and New Kingdom Come Game Set for 2028 Launch",
+    excerpt: "Darksiders 4 and Kingdom Come Deliverance 2 are confirmed to launch before March 2028, per Embracer Group's latest roadmap updates for upcoming titles.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/7862609/pexels-photo-7862609.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-14",
+    timestamp: "2026-08-14T02:54:21.513Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "train-derails-east-sussex-11-injured",
     title: "Train Derails in East Sussex, 11 Injured in Southern England",
     excerpt: "A passenger train derailed in East Sussex, southern England, leaving 11 injured. Here's the latest on the incident near Lewes.",
