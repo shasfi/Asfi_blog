@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "nsw-gun-buyback-after-bondi-attack",
+    title: "NSW Gun Buyback Launched After Bondi Attack",
+    excerpt: "NSW Gun Buyback Scheme launched in response to Bondi terror attack. Learn about the program's goals, public reaction, and implications for gun laws in Australia.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/11941117/pexels-photo-11941117.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-15",
+    timestamp: "2026-08-15T23:47:14.089Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "gomez-fernando-mendoza-debut-bigger-test",
     title: "Gutierrez: Fernando Mendoza Shines in Debut, Major Test Ahead",
     excerpt: "Raiders rookie QB Fernando Mendoza excels in preseason debut, but faces tougher challenges ahead. Analyze his performance and what’s next.",
