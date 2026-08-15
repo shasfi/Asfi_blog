@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "gomez-fernando-mendoza-debut-bigger-test",
+    title: "Gutierrez: Fernando Mendoza Shines in Debut, Major Test Ahead",
+    excerpt: "Raiders rookie QB Fernando Mendoza excels in preseason debut, but faces tougher challenges ahead. Analyze his performance and what’s next.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/159505/quarterback-running-back-football-player-159505.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-15",
+    timestamp: "2026-08-15T17:01:18.454Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "taliban-education-toll-afghanistan-girls-boys",
     title: "Taliban Education Toll: Impact on Girls and Boys in Afghanistan",
     excerpt: "The Taliban's takeover has severely impacted education for all Afghan students, particularly girls, with profound social and economic consequences.",
