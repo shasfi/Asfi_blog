@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "us-tourist-dies-after-lightning-strike-on-mount-etna",
+    title: "US Tourist Dies After Lightning Strike on Mount Etna",
+    excerpt: "A US tourist died after being struck by lightning while hiking Sicily’s Mount Etna. Learn about the incident, lightning risks in volcanic regions, and safety measures from CNN, NBC, and NYT reports.",
+    category: "Science",
+    image: "https://images.pexels.com/photos/12372779/pexels-photo-12372779.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-18",
+    timestamp: "2026-08-18T23:14:39.368Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "lakers-governor-buss-blocks-stake-sale",
     title: "Lakers Governor Jeanie Buss Blocks Siblings’ Stake Sale",
     excerpt: "Jeanie Buss denies her siblings cannot sell Lakers family stake to Bob Iger and Joshua Kushner, sparking legal and financial debate and future franchise value.",
