@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "lakers-governor-buss-blocks-stake-sale",
+    title: "Lakers Governor Jeanie Buss Blocks Siblings’ Stake Sale",
+    excerpt: "Jeanie Buss denies her siblings cannot sell Lakers family stake to Bob Iger and Joshua Kushner, sparking legal and financial debate and future franchise value.",
+    category: "Business",
+    image: "https://images.pexels.com/photos/6289049/pexels-photo-6289049.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-18",
+    timestamp: "2026-08-18T02:01:13.138Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "nsw-gun-buyback-after-bondi-attack",
     title: "NSW Gun Buyback Launched After Bondi Attack",
     excerpt: "NSW Gun Buyback Scheme launched in response to Bondi terror attack. Learn about the program's goals, public reaction, and implications for gun laws in Australia.",
