@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "israeli-military-probes-hind-rajab-killing",
+    title: "Israeli Military Probes Hind Rajab Killing",
+    excerpt: "Israeli military launches criminal probes into the killings of Hind Rajab and Palestinian paramedics, raising fresh concerns over accountability and conduct in Gaza.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/6069240/pexels-photo-6069240.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-19",
+    timestamp: "2026-08-19T23:01:04.938Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "us-tourist-dies-after-lightning-strike-on-mount-etna",
     title: "US Tourist Dies After Lightning Strike on Mount Etna",
     excerpt: "A US tourist died after being struck by lightning while hiking Sicily’s Mount Etna. Learn about the incident, lightning risks in volcanic regions, and safety measures from CNN, NBC, and NYT reports.",
