@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "falcons-colts-joint-practices-day-1",
+    title: "Falcons-Colts Joint Practices Day 1: Key Takeaways",
+    excerpt: "Everything you need to know from Day 1 of Falcons-Colts joint practices, including standout performances and what to expect next.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/30612723/pexels-photo-30612723.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-20",
+    timestamp: "2026-08-20T12:09:08.452Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "fc-dallas-real-salt-lake-lineup",
     title: "fc dallas - real salt lake lineup",
     excerpt: "fc dallas vs real salt lake lineup preview offers insight into both teams’ tactical plans and key player rotations ahead of their upcoming clash.",
