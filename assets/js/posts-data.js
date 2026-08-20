@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "fc-dallas-real-salt-lake-lineup",
+    title: "fc dallas - real salt lake lineup",
+    excerpt: "fc dallas vs real salt lake lineup preview offers insight into both teams’ tactical plans and key player rotations ahead of their upcoming clash.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/1657324/pexels-photo-1657324.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-20",
+    timestamp: "2026-08-20T02:01:11.096Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "israeli-military-probes-hind-rajab-killing",
     title: "Israeli Military Probes Hind Rajab Killing",
     excerpt: "Israeli military launches criminal probes into the killings of Hind Rajab and Palestinian paramedics, raising fresh concerns over accountability and conduct in Gaza.",
