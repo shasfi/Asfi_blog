@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "dutch-gp-ending-zandvoort-f1",
+    title: "Dutch GP Ending: Why Zandvoort Race is Concluding Despite F1 Support",
+    excerpt: "The Dutch GP is ending despite F1 wanting Zandvoort to stay. Discover the key factors behind this decision and what it means for the future of Formula 1.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/28680795/pexels-photo-28680795.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-21",
+    timestamp: "2026-08-21T12:01:00.505Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "falcons-colts-joint-practices-day-1",
     title: "Falcons-Colts Joint Practices Day 1: Key Takeaways",
     excerpt: "Everything you need to know from Day 1 of Falcons-Colts joint practices, including standout performances and what to expect next.",
