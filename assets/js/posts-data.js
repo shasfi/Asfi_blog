@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "pentagon-fires-stars-and-stripes-leaders",
+    title: "Pentagon Fires Stars and Stripes Leaders Over Criticism",
+    excerpt: "Pentagon fires Stars and Stripes leaders who criticized DOD interference, raising concerns over press freedom and editorial independence.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/33738318/pexels-photo-33738318.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-22",
+    timestamp: "2026-08-22T02:11:16.519Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "dutch-gp-ending-zandvoort-f1",
     title: "Dutch GP Ending: Why Zandvoort Race is Concluding Despite F1 Support",
     excerpt: "The Dutch GP is ending despite F1 wanting Zandvoort to stay. Discover the key factors behind this decision and what it means for the future of Formula 1.",
