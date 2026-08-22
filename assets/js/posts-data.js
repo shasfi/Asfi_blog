@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "grand-theft-auto-vi-leak-escalates-without-resolution",
+    title: "Grand Theft Auto VI Leak Escalates Without Resolution",
+    excerpt: "The Grand Theft Auto VI leak continues to spread unchecked, with new gameplay and map details emerging despite efforts by Take-Two to contain the breach.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/34482313/pexels-photo-34482313.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-22",
+    timestamp: "2026-08-22T12:23:36.521Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "pentagon-fires-stars-and-stripes-leaders",
     title: "Pentagon Fires Stars and Stripes Leaders Over Criticism",
     excerpt: "Pentagon fires Stars and Stripes leaders who criticized DOD interference, raising concerns over press freedom and editorial independence.",
