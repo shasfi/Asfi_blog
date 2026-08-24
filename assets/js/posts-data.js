@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "iphone-18-pro-release-schedule-what-to-expect-when",
+    title: "iPhone 18 Pro Release Schedule: What To Expect When",
+    excerpt: "Get the latest iPhone 18 Pro release schedule and timeline. Find out when to expect the announcement, pre-orders, and availability based on recent leaks and industry trends.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/7537255/pexels-photo-7537255.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-24",
+    timestamp: "2026-08-24T02:20:48.773Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "grand-theft-auto-vi-leak-escalates-without-resolution",
     title: "Grand Theft Auto VI Leak Escalates Without Resolution",
     excerpt: "The Grand Theft Auto VI leak continues to spread unchecked, with new gameplay and map details emerging despite efforts by Take-Two to contain the breach.",
