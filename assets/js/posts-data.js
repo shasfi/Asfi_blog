@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "enes-kanter-freedom-ejected-sky-fever-game",
+    title: "Enes Kanter Freedom Ejected in Sky vs Fever Game",
+    excerpt: "Former NBA player Enes Kanter Freedom was ejected during a Sky vs Fever game after a heated confrontation with Chicago's Natasha Cloud.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/5274999/pexels-photo-5274999.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-24",
+    timestamp: "2026-08-24T17:01:00.864Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "iphone-18-pro-release-schedule-what-to-expect-when",
     title: "iPhone 18 Pro Release Schedule: What To Expect When",
     excerpt: "Get the latest iPhone 18 Pro release schedule and timeline. Find out when to expect the announcement, pre-orders, and availability based on recent leaks and industry trends.",
