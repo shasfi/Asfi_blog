@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "fire-vs-wings-odds-dallas-hosts-portland-in-wnba-clash",
+    title: "Fire vs Wings Odds: Dallas Hosts Portland in WNBA Clash",
+    excerpt: "Fire vs Wings odds preview: Dallas Wings host Portland Fire in a key WNBA matchup. Get betting lines, analysis, and what to expect.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/27866609/pexels-photo-27866609.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-25",
+    timestamp: "2026-08-25T23:34:13.024Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "ship-disabled-attack-strait-hormuz-middle-east",
     title: "Ship Disabled by Attack in Strait of Hormuz: Latest Updates",
     excerpt: "A ship was disabled in a Strait of Hormuz attack amid rising regional tensions. Get the latest updates on maritime incidents and Middle East developments.",
