@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "ship-disabled-attack-strait-hormuz-middle-east",
+    title: "Ship Disabled by Attack in Strait of Hormuz: Latest Updates",
+    excerpt: "A ship was disabled in a Strait of Hormuz attack amid rising regional tensions. Get the latest updates on maritime incidents and Middle East developments.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/32237794/pexels-photo-32237794.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-25",
+    timestamp: "2026-08-25T17:01:27.034Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "browns-name-deshaun-watson-starting-qb-over-shedeur-sanders",
     title: "Browns Name Deshaun Watson Starting QB Over Shedeur Sanders",
     excerpt: "Browns name Deshaun Watson starting quarterback over Shedeur Sanders. Get the full breakdown of the decision, coach comments, and what it means for Cleveland.",
