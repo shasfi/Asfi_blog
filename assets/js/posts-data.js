@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "browns-name-deshaun-watson-starting-qb-over-shedeur-sanders",
+    title: "Browns Name Deshaun Watson Starting QB Over Shedeur Sanders",
+    excerpt: "Browns name Deshaun Watson starting quarterback over Shedeur Sanders. Get the full breakdown of the decision, coach comments, and what it means for Cleveland.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/33920564/pexels-photo-33920564.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-25",
+    timestamp: "2026-08-25T12:45:59.053Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "enes-kanter-freedom-ejected-sky-fever-game",
     title: "Enes Kanter Freedom Ejected in Sky vs Fever Game",
     excerpt: "Former NBA player Enes Kanter Freedom was ejected during a Sky vs Fever game after a heated confrontation with Chicago's Natasha Cloud.",
