@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "draftkings-odds-phillies-mlb-betting-tips",
+    title: "DraftKings Odds: Phillies Win Trends and MLB Betting Tips",
+    excerpt: "DraftKings odds highlight the Phillies' continued success. Get MLB betting tips for Monday and analyze Philadelphia's winning streak.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/7594232/pexels-photo-7594232.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-26",
+    timestamp: "2026-08-26T17:01:21.923Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "fire-vs-wings-odds-dallas-hosts-portland-in-wnba-clash",
     title: "Fire vs Wings Odds: Dallas Hosts Portland in WNBA Clash",
     excerpt: "Fire vs Wings odds preview: Dallas Wings host Portland Fire in a key WNBA matchup. Get betting lines, analysis, and what to expect.",
