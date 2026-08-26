@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "sec-punishments-coaches-sign-nfl-players",
+    title: "SEC Punishes Coaches Who Sign NFL Players: New Rule Explained",
+    excerpt: "SEC reportedly settles on punishments for programs and head coaches who decide to sign NFL players. Here is what the new rule means and who it affects.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/15338948/pexels-photo-15338948.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-26",
+    timestamp: "2026-08-26T23:01:14.060Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "draftkings-odds-phillies-mlb-betting-tips",
     title: "DraftKings Odds: Phillies Win Trends and MLB Betting Tips",
     excerpt: "DraftKings odds highlight the Phillies' continued success. Get MLB betting tips for Monday and analyze Philadelphia's winning streak.",
