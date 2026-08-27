@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "tech-companies-ndas-data-center-talks",
+    title: "Tech Companies Use NDAs for Data Center Talks",
+    excerpt: "Tech companies and local officials are covering data center talks in NDAs, heavily restricting public transparency. Discover why this practice raises alarms.",
+    category: "Business",
+    image: "https://images.pexels.com/photos/37730212/pexels-photo-37730212.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-27",
+    timestamp: "2026-08-27T12:00:51.638Z",
+    readMins: 10,
+    views: 0
+  },
+
+  {
     slug: "nathan-grima-afl-surgery-nightmare",
     title: "Nathan Grima: AFL Star's Surgery Nightmare Story",
     excerpt: "Nathan Grima, former AFL player, faced a near-death ordeal after what was meant to be minor surgery. Here is what we know about his recovery and the warning signs.",
