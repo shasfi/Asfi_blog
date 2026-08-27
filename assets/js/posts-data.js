@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "alex-apodaca-bella-mir-dana-white-contender-series-upset",
+    title: "Alex Apodaca Stuns Bella Mir on Dana White Contender Series",
+    excerpt: "Alex Apodaca reacts to his massive upset win over Bella Mir on Dana White's Contender Series, calling the victory 'sick' as he earns a UFC deal.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/5424764/pexels-photo-5424764.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-27",
+    timestamp: "2026-08-27T02:01:05.096Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "sec-punishments-coaches-sign-nfl-players",
     title: "SEC Punishes Coaches Who Sign NFL Players: New Rule Explained",
     excerpt: "SEC reportedly settles on punishments for programs and head coaches who decide to sign NFL players. Here is what the new rule means and who it affects.",
