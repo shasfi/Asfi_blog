@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "robert-griffin-iii-conspiracy-theory-browns-qb-sanders",
+    title: "Robert Griffin III Conspiracy Theory on Browns QB Decision: Is Shedeur Sanders the Answer?",
+    excerpt: "Robert Griffin III's Browns QB conspiracy theory involving Shedeur Sanders sparks debate across NFL media landscape.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/163531/quarterback-american-football-college-game-163531.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-27",
+    timestamp: "2026-08-27T23:41:55.501Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "nepal-flash-floods-live-updates-hundreds-dead-thousands-missing",
     title: "Nepal Flash Floods Live Updates: Hundreds Dead, 1,000+ Missing",
     excerpt: "Nepal flash floods have claimed hundreds of lives with over 1,000 missing. Get the latest updates on casualties, rescue efforts, and expert analysis of the disaster.",
