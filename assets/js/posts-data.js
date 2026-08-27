@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "nathan-grima-afl-surgery-nightmare",
+    title: "Nathan Grima: AFL Star's Surgery Nightmare Story",
+    excerpt: "Nathan Grima, former AFL player, faced a near-death ordeal after what was meant to be minor surgery. Here is what we know about his recovery and the warning signs.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/6129152/pexels-photo-6129152.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-27",
+    timestamp: "2026-08-27T02:05:09.496Z",
+    readMins: 8,
+    views: 0
+  },
+
+  {
     slug: "alex-apodaca-bella-mir-dana-white-contender-series-upset",
     title: "Alex Apodaca Stuns Bella Mir on Dana White Contender Series",
     excerpt: "Alex Apodaca reacts to his massive upset win over Bella Mir on Dana White's Contender Series, calling the victory 'sick' as he earns a UFC deal.",
