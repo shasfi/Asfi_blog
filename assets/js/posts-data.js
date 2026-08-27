@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "nepal-flash-floods-live-updates-hundreds-dead-thousands-missing",
+    title: "Nepal Flash Floods Live Updates: Hundreds Dead, 1,000+ Missing",
+    excerpt: "Nepal flash floods have claimed hundreds of lives with over 1,000 missing. Get the latest updates on casualties, rescue efforts, and expert analysis of the disaster.",
+    category: "General",
+    image: "https://images.pexels.com/photos/32782556/pexels-photo-32782556.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-27",
+    timestamp: "2026-08-27T17:48:47.348Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "tech-companies-ndas-data-center-talks",
     title: "Tech Companies Use NDAs for Data Center Talks",
     excerpt: "Tech companies and local officials are covering data center talks in NDAs, heavily restricting public transparency. Discover why this practice raises alarms.",
