@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "nepal-china-border-disaster-death-toll-rises-lake-flood-threat",
+    title: "Nepal China Border Disaster: Death Toll Rises as Lake Floods",
+    excerpt: "Nepal China border disaster death toll rises as a glacial lake poses a new flood threat; rescue efforts intensify and over 2,000 people remain missing.",
+    category: "General",
+    image: "https://images.pexels.com/photos/33779961/pexels-photo-33779961.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-28",
+    timestamp: "2026-08-28T17:01:03.451Z",
+    readMins: 8,
+    views: 0
+  },
+
+  {
     slug: "bwin-trending-topic",
     title: "bwin: What You Need to Know About the Trending Topic",
     excerpt: "bwin trends online as users search for updates on the brand’s latest developments, market impact, and what the buzz means for consumers and industry watchers.",
