@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "bwin-trending-topic",
+    title: "bwin: What You Need to Know About the Trending Topic",
+    excerpt: "bwin trends online as users search for updates on the brand’s latest developments, market impact, and what the buzz means for consumers and industry watchers.",
+    category: "Business",
+    image: "https://images.pexels.com/photos/30516010/pexels-photo-30516010.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-28",
+    timestamp: "2026-08-28T02:05:07.045Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "lindsay-clancy-trial-jury-deliberations-mother-killed-three-children",
     title: "Lindsay Clancy Trial: Jury Weighs Case of Mom Who Killed 3 Kids",
     excerpt: "Key moments from Lindsay Clancy trial as jury deliberates the case of a mother accused of killing her 3 children, with postpartum psychosis at center.",
