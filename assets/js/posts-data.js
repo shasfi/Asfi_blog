@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "lindsay-clancy-trial-jury-deliberations-mother-killed-three-children",
+    title: "Lindsay Clancy Trial: Jury Weighs Case of Mom Who Killed 3 Kids",
+    excerpt: "Key moments from Lindsay Clancy trial as jury deliberates the case of a mother accused of killing her 3 children, with postpartum psychosis at center.",
+    category: "General",
+    image: "https://images.pexels.com/photos/37732186/pexels-photo-37732186.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-28",
+    timestamp: "2026-08-28T02:01:28.545Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "robert-griffin-iii-conspiracy-theory-browns-qb-sanders",
     title: "Robert Griffin III Conspiracy Theory on Browns QB Decision: Is Shedeur Sanders the Answer?",
     excerpt: "Robert Griffin III's Browns QB conspiracy theory involving Shedeur Sanders sparks debate across NFL media landscape.",
