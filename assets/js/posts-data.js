@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "trumps-evolving-endgame-iran-war-6-quotes",
+    title: "Trump's evolving endgame for the Iran war, in 6 quotes",
+    excerpt: "Trump's evolving endgame for the Iran war, in 6 quotes reveals shifting strategy as the conflict enters its sixth month and diplomatic tensions rise now.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/13806469/pexels-photo-13806469.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-29",
+    timestamp: "2026-08-29T23:41:35.446Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "nepal-china-border-disaster-death-toll-rises-lake-flood-threat",
     title: "Nepal China Border Disaster: Death Toll Rises as Lake Floods",
     excerpt: "Nepal China border disaster death toll rises as a glacial lake poses a new flood threat; rescue efforts intensify and over 2,000 people remain missing.",
