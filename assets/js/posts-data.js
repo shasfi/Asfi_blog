@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "beto-linked-with-serie-a-return-fiorentina",
+    title: "Beto Linked With Serie A Return as Fiorentina Circle",
+    excerpt: "Beto is being linked with a Serie A return as Fiorentina circle the striker, with transfer rumours heating up across Europe ahead of the window.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/1657324/pexels-photo-1657324.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-30",
+    timestamp: "2026-08-30T23:41:19.543Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "iran-supreme-leader-muslim-unity-against-us-israel",
     title: "Iran Supreme Leader Calls for Muslim Unity Against US, Israel",
     excerpt: "Iran supreme leader calls for Muslim unity against US and Israel amid Middle East tensions and Hormuz Strait concerns.",
