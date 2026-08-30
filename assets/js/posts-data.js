@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "pete-crow-armstrong-three-homer-showcase-cubs-win-over-reds",
+    title: "Pete Crow-Armstrong adds to NL MVP case with three homers",
+    excerpt: "Pete Crow-Armstrong’s three‑home‑run showcase fuels his NL MVP momentum, leading the Cubs to a dominant win over the Reds and marking a historic night at Wrigley Field.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/209804/pexels-photo-209804.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-30",
+    timestamp: "2026-08-30T02:01:07.986Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "trumps-evolving-endgame-iran-war-6-quotes",
     title: "Trump's evolving endgame for the Iran war, in 6 quotes",
     excerpt: "Trump's evolving endgame for the Iran war, in 6 quotes reveals shifting strategy as the conflict enters its sixth month and diplomatic tensions rise now.",
