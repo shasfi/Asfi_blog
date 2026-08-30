@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "iran-supreme-leader-muslim-unity-against-us-israel",
+    title: "Iran Supreme Leader Calls for Muslim Unity Against US, Israel",
+    excerpt: "Iran supreme leader calls for Muslim unity against US and Israel amid Middle East tensions and Hormuz Strait concerns.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/36359521/pexels-photo-36359521.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-30",
+    timestamp: "2026-08-30T23:01:09.670Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "ex-white-house-teleprompter-operator-fined-trump-speech-bets",
     title: "Ex-White House Teleprompter Operator Fined $172,000 Over Trump Speech Bets",
     excerpt: "Ex-White House teleprompter operator fined $172,000 for placing bets on Trump speeches using non-public information, according to CFTC settlement.",
