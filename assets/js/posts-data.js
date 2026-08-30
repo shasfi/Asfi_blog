@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "ex-white-house-teleprompter-operator-fined-trump-speech-bets",
+    title: "Ex-White House Teleprompter Operator Fined $172,000 Over Trump Speech Bets",
+    excerpt: "Ex-White House teleprompter operator fined $172,000 for placing bets on Trump speeches using non-public information, according to CFTC settlement.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/36984940/pexels-photo-36984940.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-30",
+    timestamp: "2026-08-30T02:05:10.145Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "pete-crow-armstrong-three-homer-showcase-cubs-win-over-reds",
     title: "Pete Crow-Armstrong adds to NL MVP case with three homers",
     excerpt: "Pete Crow-Armstrong’s three‑home‑run showcase fuels his NL MVP momentum, leading the Cubs to a dominant win over the Reds and marking a historic night at Wrigley Field.",
