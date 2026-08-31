@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "messi-retires-argentina-international-duty",
+    title: "Messi Retires From Argentina: 'A Decision That Hurts My Soul'",
+    excerpt: "Lionel Messi announces retirement from Argentina international duty, calling it a decision that hurts my soul. Football legend ends era.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/35879860/pexels-photo-35879860.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-31",
+    timestamp: "2026-08-31T23:41:54.122Z",
+    readMins: 8,
+    views: 0
+  },
+
+  {
     slug: "lindsay-clancy-jury-asks-to-go-home-after-second-day",
     title: "Lindsay Clancy Jury Asks to Go Home After Second Day",
     excerpt: "Lindsay Clancy jury asks to go home after a second full day of deliberations, leaving the triple murder case unresolved as jurors continue toward a verdict.",
