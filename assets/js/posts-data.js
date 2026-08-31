@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "lindsay-clancy-jury-asks-to-go-home-after-second-day",
+    title: "Lindsay Clancy Jury Asks to Go Home After Second Day",
+    excerpt: "Lindsay Clancy jury asks to go home after a second full day of deliberations, leaving the triple murder case unresolved as jurors continue toward a verdict.",
+    category: "General",
+    image: "https://images.pexels.com/photos/33939971/pexels-photo-33939971.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-31",
+    timestamp: "2026-08-31T23:01:05.555Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "kyiv-area-survivor-recalls-russian-strike-killed-38",
     title: "Kyiv-Area Survivor Recalls Russian Strike That Killed 38",
     excerpt: "Kyiv-area survivor recalls the Russian strike that killed 38 people, describing the chaos and aftermath of one of the deadliest attacks on Ukraine this year.",
