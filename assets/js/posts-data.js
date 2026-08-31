@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "kyiv-area-survivor-recalls-russian-strike-killed-38",
+    title: "Kyiv-Area Survivor Recalls Russian Strike That Killed 38",
+    excerpt: "Kyiv-area survivor recalls the Russian strike that killed 38 people, describing the chaos and aftermath of one of the deadliest attacks on Ukraine this year.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/38383328/pexels-photo-38383328.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-08-31",
+    timestamp: "2026-08-31T02:01:26.981Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "beto-linked-with-serie-a-return-fiorentina",
     title: "Beto Linked With Serie A Return as Fiorentina Circle",
     excerpt: "Beto is being linked with a Serie A return as Fiorentina circle the striker, with transfer rumours heating up across Europe ahead of the window.",
