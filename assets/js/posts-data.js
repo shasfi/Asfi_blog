@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "trump-arch-groundbreaking-burgum",
+    title: "Trump Arch Groundbreaking Set to Begin Within Two Weeks",
+    excerpt: "Trump arch groundbreaking will begin soon, Interior Secretary Burgum says, as excavation on the towering gilded memorial starts before final approvals are in place.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/14143755/pexels-photo-14143755.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-03",
+    timestamp: "2026-09-03T23:41:33.118Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "messi-retires-argentina-international-duty",
     title: "Messi Retires From Argentina: 'A Decision That Hurts My Soul'",
     excerpt: "Lionel Messi announces retirement from Argentina international duty, calling it a decision that hurts my soul. Football legend ends era.",
