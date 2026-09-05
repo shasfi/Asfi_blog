@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "older-pixel-phones-get-quick-share-airdrop-support",
+    title: "Older Pixel phones get Quick Share AirDrop support",
+    excerpt: "Older Pixel phones may finally receive Quick Share AirDrop support, enabling seamless file sharing. Learn how this feature works and what it means for users.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/2228574/pexels-photo-2228574.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-05",
+    timestamp: "2026-09-05T02:01:22.602Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "trump-arch-groundbreaking-burgum",
     title: "Trump Arch Groundbreaking Set to Begin Within Two Weeks",
     excerpt: "Trump arch groundbreaking will begin soon, Interior Secretary Burgum says, as excavation on the towering gilded memorial starts before final approvals are in place.",
