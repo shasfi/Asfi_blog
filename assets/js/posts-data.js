@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "apple-september-9-event-preview-iphone-ultra",
+    title: "Apple September 9 Event Preview iPhone Ultra",
+    excerpt: "Apple September 9 event preview covers iPhone Ultra, iPhone 18 Pro, foldable iPhone, and more. Here is what to expect from Apple's biggest product launch.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/28936752/pexels-photo-28936752.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-05",
+    timestamp: "2026-09-05T12:03:02.762Z",
+    readMins: 8,
+    views: 0
+  },
+
+  {
     slug: "older-pixel-phones-get-quick-share-airdrop-support",
     title: "Older Pixel phones get Quick Share AirDrop support",
     excerpt: "Older Pixel phones may finally receive Quick Share AirDrop support, enabling seamless file sharing. Learn how this feature works and what it means for users.",
