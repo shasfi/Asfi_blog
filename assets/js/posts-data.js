@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "ifa-berlin-2026-live-announcements-samsung-dyson-lg",
+    title: "IFA Berlin 2026 Live: Top Announcements From Samsung, Dyson, LG",
+    excerpt: "Live coverage of IFA Berlin 2026: Samsung, Dyson, LG and other major brands reveal their biggest tech announcements and innovations.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/35138560/pexels-photo-35138560.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-06",
+    timestamp: "2026-09-06T23:01:26.787Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "apple-september-9-event-preview-iphone-ultra",
     title: "Apple September 9 Event Preview iPhone Ultra",
     excerpt: "Apple September 9 event preview covers iPhone Ultra, iPhone 18 Pro, foldable iPhone, and more. Here is what to expect from Apple's biggest product launch.",
