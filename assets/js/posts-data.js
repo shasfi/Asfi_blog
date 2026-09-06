@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "jessica-pegula-us-open-2026-highlights-vs-leylah-fernandez",
+    title: "Jessica Pegula US Open 2026: Match Highlights vs Leylah Fernandez",
+    excerpt: "Jessica Pegula's US Open 2026 Round 3 match against Leylah Fernandez delivered thrilling highlights. Discover key moments, player strategies, and match outcomes.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/171568/pexels-photo-171568.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-06",
+    timestamp: "2026-09-06T23:41:20.763Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "ifa-berlin-2026-live-announcements-samsung-dyson-lg",
     title: "IFA Berlin 2026 Live: Top Announcements From Samsung, Dyson, LG",
     excerpt: "Live coverage of IFA Berlin 2026: Samsung, Dyson, LG and other major brands reveal their biggest tech announcements and innovations.",
