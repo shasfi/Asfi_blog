@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "trump-renaming-new-mexico-new-america",
+    title: "Trump Suggests Renaming New Mexico as 'New America'",
+    excerpt: "Trump suggests renaming New Mexico 'New America,' sparking a torrent of online memes, political pushback, and debate over state identity and sovereignty.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/7649100/pexels-photo-7649100.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-07",
+    timestamp: "2026-09-07T17:48:33.821Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "jessica-pegula-us-open-2026-highlights-vs-leylah-fernandez",
     title: "Jessica Pegula US Open 2026: Match Highlights vs Leylah Fernandez",
     excerpt: "Jessica Pegula's US Open 2026 Round 3 match against Leylah Fernandez delivered thrilling highlights. Discover key moments, player strategies, and match outcomes.",
