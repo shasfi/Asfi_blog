@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "sony-brings-back-fan-favorite-xm4-headphones",
+    title: "Sony Brings Back Fan-Favorite XM4 Headphones",
+    excerpt: "Sony revives its fan-favorite XM4 headphones with refreshed models featuring updated sound, Bluetooth 6.0, and user-replaceable batteries at a lower price.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/6687733/pexels-photo-6687733.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-07",
+    timestamp: "2026-09-07T23:00:57.394Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "trump-renaming-new-mexico-new-america",
     title: "Trump Suggests Renaming New Mexico as 'New America'",
     excerpt: "Trump suggests renaming New Mexico 'New America,' sparking a torrent of online memes, political pushback, and debate over state identity and sovereignty.",
