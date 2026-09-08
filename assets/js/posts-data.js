@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "superbowl-predictions-2026-asfi-blog",
+    title: "Super Bowl Predictions 2026: Comprehensive Analysis of Top Teams and Players",
+    excerpt: "Explore the latest Super Bowl predictions 2026 with expert analysis on teams, players, and key matchups shaping the biggest game of the year.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/31744925/pexels-photo-31744925.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-08",
+    timestamp: "2026-09-08T17:48:59.240Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "ps5-pro-news-major-system-upgrade-hefty-graphics-boost",
     title: "PS5 Pro News: Major Upgrade With Hefty Graphics Boost",
     excerpt: "PS5 Pro news indicates a major system upgrade is coming with a hefty boost to graphics, signaling a significant leap in console performance and visual fidelity for players.",
