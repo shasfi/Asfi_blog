@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "ps5-pro-news-major-system-upgrade-hefty-graphics-boost",
+    title: "PS5 Pro News: Major Upgrade With Hefty Graphics Boost",
+    excerpt: "PS5 Pro news indicates a major system upgrade is coming with a hefty boost to graphics, signaling a significant leap in console performance and visual fidelity for players.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/16776031/pexels-photo-16776031.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-08",
+    timestamp: "2026-09-08T17:01:24.575Z",
+    readMins: 8,
+    views: 0
+  },
+
+  {
     slug: "sony-brings-back-fan-favorite-xm4-headphones",
     title: "Sony Brings Back Fan-Favorite XM4 Headphones",
     excerpt: "Sony revives its fan-favorite XM4 headphones with refreshed models featuring updated sound, Bluetooth 6.0, and user-replaceable batteries at a lower price.",
