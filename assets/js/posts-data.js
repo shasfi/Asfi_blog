@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "apple-watch-series-12-ultra-4-ai-recap",
+    title: "Apple Watch Series 12 and Ultra 4 Unveiled with AI Day Recap",
+    excerpt: "Apple unveils Watch Series 12 and Watch Ultra 4 with AI upgrade that recap your day. Explore new features, health sensing, and release details.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/19961775/pexels-photo-19961775.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-09",
+    timestamp: "2026-09-09T23:01:14.050Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "superbowl-predictions-2026-asfi-blog",
     title: "Super Bowl Predictions 2026: Comprehensive Analysis of Top Teams and Players",
     excerpt: "Explore the latest Super Bowl predictions 2026 with expert analysis on teams, players, and key matchups shaping the biggest game of the year.",
