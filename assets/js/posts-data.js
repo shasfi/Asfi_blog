@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "nfl-players-coaches-execs-remember-911-25th-anniversary",
+    title: "NFL Players, Coaches, Execs Remember 9/11 25th Anniversary",
+    excerpt: "NFL players, coaches and executives honor 9/11’s 25th anniversary with tributes across the league, highlighting unity and remembrance efforts.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/1432355/pexels-photo-1432355.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-11",
+    timestamp: "2026-09-11T17:01:32.801Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "elena-rybakina-us-open-2026-semi-final",
     title: "Elena Rybakina Advances to US Open 2026 Semi-Final",
     excerpt: "Elena Rybakina advances to the US Open 2026 semi-final after Coco Gauff saves match points to beat Mirra Andreeva in a thrilling quarter-final clash on Wednesday.",
