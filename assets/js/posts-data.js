@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "elena-rybakina-us-open-2026-semi-final",
+    title: "Elena Rybakina Advances to US Open 2026 Semi-Final",
+    excerpt: "Elena Rybakina advances to the US Open 2026 semi-final after Coco Gauff saves match points to beat Mirra Andreeva in a thrilling quarter-final clash on Wednesday.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/37112807/pexels-photo-37112807.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-11",
+    timestamp: "2026-09-11T02:01:08.478Z",
+    readMins: 10,
+    views: 0
+  },
+
+  {
     slug: "apple-watch-series-12-ultra-4-ai-recap",
     title: "Apple Watch Series 12 and Ultra 4 Unveiled with AI Day Recap",
     excerpt: "Apple unveils Watch Series 12 and Watch Ultra 4 with AI upgrade that recap your day. Explore new features, health sensing, and release details.",
