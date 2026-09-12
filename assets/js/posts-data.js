@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "the-pitt-emmy-predictions",
+    title: "The Pitt: How a Trending Topic Shapes Emmy Predictions",
+    excerpt: "The Pitt has emerged as a buzzworthy narrative shaping expectations for the Emmys 2026 predictions, influencing which shows dominate award chatter today.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/12091729/pexels-photo-12091729.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-12",
+    timestamp: "2026-09-12T23:41:25.010Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "nintendo-launches-major-sale-tariff-refunds",
     title: "Nintendo launches major sale thanks to tariff refunds",
     excerpt: "Nintendo launches major sale with help from tariff refunds, offering Switch discounts as the company uses rebate funds for a customer appreciation promotion.",
