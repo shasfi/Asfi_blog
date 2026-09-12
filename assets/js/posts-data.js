@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "nintendo-launches-major-sale-tariff-refunds",
+    title: "Nintendo launches major sale thanks to tariff refunds",
+    excerpt: "Nintendo launches major sale with help from tariff refunds, offering Switch discounts as the company uses rebate funds for a customer appreciation promotion.",
+    category: "Business",
+    image: "https://images.pexels.com/photos/36398873/pexels-photo-36398873.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-12",
+    timestamp: "2026-09-12T02:05:09.467Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "nfl-players-coaches-execs-remember-911-25th-anniversary",
     title: "NFL Players, Coaches, Execs Remember 9/11 25th Anniversary",
     excerpt: "NFL players, coaches and executives honor 9/11’s 25th anniversary with tributes across the league, highlighting unity and remembrance efforts.",
