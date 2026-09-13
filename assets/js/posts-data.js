@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "houthi-advance-yemen-puts-us-in-new-bind",
+    title: "Houthi Advance in Yemen Puts U.S. in a New Bind",
+    excerpt: "The Houthi advance in Yemen creates a new challenge for U.S. foreign policy as fighting escalates around Bab al-Mandeb and Red Sea shipping faces growing threats.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/10464009/pexels-photo-10464009.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-13",
+    timestamp: "2026-09-13T02:05:11.772Z",
+    readMins: 8,
+    views: 0
+  },
+
+  {
     slug: "the-pitt-emmy-predictions",
     title: "The Pitt: How a Trending Topic Shapes Emmy Predictions",
     excerpt: "The Pitt has emerged as a buzzworthy narrative shaping expectations for the Emmys 2026 predictions, influencing which shows dominate award chatter today.",
