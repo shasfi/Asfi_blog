@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "himalayan-floods-wiped-out-towns-grief",
+    title: "Himalayan floods leave towns destroyed and grief mounting",
+    excerpt: "Himalayan floods have devastated Nepalese towns, leaving over 1,300 dead, thousands missing, and deep grief. Aid and drone ops now help displaced.",
+    category: "Science",
+    image: "https://images.pexels.com/photos/12532338/pexels-photo-12532338.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-13",
+    timestamp: "2026-09-13T12:01:28.791Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "houthi-advance-yemen-puts-us-in-new-bind",
     title: "Houthi Advance in Yemen Puts U.S. in a New Bind",
     excerpt: "The Houthi advance in Yemen creates a new challenge for U.S. foreign policy as fighting escalates around Bab al-Mandeb and Red Sea shipping faces growing threats.",
