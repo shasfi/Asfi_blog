@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "talarico-leading-paxton-survey-republican-anxiety",
+    title: "Talarico Leading Paxton in Survey as GOP Anxiety Grows",
+    excerpt: "Talarico leading Paxton in survey highlights rising Republican anxiety about the Texas attorney general's viability as legal and political headwinds continue.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/1464193/pexels-photo-1464193.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-14",
+    timestamp: "2026-09-14T17:49:00.271Z",
+    readMins: 10,
+    views: 0
+  },
+
+  {
     slug: "mcconaughey-texas-win-ohio-state-three-words",
     title: "McConaughey Sums Up Texas Win Over Ohio State in 3 Words",
     excerpt: "Actor Matthew McConaughey summed up Texas' stunning comeback win over No. 1 Ohio State in just three words, capturing the shock felt by fans everywhere.",
