@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "trump-immigration-rule-states-cities-sue",
+    title: "Trump immigration rule sued by states and cities",
+    excerpt: "States and cities sue to block Trump immigration rule on public benefits, challenging a DHS policy that could deny green cards to immigrants using public assistance.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/12004745/pexels-photo-12004745.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-14",
+    timestamp: "2026-09-14T23:41:50.714Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "talarico-leading-paxton-survey-republican-anxiety",
     title: "Talarico Leading Paxton in Survey as GOP Anxiety Grows",
     excerpt: "Talarico leading Paxton in survey highlights rising Republican anxiety about the Texas attorney general's viability as legal and political headwinds continue.",
