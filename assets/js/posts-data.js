@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "mcconaughey-texas-win-ohio-state-three-words",
+    title: "McConaughey Sums Up Texas Win Over Ohio State in 3 Words",
+    excerpt: "Actor Matthew McConaughey summed up Texas' stunning comeback win over No. 1 Ohio State in just three words, capturing the shock felt by fans everywhere.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/34304261/pexels-photo-34304261.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-14",
+    timestamp: "2026-09-14T02:01:20.312Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "himalayan-floods-wiped-out-towns-grief",
     title: "Himalayan floods leave towns destroyed and grief mounting",
     excerpt: "Himalayan floods have devastated Nepalese towns, leaving over 1,300 dead, thousands missing, and deep grief. Aid and drone ops now help displaced.",
