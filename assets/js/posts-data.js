@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "russian-oligarch-putin-trump-wedding-funding",
+    title: "Russian Oligarch Linked to Putin Funded Trump Jr.'s Wedding",
+    excerpt: "A Putin-tied Russian oligarch reportedly funded parts of Donald Trump Jr.'s wedding celebrations, raising questions about foreign influence and political ties.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/8847148/pexels-photo-8847148.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-15",
+    timestamp: "2026-09-15T12:03:09.770Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "vikings-roar-packers-collapse-lafleur-criticism",
     title: "Vikings Roar as Packers Collapse Again Under LaFleur",
     excerpt: "Vikings roar past Packers as Matt LaFleur faces criticism again for questionable decisions in another late-game collapse.",
