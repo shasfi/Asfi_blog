@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "vikings-roar-packers-collapse-lafleur-criticism",
+    title: "Vikings Roar as Packers Collapse Again Under LaFleur",
+    excerpt: "Vikings roar past Packers as Matt LaFleur faces criticism again for questionable decisions in another late-game collapse.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/17071576/pexels-photo-17071576.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-15",
+    timestamp: "2026-09-15T02:05:05.542Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "trump-immigration-rule-states-cities-sue",
     title: "Trump immigration rule sued by states and cities",
     excerpt: "States and cities sue to block Trump immigration rule on public benefits, challenging a DHS policy that could deny green cards to immigrants using public assistance.",
