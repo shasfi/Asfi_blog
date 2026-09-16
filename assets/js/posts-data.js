@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "nvidia-gpu-equivalent-meta-quest-3",
+    title: "Nvidia GPU Equivalent to Meta Quest 3 – Performance Analysis and Buyer Guide",
+    excerpt: "The Nvidia GPU equivalent to the Meta Quest 3 offers performance details, price analysis and 2026 recommendations for immersive VR experiences.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/7561900/pexels-photo-7561900.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-16",
+    timestamp: "2026-09-16T02:05:00.440Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "russian-oligarch-putin-trump-wedding-funding",
     title: "Russian Oligarch Linked to Putin Funded Trump Jr.'s Wedding",
     excerpt: "A Putin-tied Russian oligarch reportedly funded parts of Donald Trump Jr.'s wedding celebrations, raising questions about foreign influence and political ties.",
