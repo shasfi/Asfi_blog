@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "charlie-kirks-family-alleges-uvu-security-failures-before-assassination",
+    title: "Charlie Kirk's Family Alleges UVU Security Failures Before Assassination",
+    excerpt: "Charlie Kirk's family alleges University of Utah knew of rooftop security risks before his assassination. Legal filing claims official security failures contributed.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/37429780/pexels-photo-37429780.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-16",
+    timestamp: "2026-09-16T17:00:53.801Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "nvidia-gpu-equivalent-meta-quest-3",
     title: "Nvidia GPU Equivalent to Meta Quest 3 – Performance Analysis and Buyer Guide",
     excerpt: "The Nvidia GPU equivalent to the Meta Quest 3 offers performance details, price analysis and 2026 recommendations for immersive VR experiences.",
