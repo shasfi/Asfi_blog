@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "fbs-oversight-committee-replay-protocols-michigan-hail-mary",
+    title: "Michigan Hail Mary: FBS Says Replay Protocols Not Followed",
+    excerpt: "FBS oversight committee says replay protocols were not followed during Michigan Hail Mary victory over Western Michigan, but cannot overturn the final result.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/28239821/pexels-photo-28239821.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-17",
+    timestamp: "2026-09-17T12:02:43.514Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "charlie-kirks-family-alleges-uvu-security-failures-before-assassination",
     title: "Charlie Kirk's Family Alleges UVU Security Failures Before Assassination",
     excerpt: "Charlie Kirk's family alleges University of Utah knew of rooftop security risks before his assassination. Legal filing claims official security failures contributed.",
