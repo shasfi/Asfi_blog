@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "onui9-rollout-galaxy-s25-models",
+    title: "One UI 9 Rollout Date Announced for Galaxy S25 and Older Models",
+    excerpt: "One UI 9 will reach Galaxy S25 and older models soon. The official rollout date has been confirmed, bringing updated software updates to all current users now.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/36554527/pexels-photo-36554527.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-17",
+    timestamp: "2026-09-17T17:48:36.413Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "fbs-oversight-committee-replay-protocols-michigan-hail-mary",
     title: "Michigan Hail Mary: FBS Says Replay Protocols Not Followed",
     excerpt: "FBS oversight committee says replay protocols were not followed during Michigan Hail Mary victory over Western Michigan, but cannot overturn the final result.",
