@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "saudi-arabia-debris-intercepted-houthi-drone-kills",
+    title: "Saudi Arabia: Debris from Intercepted Houthi Drone Kills 1",
+    excerpt: "Saudi Arabia says debris from an intercepted Houthi drone killed one person as the Middle East conflict rapidly escalates. Here are the latest developments and ongoing strikes.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/33610644/pexels-photo-33610644.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-18",
+    timestamp: "2026-09-18T02:01:08.488Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "onui9-rollout-galaxy-s25-models",
     title: "One UI 9 Rollout Date Announced for Galaxy S25 and Older Models",
     excerpt: "One UI 9 will reach Galaxy S25 and older models soon. The official rollout date has been confirmed, bringing updated software updates to all current users now.",
