@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "buffalo-bills-fans-pay-eye-opening-prices-for-stadium-food",
+    title: "Buffalo Bills Fans Pay Eye-Opening Prices for Stadium Food",
+    excerpt: "Buffalo Bills fans paid eye-opening prices for beer and food at Highmark Stadium's first home opener. Here is what attendees spent and what it signals going forward.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/28649677/pexels-photo-28649677.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-18",
+    timestamp: "2026-09-18T17:48:35.882Z",
+    readMins: 9,
+    views: 0
+  },
+
+  {
     slug: "saudi-arabia-debris-intercepted-houthi-drone-kills",
     title: "Saudi Arabia: Debris from Intercepted Houthi Drone Kills 1",
     excerpt: "Saudi Arabia says debris from an intercepted Houthi drone killed one person as the Middle East conflict rapidly escalates. Here are the latest developments and ongoing strikes.",
