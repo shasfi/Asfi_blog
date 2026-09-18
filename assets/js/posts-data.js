@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "gary-lineker-luke-littler-darts-manchester",
+    title: "Gary Lineker Reacts to Luke Littler Darts Showdown",
+    excerpt: "Gary Lineker comments on Luke Littler facing darts fans in Manchester for £501,000 prize. Follow the latest sports updates here.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/19657729/pexels-photo-19657729.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-18",
+    timestamp: "2026-09-18T23:41:33.938Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "buffalo-bills-fans-pay-eye-opening-prices-for-stadium-food",
     title: "Buffalo Bills Fans Pay Eye-Opening Prices for Stadium Food",
     excerpt: "Buffalo Bills fans paid eye-opening prices for beer and food at Highmark Stadium's first home opener. Here is what attendees spent and what it signals going forward.",
