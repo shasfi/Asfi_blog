@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "apple-vp-iphone-duo-durability-design",
+    title: "Apple VP Discusses iPhone Duo Durability and Design Challenges",
+    excerpt: "Apple VP of hardware discusses iPhone Duo durability, crease, hinge, and other design challenges in a recent interview.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/19281807/pexels-photo-19281807.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-19",
+    timestamp: "2026-09-19T02:04:55.598Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "what-is-a-data-breach",
     title: "What Is a Data Breach and What It Means for Schools",
     excerpt: "What is a data breach? Learn how this security incident exposes sensitive information, using a recent school cyber attack as an example of impact and response.",
