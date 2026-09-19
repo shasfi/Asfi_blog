@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "what-is-a-data-breach",
+    title: "What Is a Data Breach and What It Means for Schools",
+    excerpt: "What is a data breach? Learn how this security incident exposes sensitive information, using a recent school cyber attack as an example of impact and response.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/5483248/pexels-photo-5483248.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-19",
+    timestamp: "2026-09-19T02:01:22.179Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "gary-lineker-luke-littler-darts-manchester",
     title: "Gary Lineker Reacts to Luke Littler Darts Showdown",
     excerpt: "Gary Lineker comments on Luke Littler facing darts fans in Manchester for £501,000 prize. Follow the latest sports updates here.",
