@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "pixel-11-pro-fold-review-iphone-duo-joins-googles-party",
+    title: "Pixel 11 Pro Fold Review: iPhone Duo Joins Google's Party",
+    excerpt: "Pixel 11 Pro Fold Review: iPhone Duo Joins Google's Party — a look at Google's foldable flagship, its triple camera system, and Apple's entry into foldables.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/19281806/pexels-photo-19281806.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-19",
+    timestamp: "2026-09-19T17:48:56.109Z",
+    readMins: 10,
+    views: 0
+  },
+
+  {
     slug: "apple-vp-iphone-duo-durability-design",
     title: "Apple VP Discusses iPhone Duo Durability and Design Challenges",
     excerpt: "Apple VP of hardware discusses iPhone Duo durability, crease, hinge, and other design challenges in a recent interview.",
