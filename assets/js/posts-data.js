@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "merz-calls-state-election-disaster-vows-to-stay",
+    title: "Merz Calls State Election 'Disaster' But Vows to Stay On",
+    excerpt: "German Chancellor Friedrich Merz calls recent state election results a 'disaster' for his CDU party as the far-right AfD surges, but pledges to remain in office.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/15920138/pexels-photo-15920138.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-21",
+    timestamp: "2026-09-21T02:04:37.353Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "pixel-11-pro-fold-review-iphone-duo-joins-googles-party",
     title: "Pixel 11 Pro Fold Review: iPhone Duo Joins Google's Party",
     excerpt: "Pixel 11 Pro Fold Review: iPhone Duo Joins Google's Party — a look at Google's foldable flagship, its triple camera system, and Apple's entry into foldables.",
