@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "most-brownlow-votes-ever-cats-star-record",
+    title: "Most Brownlow votes ever: Cats star in record hunt",
+    excerpt: "Most Brownlow votes ever: Cats star poised to break the record but could lose a vote, leaving fans uncertain about the final count and its historic impact.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/6345324/pexels-photo-6345324.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-21",
+    timestamp: "2026-09-21T17:01:27.681Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "merz-calls-state-election-disaster-vows-to-stay",
     title: "Merz Calls State Election 'Disaster' But Vows to Stay On",
     excerpt: "German Chancellor Friedrich Merz calls recent state election results a 'disaster' for his CDU party as the far-right AfD surges, but pledges to remain in office.",
