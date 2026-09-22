@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "sources-giants-qb-jaxson-dart-out-extended-period",
+    title: "Sources: Giants QB Jaxson Dart out for extended period",
+    excerpt: "Sources confirm Giants quarterback Jaxson Dart faces an extended absence due to a knee injury, raising questions about New York’s offensive plans and veteran leadership.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/274517/pexels-photo-274517.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-22",
+    timestamp: "2026-09-22T23:41:54.491Z",
+    readMins: 9,
+    views: 0
+  },
+
+  {
     slug: "most-brownlow-votes-ever-cats-star-record",
     title: "Most Brownlow votes ever: Cats star in record hunt",
     excerpt: "Most Brownlow votes ever: Cats star poised to break the record but could lose a vote, leaving fans uncertain about the final count and its historic impact.",
