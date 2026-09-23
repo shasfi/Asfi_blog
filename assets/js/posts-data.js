@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "sri-lanka-convicts-15-in-easter-2019-bomb-attacks",
+    title: "Sri Lanka Convicts 15 in Easter 2019 Bomb Attacks",
+    excerpt: "Sri Lanka Convicts 15 in Easter 2019 Bomb Attacks: court hands down lengthy prison terms for those behind the deadly suicide blasts that killed over 260 people",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/6077447/pexels-photo-6077447.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-23",
+    timestamp: "2026-09-23T12:01:18.891Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "sources-giants-qb-jaxson-dart-out-extended-period",
     title: "Sources: Giants QB Jaxson Dart out for extended period",
     excerpt: "Sources confirm Giants quarterback Jaxson Dart faces an extended absence due to a knee injury, raising questions about New York’s offensive plans and veteran leadership.",
