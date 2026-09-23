@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "harvey-weinstein-sentenced-15-years",
+    title: "Harvey Weinstein Sentenced to 15 Years After Conviction",
+    excerpt: "Harvey Weinstein sentenced to 15 years after sexual assault conviction. This article explores the ruling's impact on survivors and broader cultural implications.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/6077240/pexels-photo-6077240.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-23",
+    timestamp: "2026-09-23T17:01:10.870Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "sri-lanka-convicts-15-in-easter-2019-bomb-attacks",
     title: "Sri Lanka Convicts 15 in Easter 2019 Bomb Attacks",
     excerpt: "Sri Lanka Convicts 15 in Easter 2019 Bomb Attacks: court hands down lengthy prison terms for those behind the deadly suicide blasts that killed over 260 people",
