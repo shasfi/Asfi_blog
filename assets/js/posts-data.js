@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "big-weekend-storm-nor-easter-threatens-east-coast",
+    title: "Big Weekend Storm: Nor'easter Threatens East Coast",
+    excerpt: "A big weekend storm is coming! Nor'easter brings heavy rain, strong winds, and coastal flooding to the East Coast. Prepare for severe weather now.",
+    category: "General",
+    image: "https://images.pexels.com/photos/18837991/pexels-photo-18837991.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-24",
+    timestamp: "2026-09-24T23:41:56.384Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "beats-360-pre-orders-amazon-cushion-kits-sale",
     title: "Beats 360 Pre-Orders Open at Amazon With Cushion Kits on Sale",
     excerpt: "Beats 360 pre-orders are now open at Amazon with cushion kits on sale. Here is everything you need to know about the new lightweight headphones and current deals.",
