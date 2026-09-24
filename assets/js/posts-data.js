@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "beats-360-pre-orders-amazon-cushion-kits-sale",
+    title: "Beats 360 Pre-Orders Open at Amazon With Cushion Kits on Sale",
+    excerpt: "Beats 360 pre-orders are now open at Amazon with cushion kits on sale. Here is everything you need to know about the new lightweight headphones and current deals.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/6687733/pexels-photo-6687733.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-24",
+    timestamp: "2026-09-24T02:04:59.031Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "harvey-weinstein-sentenced-15-years",
     title: "Harvey Weinstein Sentenced to 15 Years After Conviction",
     excerpt: "Harvey Weinstein sentenced to 15 years after sexual assault conviction. This article explores the ruling's impact on survivors and broader cultural implications.",
