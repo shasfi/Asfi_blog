@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "work-continues-on-field-for-ravens-cowboys",
+    title: "Work Continues on Field for Ravens-Cowboys Game in Brazil",
+    excerpt: "Work continues on field for Ravens-Cowboys game in Brazil as stadium preparations accelerate ahead of the unprecedented NFL Week 3 international matchup.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/3102323/pexels-photo-3102323.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-25",
+    timestamp: "2026-09-25T17:00:55.020Z",
+    readMins: 8,
+    views: 0
+  },
+
+  {
     slug: "big-weekend-storm-nor-easter-threatens-east-coast",
     title: "Big Weekend Storm: Nor'easter Threatens East Coast",
     excerpt: "A big weekend storm is coming! Nor'easter brings heavy rain, strong winds, and coastal flooding to the East Coast. Prepare for severe weather now.",
