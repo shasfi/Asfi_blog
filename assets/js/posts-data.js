@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "norma-dumont-throws-condoms-money-ailin-perez-video",
+    title: "Norma Dumont throws condoms, money at Ailin Perez video",
+    excerpt: "Watch the viral video of UFC Vegas 121 faceoff where Norma Dumont throws condoms and money at Ailin Perez, sparking controversy and mental warfare talk.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/29528231/pexels-photo-29528231.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-25",
+    timestamp: "2026-09-25T23:41:29.099Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "work-continues-on-field-for-ravens-cowboys",
     title: "Work Continues on Field for Ravens-Cowboys Game in Brazil",
     excerpt: "Work continues on field for Ravens-Cowboys game in Brazil as stadium preparations accelerate ahead of the unprecedented NFL Week 3 international matchup.",
