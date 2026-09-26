@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "michigan-football-vs-iowa-week-4-live-updates-highlights",
+    title: "Michigan Football vs Iowa Week 4 Live Updates and Highlights",
+    excerpt: "Michigan football vs Iowa Week 4 live updates deliver the latest game score, thrilling highlights, and key plays from the Big Ten conference matchup to watch today.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/19432786/pexels-photo-19432786.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-26",
+    timestamp: "2026-09-26T23:41:38.024Z",
+    readMins: 9,
+    views: 0
+  },
+
+  {
     slug: "bears-qb-williams-out-mnf-backup-bagent-practice",
     title: "QB Williams Out for MNF as Backup Bagent Returns to Practice",
     excerpt: "Bears QB Williams is out for Monday Night Football as backup Bagent returns to practice but remains questionable against the Eagles due to a concussion update.",
