@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "bears-qb-williams-out-mnf-backup-bagent-practice",
+    title: "QB Williams Out for MNF as Backup Bagent Returns to Practice",
+    excerpt: "Bears QB Williams is out for Monday Night Football as backup Bagent returns to practice but remains questionable against the Eagles due to a concussion update.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/13401812/pexels-photo-13401812.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-26",
+    timestamp: "2026-09-26T23:01:19.964Z",
+    readMins: 9,
+    views: 0
+  },
+
+  {
     slug: "control-resonant-and-new-indie-games-to-play-now",
     title: "Control Resonant and New Indie Games to Play Now",
     excerpt: "Control Resonant leads a fresh wave of indie games worth playing now. Discover rapidfire CEO turnovers and trending new releases.",
