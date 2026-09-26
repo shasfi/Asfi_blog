@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "control-resonant-and-new-indie-games-to-play-now",
+    title: "Control Resonant and New Indie Games to Play Now",
+    excerpt: "Control Resonant leads a fresh wave of indie games worth playing now. Discover rapidfire CEO turnovers and trending new releases.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/27641930/pexels-photo-27641930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-26",
+    timestamp: "2026-09-26T17:48:50.037Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "norma-dumont-throws-condoms-money-ailin-perez-video",
     title: "Norma Dumont throws condoms, money at Ailin Perez video",
     excerpt: "Watch the viral video of UFC Vegas 121 faceoff where Norma Dumont throws condoms and money at Ailin Perez, sparking controversy and mental warfare talk.",
