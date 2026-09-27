@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "columbus-crew-vs-inter-miami-mls-analysis",
+    title: "Columbus Crew vs Inter Miami: MLS Showdown Analysis",
+    excerpt: "Explore the Columbus Crew vs Inter Miami MLS clash: stats, head-to-head history, key players, and what to expect in their upcoming matchup.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/7258838/pexels-photo-7258838.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-27",
+    timestamp: "2026-09-27T23:00:44.918Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "michigan-football-vs-iowa-week-4-live-updates-highlights",
     title: "Michigan Football vs Iowa Week 4 Live Updates and Highlights",
     excerpt: "Michigan football vs Iowa Week 4 live updates deliver the latest game score, thrilling highlights, and key plays from the Big Ten conference matchup to watch today.",
