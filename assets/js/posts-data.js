@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "john-waldron-goldman-sachs-succession-planning",
+    title: "John Waldron and Goldman Sachs Succession Planning: What's Next?",
+    excerpt: "Explore the role of John Waldron in Goldman Sachs succession planning discussions, his potential impact, and implications for the firm's leadership future.",
+    category: "Business",
+    image: "https://images.pexels.com/photos/7433847/pexels-photo-7433847.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-28",
+    timestamp: "2026-09-28T23:41:29.416Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "south-korea-vs-uruguay-friendlies-stats-head-to-head",
     title: "South Korea vs Uruguay: Friendlies Stats and Head to Head",
     excerpt: "South Korea vs Uruguay friendlies stats and head to head explores the historical rivalry and statistical trends between these football nations. Discover the key data points.",
