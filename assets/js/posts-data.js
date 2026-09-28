@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "south-korea-vs-uruguay-friendlies-stats-head-to-head",
+    title: "South Korea vs Uruguay: Friendlies Stats and Head to Head",
+    excerpt: "South Korea vs Uruguay friendlies stats and head to head explores the historical rivalry and statistical trends between these football nations. Discover the key data points.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/4038911/pexels-photo-4038911.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-28",
+    timestamp: "2026-09-28T12:01:13.881Z",
+    readMins: 9,
+    views: 0
+  },
+
+  {
     slug: "columbus-crew-vs-inter-miami-mls-analysis",
     title: "Columbus Crew vs Inter Miami: MLS Showdown Analysis",
     excerpt: "Explore the Columbus Crew vs Inter Miami MLS clash: stats, head-to-head history, key players, and what to expect in their upcoming matchup.",
