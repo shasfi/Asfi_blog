@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "severely-disabled-toddler-euthanized-netherlands",
+    title: "Severely disabled toddler euthanized in Netherlands",
+    excerpt: "Severely disabled one-year-old euthanized in Netherlands under new infant euthanasia rules, igniting worldwide debate over ethics and disability rights.",
+    category: "Health",
+    image: "https://images.pexels.com/photos/12081340/pexels-photo-12081340.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-29",
+    timestamp: "2026-09-29T17:49:12.867Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "john-waldron-goldman-sachs-succession-planning",
     title: "John Waldron and Goldman Sachs Succession Planning: What's Next?",
     excerpt: "Explore the role of John Waldron in Goldman Sachs succession planning discussions, his potential impact, and implications for the firm's leadership future.",
