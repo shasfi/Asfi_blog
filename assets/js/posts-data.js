@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "white-sox-26-man-wild-card-series-roster-no-surprises",
+    title: "White Sox 26-Man Wild Card Series Roster Shows No Surprises",
+    excerpt: "The White Sox 26-man Wild Card Series roster delivered no surprises, sticking to expected talent and depth. Discover what this means for Chicago playoff outlook.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/17724027/pexels-photo-17724027.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-29",
+    timestamp: "2026-09-29T23:01:16.185Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "severely-disabled-toddler-euthanized-netherlands",
     title: "Severely disabled toddler euthanized in Netherlands",
     excerpt: "Severely disabled one-year-old euthanized in Netherlands under new infant euthanasia rules, igniting worldwide debate over ethics and disability rights.",
