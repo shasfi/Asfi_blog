@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "samsung-gives-galaxy-tab-s-plus-a-two-year-overhaul",
+    title: "Samsung gives Galaxy Tab S Plus a two-year overhaul",
+    excerpt: "Samsung gives its two-year-old Galaxy Tab S Plus an overhaul, refreshing the tablet with updated specs and software to extend its lifespan and appeal for users.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/6337/light-coffee-pen-working.jpg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-30",
+    timestamp: "2026-09-30T17:48:56.284Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "white-sox-26-man-wild-card-series-roster-no-surprises",
     title: "White Sox 26-Man Wild Card Series Roster Shows No Surprises",
     excerpt: "The White Sox 26-man Wild Card Series roster delivered no surprises, sticking to expected talent and depth. Discover what this means for Chicago playoff outlook.",
