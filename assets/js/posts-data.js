@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "caitlin-clark-fever-game-2-aces-playoffs",
+    title: "Caitlin Clark Keeps Fever Alive With Historic Game 2",
+    excerpt: "Caitlin Clark's historic playoff performance keeps the Fever's season alive in Game 2 against the Aces. Read how her 27 points and 15 assists sparked a comeback.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/159611/basketball-player-game-sport-159611.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-30",
+    timestamp: "2026-09-30T23:01:11.082Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "samsung-gives-galaxy-tab-s-plus-a-two-year-overhaul",
     title: "Samsung gives Galaxy Tab S Plus a two-year overhaul",
     excerpt: "Samsung gives its two-year-old Galaxy Tab S Plus an overhaul, refreshing the tablet with updated specs and software to extend its lifespan and appeal for users.",
