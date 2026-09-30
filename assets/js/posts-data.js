@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "big-brother-on-tonight-final-house-explosion",
+    title: "Big Brother On Tonight – Final House Explosion",
+    excerpt: "Big Brother on tonight recap: final host‑of‑the‑house, jury reactions and what happened after the explosive finale reveals behind the drama inside living room.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/8730030/pexels-photo-8730030.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-09-30",
+    timestamp: "2026-09-30T23:41:19.142Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "caitlin-clark-fever-game-2-aces-playoffs",
     title: "Caitlin Clark Keeps Fever Alive With Historic Game 2",
     excerpt: "Caitlin Clark's historic playoff performance keeps the Fever's season alive in Game 2 against the Aces. Read how her 27 points and 15 assists sparked a comeback.",
