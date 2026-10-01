@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "joey-porter-jr-traded-cowboys-steelers-dispute",
+    title: "Joey Porter Jr. Traded to Cowboys After Steelers Dispute",
+    excerpt: "Joey Porter Jr. felt disrespected and underappreciated by the Steelers before being traded to the Cowboys. Read the latest on this NFL trade.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/16823572/pexels-photo-16823572.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-01",
+    timestamp: "2026-10-01T23:01:12.053Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "big-brother-on-tonight-final-house-explosion",
     title: "Big Brother On Tonight – Final House Explosion",
     excerpt: "Big Brother on tonight recap: final host‑of‑the‑house, jury reactions and what happened after the explosive finale reveals behind the drama inside living room.",
