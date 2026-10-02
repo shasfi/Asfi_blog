@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "amazon-redesigns-kindle-lineup-and-announces-new-accessories",
+    title: "Amazon Redesigns Kindle Lineup and Announces New Accessories",
+    excerpt: "Amazon redesigns Kindle lineup and announces new accessories, featuring thinner, lighter, and more colorful e-readers for readers.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/31145644/pexels-photo-31145644.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-02",
+    timestamp: "2026-10-02T12:01:03.659Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "joey-porter-jr-traded-cowboys-steelers-dispute",
     title: "Joey Porter Jr. Traded to Cowboys After Steelers Dispute",
     excerpt: "Joey Porter Jr. felt disrespected and underappreciated by the Steelers before being traded to the Cowboys. Read the latest on this NFL trade.",
