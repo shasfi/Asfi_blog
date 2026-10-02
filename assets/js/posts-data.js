@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "lula-bolsonaro-mudslinging-heats-up-ahead-of-election",
+    title: "Lula and Bolsonaro's Mudslinging Intensifies Before Election Vote",
+    excerpt: "Brazil's presidential candidates Lula and Bolsonaro engage in intense mudslinging as the weekend vote approaches, with polls showing a close race and debates over key issues.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/8846952/pexels-photo-8846952.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-02",
+    timestamp: "2026-10-02T17:01:28.304Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "amazon-redesigns-kindle-lineup-and-announces-new-accessories",
     title: "Amazon Redesigns Kindle Lineup and Announces New Accessories",
     excerpt: "Amazon redesigns Kindle lineup and announces new accessories, featuring thinner, lighter, and more colorful e-readers for readers.",
