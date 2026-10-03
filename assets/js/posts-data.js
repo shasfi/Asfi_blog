@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "shop-clerk-son-charged-in-ole-miss-kratom-sales-case",
+    title: "Shop Clerk, Son Charged in Ole Miss Kratom Sales Case",
+    excerpt: "Shop clerk and son charged with selling illegal kratom amid investigation into deaths of 2 Ole Miss students. Federal prosecutors call them a danger to the public.",
+    category: "General",
+    image: "https://images.pexels.com/photos/165228/pexels-photo-165228.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-03",
+    timestamp: "2026-10-03T12:01:08.697Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "cricbuzz-pakistan-vs-india-asian-games-2026-live-stream",
     title: "Cricbuzz Live: Pakistan vs India Asian Games 2026 Stream",
     excerpt: "Cricbuzz streams Pakistan vs India Gold Medal match for Asian Games 2026. Get scores, commentary, highlights and live updates across the USA and Canada.",
