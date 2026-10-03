@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "cricbuzz-pakistan-vs-india-asian-games-2026-live-stream",
+    title: "Cricbuzz Live: Pakistan vs India Asian Games 2026 Stream",
+    excerpt: "Cricbuzz streams Pakistan vs India Gold Medal match for Asian Games 2026. Get scores, commentary, highlights and live updates across the USA and Canada.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/15862398/pexels-photo-15862398.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-03",
+    timestamp: "2026-10-03T02:04:56.554Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "lula-bolsonaro-mudslinging-heats-up-ahead-of-election",
     title: "Lula and Bolsonaro's Mudslinging Intensifies Before Election Vote",
     excerpt: "Brazil's presidential candidates Lula and Bolsonaro engage in intense mudslinging as the weekend vote approaches, with polls showing a close race and debates over key issues.",
