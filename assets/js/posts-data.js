@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "michael-lewis-takes-on-elon-musk-and-doge",
+    title: "Michael Lewis Takes On Elon Musk And DOGE",
+    excerpt: "Michael Lewis, author of The Big Short and Moneyball, is back to take on Elon Musk and DOGE. Discover why his new focus is creating a roller coaster in business and politics.",
+    category: "Business",
+    image: "https://images.pexels.com/photos/7580704/pexels-photo-7580704.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-04",
+    timestamp: "2026-10-04T17:01:06.510Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "shop-clerk-son-charged-in-ole-miss-kratom-sales-case",
     title: "Shop Clerk, Son Charged in Ole Miss Kratom Sales Case",
     excerpt: "Shop clerk and son charged with selling illegal kratom amid investigation into deaths of 2 Ole Miss students. Federal prosecutors call them a danger to the public.",
