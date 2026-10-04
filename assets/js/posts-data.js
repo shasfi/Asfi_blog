@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "houthis-claim-attack-on-aramco-as-yemen-conflict-escalates",
+    title: "Houthis Claim Attack on Aramco as Yemen Conflict Escalates",
+    excerpt: "Houthis Claim Attack on Aramco as Yemen Conflict Escalates. New reports detail the Saudi-backed offensive, Iran's stance, and risks to regional stability.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/35566202/pexels-photo-35566202.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-04",
+    timestamp: "2026-10-04T17:49:08.039Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "michael-lewis-takes-on-elon-musk-and-doge",
     title: "Michael Lewis Takes On Elon Musk And DOGE",
     excerpt: "Michael Lewis, author of The Big Short and Moneyball, is back to take on Elon Musk and DOGE. Discover why his new focus is creating a roller coaster in business and politics.",
