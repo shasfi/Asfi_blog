@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "apple-smart-home-push-includes-doorbell-lock-thermostat",
+    title: "Apple Smart Home Push Includes Doorbell, Lock, Thermostat",
+    excerpt: "Apple’s Smart Home Push Includes Doorbell, Lock, Thermostat co‑developed with LG, expanding its ecosystem and integrating tighter home control.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/22307556/pexels-photo-22307556.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-06",
+    timestamp: "2026-10-06T23:01:12.215Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "houthis-claim-attack-on-aramco-as-yemen-conflict-escalates",
     title: "Houthis Claim Attack on Aramco as Yemen Conflict Escalates",
     excerpt: "Houthis Claim Attack on Aramco as Yemen Conflict Escalates. New reports detail the Saudi-backed offensive, Iran's stance, and risks to regional stability.",
