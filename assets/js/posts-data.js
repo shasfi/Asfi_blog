@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "christa-pike-live-updates-judge-to-hear-lawyers",
+    title: "Christa Pike Live Updates: Judge to Hear Lawyers",
+    excerpt: "Christa Pike Live Updates reveal a judge is set to hear from her lawyers following a failed execution and court appearance by defense attorneys today.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/14766052/pexels-photo-14766052.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-07",
+    timestamp: "2026-10-07T17:49:08.885Z",
+    readMins: 9,
+    views: 0
+  },
+
+  {
     slug: "apple-smart-home-push-includes-doorbell-lock-thermostat",
     title: "Apple Smart Home Push Includes Doorbell, Lock, Thermostat",
     excerpt: "Apple’s Smart Home Push Includes Doorbell, Lock, Thermostat co‑developed with LG, expanding its ecosystem and integrating tighter home control.",
