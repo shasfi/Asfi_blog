@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "houthis-claim-missile-strike-on-riyadh-explosions-heard-in-capital",
+    title: "Houthis Claim Missile Strike on Riyadh as Explosions Echo in Capital",
+    excerpt: "Houthis claim missile strike on Riyadh as explosions heard in capital. Saudi Arabia faces escalating attacks amid ongoing Yemen conflict tensions.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/38000926/pexels-photo-38000926.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-08",
+    timestamp: "2026-10-08T12:03:00.789Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "christa-pike-live-updates-judge-to-hear-lawyers",
     title: "Christa Pike Live Updates: Judge to Hear Lawyers",
     excerpt: "Christa Pike Live Updates reveal a judge is set to hear from her lawyers following a failed execution and court appearance by defense attorneys today.",
