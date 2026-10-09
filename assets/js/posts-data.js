@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "the-exorcist-martyrs-trailer-scarlett-johansson",
+    title: "The Exorcist: Martyrs Trailer Debuts Scarlett Johansson",
+    excerpt: "The Exorcist: Martyrs trailer shows Scarlett Johansson hunting a demonic killer in Mike Flanagan's new take on the horror classic, reviving the franchise.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/19010140/pexels-photo-19010140.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-09",
+    timestamp: "2026-10-09T23:41:34.269Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "pradhama-drishtiya-kuttakkar-ott-release-parvathy-thiruvothu",
     title: "Pradhama Drishtiya Kuttakkar OTT Release: Parvathy Thiruvothu Thriller Debuts This Week",
     excerpt: "Pradhama Drishtiya Kuttakkar hits OTT this week starring Parvathy Thiruvothu. Get release details, plot insights, and what to expect from this Malayalam thriller.",
