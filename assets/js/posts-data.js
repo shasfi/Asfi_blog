@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "pradhama-drishtiya-kuttakkar-ott-release-parvathy-thiruvothu",
+    title: "Pradhama Drishtiya Kuttakkar OTT Release: Parvathy Thiruvothu Thriller Debuts This Week",
+    excerpt: "Pradhama Drishtiya Kuttakkar hits OTT this week starring Parvathy Thiruvothu. Get release details, plot insights, and what to expect from this Malayalam thriller.",
+    category: "Entertainment",
+    image: "https://images.pexels.com/photos/30588671/pexels-photo-30588671.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-09",
+    timestamp: "2026-10-09T12:01:27.166Z",
+    readMins: 7,
+    views: 0
+  },
+
+  {
     slug: "houthis-claim-missile-strike-on-riyadh-explosions-heard-in-capital",
     title: "Houthis Claim Missile Strike on Riyadh as Explosions Echo in Capital",
     excerpt: "Houthis claim missile strike on Riyadh as explosions heard in capital. Saudi Arabia faces escalating attacks amid ongoing Yemen conflict tensions.",
