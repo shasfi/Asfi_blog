@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "inter-vs-parma-serie-a-stats-head-to-head-analysis",
+    title: "Inter vs Parma: Serie A Stats and Head-to-Head Analysis",
+    excerpt: "Inter vs Parma: Italian Serie A stats & head-to-head analysis. Explore the history, tactics, and stakes defining this Serie A matchup between Milan and Parma.",
+    category: "Sports",
+    image: "https://images.pexels.com/photos/20814951/pexels-photo-20814951.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-10",
+    timestamp: "2026-10-10T17:48:59.332Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "amazon-shuffles-alexa-leadership-after-tablet-release",
     title: "Amazon shuffles Alexa leadership after tablet launch",
     excerpt: "Amazon shuffles Alexa leadership following a high-end tablet release, signaling a strategic shift in its smart device lineup and AI focus for consumers.",
