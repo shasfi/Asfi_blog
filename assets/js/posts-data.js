@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "amazon-shuffles-alexa-leadership-after-tablet-release",
+    title: "Amazon shuffles Alexa leadership after tablet launch",
+    excerpt: "Amazon shuffles Alexa leadership following a high-end tablet release, signaling a strategic shift in its smart device lineup and AI focus for consumers.",
+    category: "Technology",
+    image: "https://images.pexels.com/photos/6687746/pexels-photo-6687746.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-10",
+    timestamp: "2026-10-10T17:01:22.976Z",
+    readMins: 4,
+    views: 0
+  },
+
+  {
     slug: "the-exorcist-martyrs-trailer-scarlett-johansson",
     title: "The Exorcist: Martyrs Trailer Debuts Scarlett Johansson",
     excerpt: "The Exorcist: Martyrs trailer shows Scarlett Johansson hunting a demonic killer in Mike Flanagan's new take on the horror classic, reviving the franchise.",
