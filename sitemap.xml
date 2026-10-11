@@ -1380,4 +1380,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://asfiblog.vercel.app/blog/hurricane-simon-pounds-mexico-pacific-coast-resorts-towns.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
