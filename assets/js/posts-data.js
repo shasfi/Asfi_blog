@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "hurricane-simon-pounds-mexico-pacific-coast-resorts-towns",
+    title: "Hurricane Simon Pounds Mexico’s Pacific Coast Resorts and Towns",
+    excerpt: "Hurricane Simon pounds resorts and vulnerable towns along Mexico’s Pacific coast, bringing destructive winds and severe flooding fears across the wider region.",
+    category: "General",
+    image: "https://images.pexels.com/photos/19314212/pexels-photo-19314212.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-11",
+    timestamp: "2026-10-11T17:49:12.885Z",
+    readMins: 9,
+    views: 0
+  },
+
+  {
     slug: "inter-vs-parma-serie-a-stats-head-to-head-analysis",
     title: "Inter vs Parma: Serie A Stats and Head-to-Head Analysis",
     excerpt: "Inter vs Parma: Italian Serie A stats & head-to-head analysis. Explore the history, tactics, and stakes defining this Serie A matchup between Milan and Parma.",
