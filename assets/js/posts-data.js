@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "us-and-nato-commander-vows-to-thwart-moscow-warns-kyiv",
+    title: "U.S. and NATO Commander Vows to Thwart Moscow, Warns Kyiv",
+    excerpt: "U.S. and NATO commander vows to thwart Moscow and warns Kyiv over refinery strikes as NATO details new defense plans for European allies amid rising tensions.",
+    category: "Politics",
+    image: "https://images.pexels.com/photos/11834883/pexels-photo-11834883.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-12",
+    timestamp: "2026-10-12T23:41:38.265Z",
+    readMins: 6,
+    views: 0
+  },
+
+  {
     slug: "hurricane-simon-pounds-mexico-pacific-coast-resorts-towns",
     title: "Hurricane Simon Pounds Mexico’s Pacific Coast Resorts and Towns",
     excerpt: "Hurricane Simon pounds resorts and vulnerable towns along Mexico’s Pacific coast, bringing destructive winds and severe flooding fears across the wider region.",
