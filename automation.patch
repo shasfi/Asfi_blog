@@ -1,0 +1,212 @@
+--- a/api/generate-blog.js
++++ b/api/generate-blog.js
+@@ -227,11 +227,11 @@
+       const errText = await postsDataGet.text();
+       return res.status(500).json({ error: "Could not fetch posts-data.js from GitHub", detail: errText });
+     }
+     const postsDataFile = await postsDataGet.json();
+     let postsDataJs = Buffer.from(postsDataFile.content, "base64").toString("utf-8");
+-    const existingTitles = [...postsDataJs.matchAll(/title:\s*"((?:[^"\\]|\\.)*)"/g)].map((m) => m[1]);
++    const existingTitles = [...postsDataJs.matchAll(/(?:"title"|title)\s*:\s*"((?:[^"\\]|\\.)*)"/g)].map((m) => m[1]);
+     const usedTitlesLower = existingTitles.map((t) => t.toLowerCase());
+ 
+     if (!customTopic) {
+       console.log("STEP 1: fetching real-time trending topics (Google Trends + Google News)");
+ 
+@@ -306,63 +306,81 @@
+       const newsPool = newsItemsPerFeed.flatMap((items,i) => items.slice(0,8).map((item,rank) => ({ ...item, feed: newsFeeds[i].label, rank })));
+       if (!trendItems.length && !newsPool.length) {
+         return res.status(503).json({ error: "Trending feeds unavailable; no unverified article published" });
+       }
+ 
+-      // A modest freshness/search-interest heuristic, NOT measured viral reach,
+-      // keyword volume or an estimate of future US readers. News is preferred.
+-      const newsCandidates = newsPool.filter(item =>
+-        !usedTitlesLower.some(t => titleSimilarity(t, item.title) >= 0.7));
+-      const trendsCandidates = trendItems.filter(item =>
+-        !usedTitlesLower.some(t => titleSimilarity(t, item.title) >= 0.7));
+-      const useNews = newsCandidates.length && (!trendsCandidates.length || Math.random() < 0.85);
+-      const candidates = useNews ? newsCandidates : trendsCandidates;
+-      if (!candidates.length) return res.status(409).json({ error: 'All available headlines already covered; nothing duplicated' });
+-      const weights = candidates.map(c => {
+-        const usWeight = c.feed?.startsWith('us-') ? 2.5 : 1;
+-        const freshness = Math.max(1, 9 - (c.rank || 0));
+-        const searchInterest = c.traffic ? Math.min(5, 1 + Math.log10(c.traffic + 1)) : 1;
+-        return usWeight * freshness * searchInterest;
+-      });
+-      let ticket = Math.random() * weights.reduce((sum,w) => sum + w, 0);
+-      let chosen = candidates[candidates.length - 1];
+-      for (let i=0; i<candidates.length; i++) { ticket -= weights[i]; if(ticket <= 0) { chosen = candidates[i]; break; } }
+-      trendingHeadline = chosen.title;
+-      sourceUrl = chosen.sourceUrl || "";
+-      trendingContext = chosen.description || "";
+-
+-      // Seek independent corroborating Google News coverage of the SAME story.
+-      // One sensational headline is not evidence for a 1,600-word news report.
+-      const searchQuery = encodeURIComponent(`"${trendingHeadline.replace(/\"/g, '')}" when:2d`);
+-      let corroborating = [];
+-      try {
+-        const matchRes = await fetch(`https://news.google.com/rss/search?q=${searchQuery}&hl=en-US&gl=US&ceid=US:en`, { signal: AbortSignal.timeout(5000) });
+-        if (matchRes.ok) {
+-          const matchItems = parseNewsRss(await matchRes.text());
+-          const uniquePublishers = new Set();
+-          corroborating = matchItems.filter(item => {
+-            const publisher = item.sourceName.toLowerCase();
+-            if (!publisher || uniquePublishers.has(publisher)) return false;
+-            if (titleSimilarity(trendingHeadline, item.title) < 0.40) return false;
++      // Priority = credible, current, widely-covered US-interest stories.
++      // We cannot measure X/TikTok/YouTube virality or predict future search volume
++      // from Google News/Trends RSS. Do not describe this as a viral guarantee.
++      const relevantToUS = /\b(us|u\.s\.|american|united states|trump|white house|nfl|nba|mlb|wnba|nhl|elon musk|starlink|tesla|nvidia|apple|google|microsoft|openai|space ?x|world cup|fifa|olympic|netflix|disney)\b/i;
++      const highInterestNames = /\b(elon musk|donald trump|taylor swift|lebron james|caitlin clark|sam altman|mukesh ambani|narendra modi|rahul gandhi|mess(i)?|nvidia|iphone|chatgpt|starlink)\b/i;
++      const freshNews = newsPool.filter(item =>
++        !usedTitlesLower.some(t => titleSimilarity(t, item.title) >= 0.66));
++      const freshTrends = trendItems.filter(item =>
++        !usedTitlesLower.some(t => titleSimilarity(t, item.title) >= 0.66));
++      const sourceScore = (candidate) => {
++        const relatedPublishers = new Set(newsPool.filter(n => titleSimilarity(candidate.title, n.title) >= 0.42)
++          .map(n => (n.sourceName || '').toLowerCase()).filter(Boolean));
++        const trendCorroboration = freshTrends.some(t => titleSimilarity(candidate.title, t.title) >= 0.42);
++        const candidateDate = Date.parse(candidate.published || '');
++        const ageHours = Number.isFinite(candidateDate) ? Math.max(0, (Date.now() - candidateDate)/3600000) : null;
++        const freshness = ageHours === null ? Math.max(0, 12 - (candidate.rank || 0))
++          : ageHours <= 12 ? 16 : ageHours <= 24 ? 12 : ageHours <= 48 ? 7 : 1;
++        const us = candidate.feed?.startsWith('us-') ? 13 : 0;
++        const usTopic = relevantToUS.test(candidate.title) ? 9 : 0;
++        const namedSubject = highInterestNames.test(candidate.title) ? 6 : 0;
++        const breadth = Math.min(20, relatedPublishers.size * 5);
++        const trend = trendCorroboration ? 16 : 0;
++        const searchInterest = candidate.traffic ? Math.min(12, Math.log10(candidate.traffic + 1) * 3) : 0;
++        return freshness + us + usTopic + namedSubject + breadth + trend + searchInterest;
++      };
++      const candidates = [...freshNews, ...freshTrends].sort((a,b) => sourceScore(b) - sourceScore(a));
++      if (!candidates.length) return res.status(409).json({ error: 'All discovered topics already covered; no duplicates published' });
++
++      // Headlines cannot independently verify quotations, official allegations or
++      // results. Check multiple publishers before drafting; skip weak stories.
++      let selected = null;
++      let selectedCoverage = [];
++      for (const candidate of candidates.slice(0, 5)) {
++        const keywords = candidate.title.replace(/[^\p{L}\p{N}\s-]/gu, ' ').split(/\s+/)
++          .filter(w => w.length > 3 && !/^(with|this|that|from|after|amid|live|news|latest|update)$/i.test(w))
++          .slice(0, 7).join(' ');
++        const searchQuery = encodeURIComponent(`${keywords} when:2d`);
++        let matchItems = [];
++        try {
++          const matchRes = await fetch(`https://news.google.com/rss/search?q=${searchQuery}&hl=en-US&gl=US&ceid=US:en`, { signal: AbortSignal.timeout(4000) });
++          if (matchRes.ok) matchItems = parseNewsRss(await matchRes.text());
++        } catch(e) { console.warn('Corroboration query unavailable:', e.message); }
++        const uniquePublishers = new Set();
++        const relevantCoverage = [...matchItems, ...newsPool]
++          .filter(item => titleSimilarity(candidate.title, item.title) >= 0.40)
++          .filter(item => {
++            const publisher=(item.sourceName || '').trim().toLowerCase();
++            if (!publisher || publisher === 'news coverage' || uniquePublishers.has(publisher)) return false;
+             uniquePublishers.add(publisher);
+             return true;
+-          }).slice(0, 4);
++          }).slice(0, 5);
++        const highRisk = /\b(dies|dead|death|killed|murder|suicide|arrested|charged|convicted|rape|assault|fraud|scandal|accused|alleged|assassination|war crimes|election fraud|cancer diagnosis)\b/i.test(candidate.title);
++        if (highRisk && relevantCoverage.length < 2) {
++          console.warn('Sensitive breaking-news claim lacks two independent publisher references:', candidate.title);
++          continue;
+         }
+-      } catch (e) { console.warn('News corroboration query unavailable:', e.message); }
+-      const highRisk = /\b(dies|dead|death|killed|murder|suicide|arrested|charged|convicted|rape|assault|fraud|scandal|accused|alleged|health crisis|war crimes)\b/i.test(trendingHeadline);
+-      if (highRisk && corroborating.length < 2) {
+-        return res.status(422).json({ error: 'Sensitive breaking-news claim lacks two independent publisher references; skipped', topic: trendingHeadline });
++        if (!candidate.description || (candidate.description.length < 60 && relevantCoverage.length < 2)) continue;
++        // Unverified viral query alone is not reportable news.
++        if (candidate.feed === 'trends' && relevantCoverage.length < 2) continue;
++        if (relevantCoverage.length === 0) continue;
++        selected = candidate;
++        selectedCoverage = relevantCoverage;
++        break;
+       }
+-      if (!trendingContext || (trendingContext.length < 60 && corroborating.length < 2)) {
+-        return res.status(422).json({ error: 'Insufficient attributable topic detail; skipped instead of generating invented filler', topic: trendingHeadline });
+-      }
+-      sourceReferences = [...corroborating.map(item => ({title:item.title, name:item.sourceName, url:item.sourceUrl, published:item.published}))];
+-      if (!sourceReferences.length && sourceUrl) sourceReferences.push({title:trendingHeadline, name:'Original discovery feed', url: sourceUrl, published: ''});
+-      if (sourceReferences.length) {
+-        trendingContext += '\nRelated coverage (headlines only, not full verified reporting):\n' + sourceReferences
+-          .map((item,idx) => `${idx+1}. ${item.name}: ${item.title} (${item.published || 'date unavailable'}) — ${item.url}`).join('\n');
+-      }
++      if (!selected) return res.status(422).json({ error: 'No sufficiently sourced fresh story. Skipped publishing rather than inventing viral news.' });
++      trendingHeadline = selected.title;
++      sourceUrl = selected.sourceUrl || '';
++      trendingContext = selected.description || '';
++      sourceReferences = selectedCoverage.map(item => ({ title:item.title, name:item.sourceName, url:item.sourceUrl, published:item.published }));
++      trendingContext += '\nIndependent coverage headline references (verify facts before treating claims as true):\n'
++        + sourceReferences.map((item,idx) => `${idx+1}. ${item.name}: ${item.title} (${item.published || 'date unavailable'}) — ${item.url}`).join('\n');
+       console.log('STEP 1 selected trending story:', trendingHeadline, 'publisher references:', sourceReferences.length);
+ 
+       console.log("STEP 1.5: checking whether to run an evergreen listicle instead");
+ 
+       // Evergreen "best of" listicle topics, aimed at Asfi Blog's AI/programming/
+@@ -385,11 +403,12 @@
+         "Best AI Tools for Building a Portfolio Website in 2026",
+       ];
+       const availableTopics = EVERGREEN_TOPICS.filter(
+         (t) => !usedTitlesLower.some((u) => u.includes(t.toLowerCase().split(" in 2026")[0].slice(0, 18)))
+       );
+-      isListicle = availableTopics.length > 0 && Math.random() < (focused ? 0.20 : 0.05);
++      isListicle = process.env.AUTO_ALLOW_EVERGREEN === 'true' &&
++        availableTopics.length > 0 && Math.random() < 0.05;
+       listicleTopic = isListicle ? availableTopics[Math.floor(Math.random() * availableTopics.length)] : null;
+       console.log("STEP 1.5 done: mode =", isListicle ? `listicle (${listicleTopic})` : "trending");
+     } else {
+       console.log("STEP 1: custom topic override in use ->", customTopic);
+     }
+@@ -427,19 +446,24 @@
+   "tags": ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6"],
+   "image_keyword": "...",
+   "image_alts": ["...", "..."],
+   "faq": [{"q": "...", "a": "..."}, {"q": "...", "a": "..."}, {"q": "...", "a": "..."}, {"q": "...", "a": "..."}]
+ }`
+-      : `You are a professional SEO editor for "Asfi Blog", a trending news publication. Write a detailed, 100% original, SEO-optimized, answer-engine-optimized (AEO) blog article based on this ${customTopic ? "topic" : "real, currently trending topic"}.
++      : `You are a professional SEO editor for "Asfi Blog", a trending news publication. Write an engaging, carefully attributed, deeply reported-style and fully original SEO-optimized, GEO- and AEO-friendly news explainer based on this ${customTopic ? "topic" : "real, currently trending topic"}.
+ 
+ ${customTopic ? "Topic" : "Trending term"}: "${trendingHeadline}"
+ ${customTopic ? "Extra context (optional)" : "Related news context"}: "${trendingContext}"
+ 
+ IMPORTANT RULES:
+ - Use ONLY supported facts from the given discovery coverage; it is a list of headlines/snippets and is NOT independent verification. Do not invent quotes, statements, sources, matches, scores, injuries, deaths, votes, statistics or dates. If the available context is too thin for a factual article, return {"insufficient_source_detail": true} instead of fabricating material.
+ - Distinguish clearly between confirmed information from the supplied sources, historical general context, and what remains unknown. Never present a trending search term, rumor or single claim as verified news. Do not paraphrase a fabricated quote into fact.
+ - Write for US readers in clear US English, but preserve appropriate international context. Avoid US-centric claims unless the provided source supports them.
++- Prioritize the genuinely newsworthy angle: verified major figures, major US sports outcomes, consequential tech launches, policy changes, or widely corroborated developments. Do not present guessed future virality as observed virality.
++- Lead with the verified news hook and a compelling but accurate headline. Write like a credible US news desk: a fast clear lede, then the timeline, the verified quotes (only if supplied verbatim), relevant stakeholders, official response, stakes for readers, what is not known, and concrete next milestones.
++- Highlight why a short social post went viral and the legitimate controversy, but never fabricate 'exclusive' reporting, fake reactions, traffic/virality counts, witnesses, interviews, or a scandal.
++- Compare competing claims fairly and explicitly attribute allegations; corroboration of a headline does not establish the truth of an allegation. Avoid publishing if facts are insufficient.
++- Every article must offer distinct value beyond the discovery headline. Include precise context, reader questions, source attribution, and related stories; do not generate two near-identical articles on the same event.
+ - The headline must reflect the news in the evidence, not add sensational claims. For sports, give only verified result details; for politics or public figure allegations, be neutral and precise.
+ - Include concise answer-first paragraphs, who/what/when/where/why, relevant background, what changes for readers, and attribution to the provided outlets. Add no artificial keyword repetition.
+ ${customCategory ? `- category must be "${customCategory}".` : "- Pick the single best-fitting \"category\" for this topic: one of Technology, Business, Science, Health, Entertainment, Sports, Politics, or General."}
+ - Write natural, human-readable editorial prose in simple, clear American English; vary sentence structure and lead with the direct answer. Cover the reader's relevant questions with practical details, necessary context, examples, limitations, and concrete takeaways. No clichéd openings, robotic filler, irrelevant how-tos, invented hands-on tests, or claims of human authorship.
+ - Prioritize depth and quality over brevity: it is fine, and preferred, for the article to run long if that makes it more useful, more authoritative, and better for SEO.
+@@ -579,11 +603,11 @@
+         console.log("DUPLICATE BLOCKED:", duplicateWarning);
+         break;
+       }
+     }
+ 
+-    if (duplicateWarning || existingTitles.some(t => t.toLowerCase() === post.title.toLowerCase()) || postsDataJs.includes(`slug: ${JSON.stringify(slug)}`)) {
++    if (duplicateWarning || existingTitles.some(t => t.toLowerCase() === post.title.toLowerCase()) || new RegExp(`(?:"slug"|slug)\\s*:\\s*${JSON.stringify(slug)}`).test(postsDataJs)) {
+       return res.status(409).json({ error: "Duplicate content blocked; no article created", detail: duplicateWarning || "Existing slug/title" });
+     }
+ 
+     // ---- Build Table of Contents from the real headings in the content ----
+     const { html: contentWithIds, tocHtml, headings } = buildHeadingsAndToc(post.content);
+@@ -940,11 +964,11 @@
+     // posts-data.js (e.g. the same trending story comes up again on a later
+     // run), strip the old object out first so we never end up with two
+     // entries for the same slug — which would show the same post twice on
+     // the homepage/blog listing.
+     const existingEntryRe = new RegExp(
+-      `\\s*\\{\\s*slug:\\s*${JSON.stringify(slug)}[\\s\\S]*?\\},?\\n`
++      `\\s*\\{\\s*(?:"slug"|slug)\\s*:\\s*${JSON.stringify(slug)}[\\s\\S]*?\\},?\\n`
+     );
+     postsDataJs = postsDataJs.replace(existingEntryRe, "\n");
+ 
+     postsDataJs = postsDataJs.replace(
+       "window.ASFIBLOG_POSTS = [",
