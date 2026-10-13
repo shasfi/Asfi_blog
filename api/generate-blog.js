@@ -1,8 +1,8 @@
 // api/generate-blog.js
 // Vercel Serverless Function
-// URL after deploy: https://yourproject.vercel.app/api/generate-blog?secret=YOUR_SECRET
+// URL after deploy: https://yourproject.vercel.app/api/generate-blog (Vercel Cron authenticates with Bearer CRON_SECRET)
 //
-// Full pipeline (100% free):
+// Automated, AI-assisted pipeline; API usage and hosting may incur charges:
 // 1. Fetch REAL trending searches from Google Trends RSS (free, no API key)
 //    -- OR use a custom topic passed in by you (see "CUSTOM TOPIC" below)
 // 2. Generate a full SEO + AEO + GEO optimized article using OpenRouter FREE model
@@ -21,8 +21,8 @@
 // CUSTOM TOPIC (manual override):
 // Call the endpoint with a "topic" param and the pipeline skips trending/evergreen
 // selection completely and writes about exactly what you asked for:
-//   /api/generate-blog?secret=YOUR_SECRET&topic=Iran%20Israel%20ceasefire%20latest
-//   /api/generate-blog?secret=YOUR_SECRET&topic=FIFA%20World%20Cup%202026%20schedule&category=Sports
+//   POST /api/generate-blog with Authorization: Bearer <CRON_SECRET> and JSON {"topic":"..."}
+//   Example JSON body: {"topic":"FIFA World Cup 2026 schedule","category":"Sports"}
 // Optional: &category=Sports (else the AI still picks the best-fitting one)
 
 export default async function handler(req, res) {
@@ -176,9 +176,14 @@ export default async function handler(req, res) {
     // Vercel Cron sends "Authorization: Bearer <CRON_SECRET>" automatically.
     // Keep accepting the old ?secret= query param too, so manual runs and
     // cron-job.org (kept as an optional backup trigger) still work.
+    const configuredSecret = process.env.CRON_SECRET;
+    if (!configuredSecret || configuredSecret.length < 16) {
+      return res.status(503).json({ error: "Publishing disabled: configure a strong CRON_SECRET (16+ characters)." });
+    }
+    if (!["GET", "POST"].includes(req.method)) return res.status(405).json({ error: "Method not allowed" });
     const authHeader = req.headers.authorization || "";
-    const headerOk = authHeader === `Bearer ${process.env.CRON_SECRET}`;
-    const queryOk = req.query.secret === process.env.CRON_SECRET;
+    const headerOk = authHeader === `Bearer ${configuredSecret}`;
+    const queryOk = typeof req.query.secret === "string" && req.query.secret === configuredSecret;
     if (!headerOk && !queryOk) {
       return res.status(401).json({ error: "Unauthorized" });
     }
@@ -190,12 +195,21 @@ export default async function handler(req, res) {
     const GITHUB_REPO = process.env.GITHUB_REPO;
     const SITE_URL = process.env.SITE_URL;
 
+    if (!OPENROUTER_KEY || !GITHUB_TOKEN || !GITHUB_OWNER || !GITHUB_REPO || !SITE_URL) {
+      return res.status(503).json({ error: "Publishing configuration incomplete; check required environment variables." });
+    }
+    if (!/^https:\/\/[-a-z0-9.]+(?:\:\d+)?$/i.test(SITE_URL)) {
+      return res.status(503).json({ error: "SITE_URL must be an HTTPS origin without a path or trailing slash." });
+    }
+
     // ---- CUSTOM TOPIC OVERRIDE ----
     // If you pass ?topic=... the whole trending/evergreen picker is skipped
     // and the AI writes about exactly what you gave it.
     const customTopic = (req.query.topic || req.body?.topic || "").trim();
     const customCategory = (req.query.category || req.body?.category || "").trim();
 
+    let sourceUrl = "";
+    let sourceReferences = [];
     let trendingHeadline = customTopic;
     let trendingContext = req.query.context || req.body?.context || "User-provided topic — write a complete, accurate, well-researched style article about it.";
     let isListicle = false;
@@ -221,98 +235,133 @@ export default async function handler(req, res) {
     if (!customTopic) {
       console.log("STEP 1: fetching real-time trending topics (Google Trends + Google News)");
 
-      // Google Trends daily/realtime RSS — good for fast-moving search terms.
-      const trendsGeos = ["US", "AU", "GB", "CA"];
+      // Discover Google Trends and US-first Google News. Broad public-interest
+      // news is the default; "focused" is an explicit optional tech-only mode.
+      // Audience location shares are NOT guaranteed by where we source headlines.
+      const focused = process.env.AUTO_TOPIC_MODE === "focused";
+      const trendsGeos = ["US", "US", "GB", "CA"];
       const trendsPromises = trendsGeos.map((geo) =>
         fetch(`https://trends.google.com/trending/rss?geo=${geo}`)
-          .then((r) => r.text())
+          .then((r) => r.ok ? r.text() : "")
           .catch(() => "")
       );
-
-      // Google News RSS, topic by topic — this is what actually surfaces big
-      // real-world stories (wars, sports results/scandals, celebrity news,
-      // tech launches) that plain "trending searches" often miss because those
-      // are just short, generic queries.
       const newsFeeds = [
-        { url: "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", label: "general" },
-        { url: "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-US&gl=US&ceid=US:en", label: "world" },
-        { url: "https://news.google.com/rss/headlines/section/topic/SPORTS?hl=en-US&gl=US&ceid=US:en", label: "sports" },
-        { url: "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en", label: "technology" },
-        { url: "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=en-US&gl=US&ceid=US:en", label: "entertainment" },
-        { url: "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en", label: "business" },
-      ];
-      const newsPromises = newsFeeds.map((f) => fetch(f.url).then((r) => r.text()).catch(() => ""));
-
+        { url: "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", label: "us-general" },
+        { url: "https://news.google.com/rss/headlines/section/topic/SPORTS?hl=en-US&gl=US&ceid=US:en", label: "us-sports" },
+        { url: "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=en-US&gl=US&ceid=US:en", label: "us-entertainment" },
+        { url: "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en", label: "us-tech" },
+        { url: "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en", label: "us-business" },
+        { url: "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-US&gl=US&ceid=US:en", label: "us-world" },
+        { url: "https://news.google.com/rss?hl=en-GB&gl=GB&ceid=GB:en", label: "uk-general" },
+        { url: "https://news.google.com/rss?hl=en-CA&gl=CA&ceid=CA:en", label: "ca-general" },
+      ].filter(f => !focused || /us-tech|us-business|uk-general|ca-general/.test(f.label));
+      const newsPromises = newsFeeds.map((f) =>
+        fetch(f.url).then((r) => r.ok ? r.text() : "").catch(() => "")
+      );
       const [trendsTexts, newsTexts] = await Promise.all([
         Promise.all(trendsPromises),
         Promise.all(newsPromises),
       ]);
-      console.log("STEP 1 done: trends+news feeds fetched");
 
-      const clean = (s) =>
-        s ? s.replace(/<!\[CDATA\[|\]\]>/g, "").replace(/<[^>]+>/g, "").trim() : "";
+      const clean = (value) => String(value || "")
+        .replace(/<!\[CDATA\[|\]\]>/g, "")
+        .replace(/<[^>]+>/g, "")
+        .replace(/&amp;/gi, "&")
+        .replace(/&quot;/gi, '\"')
+        .replace(/&#39;|&apos;/gi, "'")
+        .replace(/&lt;/gi, "<")
+        .replace(/&gt;/gi, ">")
+        .trim();
 
-      function parseTrendsRss(text) {
-        return text
-          .split("<item>")
-          .slice(1)
-          .map((block) => {
-            const titleMatch = block.match(/<title>(.*?)<\/title>/s);
-            const snippetMatch = block.match(/<ht:news_item_snippet>(.*?)<\/ht:news_item_snippet>/s);
-            const newsTitleMatch = block.match(/<ht:news_item_title>(.*?)<\/ht:news_item_title>/s);
-            return {
-              title: titleMatch ? clean(titleMatch[1]) : null,
-              description: clean(snippetMatch?.[1] || newsTitleMatch?.[1] || ""),
-            };
-          })
-          .filter((i) => i.title);
+      function parseTrendsRss(xml) {
+        return xml.split("<item>").slice(1).map((block) => {
+          const title = clean(block.match(/<title>([\s\S]*?)<\/title>/)?.[1]);
+          const description = clean(block.match(/<ht:news_item_snippet>([\s\S]*?)<\/ht:news_item_snippet>/)?.[1]
+            || block.match(/<ht:news_item_title>([\s\S]*?)<\/ht:news_item_title>/)?.[1]);
+          const sourceUrl = clean(block.match(/<ht:news_item_url>([\s\S]*?)<\/ht:news_item_url>/)?.[1]);
+          const rawTraffic = clean(block.match(/<ht:approx_traffic>([\s\S]*?)<\/ht:approx_traffic>/)?.[1]);
+          let traffic = Number.parseFloat(rawTraffic.replace(/[^0-9.]/g, "")) || 0;
+          if (/M/i.test(rawTraffic)) traffic *= 1000000;
+          else if (/K/i.test(rawTraffic)) traffic *= 1000;
+          return { title, description, sourceUrl, traffic, feed: 'trends' };
+        }).filter(i => i.title && i.description);
       }
 
-      function parseNewsRss(text) {
-        return text
-          .split("<item>")
-          .slice(1)
-          .map((block) => {
-            const titleMatch = block.match(/<title>(.*?)<\/title>/s);
-            const descMatch = block.match(/<description>([\s\S]*?)<\/description>/s);
-            let title = titleMatch ? clean(titleMatch[1]) : null;
-            if (title) {
-              // Google News titles look like "Headline text - Source Name" —
-              // strip the trailing " - Source" so we're left with the headline.
-              const dashIdx = title.lastIndexOf(" - ");
-              if (dashIdx > 15) title = title.slice(0, dashIdx).trim();
-            }
-            return { title, description: clean(descMatch?.[1] || "") };
-          })
-          .filter((i) => i.title);
+      function parseNewsRss(xml) {
+        return xml.split("<item>").slice(1).map((block) => {
+          const rawTitle = clean(block.match(/<title>([\s\S]*?)<\/title>/)?.[1]);
+          const dashIdx = rawTitle.lastIndexOf(' - ');
+          const title = dashIdx > 15 ? rawTitle.slice(0, dashIdx).trim() : rawTitle;
+          const sourceName = clean(block.match(/<source[^>]*>([\s\S]*?)<\/source>/)?.[1]) || (dashIdx > 15 ? rawTitle.slice(dashIdx + 3).trim() : 'News coverage');
+          const description = clean(block.match(/<description>([\s\S]*?)<\/description>/)?.[1]);
+          const sourceUrl = clean(block.match(/<link>([\s\S]*?)<\/link>/)?.[1]);
+          const published = clean(block.match(/<pubDate>([\s\S]*?)<\/pubDate>/)?.[1]);
+          return { title, description, sourceUrl, sourceName, published };
+        }).filter(i => i.title && /^https:\/\//i.test(i.sourceUrl));
       }
 
-      const trendItems = trendsTexts.flatMap(parseTrendsRss);
-
-      // IMPORTANT FIX: previously all feeds were flattened into one long array
-      // (general, world, sports, tech, entertainment, business, in that order)
-      // and only the first 15 items of that combined array were eligible for
-      // selection. Since "general" and "world" feeds are large, sports/
-      // entertainment items (FIFA, cricket, etc.) almost never made the cut.
-      // Fix: take a fair slice from EACH feed first, THEN combine, so every
-      // category has a real chance of being picked.
-      const PER_FEED_LIMIT = 8;
+      const technologyTerms = /\b(ai|software|app|developer|google|microsoft|apple|android|iphone|openai|claude|chatgpt|cloud|cyber|chip|nvidia|computer|technology|api|tech|web)\b/i;
+      const trendItems = trendsTexts.flatMap(parseTrendsRss).filter(i => !focused || technologyTerms.test(i.title));
       const newsItemsPerFeed = newsTexts.map(parseNewsRss);
-      const balancedNewsPool = newsItemsPerFeed.flatMap((items) => items.slice(0, PER_FEED_LIMIT));
-
-      if (trendItems.length === 0 && balancedNewsPool.length === 0) {
-        return res.status(500).json({ error: "Could not fetch trending topics" });
+      const newsPool = newsItemsPerFeed.flatMap((items,i) => items.slice(0,8).map((item,rank) => ({ ...item, feed: newsFeeds[i].label, rank })));
+      if (!trendItems.length && !newsPool.length) {
+        return res.status(503).json({ error: "Trending feeds unavailable; no unverified article published" });
       }
 
-      // Prefer real news headlines (war/politics/sports/entertainment/tech)
-      // most of the time, since they're what people actually mean by
-      // "trending" — fall back to Trends search terms for freshness/variety.
-      const useNewsPool = balancedNewsPool.length > 0 && (trendItems.length === 0 || Math.random() < 0.7);
-      const pool = useNewsPool ? balancedNewsPool : trendItems;
-      const pickFrom = Math.min(pool.length, 30);
-      const chosen = pool[Math.floor(Math.random() * pickFrom)];
+      // A modest freshness/search-interest heuristic, NOT measured viral reach,
+      // keyword volume or an estimate of future US readers. News is preferred.
+      const newsCandidates = newsPool.filter(item =>
+        !usedTitlesLower.some(t => titleSimilarity(t, item.title) >= 0.7));
+      const trendsCandidates = trendItems.filter(item =>
+        !usedTitlesLower.some(t => titleSimilarity(t, item.title) >= 0.7));
+      const useNews = newsCandidates.length && (!trendsCandidates.length || Math.random() < 0.85);
+      const candidates = useNews ? newsCandidates : trendsCandidates;
+      if (!candidates.length) return res.status(409).json({ error: 'All available headlines already covered; nothing duplicated' });
+      const weights = candidates.map(c => {
+        const usWeight = c.feed?.startsWith('us-') ? 2.5 : 1;
+        const freshness = Math.max(1, 9 - (c.rank || 0));
+        const searchInterest = c.traffic ? Math.min(5, 1 + Math.log10(c.traffic + 1)) : 1;
+        return usWeight * freshness * searchInterest;
+      });
+      let ticket = Math.random() * weights.reduce((sum,w) => sum + w, 0);
+      let chosen = candidates[candidates.length - 1];
+      for (let i=0; i<candidates.length; i++) { ticket -= weights[i]; if(ticket <= 0) { chosen = candidates[i]; break; } }
       trendingHeadline = chosen.title;
-      trendingContext = chosen.description || "No additional summary available.";
+      sourceUrl = chosen.sourceUrl || "";
+      trendingContext = chosen.description || "";
+
+      // Seek independent corroborating Google News coverage of the SAME story.
+      // One sensational headline is not evidence for a 1,600-word news report.
+      const searchQuery = encodeURIComponent(`"${trendingHeadline.replace(/\"/g, '')}" when:2d`);
+      let corroborating = [];
+      try {
+        const matchRes = await fetch(`https://news.google.com/rss/search?q=${searchQuery}&hl=en-US&gl=US&ceid=US:en`, { signal: AbortSignal.timeout(5000) });
+        if (matchRes.ok) {
+          const matchItems = parseNewsRss(await matchRes.text());
+          const uniquePublishers = new Set();
+          corroborating = matchItems.filter(item => {
+            const publisher = item.sourceName.toLowerCase();
+            if (!publisher || uniquePublishers.has(publisher)) return false;
+            if (titleSimilarity(trendingHeadline, item.title) < 0.40) return false;
+            uniquePublishers.add(publisher);
+            return true;
+          }).slice(0, 4);
+        }
+      } catch (e) { console.warn('News corroboration query unavailable:', e.message); }
+      const highRisk = /\b(dies|dead|death|killed|murder|suicide|arrested|charged|convicted|rape|assault|fraud|scandal|accused|alleged|health crisis|war crimes)\b/i.test(trendingHeadline);
+      if (highRisk && corroborating.length < 2) {
+        return res.status(422).json({ error: 'Sensitive breaking-news claim lacks two independent publisher references; skipped', topic: trendingHeadline });
+      }
+      if (!trendingContext || (trendingContext.length < 60 && corroborating.length < 2)) {
+        return res.status(422).json({ error: 'Insufficient attributable topic detail; skipped instead of generating invented filler', topic: trendingHeadline });
+      }
+      sourceReferences = [...corroborating.map(item => ({title:item.title, name:item.sourceName, url:item.sourceUrl, published:item.published}))];
+      if (!sourceReferences.length && sourceUrl) sourceReferences.push({title:trendingHeadline, name:'Original discovery feed', url: sourceUrl, published: ''});
+      if (sourceReferences.length) {
+        trendingContext += '\nRelated coverage (headlines only, not full verified reporting):\n' + sourceReferences
+          .map((item,idx) => `${idx+1}. ${item.name}: ${item.title} (${item.published || 'date unavailable'}) — ${item.url}`).join('\n');
+      }
+      console.log('STEP 1 selected trending story:', trendingHeadline, 'publisher references:', sourceReferences.length);
 
       console.log("STEP 1.5: checking whether to run an evergreen listicle instead");
 
@@ -338,7 +387,7 @@ export default async function handler(req, res) {
       const availableTopics = EVERGREEN_TOPICS.filter(
         (t) => !usedTitlesLower.some((u) => u.includes(t.toLowerCase().split(" in 2026")[0].slice(0, 18)))
       );
-      isListicle = availableTopics.length > 0 && Math.random() < 0.3;
+      isListicle = availableTopics.length > 0 && Math.random() < (focused ? 0.20 : 0.05);
       listicleTopic = isListicle ? availableTopics[Math.floor(Math.random() * availableTopics.length)] : null;
       console.log("STEP 1.5 done: mode =", isListicle ? `listicle (${listicleTopic})` : "trending");
     } else {
@@ -356,10 +405,11 @@ Topic: "${listicleTopic}"
 IMPORTANT RULES:
 - This is an evergreen "best of" guide, not breaking news — do not claim it is based on a trending search or cite a publish date as the reason it matters.
 - category must be "Technology".
+- Write natural, human-readable editorial prose in simple, clear American English; vary sentence structure and lead with the direct answer. Cover the reader's relevant questions with practical details, necessary context, examples, limitations, and concrete takeaways. No clichéd openings, robotic filler, irrelevant how-tos, invented hands-on tests, or claims of human authorship.
 - Prioritize depth and quality over brevity: it is fine, and preferred, for the article to run long if that makes it more useful and complete.
 - Title: under 60 characters, front-load the main keyword, no clickbait, no symbols besides normal punctuation.
 - meta_description: exactly 150-160 characters, includes the main keyword naturally near the start.
-- Content: 1600-2200 words of full HTML using ONLY <h2>, <h3>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>, no inline styles, no <div>). Structure it as a numbered list: one <h2> per item, formatted like "1. Tool or Item Name" (put the descriptor in the paragraph, not the heading). Under each <h2>, optionally use one <h3> for a "Best for" or "Key feature" sub-point if it adds real structure. Cover at least 8 items if the topic implies a "Top 10". Each item needs a substantive paragraph on what it does, who it's best for, and one standout feature. Do NOT invent specific prices, version numbers, or benchmark stats you can't verify — describe capabilities in general, accurate terms instead.
+- Content: 1600-2200 words (minimum 1200 original, substantive words; short output is rejected) of full HTML using ONLY <h2>, <h3>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>, no inline styles, no <div>). Structure it as a numbered list: one <h2> per item, formatted like "1. Tool or Item Name" (put the descriptor in the paragraph, not the heading). Under each <h2>, optionally use one <h3> for a "Best for" or "Key feature" sub-point if it adds real structure. Cover at least 8 items if the topic implies a "Top 10". Each item needs a substantive paragraph on what it does, who it's best for, and one standout feature. Do NOT invent specific prices, version numbers, or benchmark stats you can't verify — describe capabilities in general, accurate terms instead.
 - Include one short concluding <h2> section ("Which One Should You Choose") that directly and plainly answers the core question the topic raises, phrased so it could be lifted as a direct answer by an AI search summary.
 - tags: exactly 6 relevant, specific tags (not single generic words like "AI").
 - image_keyword: one GENERIC, safe-for-work English keyword phrase to search stock photography for this topic — never a specific brand/product name.
@@ -385,12 +435,17 @@ ${customTopic ? "Topic" : "Trending term"}: "${trendingHeadline}"
 ${customTopic ? "Extra context (optional)" : "Related news context"}: "${trendingContext}"
 
 IMPORTANT RULES:
-- Base the article strictly on the topic and context given above. Do not invent specific product names, features, statistics, dates, or quotes that are not implied by the given information. If the context is thin, write more generally about the topic and why it matters, rather than making up specifics.
+- Use ONLY supported facts from the given discovery coverage; it is a list of headlines/snippets and is NOT independent verification. Do not invent quotes, statements, sources, matches, scores, injuries, deaths, votes, statistics or dates. If the available context is too thin for a factual article, return {"insufficient_source_detail": true} instead of fabricating material.
+- Distinguish clearly between confirmed information from the supplied sources, historical general context, and what remains unknown. Never present a trending search term, rumor or single claim as verified news. Do not paraphrase a fabricated quote into fact.
+- Write for US readers in clear US English, but preserve appropriate international context. Avoid US-centric claims unless the provided source supports them.
+- The headline must reflect the news in the evidence, not add sensational claims. For sports, give only verified result details; for politics or public figure allegations, be neutral and precise.
+- Include concise answer-first paragraphs, who/what/when/where/why, relevant background, what changes for readers, and attribution to the provided outlets. Add no artificial keyword repetition.
 ${customCategory ? `- category must be "${customCategory}".` : "- Pick the single best-fitting \"category\" for this topic: one of Technology, Business, Science, Health, Entertainment, Sports, Politics, or General."}
+- Write natural, human-readable editorial prose in simple, clear American English; vary sentence structure and lead with the direct answer. Cover the reader's relevant questions with practical details, necessary context, examples, limitations, and concrete takeaways. No clichéd openings, robotic filler, irrelevant how-tos, invented hands-on tests, or claims of human authorship.
 - Prioritize depth and quality over brevity: it is fine, and preferred, for the article to run long if that makes it more useful, more authoritative, and better for SEO.
 - Title: under 60 characters, front-load the main keyword, no clickbait, no symbols besides normal punctuation.
 - meta_description: exactly 150-160 characters, includes the main keyword naturally near the start.
-- Content: 1600-2200 words of full HTML using ONLY <h2>, <h3>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>, no inline styles, no <div>). Use at least 5 <h2> subheadings, and add <h3> sub-subheadings under any <h2> that covers more than one distinct point (this both improves readability and gives search engines a clearer content outline for the Table of Contents). Write in a clear, human, editorial tone grounded strictly in the given information — never generic AI filler phrasing ("in today's fast-paced world", "it is important to note that", etc.). Every paragraph must add real information — no filler, no repeating the same sentence in different words. This is for a real publication and must read like it was written by an experienced human journalist: concrete details, specific attributions, varied sentence rhythm.
+- Content: 1600-2200 words (minimum 1200 original, substantive words; short output is rejected) of full HTML using ONLY <h2>, <h3>, <p>, <ul>, <li>, <strong> tags (no <html>/<head>/<body>, no inline styles, no <div>). Use at least 5 <h2> subheadings, and add <h3> sub-subheadings under any <h2> that covers more than one distinct point (this both improves readability and gives search engines a clearer content outline for the Table of Contents). Write in a clear, human, editorial tone grounded strictly in the given information — never generic AI filler phrasing ("in today's fast-paced world", "it is important to note that", etc.). Every paragraph must add real information — no filler, no repeating the same sentence in different words. This is for a real publication and must read like it was written by an experienced human journalist: concrete details, specific attributions, varied sentence rhythm.
 - Include one short concluding <h2> section that directly and plainly answers the core question the topic raises, phrased so it could be lifted as a direct answer by an AI search summary.
 - tags: exactly 6 relevant, specific tags (not single generic words like "news").
 - image_keyword: one GENERIC, safe-for-work English keyword phrase to search stock photography for this topic — never a specific brand/company/product name, since stock photos for brand names are often wrong or mismatched.
@@ -450,6 +505,9 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
     let post = null;
     for (const model of modelsToTry) {
       post = await tryGenerate(model);
+      if (post?.insufficient_source_detail) {
+        return res.status(422).json({ error: 'AI reported insufficient supported facts; no article published' });
+      }
       if (post && post.title && post.content) {
         console.log(`STEP 2 done: got valid content from ${model}`);
         break;
@@ -462,6 +520,20 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
       });
     }
 
+
+    // Publishing quality gate: never silently publish 400-word AI summaries
+    // or near-duplicate topics merely because the model returned JSON.
+    const MIN_WORDS = 1200;
+    const MIN_HEADINGS = 5;
+    const plaintext = String(post.content || "").replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi," ");
+    const generatedWords = plaintext.trim().split(/\s+/).filter(Boolean).length;
+    const headingCount = (String(post.content || "").match(/<h2\b/gi)||[]).length;
+    const invalidMarkup = /<\s*(script|iframe|style|form|object|embed|svg|img|a)\b|\bon\w+\s*=|javascript\s*:/i.test(String(post.content || ""));
+    const factualWarning = /in today'?s fast.paced world|delve into|ever.evolving landscape|as an ai language model/i.test(plaintext);
+    if (generatedWords < MIN_WORDS || headingCount < MIN_HEADINGS || invalidMarkup || factualWarning || !Array.isArray(post.faq) || post.faq.length < 3) {
+      return res.status(422).json({ error: "Article rejected by editorial quality gate; not published", checks: { generatedWords, minimumWords: MIN_WORDS, headingCount, minimumHeadings: MIN_HEADINGS, invalidMarkup, boilerplateDetected: factualWarning } });
+    }
+
     // ---- Clean up stray "--", "@", "#" and other markdown leftovers ----
     post.title = sanitizeSymbols(post.title);
     post.meta_description = sanitizeSymbols(post.meta_description);
@@ -472,6 +544,9 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
       a: sanitizeSymbols(f.a),
     }));
 
+    const unsafeMetadata = [post.title, post.meta_description, ...(post.image_alts||[]), ...(post.faq||[]).flatMap(f=>[f.q,f.a])].some(x=> /[<>]/.test(String(x||"")));
+    if (unsafeMetadata) return res.status(422).json({ error: "Unsafe markup in article metadata; rejected" });
+
     const slug =
       post.slug ||
       post.title
@@ -479,6 +554,9 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-|-$)/g, "");
 
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) || slug.length > 100) {
+      return res.status(422).json({ error: "Unsafe or invalid article slug; rejected" });
+    }
     const category = post.category || "General";
     const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
 
@@ -497,10 +575,14 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
     for (const existing of existingTitles) {
       const sim = titleSimilarity(post.title, existing);
       if (sim >= 0.7) {
-        duplicateWarning = `New title "${post.title}" is ${(sim * 100).toFixed(0)}% similar to existing post "${existing}". Publishing anyway, but you may want to review/merge these.`;
-        console.log("DUPLICATE WARNING:", duplicateWarning);
+        duplicateWarning = `New title is ${(sim * 100).toFixed(0)}% similar to an existing post. Do not republish this topic.`;
+        console.log("DUPLICATE BLOCKED:", duplicateWarning);
         break;
       }
+    }
+
+    if (duplicateWarning || existingTitles.some(t => t.toLowerCase() === post.title.toLowerCase()) || postsDataJs.includes(`slug: ${JSON.stringify(slug)}`)) {
+      return res.status(409).json({ error: "Duplicate content blocked; no article created", detail: duplicateWarning || "Existing slug/title" });
     }
 
     // ---- Build Table of Contents from the real headings in the content ----
@@ -508,12 +590,13 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
     post.content = contentWithIds;
 
     const imgQuery = encodeURIComponent(post.image_keyword || category);
-    const pexelsRes = await fetch(
-      `https://api.pexels.com/v1/search?query=${imgQuery}&per_page=${imageCount}`,
-      { headers: { Authorization: PEXELS_KEY } }
-    );
-    const pexelsData = await pexelsRes.json();
-    const images = (pexelsData.photos || []).map((p) => p.src.large);
+    let images = [];
+    if (PEXELS_KEY) {
+      try {
+        const pexelsRes = await fetch(`https://api.pexels.com/v1/search?query=${imgQuery}&per_page=${imageCount}`, { headers: { Authorization: PEXELS_KEY }, signal: AbortSignal.timeout(8000) });
+        if (pexelsRes.ok) { const data = await pexelsRes.json(); images = (data.photos || []).map(p=>p.src.large).filter(u=>/^https:\/\//.test(u)); }
+      } catch (e) { console.error('Pexels image lookup failed:', e.message); }
+    }
     const thumbnail = images[0] || "";
     const imageAlts =
       post.image_alts && post.image_alts.length === images.length
@@ -521,8 +604,18 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
         : images.map((_, i) => `${post.title} — illustration ${i + 1}`);
 
     const heroImageHtml = thumbnail
-      ? `<figure class="post-figure post-figure--hero"><img src="${thumbnail}" alt="${imageAlts[0]}" loading="lazy" /></figure>`
+      ? `<figure class="post-figure post-figure--hero"><img src="${thumbnail}" alt="${imageAlts[0]}" loading="eager" fetchpriority="high" /></figure>`
       : "";
+    // References and AI-disclosure must be added BEFORE building HTML, or they
+    // are silently absent from published articles (bug in the previous ZIP).
+    const safeLinks = sourceReferences.filter(item => /^https:\/\/[^\s"'<>]+$/i.test(item.url));
+    if (safeLinks.length || (sourceUrl && /^https:\/\/[^\s"'<>]+$/i.test(sourceUrl))) {
+      const unique = safeLinks.length ? safeLinks : [{ name: 'Topic discovery', title: trendingHeadline, url: sourceUrl }];
+      post.content += `<h2>Sources and verification limits</h2><p>These links informed topic selection. Source headlines are not substitutes for independent editorial fact-checking.</p><ul>` + unique.map(item =>
+        `<li><a href="${item.url.replace(/&/g,'&amp;')}" rel="noopener noreferrer nofollow" target="_blank">${String(item.name || 'Coverage').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</a></li>`
+      ).join('') + `</ul>`;
+    }
+    post.content += `<p class="editorial-disclosure"><em>Editorial note: This article was prepared with AI assistance and has not been independently fact-checked by a human editor. Verify breaking claims against primary reporting; corrections are welcome.</em></p>`;
     const bodyWithImages = distributeImages(post.content, images, imageAlts);
 
     const publishDate = new Date();
@@ -556,6 +649,21 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
     const htmlPage = `<!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- AsfiBlog GA4: consent is denied until the reader opts in. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var optedIn = false;
+    try { optedIn = localStorage.getItem('asfiblog_cookie_choice') === 'accepted'; } catch (_) {}
+    var mode = optedIn ? 'granted' : 'denied';
+    gtag('consent','default',{analytics_storage:mode,ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+  })();
+  gtag('js',new Date());
+  gtag('config','G-SXL9MNZFNL');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SXL9MNZFNL"></script>
+<script src="/assets/js/consent.js" defer></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${post.title} — Asfi Blog</title>
@@ -594,7 +702,7 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "NewsArticle",
+  "@type": "BlogPosting",
   "headline": ${JSON.stringify(post.title)},
   "description": ${JSON.stringify(post.meta_description)},
   "image": ${JSON.stringify(images)},
@@ -717,7 +825,7 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
       <p>Independent coverage of what the world's talking about — technology, business, science, and health, filed in plain English, around the clock.</p>
       <div class="footer__social">
         <a href="https://www.linkedin.com/in/asfand-yar-ali-1466b6373/" aria-label="Asfi Blog on LinkedIn" target="_blank" rel="noopener">in</a>
-        <a href="/blog/index.html" aria-label="Asfi Blog RSS">RSS</a>
+        <a href="/rss.xml" aria-label="Asfi Blog RSS">RSS</a>
       </div>
     </div>
     <div class="footer__col">
@@ -749,7 +857,7 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
   </div>
   <div class="wrap footer__bottom">
     <span class="footer__fine">© <span id="year"></span> Asfi Blog. All rights reserved.</span>
-    <span class="footer__fine">Filed daily from a small, independent newsroom.</span>
+    <span class="footer__fine">Independent publishing, AI-assisted where disclosed.</span>
   </div>
 </footer>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
@@ -897,6 +1005,28 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
       });
     }
 
+    // Pre-rendered article links must stay up to date for crawlers and readers
+    // who have JavaScript blocked. A failure is recorded rather than hidden.
+    let archiveUpdated = false;
+    try {
+      const archiveApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/blog/index.html`;
+      for (let attempt = 0; attempt < 2; attempt++) {
+        const archiveGet = await fetch(archiveApi, { headers: { Authorization: `Bearer ${GITHUB_TOKEN}` } });
+        if (!archiveGet.ok) throw new Error(`Read static archive: ${archiveGet.status}`);
+        const archiveFile = await archiveGet.json();
+        let archiveHtml = Buffer.from(archiveFile.content, 'base64').toString('utf-8');
+        const marker = '<!-- STATIC_ARCHIVE_START -->';
+        if (!archiveHtml.includes(marker)) throw new Error('Missing static archive marker');
+        if (archiveHtml.includes(`href="/blog/${slug}.html"`)) { archiveUpdated = true; break; }
+        const safeTitle = post.title.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+        archiveHtml = archiveHtml.replace(marker, `${marker}\n<li><a href="/blog/${slug}.html">${safeTitle}</a></li>`);
+        archiveHtml = archiveHtml.replace(/(Complete article directory \()(\d+)( articles\))/, (_,before,num,after) => `${before}${Number(num)+1}${after}`);
+        const update = await fetch(archiveApi, { method: 'PUT', headers: { Authorization: `Bearer ${GITHUB_TOKEN}`, 'Content-Type':'application/json' }, body: JSON.stringify({ message: `Update static archive: ${post.title}`, content: Buffer.from(archiveHtml).toString('base64'), sha: archiveFile.sha }) });
+        if (update.ok) { archiveUpdated = true; break; }
+        if (update.status !== 409) throw new Error(`Update static archive: ${update.status}`);
+      }
+    } catch (e) { console.error('STATIC ARCHIVE UPDATE FAILED:', e.message); }
+
     try {
       const sitemapApi = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/sitemap.xml`;
       const sitemapGet = await fetch(sitemapApi, {
@@ -921,7 +1051,7 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
 </urlset>`;
       sitemapXml = sitemapXml.replace("</urlset>", newUrlEntry);
 
-      await fetch(sitemapApi, {
+      const sitemapPut = await fetch(sitemapApi, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${GITHUB_TOKEN}`,
@@ -933,8 +1063,9 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
           sha: sitemapData.sha,
         }),
       });
+      if (!sitemapPut.ok) console.error("SITEMAP UPDATE FAILED", sitemapPut.status, await sitemapPut.text());
     } catch (e) {
-      // Non-fatal
+      console.error("SITEMAP UPDATE FAILED", e.message);
     }
 
     try {
@@ -969,7 +1100,7 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
       rssXml = rssXml.replace(existingItemRe, "\n");
       rssXml = rssXml.replace(/(<language>[^<]*<\/language>\s*\n)/, `$1${newItem}`);
 
-      await fetch(rssApi, {
+      const rssPut = await fetch(rssApi, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${GITHUB_TOKEN}`,
@@ -981,8 +1112,9 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
           sha: rssData.sha,
         }),
       });
+      if (!rssPut.ok) console.error("RSS UPDATE FAILED", rssPut.status, await rssPut.text());
     } catch (e) {
-      // Non-fatal
+      console.error("RSS UPDATE FAILED", e.message);
     }
 
     return res.status(200).json({
@@ -994,6 +1126,7 @@ ${thumbnail ? `<meta name="twitter:image" content="${thumbnail}" />` : ""}
       wordCount,
       headings: headings.length,
       duplicateWarning,
+      archiveUpdated,
       url: `${SITE_URL}/blog/${slug}.html`,
     });
   } catch (error) {

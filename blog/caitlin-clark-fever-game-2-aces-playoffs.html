@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- AsfiBlog GA4: consent is denied until the reader opts in. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var optedIn = false;
+    try { optedIn = localStorage.getItem('asfiblog_cookie_choice') === 'accepted'; } catch (_) {}
+    var mode = optedIn ? 'granted' : 'denied';
+    gtag('consent','default',{analytics_storage:mode,ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+  })();
+  gtag('js',new Date());
+  gtag('config','G-SXL9MNZFNL');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SXL9MNZFNL"></script>
+<script src="/assets/js/consent.js" defer></script>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Caitlin Clark Keeps Fever Alive With Historic Game 2 — Asfi Blog</title>
@@ -146,7 +162,7 @@
     <span class="stamp">Sports</span>
     <h1>Caitlin Clark Keeps Fever Alive With Historic Game 2</h1>
     <p class="timestamp" data-published="2026-09-30T23:01:11.082Z">Filed Sep 30, 2026, 11:01 PM UTC · 5 min read</p>
-    <figure class="post-figure post-figure--hero"><img src="https://images.pexels.com/photos/159611/basketball-player-game-sport-159611.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Caitlin Clark dribbling a basketball during a WNBA playoff game" loading="lazy" /></figure>
+    <figure class="post-figure post-figure--hero"><img src="https://images.pexels.com/photos/159611/basketball-player-game-sport-159611.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Caitlin Clark dribbling a basketball during a WNBA playoff game" loading="eager" fetchpriority="high" /></figure>
     <nav class="toc" aria-label="Table of contents">
       <p class="toc-title">In this article</p>
       <ol>
@@ -251,7 +267,7 @@
       <p>Independent coverage of what the world's talking about — technology, business, science, and health, filed in plain English, around the clock.</p>
       <div class="footer__social">
         <a href="https://www.linkedin.com/in/asfand-yar-ali-1466b6373/" aria-label="Asfi Blog on LinkedIn" target="_blank" rel="noopener">in</a>
-        <a href="/blog/index.html" aria-label="Asfi Blog RSS">RSS</a>
+        <a href="/rss.xml" aria-label="Asfi Blog RSS">RSS</a>
       </div>
     </div>
     <div class="footer__col">
@@ -283,7 +299,7 @@
   </div>
   <div class="wrap footer__bottom">
     <span class="footer__fine">© <span id="year"></span> Asfi Blog. All rights reserved.</span>
-    <span class="footer__fine">Filed daily from a small, independent newsroom.</span>
+    <span class="footer__fine">Independent publishing, AI-assisted where disclosed.</span>
   </div>
 </footer>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>

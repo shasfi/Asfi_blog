@@ -2,6 +2,22 @@
 <html lang="en">
 
 <head>
+<!-- AsfiBlog GA4: consent is denied until the reader opts in. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var optedIn = false;
+    try { optedIn = localStorage.getItem('asfiblog_cookie_choice') === 'accepted'; } catch (_) {}
+    var mode = optedIn ? 'granted' : 'denied';
+    gtag('consent','default',{analytics_storage:mode,ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+  })();
+  gtag('js',new Date());
+  gtag('config','G-SXL9MNZFNL');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SXL9MNZFNL"></script>
+<script src="/assets/js/consent.js" defer></script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Asfi Blog</title>
@@ -81,15 +97,12 @@
     </ul>
 
     <h2>How our stories are put together</h2>
-    <p>Asfi Blog follows a rigorous editorial workflow: trending topics are identified from public news sources,
-      researched thoroughly, and written to inform readers with accuracy and clarity. Every published piece is meant to
+    <p>Asfi Blog uses automated topic discovery and AI-assisted drafting. Source verification and editorial improvements are ongoing; not every AI draft is independently fact-checked. Every published piece is meant to
       complement, not replace, original reporting — we always encourage readers to explore primary sources. See our <a
         href="/disclaimer.html">Disclaimer</a> for more detail on this process.</p>
 
     <h2>Our editorial standards</h2>
-    <p>Even with an automated pipeline, we hold every article to the same bar: no invented facts, no misleading
-      headlines, and no recycled paragraphs lifted from other outlets. Sources are chosen from established news wires,
-      and any figure, quote, or statistic used in an article is meant to reflect what was actually reported.</p>
+    <p>Our editorial goal is to provide clear, original explanation supported by traceable sources. AI-assisted drafts can contain errors; if you spot one, please use our contact page to request a correction.</p>
 
     <h2>Founder & Editor</h2>
     <p><strong>Sheikh Asfi (Asfand Yar Ali)</strong> is a full-stack software developer specializing in Laravel/PHP and
@@ -110,7 +123,7 @@
           plain English, around the clock.</p>
         <div class="footer__social">
           <a href="https://www.linkedin.com/in/asfand-yar-ali-1466b6373/" aria-label="Asfi Blog on LinkedIn" target="_blank" rel="noopener">in</a>
-          <a href="/blog/index.html" aria-label="Asfi Blog RSS">RSS</a>
+          <a href="/rss.xml" aria-label="Asfi Blog RSS">RSS</a>
         </div>
       </div>
       <div class="footer__col">
@@ -142,7 +155,7 @@
     </div>
     <div class="wrap footer__bottom">
       <span class="footer__fine">© <span id="year"></span> Asfi Blog. All rights reserved.</span>
-      <span class="footer__fine">Filed daily from a small, independent newsroom.</span>
+      <span class="footer__fine">Independent publishing, AI-assisted where disclosed.</span>
     </div>
   </footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>

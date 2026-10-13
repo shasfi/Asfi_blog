@@ -50,6 +50,8 @@ export default async function handler(req, res) {
   }
 
   try {
+    const escapeHtml = (value) => String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) return res.status(503).json({error:'Contact form is currently unavailable.'});
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -64,7 +66,7 @@ export default async function handler(req, res) {
       replyTo: email,
       subject: `New Asfi Blog contact message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-      html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, "<br>")}</p>`,
+      html: `<p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Message:</strong></p><p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`,
     });
 
     return res.status(200).json({ success: true });

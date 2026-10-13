@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- AsfiBlog GA4: consent is denied until the reader opts in. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var optedIn = false;
+    try { optedIn = localStorage.getItem('asfiblog_cookie_choice') === 'accepted'; } catch (_) {}
+    var mode = optedIn ? 'granted' : 'denied';
+    gtag('consent','default',{analytics_storage:mode,ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+  })();
+  gtag('js',new Date());
+  gtag('config','G-SXL9MNZFNL');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SXL9MNZFNL"></script>
+<script src="/assets/js/consent.js" defer></script>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Page Not Found — Asfi Blog</title>

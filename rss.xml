@@ -1,1552 +1,709 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version='1.0' encoding='utf-8'?>
+<rss version="2.0">
   <channel>
-    <title>Asfi Blog</title>
+    <title>AsfiBlog — Technology, Guides and Updates</title>
     <link>https://asfiblog.vercel.app/</link>
-    <atom:link href="https://asfiblog.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
-    <description>Independent coverage of trending topics in technology, business, science, and health.</description>
-    <language>en-us</language>
+    <description>AsfiBlog publishes AI-assisted explainers, technology news and practical guides.</description>
+    <language>en-US</language>
     <item>
       <title>Six Flags closes nine rides after Georgia coaster death</title>
       <link>https://asfiblog.vercel.app/blog/six-flags-closes-nine-rides-after-georgia-coaster-death.html</link>
       <guid>https://asfiblog.vercel.app/blog/six-flags-closes-nine-rides-after-georgia-coaster-death.html</guid>
-      <pubDate>2026-10-13 00:00:00 GMT</pubDate>
       <description>Six Flags closes nine rides nationwide after a 42‑year‑old man died on a coaster at Six Flags Over Georgia. Authorities have launched an investigation.</description>
+      <pubDate>Tue, 13 Oct 2026 17:48:45 GMT</pubDate>
     </item>
     <item>
       <title>U.S. and NATO Commander Vows to Thwart Moscow, Warns Kyiv</title>
       <link>https://asfiblog.vercel.app/blog/us-and-nato-commander-vows-to-thwart-moscow-warns-kyiv.html</link>
       <guid>https://asfiblog.vercel.app/blog/us-and-nato-commander-vows-to-thwart-moscow-warns-kyiv.html</guid>
-      <pubDate>2026-10-12 00:00:00 GMT</pubDate>
       <description>U.S. and NATO commander vows to thwart Moscow and warns Kyiv over refinery strikes as NATO details new defense plans for European allies amid rising tensions.</description>
+      <pubDate>Mon, 12 Oct 2026 23:41:38 GMT</pubDate>
     </item>
     <item>
       <title>Hurricane Simon Pounds Mexico’s Pacific Coast Resorts and Towns</title>
       <link>https://asfiblog.vercel.app/blog/hurricane-simon-pounds-mexico-pacific-coast-resorts-towns.html</link>
       <guid>https://asfiblog.vercel.app/blog/hurricane-simon-pounds-mexico-pacific-coast-resorts-towns.html</guid>
-      <pubDate>2026-10-11 00:00:00 GMT</pubDate>
       <description>Hurricane Simon pounds resorts and vulnerable towns along Mexico’s Pacific coast, bringing destructive winds and severe flooding fears across the wider region.</description>
+      <pubDate>Sun, 11 Oct 2026 17:49:12 GMT</pubDate>
     </item>
     <item>
       <title>Inter vs Parma: Serie A Stats and Head-to-Head Analysis</title>
       <link>https://asfiblog.vercel.app/blog/inter-vs-parma-serie-a-stats-head-to-head-analysis.html</link>
       <guid>https://asfiblog.vercel.app/blog/inter-vs-parma-serie-a-stats-head-to-head-analysis.html</guid>
-      <pubDate>2026-10-10 00:00:00 GMT</pubDate>
       <description>Inter vs Parma: Italian Serie A stats &amp; head-to-head analysis. Explore the history, tactics, and stakes defining this Serie A matchup between Milan and Parma.</description>
+      <pubDate>Sat, 10 Oct 2026 17:48:59 GMT</pubDate>
     </item>
     <item>
       <title>Amazon shuffles Alexa leadership after tablet launch</title>
       <link>https://asfiblog.vercel.app/blog/amazon-shuffles-alexa-leadership-after-tablet-release.html</link>
       <guid>https://asfiblog.vercel.app/blog/amazon-shuffles-alexa-leadership-after-tablet-release.html</guid>
-      <pubDate>2026-10-10 00:00:00 GMT</pubDate>
       <description>Amazon shuffles Alexa leadership following a high-end tablet release, signaling a strategic shift in its smart device lineup and AI focus for consumers.</description>
+      <pubDate>Sat, 10 Oct 2026 17:01:22 GMT</pubDate>
     </item>
     <item>
       <title>The Exorcist: Martyrs Trailer Debuts Scarlett Johansson</title>
       <link>https://asfiblog.vercel.app/blog/the-exorcist-martyrs-trailer-scarlett-johansson.html</link>
       <guid>https://asfiblog.vercel.app/blog/the-exorcist-martyrs-trailer-scarlett-johansson.html</guid>
-      <pubDate>2026-10-09 00:00:00 GMT</pubDate>
-      <description>The Exorcist: Martyrs trailer shows Scarlett Johansson hunting a demonic killer in Mike Flanagan&#x27;s new take on the horror classic, reviving the franchise.</description>
+      <description>The Exorcist: Martyrs trailer shows Scarlett Johansson hunting a demonic killer in Mike Flanagan's new take on the horror classic, reviving the franchise.</description>
+      <pubDate>Fri, 09 Oct 2026 23:41:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>Pradhama Drishtiya Kuttakkar OTT Release: Parvathy Thiruvothu Thriller Debuts This Week</title>
+      <link>https://asfiblog.vercel.app/blog/pradhama-drishtiya-kuttakkar-ott-release-parvathy-thiruvothu.html</link>
+      <guid>https://asfiblog.vercel.app/blog/pradhama-drishtiya-kuttakkar-ott-release-parvathy-thiruvothu.html</guid>
+      <description>Pradhama Drishtiya Kuttakkar hits OTT this week starring Parvathy Thiruvothu. Get release details, plot insights, and what to expect from this Malayalam thriller.</description>
+      <pubDate>Fri, 09 Oct 2026 12:01:27 GMT</pubDate>
     </item>
     <item>
       <title>Houthis Claim Missile Strike on Riyadh as Explosions Echo in Capital</title>
       <link>https://asfiblog.vercel.app/blog/houthis-claim-missile-strike-on-riyadh-explosions-heard-in-capital.html</link>
       <guid>https://asfiblog.vercel.app/blog/houthis-claim-missile-strike-on-riyadh-explosions-heard-in-capital.html</guid>
-      <pubDate>2026-10-08 00:00:00 GMT</pubDate>
       <description>Houthis claim missile strike on Riyadh as explosions heard in capital. Saudi Arabia faces escalating attacks amid ongoing Yemen conflict tensions.</description>
+      <pubDate>Thu, 08 Oct 2026 12:03:00 GMT</pubDate>
     </item>
     <item>
       <title>Christa Pike Live Updates: Judge to Hear Lawyers</title>
       <link>https://asfiblog.vercel.app/blog/christa-pike-live-updates-judge-to-hear-lawyers.html</link>
       <guid>https://asfiblog.vercel.app/blog/christa-pike-live-updates-judge-to-hear-lawyers.html</guid>
-      <pubDate>2026-10-07 00:00:00 GMT</pubDate>
       <description>Christa Pike Live Updates reveal a judge is set to hear from her lawyers following a failed execution and court appearance by defense attorneys today.</description>
+      <pubDate>Wed, 07 Oct 2026 17:49:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>Lamar Jackson Week 5: Outside Chance to Play Despite Injury</title>
+      <link>https://asfiblog.vercel.app/blog/lamar-jackson-week-5-outside-chance-play-ankle-sprain.html</link>
+      <guid>https://asfiblog.vercel.app/blog/lamar-jackson-week-5-outside-chance-play-ankle-sprain.html</guid>
+      <description>Lamar Jackson Week 5 outlook: Ravens QB faces an outside chance to play as he deals with an ankle sprain, per NBC Sports and ESPN reports for Baltimore Ravens</description>
+      <pubDate>Wed, 07 Oct 2026 02:01:35 GMT</pubDate>
     </item>
     <item>
       <title>Apple Smart Home Push Includes Doorbell, Lock, Thermostat</title>
       <link>https://asfiblog.vercel.app/blog/apple-smart-home-push-includes-doorbell-lock-thermostat.html</link>
       <guid>https://asfiblog.vercel.app/blog/apple-smart-home-push-includes-doorbell-lock-thermostat.html</guid>
-      <pubDate>2026-10-06 00:00:00 GMT</pubDate>
       <description>Apple’s Smart Home Push Includes Doorbell, Lock, Thermostat co‑developed with LG, expanding its ecosystem and integrating tighter home control.</description>
+      <pubDate>Tue, 06 Oct 2026 23:01:12 GMT</pubDate>
     </item>
     <item>
       <title>Houthis Claim Attack on Aramco as Yemen Conflict Escalates</title>
       <link>https://asfiblog.vercel.app/blog/houthis-claim-attack-on-aramco-as-yemen-conflict-escalates.html</link>
       <guid>https://asfiblog.vercel.app/blog/houthis-claim-attack-on-aramco-as-yemen-conflict-escalates.html</guid>
-      <pubDate>2026-10-04 00:00:00 GMT</pubDate>
-      <description>Houthis Claim Attack on Aramco as Yemen Conflict Escalates. New reports detail the Saudi-backed offensive, Iran&#x27;s stance, and risks to regional stability.</description>
+      <description>Houthis Claim Attack on Aramco as Yemen Conflict Escalates. New reports detail the Saudi-backed offensive, Iran's stance, and risks to regional stability.</description>
+      <pubDate>Sun, 04 Oct 2026 17:49:08 GMT</pubDate>
     </item>
     <item>
       <title>Michael Lewis Takes On Elon Musk And DOGE</title>
       <link>https://asfiblog.vercel.app/blog/michael-lewis-takes-on-elon-musk-and-doge.html</link>
       <guid>https://asfiblog.vercel.app/blog/michael-lewis-takes-on-elon-musk-and-doge.html</guid>
-      <pubDate>2026-10-04 00:00:00 GMT</pubDate>
       <description>Michael Lewis, author of The Big Short and Moneyball, is back to take on Elon Musk and DOGE. Discover why his new focus is creating a roller coaster in business and politics.</description>
+      <pubDate>Sun, 04 Oct 2026 17:01:06 GMT</pubDate>
     </item>
     <item>
       <title>Shop Clerk, Son Charged in Ole Miss Kratom Sales Case</title>
       <link>https://asfiblog.vercel.app/blog/shop-clerk-son-charged-in-ole-miss-kratom-sales-case.html</link>
       <guid>https://asfiblog.vercel.app/blog/shop-clerk-son-charged-in-ole-miss-kratom-sales-case.html</guid>
-      <pubDate>2026-10-03 00:00:00 GMT</pubDate>
       <description>Shop clerk and son charged with selling illegal kratom amid investigation into deaths of 2 Ole Miss students. Federal prosecutors call them a danger to the public.</description>
+      <pubDate>Sat, 03 Oct 2026 12:01:08 GMT</pubDate>
     </item>
     <item>
       <title>Cricbuzz Live: Pakistan vs India Asian Games 2026 Stream</title>
       <link>https://asfiblog.vercel.app/blog/cricbuzz-pakistan-vs-india-asian-games-2026-live-stream.html</link>
       <guid>https://asfiblog.vercel.app/blog/cricbuzz-pakistan-vs-india-asian-games-2026-live-stream.html</guid>
-      <pubDate>2026-10-03 00:00:00 GMT</pubDate>
       <description>Cricbuzz streams Pakistan vs India Gold Medal match for Asian Games 2026. Get scores, commentary, highlights and live updates across the USA and Canada.</description>
+      <pubDate>Sat, 03 Oct 2026 02:04:56 GMT</pubDate>
     </item>
     <item>
-      <title>Lula and Bolsonaro&#x27;s Mudslinging Intensifies Before Election Vote</title>
+      <title>Lula and Bolsonaro's Mudslinging Intensifies Before Election Vote</title>
       <link>https://asfiblog.vercel.app/blog/lula-bolsonaro-mudslinging-heats-up-ahead-of-election.html</link>
       <guid>https://asfiblog.vercel.app/blog/lula-bolsonaro-mudslinging-heats-up-ahead-of-election.html</guid>
-      <pubDate>2026-10-02 00:00:00 GMT</pubDate>
-      <description>Brazil&#x27;s presidential candidates Lula and Bolsonaro engage in intense mudslinging as the weekend vote approaches, with polls showing a close race and debates over key issues.</description>
+      <description>Brazil's presidential candidates Lula and Bolsonaro engage in intense mudslinging as the weekend vote approaches, with polls showing a close race and debates over key issues.</description>
+      <pubDate>Fri, 02 Oct 2026 17:01:28 GMT</pubDate>
     </item>
     <item>
       <title>Amazon Redesigns Kindle Lineup and Announces New Accessories</title>
       <link>https://asfiblog.vercel.app/blog/amazon-redesigns-kindle-lineup-and-announces-new-accessories.html</link>
       <guid>https://asfiblog.vercel.app/blog/amazon-redesigns-kindle-lineup-and-announces-new-accessories.html</guid>
-      <pubDate>2026-10-02 00:00:00 GMT</pubDate>
       <description>Amazon redesigns Kindle lineup and announces new accessories, featuring thinner, lighter, and more colorful e-readers for readers.</description>
+      <pubDate>Fri, 02 Oct 2026 12:01:03 GMT</pubDate>
     </item>
     <item>
       <title>Joey Porter Jr. Traded to Cowboys After Steelers Dispute</title>
       <link>https://asfiblog.vercel.app/blog/joey-porter-jr-traded-cowboys-steelers-dispute.html</link>
       <guid>https://asfiblog.vercel.app/blog/joey-porter-jr-traded-cowboys-steelers-dispute.html</guid>
-      <pubDate>2026-10-01 00:00:00 GMT</pubDate>
       <description>Joey Porter Jr. felt disrespected and underappreciated by the Steelers before being traded to the Cowboys. Read the latest on this NFL trade.</description>
+      <pubDate>Thu, 01 Oct 2026 23:01:12 GMT</pubDate>
     </item>
     <item>
       <title>Big Brother On Tonight – Final House Explosion</title>
       <link>https://asfiblog.vercel.app/blog/big-brother-on-tonight-final-house-explosion.html</link>
       <guid>https://asfiblog.vercel.app/blog/big-brother-on-tonight-final-house-explosion.html</guid>
-      <pubDate>2026-09-30 00:00:00 GMT</pubDate>
       <description>Big Brother on tonight recap: final host‑of‑the‑house, jury reactions and what happened after the explosive finale reveals behind the drama inside living room.</description>
+      <pubDate>Wed, 30 Sep 2026 23:41:19 GMT</pubDate>
     </item>
     <item>
       <title>Caitlin Clark Keeps Fever Alive With Historic Game 2</title>
       <link>https://asfiblog.vercel.app/blog/caitlin-clark-fever-game-2-aces-playoffs.html</link>
       <guid>https://asfiblog.vercel.app/blog/caitlin-clark-fever-game-2-aces-playoffs.html</guid>
-      <pubDate>2026-09-30 00:00:00 GMT</pubDate>
-      <description>Caitlin Clark&#x27;s historic playoff performance keeps the Fever&#x27;s season alive in Game 2 against the Aces. Read how her 27 points and 15 assists sparked a comeback.</description>
+      <description>Caitlin Clark's historic playoff performance keeps the Fever's season alive in Game 2 against the Aces. Read how her 27 points and 15 assists sparked a comeback.</description>
+      <pubDate>Wed, 30 Sep 2026 23:01:11 GMT</pubDate>
     </item>
     <item>
       <title>Samsung gives Galaxy Tab S Plus a two-year overhaul</title>
       <link>https://asfiblog.vercel.app/blog/samsung-gives-galaxy-tab-s-plus-a-two-year-overhaul.html</link>
       <guid>https://asfiblog.vercel.app/blog/samsung-gives-galaxy-tab-s-plus-a-two-year-overhaul.html</guid>
-      <pubDate>2026-09-30 00:00:00 GMT</pubDate>
       <description>Samsung gives its two-year-old Galaxy Tab S Plus an overhaul, refreshing the tablet with updated specs and software to extend its lifespan and appeal for users.</description>
+      <pubDate>Wed, 30 Sep 2026 17:48:56 GMT</pubDate>
     </item>
     <item>
       <title>White Sox 26-Man Wild Card Series Roster Shows No Surprises</title>
       <link>https://asfiblog.vercel.app/blog/white-sox-26-man-wild-card-series-roster-no-surprises.html</link>
       <guid>https://asfiblog.vercel.app/blog/white-sox-26-man-wild-card-series-roster-no-surprises.html</guid>
-      <pubDate>2026-09-29 00:00:00 GMT</pubDate>
       <description>The White Sox 26-man Wild Card Series roster delivered no surprises, sticking to expected talent and depth. Discover what this means for Chicago playoff outlook.</description>
+      <pubDate>Tue, 29 Sep 2026 23:01:16 GMT</pubDate>
     </item>
     <item>
       <title>Severely disabled toddler euthanized in Netherlands</title>
       <link>https://asfiblog.vercel.app/blog/severely-disabled-toddler-euthanized-netherlands.html</link>
       <guid>https://asfiblog.vercel.app/blog/severely-disabled-toddler-euthanized-netherlands.html</guid>
-      <pubDate>2026-09-29 00:00:00 GMT</pubDate>
       <description>Severely disabled one-year-old euthanized in Netherlands under new infant euthanasia rules, igniting worldwide debate over ethics and disability rights.</description>
+      <pubDate>Tue, 29 Sep 2026 17:49:12 GMT</pubDate>
     </item>
     <item>
-      <title>John Waldron and Goldman Sachs Succession Planning: What&#x27;s Next?</title>
+      <title>John Waldron and Goldman Sachs Succession Planning: What's Next?</title>
       <link>https://asfiblog.vercel.app/blog/john-waldron-goldman-sachs-succession-planning.html</link>
       <guid>https://asfiblog.vercel.app/blog/john-waldron-goldman-sachs-succession-planning.html</guid>
-      <pubDate>2026-09-28 00:00:00 GMT</pubDate>
-      <description>Explore the role of John Waldron in Goldman Sachs succession planning discussions, his potential impact, and implications for the firm&#x27;s leadership future.</description>
+      <description>Explore the role of John Waldron in Goldman Sachs succession planning discussions, his potential impact, and implications for the firm's leadership future.</description>
+      <pubDate>Mon, 28 Sep 2026 23:41:29 GMT</pubDate>
     </item>
     <item>
       <title>South Korea vs Uruguay: Friendlies Stats and Head to Head</title>
       <link>https://asfiblog.vercel.app/blog/south-korea-vs-uruguay-friendlies-stats-head-to-head.html</link>
       <guid>https://asfiblog.vercel.app/blog/south-korea-vs-uruguay-friendlies-stats-head-to-head.html</guid>
-      <pubDate>2026-09-28 00:00:00 GMT</pubDate>
       <description>South Korea vs Uruguay friendlies stats and head to head explores the historical rivalry and statistical trends between these football nations. Discover the key data points.</description>
+      <pubDate>Mon, 28 Sep 2026 12:01:13 GMT</pubDate>
     </item>
     <item>
       <title>Columbus Crew vs Inter Miami: MLS Showdown Analysis</title>
       <link>https://asfiblog.vercel.app/blog/columbus-crew-vs-inter-miami-mls-analysis.html</link>
       <guid>https://asfiblog.vercel.app/blog/columbus-crew-vs-inter-miami-mls-analysis.html</guid>
-      <pubDate>2026-09-27 00:00:00 GMT</pubDate>
       <description>Explore the Columbus Crew vs Inter Miami MLS clash: stats, head-to-head history, key players, and what to expect in their upcoming matchup.</description>
+      <pubDate>Sun, 27 Sep 2026 23:00:44 GMT</pubDate>
     </item>
     <item>
       <title>Michigan Football vs Iowa Week 4 Live Updates and Highlights</title>
       <link>https://asfiblog.vercel.app/blog/michigan-football-vs-iowa-week-4-live-updates-highlights.html</link>
       <guid>https://asfiblog.vercel.app/blog/michigan-football-vs-iowa-week-4-live-updates-highlights.html</guid>
-      <pubDate>2026-09-26 00:00:00 GMT</pubDate>
       <description>Michigan football vs Iowa Week 4 live updates deliver the latest game score, thrilling highlights, and key plays from the Big Ten conference matchup to watch today.</description>
+      <pubDate>Sat, 26 Sep 2026 23:41:38 GMT</pubDate>
     </item>
     <item>
       <title>QB Williams Out for MNF as Backup Bagent Returns to Practice</title>
       <link>https://asfiblog.vercel.app/blog/bears-qb-williams-out-mnf-backup-bagent-practice.html</link>
       <guid>https://asfiblog.vercel.app/blog/bears-qb-williams-out-mnf-backup-bagent-practice.html</guid>
-      <pubDate>2026-09-26 00:00:00 GMT</pubDate>
       <description>Bears QB Williams is out for Monday Night Football as backup Bagent returns to practice but remains questionable against the Eagles due to a concussion update.</description>
+      <pubDate>Sat, 26 Sep 2026 23:01:19 GMT</pubDate>
     </item>
     <item>
       <title>Control Resonant and New Indie Games to Play Now</title>
       <link>https://asfiblog.vercel.app/blog/control-resonant-and-new-indie-games-to-play-now.html</link>
       <guid>https://asfiblog.vercel.app/blog/control-resonant-and-new-indie-games-to-play-now.html</guid>
-      <pubDate>2026-09-26 00:00:00 GMT</pubDate>
       <description>Control Resonant leads a fresh wave of indie games worth playing now. Discover rapidfire CEO turnovers and trending new releases.</description>
+      <pubDate>Sat, 26 Sep 2026 17:48:50 GMT</pubDate>
     </item>
     <item>
       <title>Norma Dumont throws condoms, money at Ailin Perez video</title>
       <link>https://asfiblog.vercel.app/blog/norma-dumont-throws-condoms-money-ailin-perez-video.html</link>
       <guid>https://asfiblog.vercel.app/blog/norma-dumont-throws-condoms-money-ailin-perez-video.html</guid>
-      <pubDate>2026-09-25 00:00:00 GMT</pubDate>
       <description>Watch the viral video of UFC Vegas 121 faceoff where Norma Dumont throws condoms and money at Ailin Perez, sparking controversy and mental warfare talk.</description>
+      <pubDate>Fri, 25 Sep 2026 23:41:29 GMT</pubDate>
     </item>
     <item>
       <title>Work Continues on Field for Ravens-Cowboys Game in Brazil</title>
       <link>https://asfiblog.vercel.app/blog/work-continues-on-field-for-ravens-cowboys.html</link>
       <guid>https://asfiblog.vercel.app/blog/work-continues-on-field-for-ravens-cowboys.html</guid>
-      <pubDate>2026-09-25 00:00:00 GMT</pubDate>
       <description>Work continues on field for Ravens-Cowboys game in Brazil as stadium preparations accelerate ahead of the unprecedented NFL Week 3 international matchup.</description>
+      <pubDate>Fri, 25 Sep 2026 17:00:55 GMT</pubDate>
     </item>
     <item>
-      <title>Big Weekend Storm: Nor&#x27;easter Threatens East Coast</title>
+      <title>Big Weekend Storm: Nor'easter Threatens East Coast</title>
       <link>https://asfiblog.vercel.app/blog/big-weekend-storm-nor-easter-threatens-east-coast.html</link>
       <guid>https://asfiblog.vercel.app/blog/big-weekend-storm-nor-easter-threatens-east-coast.html</guid>
-      <pubDate>2026-09-24 00:00:00 GMT</pubDate>
-      <description>A big weekend storm is coming! Nor&#x27;easter brings heavy rain, strong winds, and coastal flooding to the East Coast. Prepare for severe weather now.</description>
+      <description>A big weekend storm is coming! Nor'easter brings heavy rain, strong winds, and coastal flooding to the East Coast. Prepare for severe weather now.</description>
+      <pubDate>Thu, 24 Sep 2026 23:41:56 GMT</pubDate>
     </item>
     <item>
       <title>Beats 360 Pre-Orders Open at Amazon With Cushion Kits on Sale</title>
       <link>https://asfiblog.vercel.app/blog/beats-360-pre-orders-amazon-cushion-kits-sale.html</link>
       <guid>https://asfiblog.vercel.app/blog/beats-360-pre-orders-amazon-cushion-kits-sale.html</guid>
-      <pubDate>2026-09-24 00:00:00 GMT</pubDate>
       <description>Beats 360 pre-orders are now open at Amazon with cushion kits on sale. Here is everything you need to know about the new lightweight headphones and current deals.</description>
+      <pubDate>Thu, 24 Sep 2026 02:04:59 GMT</pubDate>
     </item>
     <item>
       <title>Harvey Weinstein Sentenced to 15 Years After Conviction</title>
       <link>https://asfiblog.vercel.app/blog/harvey-weinstein-sentenced-15-years.html</link>
       <guid>https://asfiblog.vercel.app/blog/harvey-weinstein-sentenced-15-years.html</guid>
-      <pubDate>2026-09-23 00:00:00 GMT</pubDate>
-      <description>Harvey Weinstein sentenced to 15 years after sexual assault conviction. This article explores the ruling&#x27;s impact on survivors and broader cultural implications.</description>
+      <description>Harvey Weinstein sentenced to 15 years after sexual assault conviction. This article explores the ruling's impact on survivors and broader cultural implications.</description>
+      <pubDate>Wed, 23 Sep 2026 17:01:10 GMT</pubDate>
     </item>
     <item>
       <title>Sri Lanka Convicts 15 in Easter 2019 Bomb Attacks</title>
       <link>https://asfiblog.vercel.app/blog/sri-lanka-convicts-15-in-easter-2019-bomb-attacks.html</link>
       <guid>https://asfiblog.vercel.app/blog/sri-lanka-convicts-15-in-easter-2019-bomb-attacks.html</guid>
-      <pubDate>2026-09-23 00:00:00 GMT</pubDate>
       <description>Sri Lanka Convicts 15 in Easter 2019 Bomb Attacks: court hands down lengthy prison terms for those behind the deadly suicide blasts that killed over 260 people</description>
+      <pubDate>Wed, 23 Sep 2026 12:01:18 GMT</pubDate>
     </item>
     <item>
       <title>Sources: Giants QB Jaxson Dart out for extended period</title>
       <link>https://asfiblog.vercel.app/blog/sources-giants-qb-jaxson-dart-out-extended-period.html</link>
       <guid>https://asfiblog.vercel.app/blog/sources-giants-qb-jaxson-dart-out-extended-period.html</guid>
-      <pubDate>2026-09-22 00:00:00 GMT</pubDate>
       <description>Sources confirm Giants quarterback Jaxson Dart faces an extended absence due to a knee injury, raising questions about New York’s offensive plans and veteran leadership.</description>
+      <pubDate>Tue, 22 Sep 2026 23:41:54 GMT</pubDate>
     </item>
     <item>
       <title>Most Brownlow votes ever: Cats star in record hunt</title>
       <link>https://asfiblog.vercel.app/blog/most-brownlow-votes-ever-cats-star-record.html</link>
       <guid>https://asfiblog.vercel.app/blog/most-brownlow-votes-ever-cats-star-record.html</guid>
-      <pubDate>2026-09-21 00:00:00 GMT</pubDate>
       <description>Most Brownlow votes ever: Cats star poised to break the record but could lose a vote, leaving fans uncertain about the final count and its historic impact.</description>
+      <pubDate>Mon, 21 Sep 2026 17:01:27 GMT</pubDate>
     </item>
     <item>
-      <title>Merz Calls State Election &#x27;Disaster&#x27; But Vows to Stay On</title>
+      <title>Merz Calls State Election 'Disaster' But Vows to Stay On</title>
       <link>https://asfiblog.vercel.app/blog/merz-calls-state-election-disaster-vows-to-stay.html</link>
       <guid>https://asfiblog.vercel.app/blog/merz-calls-state-election-disaster-vows-to-stay.html</guid>
-      <pubDate>2026-09-21 00:00:00 GMT</pubDate>
-      <description>German Chancellor Friedrich Merz calls recent state election results a &#x27;disaster&#x27; for his CDU party as the far-right AfD surges, but pledges to remain in office.</description>
+      <description>German Chancellor Friedrich Merz calls recent state election results a 'disaster' for his CDU party as the far-right AfD surges, but pledges to remain in office.</description>
+      <pubDate>Mon, 21 Sep 2026 02:04:37 GMT</pubDate>
     </item>
     <item>
-      <title>Pixel 11 Pro Fold Review: iPhone Duo Joins Google&#x27;s Party</title>
+      <title>Pixel 11 Pro Fold Review: iPhone Duo Joins Google's Party</title>
       <link>https://asfiblog.vercel.app/blog/pixel-11-pro-fold-review-iphone-duo-joins-googles-party.html</link>
       <guid>https://asfiblog.vercel.app/blog/pixel-11-pro-fold-review-iphone-duo-joins-googles-party.html</guid>
-      <pubDate>2026-09-19 00:00:00 GMT</pubDate>
-      <description>Pixel 11 Pro Fold Review: iPhone Duo Joins Google&#x27;s Party — a look at Google&#x27;s foldable flagship, its triple camera system, and Apple&#x27;s entry into foldables.</description>
+      <description>Pixel 11 Pro Fold Review: iPhone Duo Joins Google's Party — a look at Google's foldable flagship, its triple camera system, and Apple's entry into foldables.</description>
+      <pubDate>Sat, 19 Sep 2026 17:48:56 GMT</pubDate>
     </item>
     <item>
       <title>Apple VP Discusses iPhone Duo Durability and Design Challenges</title>
       <link>https://asfiblog.vercel.app/blog/apple-vp-iphone-duo-durability-design.html</link>
       <guid>https://asfiblog.vercel.app/blog/apple-vp-iphone-duo-durability-design.html</guid>
-      <pubDate>2026-09-19 00:00:00 GMT</pubDate>
       <description>Apple VP of hardware discusses iPhone Duo durability, crease, hinge, and other design challenges in a recent interview.</description>
+      <pubDate>Sat, 19 Sep 2026 02:04:55 GMT</pubDate>
     </item>
     <item>
       <title>What Is a Data Breach and What It Means for Schools</title>
       <link>https://asfiblog.vercel.app/blog/what-is-a-data-breach.html</link>
       <guid>https://asfiblog.vercel.app/blog/what-is-a-data-breach.html</guid>
-      <pubDate>2026-09-19 00:00:00 GMT</pubDate>
       <description>What is a data breach? Learn how this security incident exposes sensitive information, using a recent school cyber attack as an example of impact and response.</description>
+      <pubDate>Sat, 19 Sep 2026 02:01:22 GMT</pubDate>
     </item>
     <item>
       <title>Gary Lineker Reacts to Luke Littler Darts Showdown</title>
       <link>https://asfiblog.vercel.app/blog/gary-lineker-luke-littler-darts-manchester.html</link>
       <guid>https://asfiblog.vercel.app/blog/gary-lineker-luke-littler-darts-manchester.html</guid>
-      <pubDate>2026-09-18 00:00:00 GMT</pubDate>
       <description>Gary Lineker comments on Luke Littler facing darts fans in Manchester for £501,000 prize. Follow the latest sports updates here.</description>
+      <pubDate>Fri, 18 Sep 2026 23:41:33 GMT</pubDate>
     </item>
     <item>
       <title>Buffalo Bills Fans Pay Eye-Opening Prices for Stadium Food</title>
       <link>https://asfiblog.vercel.app/blog/buffalo-bills-fans-pay-eye-opening-prices-for-stadium-food.html</link>
       <guid>https://asfiblog.vercel.app/blog/buffalo-bills-fans-pay-eye-opening-prices-for-stadium-food.html</guid>
-      <pubDate>2026-09-18 00:00:00 GMT</pubDate>
-      <description>Buffalo Bills fans paid eye-opening prices for beer and food at Highmark Stadium&#x27;s first home opener. Here is what attendees spent and what it signals going forward.</description>
+      <description>Buffalo Bills fans paid eye-opening prices for beer and food at Highmark Stadium's first home opener. Here is what attendees spent and what it signals going forward.</description>
+      <pubDate>Fri, 18 Sep 2026 17:48:35 GMT</pubDate>
     </item>
     <item>
       <title>Saudi Arabia: Debris from Intercepted Houthi Drone Kills 1</title>
       <link>https://asfiblog.vercel.app/blog/saudi-arabia-debris-intercepted-houthi-drone-kills.html</link>
       <guid>https://asfiblog.vercel.app/blog/saudi-arabia-debris-intercepted-houthi-drone-kills.html</guid>
-      <pubDate>2026-09-18 00:00:00 GMT</pubDate>
       <description>Saudi Arabia says debris from an intercepted Houthi drone killed one person as the Middle East conflict rapidly escalates. Here are the latest developments and ongoing strikes.</description>
+      <pubDate>Fri, 18 Sep 2026 02:01:08 GMT</pubDate>
     </item>
     <item>
       <title>One UI 9 Rollout Date Announced for Galaxy S25 and Older Models</title>
       <link>https://asfiblog.vercel.app/blog/onui9-rollout-galaxy-s25-models.html</link>
       <guid>https://asfiblog.vercel.app/blog/onui9-rollout-galaxy-s25-models.html</guid>
-      <pubDate>2026-09-17 00:00:00 GMT</pubDate>
       <description>One UI 9 will reach Galaxy S25 and older models soon. The official rollout date has been confirmed, bringing updated software updates to all current users now.</description>
+      <pubDate>Thu, 17 Sep 2026 17:48:36 GMT</pubDate>
     </item>
     <item>
       <title>Michigan Hail Mary: FBS Says Replay Protocols Not Followed</title>
       <link>https://asfiblog.vercel.app/blog/fbs-oversight-committee-replay-protocols-michigan-hail-mary.html</link>
       <guid>https://asfiblog.vercel.app/blog/fbs-oversight-committee-replay-protocols-michigan-hail-mary.html</guid>
-      <pubDate>2026-09-17 00:00:00 GMT</pubDate>
       <description>FBS oversight committee says replay protocols were not followed during Michigan Hail Mary victory over Western Michigan, but cannot overturn the final result.</description>
+      <pubDate>Thu, 17 Sep 2026 12:02:43 GMT</pubDate>
     </item>
     <item>
-      <title>Charlie Kirk&#x27;s Family Alleges UVU Security Failures Before Assassination</title>
+      <title>Charlie Kirk's Family Alleges UVU Security Failures Before Assassination</title>
       <link>https://asfiblog.vercel.app/blog/charlie-kirks-family-alleges-uvu-security-failures-before-assassination.html</link>
       <guid>https://asfiblog.vercel.app/blog/charlie-kirks-family-alleges-uvu-security-failures-before-assassination.html</guid>
-      <pubDate>2026-09-16 00:00:00 GMT</pubDate>
-      <description>Charlie Kirk&#x27;s family alleges University of Utah knew of rooftop security risks before his assassination. Legal filing claims official security failures contributed.</description>
+      <description>Charlie Kirk's family alleges University of Utah knew of rooftop security risks before his assassination. Legal filing claims official security failures contributed.</description>
+      <pubDate>Wed, 16 Sep 2026 17:00:53 GMT</pubDate>
     </item>
     <item>
       <title>Nvidia GPU Equivalent to Meta Quest 3 – Performance Analysis and Buyer Guide</title>
       <link>https://asfiblog.vercel.app/blog/nvidia-gpu-equivalent-meta-quest-3.html</link>
       <guid>https://asfiblog.vercel.app/blog/nvidia-gpu-equivalent-meta-quest-3.html</guid>
-      <pubDate>2026-09-16 00:00:00 GMT</pubDate>
       <description>The Nvidia GPU equivalent to the Meta Quest 3 offers performance details, price analysis and 2026 recommendations for immersive VR experiences.</description>
+      <pubDate>Wed, 16 Sep 2026 02:05:00 GMT</pubDate>
     </item>
     <item>
-      <title>Russian Oligarch Linked to Putin Funded Trump Jr.&#x27;s Wedding</title>
+      <title>Russian Oligarch Linked to Putin Funded Trump Jr.'s Wedding</title>
       <link>https://asfiblog.vercel.app/blog/russian-oligarch-putin-trump-wedding-funding.html</link>
       <guid>https://asfiblog.vercel.app/blog/russian-oligarch-putin-trump-wedding-funding.html</guid>
-      <pubDate>2026-09-15 00:00:00 GMT</pubDate>
-      <description>A Putin-tied Russian oligarch reportedly funded parts of Donald Trump Jr.&#x27;s wedding celebrations, raising questions about foreign influence and political ties.</description>
+      <description>A Putin-tied Russian oligarch reportedly funded parts of Donald Trump Jr.'s wedding celebrations, raising questions about foreign influence and political ties.</description>
+      <pubDate>Tue, 15 Sep 2026 12:03:09 GMT</pubDate>
     </item>
     <item>
       <title>Vikings Roar as Packers Collapse Again Under LaFleur</title>
       <link>https://asfiblog.vercel.app/blog/vikings-roar-packers-collapse-lafleur-criticism.html</link>
       <guid>https://asfiblog.vercel.app/blog/vikings-roar-packers-collapse-lafleur-criticism.html</guid>
-      <pubDate>2026-09-15 00:00:00 GMT</pubDate>
       <description>Vikings roar past Packers as Matt LaFleur faces criticism again for questionable decisions in another late-game collapse.</description>
+      <pubDate>Tue, 15 Sep 2026 02:05:05 GMT</pubDate>
     </item>
     <item>
       <title>Trump immigration rule sued by states and cities</title>
       <link>https://asfiblog.vercel.app/blog/trump-immigration-rule-states-cities-sue.html</link>
       <guid>https://asfiblog.vercel.app/blog/trump-immigration-rule-states-cities-sue.html</guid>
-      <pubDate>2026-09-14 00:00:00 GMT</pubDate>
       <description>States and cities sue to block Trump immigration rule on public benefits, challenging a DHS policy that could deny green cards to immigrants using public assistance.</description>
+      <pubDate>Mon, 14 Sep 2026 23:41:50 GMT</pubDate>
     </item>
     <item>
       <title>Talarico Leading Paxton in Survey as GOP Anxiety Grows</title>
       <link>https://asfiblog.vercel.app/blog/talarico-leading-paxton-survey-republican-anxiety.html</link>
       <guid>https://asfiblog.vercel.app/blog/talarico-leading-paxton-survey-republican-anxiety.html</guid>
-      <pubDate>2026-09-14 00:00:00 GMT</pubDate>
-      <description>Talarico leading Paxton in survey highlights rising Republican anxiety about the Texas attorney general&#x27;s viability as legal and political headwinds continue.</description>
+      <description>Talarico leading Paxton in survey highlights rising Republican anxiety about the Texas attorney general's viability as legal and political headwinds continue.</description>
+      <pubDate>Mon, 14 Sep 2026 17:49:00 GMT</pubDate>
     </item>
     <item>
       <title>McConaughey Sums Up Texas Win Over Ohio State in 3 Words</title>
       <link>https://asfiblog.vercel.app/blog/mcconaughey-texas-win-ohio-state-three-words.html</link>
       <guid>https://asfiblog.vercel.app/blog/mcconaughey-texas-win-ohio-state-three-words.html</guid>
-      <pubDate>2026-09-14 00:00:00 GMT</pubDate>
-      <description>Actor Matthew McConaughey summed up Texas&#x27; stunning comeback win over No. 1 Ohio State in just three words, capturing the shock felt by fans everywhere.</description>
+      <description>Actor Matthew McConaughey summed up Texas' stunning comeback win over No. 1 Ohio State in just three words, capturing the shock felt by fans everywhere.</description>
+      <pubDate>Mon, 14 Sep 2026 02:01:20 GMT</pubDate>
     </item>
     <item>
       <title>Himalayan floods leave towns destroyed and grief mounting</title>
       <link>https://asfiblog.vercel.app/blog/himalayan-floods-wiped-out-towns-grief.html</link>
       <guid>https://asfiblog.vercel.app/blog/himalayan-floods-wiped-out-towns-grief.html</guid>
-      <pubDate>2026-09-13 00:00:00 GMT</pubDate>
       <description>Himalayan floods have devastated Nepalese towns, leaving over 1,300 dead, thousands missing, and deep grief. Aid and drone ops now help displaced.</description>
+      <pubDate>Sun, 13 Sep 2026 12:01:28 GMT</pubDate>
     </item>
     <item>
       <title>Houthi Advance in Yemen Puts U.S. in a New Bind</title>
       <link>https://asfiblog.vercel.app/blog/houthi-advance-yemen-puts-us-in-new-bind.html</link>
       <guid>https://asfiblog.vercel.app/blog/houthi-advance-yemen-puts-us-in-new-bind.html</guid>
-      <pubDate>2026-09-13 00:00:00 GMT</pubDate>
       <description>The Houthi advance in Yemen creates a new challenge for U.S. foreign policy as fighting escalates around Bab al-Mandeb and Red Sea shipping faces growing threats.</description>
+      <pubDate>Sun, 13 Sep 2026 02:05:11 GMT</pubDate>
     </item>
     <item>
       <title>The Pitt: How a Trending Topic Shapes Emmy Predictions</title>
       <link>https://asfiblog.vercel.app/blog/the-pitt-emmy-predictions.html</link>
       <guid>https://asfiblog.vercel.app/blog/the-pitt-emmy-predictions.html</guid>
-      <pubDate>2026-09-12 00:00:00 GMT</pubDate>
       <description>The Pitt has emerged as a buzzworthy narrative shaping expectations for the Emmys 2026 predictions, influencing which shows dominate award chatter today.</description>
+      <pubDate>Sat, 12 Sep 2026 23:41:25 GMT</pubDate>
     </item>
     <item>
       <title>Nintendo launches major sale thanks to tariff refunds</title>
       <link>https://asfiblog.vercel.app/blog/nintendo-launches-major-sale-tariff-refunds.html</link>
       <guid>https://asfiblog.vercel.app/blog/nintendo-launches-major-sale-tariff-refunds.html</guid>
-      <pubDate>2026-09-12 00:00:00 GMT</pubDate>
       <description>Nintendo launches major sale with help from tariff refunds, offering Switch discounts as the company uses rebate funds for a customer appreciation promotion.</description>
+      <pubDate>Sat, 12 Sep 2026 02:05:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>NFL Players, Coaches, Execs Remember 9/11 25th Anniversary</title>
+      <link>https://asfiblog.vercel.app/blog/nfl-players-coaches-execs-remember-911-25th-anniversary.html</link>
+      <guid>https://asfiblog.vercel.app/blog/nfl-players-coaches-execs-remember-911-25th-anniversary.html</guid>
+      <description>NFL players, coaches and executives honor 9/11’s 25th anniversary with tributes across the league, highlighting unity and remembrance efforts.</description>
+      <pubDate>Fri, 11 Sep 2026 17:01:32 GMT</pubDate>
     </item>
     <item>
       <title>Elena Rybakina Advances to US Open 2026 Semi-Final</title>
       <link>https://asfiblog.vercel.app/blog/elena-rybakina-us-open-2026-semi-final.html</link>
       <guid>https://asfiblog.vercel.app/blog/elena-rybakina-us-open-2026-semi-final.html</guid>
-      <pubDate>2026-09-11 00:00:00 GMT</pubDate>
       <description>Elena Rybakina advances to the US Open 2026 semi-final after Coco Gauff saves match points to beat Mirra Andreeva in a thrilling quarter-final clash on Wednesday.</description>
+      <pubDate>Fri, 11 Sep 2026 02:01:08 GMT</pubDate>
     </item>
     <item>
       <title>Apple Watch Series 12 and Ultra 4 Unveiled with AI Day Recap</title>
       <link>https://asfiblog.vercel.app/blog/apple-watch-series-12-ultra-4-ai-recap.html</link>
       <guid>https://asfiblog.vercel.app/blog/apple-watch-series-12-ultra-4-ai-recap.html</guid>
-      <pubDate>2026-09-09 00:00:00 GMT</pubDate>
       <description>Apple unveils Watch Series 12 and Watch Ultra 4 with AI upgrade that recap your day. Explore new features, health sensing, and release details.</description>
+      <pubDate>Wed, 09 Sep 2026 23:01:14 GMT</pubDate>
     </item>
     <item>
       <title>Super Bowl Predictions 2026: Comprehensive Analysis of Top Teams and Players</title>
       <link>https://asfiblog.vercel.app/blog/superbowl-predictions-2026-asfi-blog.html</link>
       <guid>https://asfiblog.vercel.app/blog/superbowl-predictions-2026-asfi-blog.html</guid>
-      <pubDate>2026-09-08 00:00:00 GMT</pubDate>
       <description>Explore the latest Super Bowl predictions 2026 with expert analysis on teams, players, and key matchups shaping the biggest game of the year.</description>
+      <pubDate>Tue, 08 Sep 2026 17:48:59 GMT</pubDate>
     </item>
     <item>
       <title>PS5 Pro News: Major Upgrade With Hefty Graphics Boost</title>
       <link>https://asfiblog.vercel.app/blog/ps5-pro-news-major-system-upgrade-hefty-graphics-boost.html</link>
       <guid>https://asfiblog.vercel.app/blog/ps5-pro-news-major-system-upgrade-hefty-graphics-boost.html</guid>
-      <pubDate>2026-09-08 00:00:00 GMT</pubDate>
       <description>PS5 Pro news indicates a major system upgrade is coming with a hefty boost to graphics, signaling a significant leap in console performance and visual fidelity for players.</description>
+      <pubDate>Tue, 08 Sep 2026 17:01:24 GMT</pubDate>
     </item>
     <item>
       <title>Sony Brings Back Fan-Favorite XM4 Headphones</title>
       <link>https://asfiblog.vercel.app/blog/sony-brings-back-fan-favorite-xm4-headphones.html</link>
       <guid>https://asfiblog.vercel.app/blog/sony-brings-back-fan-favorite-xm4-headphones.html</guid>
-      <pubDate>2026-09-07 00:00:00 GMT</pubDate>
       <description>Sony revives its fan-favorite XM4 headphones with refreshed models featuring updated sound, Bluetooth 6.0, and user-replaceable batteries at a lower price.</description>
+      <pubDate>Mon, 07 Sep 2026 23:00:57 GMT</pubDate>
     </item>
     <item>
-      <title>Trump Suggests Renaming New Mexico as &#x27;New America&#x27;</title>
+      <title>Trump Suggests Renaming New Mexico as 'New America'</title>
       <link>https://asfiblog.vercel.app/blog/trump-renaming-new-mexico-new-america.html</link>
       <guid>https://asfiblog.vercel.app/blog/trump-renaming-new-mexico-new-america.html</guid>
-      <pubDate>2026-09-07 00:00:00 GMT</pubDate>
-      <description>Trump suggests renaming New Mexico &#x27;New America,&#x27; sparking a torrent of online memes, political pushback, and debate over state identity and sovereignty.</description>
+      <description>Trump suggests renaming New Mexico 'New America,' sparking a torrent of online memes, political pushback, and debate over state identity and sovereignty.</description>
+      <pubDate>Mon, 07 Sep 2026 17:48:33 GMT</pubDate>
     </item>
     <item>
       <title>Jessica Pegula US Open 2026: Match Highlights vs Leylah Fernandez</title>
       <link>https://asfiblog.vercel.app/blog/jessica-pegula-us-open-2026-highlights-vs-leylah-fernandez.html</link>
       <guid>https://asfiblog.vercel.app/blog/jessica-pegula-us-open-2026-highlights-vs-leylah-fernandez.html</guid>
-      <pubDate>2026-09-06 00:00:00 GMT</pubDate>
-      <description>Jessica Pegula&#x27;s US Open 2026 Round 3 match against Leylah Fernandez delivered thrilling highlights. Discover key moments, player strategies, and match outcomes.</description>
+      <description>Jessica Pegula's US Open 2026 Round 3 match against Leylah Fernandez delivered thrilling highlights. Discover key moments, player strategies, and match outcomes.</description>
+      <pubDate>Sun, 06 Sep 2026 23:41:20 GMT</pubDate>
     </item>
     <item>
       <title>IFA Berlin 2026 Live: Top Announcements From Samsung, Dyson, LG</title>
       <link>https://asfiblog.vercel.app/blog/ifa-berlin-2026-live-announcements-samsung-dyson-lg.html</link>
       <guid>https://asfiblog.vercel.app/blog/ifa-berlin-2026-live-announcements-samsung-dyson-lg.html</guid>
-      <pubDate>2026-09-06 00:00:00 GMT</pubDate>
       <description>Live coverage of IFA Berlin 2026: Samsung, Dyson, LG and other major brands reveal their biggest tech announcements and innovations.</description>
+      <pubDate>Sun, 06 Sep 2026 23:01:26 GMT</pubDate>
     </item>
     <item>
       <title>Apple September 9 Event Preview iPhone Ultra</title>
       <link>https://asfiblog.vercel.app/blog/apple-september-9-event-preview-iphone-ultra.html</link>
       <guid>https://asfiblog.vercel.app/blog/apple-september-9-event-preview-iphone-ultra.html</guid>
-      <pubDate>2026-09-05 00:00:00 GMT</pubDate>
-      <description>Apple September 9 event preview covers iPhone Ultra, iPhone 18 Pro, foldable iPhone, and more. Here is what to expect from Apple&#x27;s biggest product launch.</description>
+      <description>Apple September 9 event preview covers iPhone Ultra, iPhone 18 Pro, foldable iPhone, and more. Here is what to expect from Apple's biggest product launch.</description>
+      <pubDate>Sat, 05 Sep 2026 12:03:02 GMT</pubDate>
     </item>
     <item>
       <title>Older Pixel phones get Quick Share AirDrop support</title>
       <link>https://asfiblog.vercel.app/blog/older-pixel-phones-get-quick-share-airdrop-support.html</link>
       <guid>https://asfiblog.vercel.app/blog/older-pixel-phones-get-quick-share-airdrop-support.html</guid>
-      <pubDate>2026-09-05 00:00:00 GMT</pubDate>
       <description>Older Pixel phones may finally receive Quick Share AirDrop support, enabling seamless file sharing. Learn how this feature works and what it means for users.</description>
+      <pubDate>Sat, 05 Sep 2026 02:01:22 GMT</pubDate>
     </item>
     <item>
       <title>Trump Arch Groundbreaking Set to Begin Within Two Weeks</title>
       <link>https://asfiblog.vercel.app/blog/trump-arch-groundbreaking-burgum.html</link>
       <guid>https://asfiblog.vercel.app/blog/trump-arch-groundbreaking-burgum.html</guid>
-      <pubDate>2026-09-03 00:00:00 GMT</pubDate>
       <description>Trump arch groundbreaking will begin soon, Interior Secretary Burgum says, as excavation on the towering gilded memorial starts before final approvals are in place.</description>
+      <pubDate>Thu, 03 Sep 2026 23:41:33 GMT</pubDate>
     </item>
     <item>
-      <title>Messi Retires From Argentina: &#x27;A Decision That Hurts My Soul&#x27;</title>
+      <title>Messi Retires From Argentina: 'A Decision That Hurts My Soul'</title>
       <link>https://asfiblog.vercel.app/blog/messi-retires-argentina-international-duty.html</link>
       <guid>https://asfiblog.vercel.app/blog/messi-retires-argentina-international-duty.html</guid>
-      <pubDate>2026-08-31 00:00:00 GMT</pubDate>
       <description>Lionel Messi announces retirement from Argentina international duty, calling it a decision that hurts my soul. Football legend ends era.</description>
+      <pubDate>Mon, 31 Aug 2026 23:41:54 GMT</pubDate>
     </item>
     <item>
       <title>Lindsay Clancy Jury Asks to Go Home After Second Day</title>
       <link>https://asfiblog.vercel.app/blog/lindsay-clancy-jury-asks-to-go-home-after-second-day.html</link>
       <guid>https://asfiblog.vercel.app/blog/lindsay-clancy-jury-asks-to-go-home-after-second-day.html</guid>
-      <pubDate>2026-08-31 00:00:00 GMT</pubDate>
       <description>Lindsay Clancy jury asks to go home after a second full day of deliberations, leaving the triple murder case unresolved as jurors continue toward a verdict.</description>
+      <pubDate>Mon, 31 Aug 2026 23:01:05 GMT</pubDate>
     </item>
     <item>
       <title>Kyiv-Area Survivor Recalls Russian Strike That Killed 38</title>
       <link>https://asfiblog.vercel.app/blog/kyiv-area-survivor-recalls-russian-strike-killed-38.html</link>
       <guid>https://asfiblog.vercel.app/blog/kyiv-area-survivor-recalls-russian-strike-killed-38.html</guid>
-      <pubDate>2026-08-31 00:00:00 GMT</pubDate>
       <description>Kyiv-area survivor recalls the Russian strike that killed 38 people, describing the chaos and aftermath of one of the deadliest attacks on Ukraine this year.</description>
+      <pubDate>Mon, 31 Aug 2026 02:01:26 GMT</pubDate>
     </item>
     <item>
       <title>Beto Linked With Serie A Return as Fiorentina Circle</title>
       <link>https://asfiblog.vercel.app/blog/beto-linked-with-serie-a-return-fiorentina.html</link>
       <guid>https://asfiblog.vercel.app/blog/beto-linked-with-serie-a-return-fiorentina.html</guid>
-      <pubDate>2026-08-30 00:00:00 GMT</pubDate>
       <description>Beto is being linked with a Serie A return as Fiorentina circle the striker, with transfer rumours heating up across Europe ahead of the window.</description>
+      <pubDate>Sun, 30 Aug 2026 23:41:19 GMT</pubDate>
     </item>
     <item>
       <title>Iran Supreme Leader Calls for Muslim Unity Against US, Israel</title>
       <link>https://asfiblog.vercel.app/blog/iran-supreme-leader-muslim-unity-against-us-israel.html</link>
       <guid>https://asfiblog.vercel.app/blog/iran-supreme-leader-muslim-unity-against-us-israel.html</guid>
-      <pubDate>2026-08-30 00:00:00 GMT</pubDate>
       <description>Iran supreme leader calls for Muslim unity against US and Israel amid Middle East tensions and Hormuz Strait concerns.</description>
+      <pubDate>Sun, 30 Aug 2026 23:01:09 GMT</pubDate>
     </item>
     <item>
-      <title>Ex-White House Teleprompter Operator Fined <language>en-us</language>
-72,000 Over Trump Speech Bets</title>
+      <title>Ex-White House Teleprompter Operator Fined $172,000 Over Trump Speech Bets</title>
       <link>https://asfiblog.vercel.app/blog/ex-white-house-teleprompter-operator-fined-trump-speech-bets.html</link>
       <guid>https://asfiblog.vercel.app/blog/ex-white-house-teleprompter-operator-fined-trump-speech-bets.html</guid>
-      <pubDate>2026-08-30 00:00:00 GMT</pubDate>
-      <description>Ex-White House teleprompter operator fined <language>en-us</language>
-72,000 for placing bets on Trump speeches using non-public information, according to CFTC settlement.</description>
+      <description>Ex-White House teleprompter operator fined $172,000 for placing bets on Trump speeches using non-public information, according to CFTC settlement.</description>
+      <pubDate>Sun, 30 Aug 2026 02:05:10 GMT</pubDate>
     </item>
     <item>
       <title>Pete Crow-Armstrong adds to NL MVP case with three homers</title>
       <link>https://asfiblog.vercel.app/blog/pete-crow-armstrong-three-homer-showcase-cubs-win-over-reds.html</link>
       <guid>https://asfiblog.vercel.app/blog/pete-crow-armstrong-three-homer-showcase-cubs-win-over-reds.html</guid>
-      <pubDate>2026-08-30 00:00:00 GMT</pubDate>
       <description>Pete Crow-Armstrong’s three‑home‑run showcase fuels his NL MVP momentum, leading the Cubs to a dominant win over the Reds and marking a historic night at Wrigley Field.</description>
+      <pubDate>Sun, 30 Aug 2026 02:01:07 GMT</pubDate>
     </item>
     <item>
-      <title>Trump&#x27;s evolving endgame for the Iran war, in 6 quotes</title>
+      <title>Trump's evolving endgame for the Iran war, in 6 quotes</title>
       <link>https://asfiblog.vercel.app/blog/trumps-evolving-endgame-iran-war-6-quotes.html</link>
       <guid>https://asfiblog.vercel.app/blog/trumps-evolving-endgame-iran-war-6-quotes.html</guid>
-      <pubDate>2026-08-29 00:00:00 GMT</pubDate>
-      <description>Trump&#x27;s evolving endgame for the Iran war, in 6 quotes reveals shifting strategy as the conflict enters its sixth month and diplomatic tensions rise now.</description>
+      <description>Trump's evolving endgame for the Iran war, in 6 quotes reveals shifting strategy as the conflict enters its sixth month and diplomatic tensions rise now.</description>
+      <pubDate>Sat, 29 Aug 2026 23:41:35 GMT</pubDate>
     </item>
     <item>
       <title>Nepal China Border Disaster: Death Toll Rises as Lake Floods</title>
       <link>https://asfiblog.vercel.app/blog/nepal-china-border-disaster-death-toll-rises-lake-flood-threat.html</link>
       <guid>https://asfiblog.vercel.app/blog/nepal-china-border-disaster-death-toll-rises-lake-flood-threat.html</guid>
-      <pubDate>2026-08-28 00:00:00 GMT</pubDate>
       <description>Nepal China border disaster death toll rises as a glacial lake poses a new flood threat; rescue efforts intensify and over 2,000 people remain missing.</description>
+      <pubDate>Fri, 28 Aug 2026 17:01:03 GMT</pubDate>
     </item>
     <item>
       <title>bwin: What You Need to Know About the Trending Topic</title>
       <link>https://asfiblog.vercel.app/blog/bwin-trending-topic.html</link>
       <guid>https://asfiblog.vercel.app/blog/bwin-trending-topic.html</guid>
-      <pubDate>2026-08-28 00:00:00 GMT</pubDate>
       <description>bwin trends online as users search for updates on the brand’s latest developments, market impact, and what the buzz means for consumers and industry watchers.</description>
+      <pubDate>Fri, 28 Aug 2026 02:05:07 GMT</pubDate>
     </item>
     <item>
       <title>Lindsay Clancy Trial: Jury Weighs Case of Mom Who Killed 3 Kids</title>
       <link>https://asfiblog.vercel.app/blog/lindsay-clancy-trial-jury-deliberations-mother-killed-three-children.html</link>
       <guid>https://asfiblog.vercel.app/blog/lindsay-clancy-trial-jury-deliberations-mother-killed-three-children.html</guid>
-      <pubDate>2026-08-28 00:00:00 GMT</pubDate>
       <description>Key moments from Lindsay Clancy trial as jury deliberates the case of a mother accused of killing her 3 children, with postpartum psychosis at center.</description>
+      <pubDate>Fri, 28 Aug 2026 02:01:28 GMT</pubDate>
     </item>
     <item>
       <title>Robert Griffin III Conspiracy Theory on Browns QB Decision: Is Shedeur Sanders the Answer?</title>
       <link>https://asfiblog.vercel.app/blog/robert-griffin-iii-conspiracy-theory-browns-qb-sanders.html</link>
       <guid>https://asfiblog.vercel.app/blog/robert-griffin-iii-conspiracy-theory-browns-qb-sanders.html</guid>
-      <pubDate>2026-08-27 00:00:00 GMT</pubDate>
-      <description>Robert Griffin III&#x27;s Browns QB conspiracy theory involving Shedeur Sanders sparks debate across NFL media landscape.</description>
+      <description>Robert Griffin III's Browns QB conspiracy theory involving Shedeur Sanders sparks debate across NFL media landscape.</description>
+      <pubDate>Thu, 27 Aug 2026 23:41:55 GMT</pubDate>
     </item>
     <item>
       <title>Nepal Flash Floods Live Updates: Hundreds Dead, 1,000+ Missing</title>
       <link>https://asfiblog.vercel.app/blog/nepal-flash-floods-live-updates-hundreds-dead-thousands-missing.html</link>
       <guid>https://asfiblog.vercel.app/blog/nepal-flash-floods-live-updates-hundreds-dead-thousands-missing.html</guid>
-      <pubDate>2026-08-27 00:00:00 GMT</pubDate>
       <description>Nepal flash floods have claimed hundreds of lives with over 1,000 missing. Get the latest updates on casualties, rescue efforts, and expert analysis of the disaster.</description>
+      <pubDate>Thu, 27 Aug 2026 17:48:47 GMT</pubDate>
     </item>
     <item>
       <title>Tech Companies Use NDAs for Data Center Talks</title>
       <link>https://asfiblog.vercel.app/blog/tech-companies-ndas-data-center-talks.html</link>
       <guid>https://asfiblog.vercel.app/blog/tech-companies-ndas-data-center-talks.html</guid>
-      <pubDate>2026-08-27 00:00:00 GMT</pubDate>
       <description>Tech companies and local officials are covering data center talks in NDAs, heavily restricting public transparency. Discover why this practice raises alarms.</description>
+      <pubDate>Thu, 27 Aug 2026 12:00:51 GMT</pubDate>
     </item>
     <item>
-      <title>Nathan Grima: AFL Star&#x27;s Surgery Nightmare Story</title>
+      <title>Nathan Grima: AFL Star's Surgery Nightmare Story</title>
       <link>https://asfiblog.vercel.app/blog/nathan-grima-afl-surgery-nightmare.html</link>
       <guid>https://asfiblog.vercel.app/blog/nathan-grima-afl-surgery-nightmare.html</guid>
-      <pubDate>2026-08-27 00:00:00 GMT</pubDate>
       <description>Nathan Grima, former AFL player, faced a near-death ordeal after what was meant to be minor surgery. Here is what we know about his recovery and the warning signs.</description>
+      <pubDate>Thu, 27 Aug 2026 02:05:09 GMT</pubDate>
     </item>
     <item>
       <title>Alex Apodaca Stuns Bella Mir on Dana White Contender Series</title>
       <link>https://asfiblog.vercel.app/blog/alex-apodaca-bella-mir-dana-white-contender-series-upset.html</link>
       <guid>https://asfiblog.vercel.app/blog/alex-apodaca-bella-mir-dana-white-contender-series-upset.html</guid>
-      <pubDate>2026-08-27 00:00:00 GMT</pubDate>
-      <description>Alex Apodaca reacts to his massive upset win over Bella Mir on Dana White&#x27;s Contender Series, calling the victory &#x27;sick&#x27; as he earns a UFC deal.</description>
+      <description>Alex Apodaca reacts to his massive upset win over Bella Mir on Dana White's Contender Series, calling the victory 'sick' as he earns a UFC deal.</description>
+      <pubDate>Thu, 27 Aug 2026 02:01:05 GMT</pubDate>
     </item>
     <item>
       <title>SEC Punishes Coaches Who Sign NFL Players: New Rule Explained</title>
       <link>https://asfiblog.vercel.app/blog/sec-punishments-coaches-sign-nfl-players.html</link>
       <guid>https://asfiblog.vercel.app/blog/sec-punishments-coaches-sign-nfl-players.html</guid>
-      <pubDate>2026-08-26 00:00:00 GMT</pubDate>
       <description>SEC reportedly settles on punishments for programs and head coaches who decide to sign NFL players. Here is what the new rule means and who it affects.</description>
+      <pubDate>Wed, 26 Aug 2026 23:01:14 GMT</pubDate>
     </item>
     <item>
       <title>DraftKings Odds: Phillies Win Trends and MLB Betting Tips</title>
       <link>https://asfiblog.vercel.app/blog/draftkings-odds-phillies-mlb-betting-tips.html</link>
       <guid>https://asfiblog.vercel.app/blog/draftkings-odds-phillies-mlb-betting-tips.html</guid>
-      <pubDate>2026-08-26 00:00:00 GMT</pubDate>
-      <description>DraftKings odds highlight the Phillies&#x27; continued success. Get MLB betting tips for Monday and analyze Philadelphia&#x27;s winning streak.</description>
+      <description>DraftKings odds highlight the Phillies' continued success. Get MLB betting tips for Monday and analyze Philadelphia's winning streak.</description>
+      <pubDate>Wed, 26 Aug 2026 17:01:21 GMT</pubDate>
     </item>
     <item>
       <title>Fire vs Wings Odds: Dallas Hosts Portland in WNBA Clash</title>
       <link>https://asfiblog.vercel.app/blog/fire-vs-wings-odds-dallas-hosts-portland-in-wnba-clash.html</link>
       <guid>https://asfiblog.vercel.app/blog/fire-vs-wings-odds-dallas-hosts-portland-in-wnba-clash.html</guid>
-      <pubDate>2026-08-25 00:00:00 GMT</pubDate>
       <description>Fire vs Wings odds preview: Dallas Wings host Portland Fire in a key WNBA matchup. Get betting lines, analysis, and what to expect.</description>
+      <pubDate>Tue, 25 Aug 2026 23:34:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>Ship Disabled by Attack in Strait of Hormuz: Latest Updates</title>
+      <link>https://asfiblog.vercel.app/blog/ship-disabled-attack-strait-hormuz-middle-east.html</link>
+      <guid>https://asfiblog.vercel.app/blog/ship-disabled-attack-strait-hormuz-middle-east.html</guid>
+      <description>A ship was disabled in a Strait of Hormuz attack amid rising regional tensions. Get the latest updates on maritime incidents and Middle East developments.</description>
+      <pubDate>Tue, 25 Aug 2026 17:01:27 GMT</pubDate>
     </item>
     <item>
       <title>Browns Name Deshaun Watson Starting QB Over Shedeur Sanders</title>
       <link>https://asfiblog.vercel.app/blog/browns-name-deshaun-watson-starting-qb-over-shedeur-sanders.html</link>
       <guid>https://asfiblog.vercel.app/blog/browns-name-deshaun-watson-starting-qb-over-shedeur-sanders.html</guid>
-      <pubDate>2026-08-25 00:00:00 GMT</pubDate>
       <description>Browns name Deshaun Watson starting quarterback over Shedeur Sanders. Get the full breakdown of the decision, coach comments, and what it means for Cleveland.</description>
+      <pubDate>Tue, 25 Aug 2026 12:45:59 GMT</pubDate>
     </item>
     <item>
       <title>Enes Kanter Freedom Ejected in Sky vs Fever Game</title>
       <link>https://asfiblog.vercel.app/blog/enes-kanter-freedom-ejected-sky-fever-game.html</link>
       <guid>https://asfiblog.vercel.app/blog/enes-kanter-freedom-ejected-sky-fever-game.html</guid>
-      <pubDate>2026-08-24 00:00:00 GMT</pubDate>
-      <description>Former NBA player Enes Kanter Freedom was ejected during a Sky vs Fever game after a heated confrontation with Chicago&#x27;s Natasha Cloud.</description>
+      <description>Former NBA player Enes Kanter Freedom was ejected during a Sky vs Fever game after a heated confrontation with Chicago's Natasha Cloud.</description>
+      <pubDate>Mon, 24 Aug 2026 17:01:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>iPhone 18 Pro Release Schedule: What To Expect When</title>
+      <link>https://asfiblog.vercel.app/blog/iphone-18-pro-release-schedule-what-to-expect-when.html</link>
+      <guid>https://asfiblog.vercel.app/blog/iphone-18-pro-release-schedule-what-to-expect-when.html</guid>
+      <description>Get the latest iPhone 18 Pro release schedule and timeline. Find out when to expect the announcement, pre-orders, and availability based on recent leaks and industry trends.</description>
+      <pubDate>Mon, 24 Aug 2026 02:20:48 GMT</pubDate>
     </item>
     <item>
       <title>Grand Theft Auto VI Leak Escalates Without Resolution</title>
       <link>https://asfiblog.vercel.app/blog/grand-theft-auto-vi-leak-escalates-without-resolution.html</link>
       <guid>https://asfiblog.vercel.app/blog/grand-theft-auto-vi-leak-escalates-without-resolution.html</guid>
-      <pubDate>2026-08-22 00:00:00 GMT</pubDate>
       <description>The Grand Theft Auto VI leak continues to spread unchecked, with new gameplay and map details emerging despite efforts by Take-Two to contain the breach.</description>
+      <pubDate>Sat, 22 Aug 2026 12:23:36 GMT</pubDate>
     </item>
     <item>
       <title>Pentagon Fires Stars and Stripes Leaders Over Criticism</title>
       <link>https://asfiblog.vercel.app/blog/pentagon-fires-stars-and-stripes-leaders.html</link>
       <guid>https://asfiblog.vercel.app/blog/pentagon-fires-stars-and-stripes-leaders.html</guid>
-      <pubDate>2026-08-22 00:00:00 GMT</pubDate>
       <description>Pentagon fires Stars and Stripes leaders who criticized DOD interference, raising concerns over press freedom and editorial independence.</description>
+      <pubDate>Sat, 22 Aug 2026 02:11:16 GMT</pubDate>
     </item>
     <item>
       <title>Dutch GP Ending: Why Zandvoort Race is Concluding Despite F1 Support</title>
       <link>https://asfiblog.vercel.app/blog/dutch-gp-ending-zandvoort-f1.html</link>
       <guid>https://asfiblog.vercel.app/blog/dutch-gp-ending-zandvoort-f1.html</guid>
-      <pubDate>2026-08-21 00:00:00 GMT</pubDate>
       <description>The Dutch GP is ending despite F1 wanting Zandvoort to stay. Discover the key factors behind this decision and what it means for the future of Formula 1.</description>
+      <pubDate>Fri, 21 Aug 2026 12:01:00 GMT</pubDate>
     </item>
     <item>
       <title>Falcons-Colts Joint Practices Day 1: Key Takeaways</title>
       <link>https://asfiblog.vercel.app/blog/falcons-colts-joint-practices-day-1.html</link>
       <guid>https://asfiblog.vercel.app/blog/falcons-colts-joint-practices-day-1.html</guid>
-      <pubDate>2026-08-20 00:00:00 GMT</pubDate>
       <description>Everything you need to know from Day 1 of Falcons-Colts joint practices, including standout performances and what to expect next.</description>
+      <pubDate>Thu, 20 Aug 2026 12:09:08 GMT</pubDate>
     </item>
     <item>
       <title>fc dallas - real salt lake lineup</title>
       <link>https://asfiblog.vercel.app/blog/fc-dallas-real-salt-lake-lineup.html</link>
       <guid>https://asfiblog.vercel.app/blog/fc-dallas-real-salt-lake-lineup.html</guid>
-      <pubDate>2026-08-20 00:00:00 GMT</pubDate>
       <description>fc dallas vs real salt lake lineup preview offers insight into both teams’ tactical plans and key player rotations ahead of their upcoming clash.</description>
+      <pubDate>Thu, 20 Aug 2026 02:01:11 GMT</pubDate>
     </item>
     <item>
       <title>Israeli Military Probes Hind Rajab Killing</title>
       <link>https://asfiblog.vercel.app/blog/israeli-military-probes-hind-rajab-killing.html</link>
       <guid>https://asfiblog.vercel.app/blog/israeli-military-probes-hind-rajab-killing.html</guid>
-      <pubDate>2026-08-19 00:00:00 GMT</pubDate>
       <description>Israeli military launches criminal probes into the killings of Hind Rajab and Palestinian paramedics, raising fresh concerns over accountability and conduct in Gaza.</description>
+      <pubDate>Wed, 19 Aug 2026 23:01:04 GMT</pubDate>
     </item>
     <item>
       <title>US Tourist Dies After Lightning Strike on Mount Etna</title>
       <link>https://asfiblog.vercel.app/blog/us-tourist-dies-after-lightning-strike-on-mount-etna.html</link>
       <guid>https://asfiblog.vercel.app/blog/us-tourist-dies-after-lightning-strike-on-mount-etna.html</guid>
-      <pubDate>2026-08-18 00:00:00 GMT</pubDate>
       <description>A US tourist died after being struck by lightning while hiking Sicily’s Mount Etna. Learn about the incident, lightning risks in volcanic regions, and safety measures from CNN, NBC, and NYT reports.</description>
+      <pubDate>Tue, 18 Aug 2026 23:14:39 GMT</pubDate>
     </item>
     <item>
       <title>Lakers Governor Jeanie Buss Blocks Siblings’ Stake Sale</title>
       <link>https://asfiblog.vercel.app/blog/lakers-governor-buss-blocks-stake-sale.html</link>
       <guid>https://asfiblog.vercel.app/blog/lakers-governor-buss-blocks-stake-sale.html</guid>
-      <pubDate>2026-08-18 00:00:00 GMT</pubDate>
       <description>Jeanie Buss denies her siblings cannot sell Lakers family stake to Bob Iger and Joshua Kushner, sparking legal and financial debate and future franchise value.</description>
-    </item>
-    <item>
-      <title>NSW Gun Buyback Launched After Bondi Attack</title>
-      <link>https://asfiblog.vercel.app/blog/nsw-gun-buyback-after-bondi-attack.html</link>
-      <guid>https://asfiblog.vercel.app/blog/nsw-gun-buyback-after-bondi-attack.html</guid>
-      <pubDate>2026-08-15 00:00:00 GMT</pubDate>
-      <description>NSW Gun Buyback Scheme launched in response to Bondi terror attack. Learn about the program&#x27;s goals, public reaction, and implications for gun laws in Australia.</description>
-    </item>
-    <item>
-      <title>Gutierrez: Fernando Mendoza Shines in Debut, Major Test Ahead</title>
-      <link>https://asfiblog.vercel.app/blog/gomez-fernando-mendoza-debut-bigger-test.html</link>
-      <guid>https://asfiblog.vercel.app/blog/gomez-fernando-mendoza-debut-bigger-test.html</guid>
-      <pubDate>2026-08-15 00:00:00 GMT</pubDate>
-      <description>Raiders rookie QB Fernando Mendoza excels in preseason debut, but faces tougher challenges ahead. Analyze his performance and what’s next.</description>
-    </item>
-    <item>
-      <title>Taliban Education Toll: Impact on Girls and Boys in Afghanistan</title>
-      <link>https://asfiblog.vercel.app/blog/taliban-education-toll-afghanistan-girls-boys.html</link>
-      <guid>https://asfiblog.vercel.app/blog/taliban-education-toll-afghanistan-girls-boys.html</guid>
-      <pubDate>2026-08-14 00:00:00 GMT</pubDate>
-      <description>The Taliban&#x27;s takeover has severely impacted education for all Afghan students, particularly girls, with profound social and economic consequences.</description>
-    </item>
-    <item>
-      <title>Darksiders 4 and New Kingdom Come Game Set for 2028 Launch</title>
-      <link>https://asfiblog.vercel.app/blog/darksiders-4-kingdom-come-game-launch-2028.html</link>
-      <guid>https://asfiblog.vercel.app/blog/darksiders-4-kingdom-come-game-launch-2028.html</guid>
-      <pubDate>2026-08-14 00:00:00 GMT</pubDate>
-      <description>Darksiders 4 and Kingdom Come Deliverance 2 are confirmed to launch before March 2028, per Embracer Group&#x27;s latest roadmap updates for upcoming titles.</description>
-    </item>
-    <item>
-      <title>Train Derails in East Sussex, 11 Injured in Southern England</title>
-      <link>https://asfiblog.vercel.app/blog/train-derails-east-sussex-11-injured.html</link>
-      <guid>https://asfiblog.vercel.app/blog/train-derails-east-sussex-11-injured.html</guid>
-      <pubDate>2026-08-13 00:00:00 GMT</pubDate>
-      <description>A passenger train derailed in East Sussex, southern England, leaving 11 injured. Here&#x27;s the latest on the incident near Lewes.</description>
-    </item>
-    <item>
-      <title>Google Pixel 11 Cases Let Phone Colors Shine Through</title>
-      <link>https://asfiblog.vercel.app/blog/google-pixel-11-cases-let-phone-colors-shine-through.html</link>
-      <guid>https://asfiblog.vercel.app/blog/google-pixel-11-cases-let-phone-colors-shine-through.html</guid>
-      <pubDate>2026-08-13 00:00:00 GMT</pubDate>
-      <description>Discover how Google Pixel 11 cases are designed to showcase vibrant phone colors. Explore the latest trends in smartphone accessories that prioritize style and visibility.</description>
-    </item>
-    <item>
-      <title>Man United vs Leeds: Match Preview, Lineups and Predictions</title>
-      <link>https://asfiblog.vercel.app/blog/man-united-vs-leeds-preview-predictions-lineups.html</link>
-      <guid>https://asfiblog.vercel.app/blog/man-united-vs-leeds-preview-predictions-lineups.html</guid>
-      <pubDate>2026-08-12 00:00:00 GMT</pubDate>
-      <description>Get the latest Man United vs Leeds preview, team news, predicted lineups, and match predictions for the upcoming Premier League clash.</description>
-    </item>
-    <item>
-      <title>What to Expect from Google&#x27;s 2026 Pixel Hardware Launch Event</title>
-      <link>https://asfiblog.vercel.app/blog/google-pixel-2026-hardware-launch-event-expectations.html</link>
-      <guid>https://asfiblog.vercel.app/blog/google-pixel-2026-hardware-launch-event-expectations.html</guid>
-      <pubDate>2026-08-11 00:00:00 GMT</pubDate>
-      <description>What to expect from Google&#x27;s 2026 Pixel hardware launch event, including rumored devices, features, and launch details. Stay updated with the latest news.</description>
-    </item>
-    <item>
-      <title>Morgan Freeman at 90: Continuing His Legacy Without Retirement Plans</title>
-      <link>https://asfiblog.vercel.app/blog/morgan-freeman-90-retirement-plans.html</link>
-      <guid>https://asfiblog.vercel.app/blog/morgan-freeman-90-retirement-plans.html</guid>
-      <pubDate>2026-08-08 00:00:00 GMT</pubDate>
-      <description>Morgan Freeman, now approaching 90, continues working with no retirement plans. Discover how he maintains his career and passion for acting at this stage.</description>
-    </item>
-    <item>
-      <title>Republicans Face Year-End Test Over Trump Spending Bill</title>
-      <link>https://asfiblog.vercel.app/blog/republicans-face-year-end-test-over-trump-spending-bill.html</link>
-      <guid>https://asfiblog.vercel.app/blog/republicans-face-year-end-test-over-trump-spending-bill.html</guid>
-      <pubDate>2026-08-08 00:00:00 GMT</pubDate>
-      <description>Republicans face likely year-end test after punting Trump spending bill, risking political fallout as Congress approaches deadline.</description>
-    </item>
-    <item>
-      <title>Puerto Rico Water Rationing Begins Amid Escalating Drought</title>
-      <link>https://asfiblog.vercel.app/blog/puerto-rico-water-rationing-begins-amid-escalating-drought.html</link>
-      <guid>https://asfiblog.vercel.app/blog/puerto-rico-water-rationing-begins-amid-escalating-drought.html</guid>
-      <pubDate>2026-08-07 00:00:00 GMT</pubDate>
-      <description>Puerto Rico starts rationing water as drought conditions intensify, affecting thousands. Learn about the crisis, its causes, and impacts on daily life.</description>
-    </item>
-    <item>
-      <title>Trump Fast-Tracks Military Cooperation With Colombia</title>
-      <link>https://asfiblog.vercel.app/blog/trump-colombia-military-cooperation-fast-tracks.html</link>
-      <guid>https://asfiblog.vercel.app/blog/trump-colombia-military-cooperation-fast-tracks.html</guid>
-      <pubDate>2026-08-07 00:00:00 GMT</pubDate>
-      <description>Trump administration accelerates military collaboration with Colombia amid new president&#x27;s security focus, reshaping regional alliances and challenges.</description>
-    </item>
-    <item>
-      <title>OpenAI&#x27;s Hockey Puck-Sized Device Over $300</title>
-      <link>https://asfiblog.vercel.app/blog/openais-hockey-puck-sized-device-over-300.html</link>
-      <guid>https://asfiblog.vercel.app/blog/openais-hockey-puck-sized-device-over-300.html</guid>
-      <pubDate>2026-08-06 00:00:00 GMT</pubDate>
-      <description>OpenAI&#x27;s new hockey puck-sized device will reportedly cost over $300, sparking excitement in tech. Learn about its potential features and market impact.</description>
-    </item>
-    <item>
-      <title>Gun Rights Devotion Disappeared After Firearm Incident</title>
-      <link>https://asfiblog.vercel.app/blog/gun-rights-devotion-disappeared-firearm-incident.html</link>
-      <guid>https://asfiblog.vercel.app/blog/gun-rights-devotion-disappeared-firearm-incident.html</guid>
-      <pubDate>2026-08-06 00:00:00 GMT</pubDate>
-      <description>A trans woman brandished a firearm, and suddenly gun rights devotion disappeared. Explore how identity politics and firearm ownership intersect in recent debates.</description>
-    </item>
-    <item>
-      <title>Jim Renacci Considers a House Bid if Max Miller Steps Down</title>
-      <link>https://asfiblog.vercel.app/blog/scoop-jim-renacci-mulls-house-bid-if-max-miller-drops-out.html</link>
-      <guid>https://asfiblog.vercel.app/blog/scoop-jim-renacci-mulls-house-bid-if-max-miller-drops-out.html</guid>
-      <pubDate>2026-08-04 00:00:00 GMT</pubDate>
-      <description>Jim Renacci mulls a House bid if Max Miller drops out, as the Ohio GOP faces turmoil over misconduct allegations and a scramble for a replacement candidate.</description>
-    </item>
-    <item>
-      <title>Matte Black Pixel 11 Pro Revealed in Detailed Gallery</title>
-      <link>https://asfiblog.vercel.app/blog/matte-black-pixel-11-pro-revealed-gallery.html</link>
-      <guid>https://asfiblog.vercel.app/blog/matte-black-pixel-11-pro-revealed-gallery.html</guid>
-      <pubDate>2026-08-03 00:00:00 GMT</pubDate>
-      <description>Explore the detailed gallery of the matte black Pixel 11 Pro, design insights, camera updates, and market expectations from the latest leaks.</description>
-    </item>
-    <item>
-      <title>Europe&#x27;s Wildfire Crisis Eases as Danger Shifts to Greece</title>
-      <link>https://asfiblog.vercel.app/blog/europes-wildfire-crisis-eases-west-danger-shifts-east-greece.html</link>
-      <guid>https://asfiblog.vercel.app/blog/europes-wildfire-crisis-eases-west-danger-shifts-east-greece.html</guid>
-      <pubDate>2026-08-01 00:00:00 GMT</pubDate>
-      <description>Europe’s wildfire crisis eases in west as danger shifts east to Greece, with evacuations in France and blazes threatening Greek islands, tourism, and Athens.</description>
-    </item>
-    <item>
-      <title>Borislav Nikolic: Late-Notice Replacement in UFC Belgrade</title>
-      <link>https://asfiblog.vercel.app/blog/borislav-nikolic-ufc-belgrade-replacement.html</link>
-      <guid>https://asfiblog.vercel.app/blog/borislav-nikolic-ufc-belgrade-replacement.html</guid>
-      <pubDate>2026-08-01 00:00:00 GMT</pubDate>
-      <description>Borislav Nikolic steps in as a late-notice replacement for UFC Belgrade, bringing excitement to the event with his Brave championship experience.</description>
-    </item>
-    <item>
-      <title>Labour Burnham Bounce Opinion Polls Explained</title>
-      <link>https://asfiblog.vercel.app/blog/labour-burnham-bounce-opinion-polls.html</link>
-      <guid>https://asfiblog.vercel.app/blog/labour-burnham-bounce-opinion-polls.html</guid>
-      <pubDate>2026-08-01 00:00:00 GMT</pubDate>
-      <description>Labour Burnham bounce opinion polls reveal significant insights into political trends and voter behavior. Discover more about this phenomenon.</description>
-    </item>
-    <item>
-      <title>Russia and Ukraine Report Casualties Amid Ongoing Attacks</title>
-      <link>https://asfiblog.vercel.app/blog/russia-ukraine-casualties-trade-attacks.html</link>
-      <guid>https://asfiblog.vercel.app/blog/russia-ukraine-casualties-trade-attacks.html</guid>
-      <pubDate>2026-08-01 00:00:00 GMT</pubDate>
-      <description>Russia and Ukraine report casualties as attacks continue, highlighting the escalating conflict and its humanitarian impact.</description>
-    </item>
-    <item>
-      <title>Spain Reports Migrants Returning From Ceuta After Tragedy</title>
-      <link>https://asfiblog.vercel.app/blog/spain-migrants-returning-ceuta-border-tragedy.html</link>
-      <guid>https://asfiblog.vercel.app/blog/spain-migrants-returning-ceuta-border-tragedy.html</guid>
-      <pubDate>2026-07-31 00:00:00 GMT</pubDate>
-      <description>Spain says migrants are returning from Ceuta after 57 die in border rush, highlighting the ongoing migrant crisis at the Spanish-Moroccan border.</description>
-    </item>
-    <item>
-      <title>Father and Son Face New Charges for Hostage Situation</title>
-      <link>https://asfiblog.vercel.app/blog/father-son-new-charges-hostage-situation.html</link>
-      <guid>https://asfiblog.vercel.app/blog/father-son-new-charges-hostage-situation.html</guid>
-      <pubDate>2026-07-31 00:00:00 GMT</pubDate>
-      <description>Father and son accused of zip-tying Forest Service workers face new charges in a troubling hostage case that highlights rising tensions.</description>
-    </item>
-    <item>
-      <title>MLB Trade Deadline Dominoes for 10 Biggest Names on 2026 Market</title>
-      <link>https://asfiblog.vercel.app/blog/mlb-trade-deadline-dominoes-2026-market.html</link>
-      <guid>https://asfiblog.vercel.app/blog/mlb-trade-deadline-dominoes-2026-market.html</guid>
-      <pubDate>2026-07-31 00:00:00 GMT</pubDate>
-      <description>Explore the MLB trade deadline dominoes for the 10 biggest names on the 2026 market and their potential impacts on teams and players.</description>
-    </item>
-    <item>
-      <title>Andy Burnham to Give Regional Mayors Share of Income Tax</title>
-      <link>https://asfiblog.vercel.app/blog/andy-burnham-regional-mayors-share-income-tax.html</link>
-      <guid>https://asfiblog.vercel.app/blog/andy-burnham-regional-mayors-share-income-tax.html</guid>
-      <pubDate>2026-07-31 00:00:00 GMT</pubDate>
-      <description>Andy Burnham plans to give regional mayors a share of income tax, enhancing financial autonomy and devolution efforts across the UK.</description>
-    </item>
-    <item>
-      <title>Informal Poll Indicates Costa Rica&#x27;s Grynspan Leads UN Chief Race</title>
-      <link>https://asfiblog.vercel.app/blog/grynspan-un-chief-poll.html</link>
-      <guid>https://asfiblog.vercel.app/blog/grynspan-un-chief-poll.html</guid>
-      <pubDate>2026-07-30 00:00:00 GMT</pubDate>
-      <description>An informal poll shows Costa Rica&#x27;s Grynspan ahead in the race to become the next UN chief, marking a significant shift in global leadership dynamics.</description>
-    </item>
-    <item>
-      <title>Jake Paul&#x27;s MVP Merges with PFL in MMA Landscape Shift</title>
-      <link>https://asfiblog.vercel.app/blog/jake-paul-mvp-merges-with-pfl.html</link>
-      <guid>https://asfiblog.vercel.app/blog/jake-paul-mvp-merges-with-pfl.html</guid>
-      <pubDate>2026-07-30 00:00:00 GMT</pubDate>
-      <description>Jake Paul&#x27;s MVP merges with PFL, creating a seismic shift in the MMA landscape that redefines combat sports promotion and athlete opportunities.</description>
-    </item>
-    <item>
-      <title>2026 MLB Trade Deadline Preview: Passan&#x27;s Insights for Every Team</title>
-      <link>https://asfiblog.vercel.app/blog/2026-mlb-trade-deadline-preview-passans-insights.html</link>
-      <guid>https://asfiblog.vercel.app/blog/2026-mlb-trade-deadline-preview-passans-insights.html</guid>
-      <pubDate>2026-07-30 00:00:00 GMT</pubDate>
-      <description>Explore Passan&#x27;s insights in the 2026 MLB trade deadline preview, detailing team strategies and potential trade candidates.</description>
-    </item>
-    <item>
-      <title>UNC and Bill Belichick in Crisis Mode Require Tough Decisions</title>
-      <link>https://asfiblog.vercel.app/blog/unc-bill-belichick-crisis-mode-decisions.html</link>
-      <guid>https://asfiblog.vercel.app/blog/unc-bill-belichick-crisis-mode-decisions.html</guid>
-      <pubDate>2026-07-30 00:00:00 GMT</pubDate>
-      <description>UNC and Bill Belichick in crisis mode require difficult decisions to navigate their troubled paths in sports and leadership.</description>
-    </item>
-    <item>
-      <title>Anthony Smith Released on $500K Bond, Faces Felony Charges</title>
-      <link>https://asfiblog.vercel.app/blog/anthony-smith-released-bond-felony-charges.html</link>
-      <guid>https://asfiblog.vercel.app/blog/anthony-smith-released-bond-felony-charges.html</guid>
-      <pubDate>2026-07-30 00:00:00 GMT</pubDate>
-      <description>Anthony Smith was released on a $500K bond after facing three felony charges including terroristic threats and domestic violence.</description>
-    </item>
-    <item>
-      <title>What’s the Catch with the Apple Upgrade Program?</title>
-      <link>https://asfiblog.vercel.app/blog/whats-the-catch-with-the-apple-upgrade-program.html</link>
-      <guid>https://asfiblog.vercel.app/blog/whats-the-catch-with-the-apple-upgrade-program.html</guid>
-      <pubDate>2026-07-29 00:00:00 GMT</pubDate>
-      <description>Discover the catch with the Apple Upgrade program, including leasing options, costs, and partnership insights with Klarna.</description>
-    </item>
-    <item>
-      <title>Tier Rankings For a Tigers Tarik Skubal Trade to Every MLB Team</title>
-      <link>https://asfiblog.vercel.app/blog/tarik-skubal-trade-tier-rankings-mlb.html</link>
-      <guid>https://asfiblog.vercel.app/blog/tarik-skubal-trade-tier-rankings-mlb.html</guid>
-      <pubDate>2026-07-29 00:00:00 GMT</pubDate>
-      <description>Explore tier rankings for a Tarik Skubal trade to every MLB team amid latest rumors surrounding the Tigers ace pitcher.</description>
-    </item>
-    <item>
-      <title>Deportation Impact: Overland Couple Shot Dead in Guatemala</title>
-      <link>https://asfiblog.vercel.app/blog/deportation-overland-couple-shot-dead-guatemala.html</link>
-      <guid>https://asfiblog.vercel.app/blog/deportation-overland-couple-shot-dead-guatemala.html</guid>
-      <pubDate>2026-07-29 00:00:00 GMT</pubDate>
-      <description>Deportation incidents lead to tragedies, like the Overland couple shot dead in Guatemala after an ICE stop. Understand the implications.</description>
-    </item>
-    <item>
-      <title>CPI Inflation Remains High Above RBA Target</title>
-      <link>https://asfiblog.vercel.app/blog/cpi-inflation-remains-high-above-rba-target.html</link>
-      <guid>https://asfiblog.vercel.app/blog/cpi-inflation-remains-high-above-rba-target.html</guid>
-      <pubDate>2026-07-29 00:00:00 GMT</pubDate>
-      <description>CPI inflation in Australia continues to outpace the RBA&#x27;s target range, impacting household budgets and economic policy. Learn what this means for interest rates and prices.</description>
-    </item>
-    <item>
-      <title>France and Spain battle wildfires as new heatwave looms</title>
-      <link>https://asfiblog.vercel.app/blog/france-spain-wildfires-heatwave.html</link>
-      <guid>https://asfiblog.vercel.app/blog/france-spain-wildfires-heatwave.html</guid>
-      <pubDate>2026-07-28 00:00:00 GMT</pubDate>
-      <description>France and Spain are struggling to contain devastating wildfires amid extreme heat, with evacuations and threats to critical infrastructure as another heatwave approaches.</description>
-    </item>
-    <item>
-      <title>US Walks Out of UN Security Council Meeting During France Remarks</title>
-      <link>https://asfiblog.vercel.app/blog/us-walks-out-un-security-council-france-remarks.html</link>
-      <guid>https://asfiblog.vercel.app/blog/us-walks-out-un-security-council-france-remarks.html</guid>
-      <pubDate>2026-07-28 00:00:00 GMT</pubDate>
-      <description>The US delegation walked out of a UN Security Council meeting during France&#x27;s remarks, reportedly protesting criticism of America&#x27;s human rights record. Details on the diplomatic rift.</description>
-    </item>
-    <item>
-      <title>Claude and Codex AI tools credited in Apple security updates</title>
-      <link>https://asfiblog.vercel.app/blog/claude-codex-ai-apple-security-updates.html</link>
-      <guid>https://asfiblog.vercel.app/blog/claude-codex-ai-apple-security-updates.html</guid>
-      <pubDate>2026-07-28 00:00:00 GMT</pubDate>
-      <description>Apple&#x27;s latest iOS and macOS security updates credit Claude, Codex, and other AI tools for enhancing protection. Learn how AI is shaping Apple&#x27;s security strategy.</description>
-    </item>
-    <item>
-      <title>PlayStation 5 GTA 6 Download Codes Region Locked, Xbox Unaffected</title>
-      <link>https://asfiblog.vercel.app/blog/playstation-5-gta-6-download-codes-region-locked-xbox-unaffected.html</link>
-      <guid>https://asfiblog.vercel.app/blog/playstation-5-gta-6-download-codes-region-locked-xbox-unaffected.html</guid>
-      <pubDate>2026-07-28 00:00:00 GMT</pubDate>
-      <description>PlayStation 5 GTA 6 download codes are now region locked, causing issues for importers, while Xbox buyers remain unaffected. Learn why this disparity exists and its implications.</description>
-    </item>
-    <item>
-      <title>Wildfire Nears Bordeaux as Thousands Evacuate in France</title>
-      <link>https://asfiblog.vercel.app/blog/wildfire-nears-bordeaux-evacuations-france.html</link>
-      <guid>https://asfiblog.vercel.app/blog/wildfire-nears-bordeaux-evacuations-france.html</guid>
-      <pubDate>2026-07-27 00:00:00 GMT</pubDate>
-      <description>A wildfire is now just nine miles from Bordeaux, France, prompting mass evacuations and health warnings. Officials warn of worsening conditions as Europe battles extreme heat.</description>
-    </item>
-    <item>
-      <title>Why a New War in Yemen Could Be Different for the Houthis</title>
-      <link>https://asfiblog.vercel.app/blog/why-new-war-yemen-different-houthis.html</link>
-      <guid>https://asfiblog.vercel.app/blog/why-new-war-yemen-different-houthis.html</guid>
-      <pubDate>2026-07-27 00:00:00 GMT</pubDate>
-      <description>Explore why a new war in Yemen could be different for the Houthis, including their military gains, regional alliances, and the impact on global shipping routes.</description>
-    </item>
-    <item>
-      <title>Pentagon Removes 4 Troops From Iran War Death Toll Amid Renewed Fighting</title>
-      <link>https://asfiblog.vercel.app/blog/pentagon-removes-4-troops-from-iran-war-death-toll.html</link>
-      <guid>https://asfiblog.vercel.app/blog/pentagon-removes-4-troops-from-iran-war-death-toll.html</guid>
-      <pubDate>2026-07-26 00:00:00 GMT</pubDate>
-      <description>The Pentagon has quietly removed 4 troops from the official Iran war death toll during renewed fighting, sparking outrage among military families and raising transparency concerns.</description>
-    </item>
-    <item>
-      <title>FF14 to Receive Two Major Housing Updates Inspired by World of Warcraft</title>
-      <link>https://asfiblog.vercel.app/blog/ff14-housing-updates-inspired-by-wow.html</link>
-      <guid>https://asfiblog.vercel.app/blog/ff14-housing-updates-inspired-by-wow.html</guid>
-      <pubDate>2026-07-26 00:00:00 GMT</pubDate>
-      <description>Final Fantasy 14 is set to get two major housing updates after Yoshi-P was inspired by World of Warcraft. Learn what changes are coming and why they matter.</description>
-    </item>
-    <item>
-      <title>Cook Islands EEZ mapped in scientific deep ocean voyage</title>
-      <link>https://asfiblog.vercel.app/blog/cook-islands-eez-mapped-scientific-deep-ocean-voyage.html</link>
-      <guid>https://asfiblog.vercel.app/blog/cook-islands-eez-mapped-scientific-deep-ocean-voyage.html</guid>
-      <pubDate>2026-07-26 00:00:00 GMT</pubDate>
-      <description>A scientific expedition has mapped deep ocean changes across the Cook Islands Exclusive Economic Zone (EEZ), revealing critical insights into marine ecosystems.</description>
-    </item>
-    <item>
-      <title>Down the Tubes: Analyzing The New York Times&#x27; Latest Coverage</title>
-      <link>https://asfiblog.vercel.app/blog/down-the-tubes-new-york-times-analysis.html</link>
-      <guid>https://asfiblog.vercel.app/blog/down-the-tubes-new-york-times-analysis.html</guid>
-      <pubDate>2026-07-26 00:00:00 GMT</pubDate>
-      <description>Explore the trending topic &#x27;Down the Tubes&#x27; and its connection to The New York Times&#x27; latest coverage. Discover insights into media trends and public discourse.</description>
-    </item>
-    <item>
-      <title>Usyk’s Team Challenges Anthony Joshua Ahead of Comeback Fight</title>
-      <link>https://asfiblog.vercel.app/blog/usyk-team-challenges-anthony-joshua-comeback-fight.html</link>
-      <guid>https://asfiblog.vercel.app/blog/usyk-team-challenges-anthony-joshua-comeback-fight.html</guid>
-      <pubDate>2026-07-25 00:00:00 GMT</pubDate>
-      <description>Oleksandr Usyk’s team has urged Anthony Joshua to ‘show greatness’ in his comeback fight against Kristian Prenga. Explore the latest updates and analysis.</description>
-    </item>
-    <item>
-      <title>Georgia’s Okefenokee Swamp Named UNESCO World Heritage Site</title>
-      <link>https://asfiblog.vercel.app/blog/georgias-okefenokee-swamp-unesco-world-heritage-site.html</link>
-      <guid>https://asfiblog.vercel.app/blog/georgias-okefenokee-swamp-unesco-world-heritage-site.html</guid>
-      <pubDate>2026-07-25 00:00:00 GMT</pubDate>
-      <description>Georgia’s Okefenokee Swamp has been designated a UNESCO World Heritage site, recognizing its ecological importance and cultural significance. Learn more about this milestone.</description>
-    </item>
-    <item>
-      <title>Jon Bon Jovi Abruptly Ends Show at Madison Square Garden</title>
-      <link>https://asfiblog.vercel.app/blog/jon-bon-jovi-ends-show-madison-square-garden.html</link>
-      <guid>https://asfiblog.vercel.app/blog/jon-bon-jovi-ends-show-madison-square-garden.html</guid>
-      <pubDate>2026-07-25 00:00:00 GMT</pubDate>
-      <description>Jon Bon Jovi shocked fans by abruptly ending his Madison Square Garden show. Learn why the rock icon cut his performance short and what it means for his legacy.</description>
-    </item>
-    <item>
-      <title>Pakistan and Iran Seek US Talks Through China’s Diplomatic Push</title>
-      <link>https://asfiblog.vercel.app/blog/pakistan-iran-us-talks-china-push.html</link>
-      <guid>https://asfiblog.vercel.app/blog/pakistan-iran-us-talks-china-push.html</guid>
-      <pubDate>2026-07-25 00:00:00 GMT</pubDate>
-      <description>Pakistan and Iran are exploring renewed talks with the US, facilitated by China’s diplomatic efforts. Sources reveal details of this geopolitical development.</description>
-    </item>
-    <item>
-      <title>The Odyssey Cast and What to Know Before Watching</title>
-      <link>https://asfiblog.vercel.app/blog/the-odyssey-cast-and-what-to-know-before-watching.html</link>
-      <guid>https://asfiblog.vercel.app/blog/the-odyssey-cast-and-what-to-know-before-watching.html</guid>
-      <pubDate>2026-07-24 00:00:00 GMT</pubDate>
-      <description>Discover the cast of The Odyssey, key characters, and plot details to enhance your viewing experience before watching this trending adaptation.</description>
-    </item>
-    <item>
-      <title>Is the US-Saudi Nuclear Deal On, or in Limbo?</title>
-      <link>https://asfiblog.vercel.app/blog/us-saudi-nuclear-deal-status.html</link>
-      <guid>https://asfiblog.vercel.app/blog/us-saudi-nuclear-deal-status.html</guid>
-      <pubDate>2026-07-24 00:00:00 GMT</pubDate>
-      <description>Explore the current status of the US-Saudi nuclear deal and factors influencing its future, including geopolitical tensions and normalization with Israel.</description>
-    </item>
-    <item>
-      <title>Attacker shouting &#x27;Allahu Akbar&#x27; stabs Jewish man in NYC</title>
-      <link>https://asfiblog.vercel.app/blog/attacker-allahu-akbar-stabs-jewish-man-nyc.html</link>
-      <guid>https://asfiblog.vercel.app/blog/attacker-allahu-akbar-stabs-jewish-man-nyc.html</guid>
-      <pubDate>2026-07-24 00:00:00 GMT</pubDate>
-      <description>A man shouting &#x27;Allahu Akbar&#x27; stabbed a Jewish man with a screwdriver in NYC, sparking a hate crime investigation. Latest updates on the Upper West Side attack.</description>
-    </item>
-    <item>
-      <title>Giuliana Rancic: Jerry O’Connell Addresses Past Breakup</title>
-      <link>https://asfiblog.vercel.app/blog/giuliana-rancic-jerry-oconnell-breakup.html</link>
-      <guid>https://asfiblog.vercel.app/blog/giuliana-rancic-jerry-oconnell-breakup.html</guid>
-      <pubDate>2026-07-24 00:00:00 GMT</pubDate>
-      <description>Giuliana Rancic&#x27;s past with Jerry O’Connell resurfaces as he discusses their breakup over a decade later. Discover more about their history.</description>
-    </item>
-    <item>
-      <title>Ukraine’s new military chief vows stronger retaliation against Russia</title>
-      <link>https://asfiblog.vercel.app/blog/ukraine-new-military-chief-retaliation-russia.html</link>
-      <guid>https://asfiblog.vercel.app/blog/ukraine-new-military-chief-retaliation-russia.html</guid>
-      <pubDate>2026-07-23 00:00:00 GMT</pubDate>
-      <description>Ukraine’s new military chief pledges to escalate retaliation against Russia amid leadership shakeups and strategic shifts. Analysis of Zelensky’s latest moves.</description>
-    </item>
-    <item>
-      <title>Tyreek Hill Reveals He Has No Power in Left Leg After Injury</title>
-      <link>https://asfiblog.vercel.app/blog/tyreek-hill-no-power-left-leg.html</link>
-      <guid>https://asfiblog.vercel.app/blog/tyreek-hill-no-power-left-leg.html</guid>
-      <pubDate>2026-07-23 00:00:00 GMT</pubDate>
-      <description>Tyreek Hill, the former Dolphins wide receiver, shared that he still has no power in his left leg 10 months after surgery. Learn more about his recovery and future.</description>
-    </item>
-    <item>
-      <title>ICE Officer Vetting Under Scrutiny Amid Hiring Push</title>
-      <link>https://asfiblog.vercel.app/blog/ice-officer-vetting-scrutiny-hiring-push.html</link>
-      <guid>https://asfiblog.vercel.app/blog/ice-officer-vetting-scrutiny-hiring-push.html</guid>
-      <pubDate>2026-07-23 00:00:00 GMT</pubDate>
-      <description>Amid a major hiring push, ICE officer vetting faces scrutiny as experts question training standards and oversight following deadly incidents involving agents.</description>
-    </item>
-    <item>
-      <title>Darragh MacAnthony responds to Peterborough United defensive injury concerns</title>
-      <link>https://asfiblog.vercel.app/blog/darragh-macanthony-peterborough-united-defensive-injuries.html</link>
-      <guid>https://asfiblog.vercel.app/blog/darragh-macanthony-peterborough-united-defensive-injuries.html</guid>
-      <pubDate>2026-07-23 00:00:00 GMT</pubDate>
-      <description>Peterborough United chairman Darragh MacAnthony addresses fan concerns over defensive injury issues, offering insight into the club&#x27;s strategy moving forward.</description>
-    </item>
-    <item>
-      <title>Jerusalem’s Holy Sites Host Ancient Colonies of Nesting Swifts</title>
-      <link>https://asfiblog.vercel.app/blog/jerusalem-holy-sites-nesting-swifts.html</link>
-      <guid>https://asfiblog.vercel.app/blog/jerusalem-holy-sites-nesting-swifts.html</guid>
-      <pubDate>2026-07-23 00:00:00 GMT</pubDate>
-      <description>Discover how Jerusalem’s holy sites are home to some of the oldest colonies of nesting swifts, blending natural history with the city’s rich cultural heritage.</description>
-    </item>
-    <item>
-      <title>Houthi Red Sea Blockade Sparks Global Economic Concerns</title>
-      <link>https://asfiblog.vercel.app/blog/houthi-red-sea-blockade-economic-impact.html</link>
-      <guid>https://asfiblog.vercel.app/blog/houthi-red-sea-blockade-economic-impact.html</guid>
-      <pubDate>2026-07-22 00:00:00 GMT</pubDate>
-      <description>The Houthi blockade in the Red Sea disrupts shipping routes, raising fears of economic instability. Learn how this impacts global trade and oil markets.</description>
-    </item>
-    <item>
-      <title>Top 10 AI Presentation Generators in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/top-ai-presentation-generators-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/top-ai-presentation-generators-2026.html</guid>
-      <pubDate>2026-07-22 00:00:00 GMT</pubDate>
-      <description>Discover the best AI presentation generators in 2026 for students and professionals. Compare features, ease of use, and standout tools for creating stunning slide decks.</description>
-    </item>
-    <item>
-      <title>iPhone 18 Rumors: 20 Claims Ranked by Likelihood</title>
-      <link>https://asfiblog.vercel.app/blog/iphone-18-rumors-ranked-by-likelihood.html</link>
-      <guid>https://asfiblog.vercel.app/blog/iphone-18-rumors-ranked-by-likelihood.html</guid>
-      <pubDate>2026-07-22 00:00:00 GMT</pubDate>
-      <description>A reality check on iPhone 18 rumors: we rank 20 claims by likelihood based on Apple&#x27;s history, leaks, and expert analysis. Get the latest on release date, Pro models, and camera upgrades.</description>
-    </item>
-    <item>
-      <title>World Cup Final Shatters U.S. Soccer Viewership Records</title>
-      <link>https://asfiblog.vercel.app/blog/world-cup-final-shatters-us-soccer-viewership-records.html</link>
-      <guid>https://asfiblog.vercel.app/blog/world-cup-final-shatters-us-soccer-viewership-records.html</guid>
-      <pubDate>2026-07-22 00:00:00 GMT</pubDate>
-      <description>The World Cup final drew over 60 million viewers in the U.S., setting a new record for soccer viewership. Learn why this historic moment matters for sports broadcasting.</description>
-    </item>
-    <item>
-      <title>AI and the Rise of the Universal Entertainment App</title>
-      <link>https://asfiblog.vercel.app/blog/ai-rise-universal-entertainment-app.html</link>
-      <guid>https://asfiblog.vercel.app/blog/ai-rise-universal-entertainment-app.html</guid>
-      <pubDate>2026-07-21 00:00:00 GMT</pubDate>
-      <description>AI is transforming entertainment with universal apps that combine streaming, gaming, and social media. Learn how this trend is reshaping digital experiences.</description>
-    </item>
-    <item>
-      <title>Light Flip Phone Review: A Colorful, Affordable Throwback</title>
-      <link>https://asfiblog.vercel.app/blog/light-flip-phone-review-colorful-affordable-throwback.html</link>
-      <guid>https://asfiblog.vercel.app/blog/light-flip-phone-review-colorful-affordable-throwback.html</guid>
-      <pubDate>2026-07-21 00:00:00 GMT</pubDate>
-      <description>The Light Flip phone combines retro design with modern minimalism at an affordable price. Discover why this colorful flip phone is trending in tech circles.</description>
-    </item>
-    <item>
-      <title>Nearly 100 US troops injured as Iran retaliates against allies</title>
-      <link>https://asfiblog.vercel.app/blog/us-troops-injured-iran-retaliation.html</link>
-      <guid>https://asfiblog.vercel.app/blog/us-troops-injured-iran-retaliation.html</guid>
-      <pubDate>2026-07-21 00:00:00 GMT</pubDate>
-      <description>The Pentagon reports almost 100 US troops injured in recent weeks amid escalating tensions with Iran, which has launched reprisal attacks on American allies.</description>
-    </item>
-    <item>
-      <title>Best AI Video Editing Tools for Content Creators in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/best-ai-video-editing-tools-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/best-ai-video-editing-tools-2026.html</guid>
-      <pubDate>2026-07-21 00:00:00 GMT</pubDate>
-      <description>Discover the best AI video editing tools for content creators in 2026, featuring cutting-edge automation, intuitive interfaces, and professional-grade effects.</description>
-    </item>
-    <item>
-      <title>Woman on trial for killing 3 children claims no criminal responsibility</title>
-      <link>https://asfiblog.vercel.app/blog/woman-trial-murder-children-no-criminal-responsibility.html</link>
-      <guid>https://asfiblog.vercel.app/blog/woman-trial-murder-children-no-criminal-responsibility.html</guid>
-      <pubDate>2026-07-20 00:00:00 GMT</pubDate>
-      <description>A woman is on trial for the murder of her three children, with her defense arguing she may not be criminally responsible due to mental health issues. The case raises questions about postpartum mental health.</description>
-    </item>
-    <item>
-      <title>Spider-Man: Brand New Day Confirmed in MCU Timeline by Kevin Feige</title>
-      <link>https://asfiblog.vercel.app/blog/spiderman-brand-new-day-mcu-timeline.html</link>
-      <guid>https://asfiblog.vercel.app/blog/spiderman-brand-new-day-mcu-timeline.html</guid>
-      <pubDate>2026-07-20 00:00:00 GMT</pubDate>
-      <description>Kevin Feige confirms &#x27;Spider-Man: Brand New Day&#x27; is part of the MCU timeline. Learn how this storyline integrates into Marvel&#x27;s cinematic universe.</description>
-    </item>
-    <item>
-      <title>Best Free AI Writing and Grammar Tools for Students</title>
-      <link>https://asfiblog.vercel.app/blog/best-free-ai-writing-grammar-tools-for-students.html</link>
-      <guid>https://asfiblog.vercel.app/blog/best-free-ai-writing-grammar-tools-for-students.html</guid>
-      <pubDate>2026-07-20 00:00:00 GMT</pubDate>
-      <description>Discover the best free AI writing and grammar tools for students to enhance productivity, improve essays, and avoid mistakes. Perfect for academic success.</description>
-    </item>
-    <item>
-      <title>Earthquake in Peru Kills 6 and Displaces Hundreds</title>
-      <link>https://asfiblog.vercel.app/blog/earthquake-in-peru-kills-6-displaces-hundreds.html</link>
-      <guid>https://asfiblog.vercel.app/blog/earthquake-in-peru-kills-6-displaces-hundreds.html</guid>
-      <pubDate>2026-07-20 00:00:00 GMT</pubDate>
-      <description>A powerful earthquake in Peru&#x27;s Andes region has killed at least 6 people and displaced hundreds. Authorities report collapsed buildings and ongoing rescue efforts.</description>
-    </item>
-    <item>
-      <title>US and Iran trade strikes as tensions escalate over troop deaths</title>
-      <link>https://asfiblog.vercel.app/blog/us-iran-trade-strikes-tensions-escalate.html</link>
-      <guid>https://asfiblog.vercel.app/blog/us-iran-trade-strikes-tensions-escalate.html</guid>
-      <pubDate>2026-07-19 00:00:00 GMT</pubDate>
-      <description>The US and Iran have exchanged military strikes after American troops were killed, escalating tensions in the Middle East. Read the latest on the conflict.</description>
-    </item>
-    <item>
-      <title>Jonas Vingegaard Crashes Out of Tour de France: What Happened</title>
-      <link>https://asfiblog.vercel.app/blog/jonas-vingegaard-crashes-out-of-tour-de-france.html</link>
-      <guid>https://asfiblog.vercel.app/blog/jonas-vingegaard-crashes-out-of-tour-de-france.html</guid>
-      <pubDate>2026-07-19 00:00:00 GMT</pubDate>
-      <description>Jonas Vingegaard crashes out of Tour de France after a Stage 15 fall. Learn the details of the incident, its impact on the race, and what’s next for the Danish cyclist.</description>
-    </item>
-    <item>
-      <title>Sam Burns Wife Caroline: Meet the Woman Behind His Open Championship Run</title>
-      <link>https://asfiblog.vercel.app/blog/sam-burns-wife-caroline-open-championship.html</link>
-      <guid>https://asfiblog.vercel.app/blog/sam-burns-wife-caroline-open-championship.html</guid>
-      <pubDate>2026-07-19 00:00:00 GMT</pubDate>
-      <description>Sam Burns&#x27; wife Caroline has been a key supporter in his golf career. Learn about their relationship and her role in his Open Championship performance at Birkdale.</description>
-    </item>
-    <item>
-      <title>AMBER Alert Washington: Search for Abducted 4-Year-Old</title>
-      <link>https://asfiblog.vercel.app/blog/amber-alert-washington-search-for-abducted-4-year-old.html</link>
-      <guid>https://asfiblog.vercel.app/blog/amber-alert-washington-search-for-abducted-4-year-old.html</guid>
-      <pubDate>2026-07-19 00:00:00 GMT</pubDate>
-      <description>An AMBER Alert has been issued in Washington for a 4-year-old girl abducted in Kennewick. Learn the details and how to assist in the search.</description>
-    </item>
-    <item>
-      <title>LeBron James praises Caitlin Clark after historic 45-point WNBA game</title>
-      <link>https://asfiblog.vercel.app/blog/lebron-james-praises-caitlin-clark-wnba-record.html</link>
-      <guid>https://asfiblog.vercel.app/blog/lebron-james-praises-caitlin-clark-wnba-record.html</guid>
-      <pubDate>2026-07-18 00:00:00 GMT</pubDate>
-      <description>LeBron James applauded Caitlin Clark on Instagram after her record-breaking 45-point, 10-assist performance for the Indiana Fever, marking a historic WNBA milestone.</description>
-    </item>
-    <item>
-      <title>Evan Blass Leak Reveals Samsung Z Fold8, Z Fold8 Ultra and Galaxy Watch9 Specs</title>
-      <link>https://asfiblog.vercel.app/blog/evan-blass-leak-samsung-z-fold8-galaxy-watch9-specs.html</link>
-      <guid>https://asfiblog.vercel.app/blog/evan-blass-leak-samsung-z-fold8-galaxy-watch9-specs.html</guid>
-      <pubDate>2026-07-18 00:00:00 GMT</pubDate>
-      <description>New leaks by Evan Blass confirm Samsung Z Fold8, Z Fold8 Ultra, and Galaxy Watch9 specs ahead of Galaxy Unpacked. Details on design, display tech, and expected features.</description>
-    </item>
-    <item>
-      <title>Sacramento County woman identified in deadly San Francisco Bay boat incident</title>
-      <link>https://asfiblog.vercel.app/blog/sacramento-county-woman-identified-deadly-boat-incident.html</link>
-      <guid>https://asfiblog.vercel.app/blog/sacramento-county-woman-identified-deadly-boat-incident.html</guid>
-      <pubDate>2026-07-18 00:00:00 GMT</pubDate>
-      <description>A Sacramento County woman has been identified as the second victim in the deadly San Francisco Bay boat sinking that claimed four lives. Authorities continue search efforts.</description>
-    </item>
-    <item>
-      <title>Fever Score: Caitlin Clark Makes WNBA History with 200 3-Pointers</title>
-      <link>https://asfiblog.vercel.app/blog/fever-score-caitlin-clark-wnba-history-200-3-pointers.html</link>
-      <guid>https://asfiblog.vercel.app/blog/fever-score-caitlin-clark-wnba-history-200-3-pointers.html</guid>
-      <pubDate>2026-07-18 00:00:00 GMT</pubDate>
-      <description>Caitlin Clark sets a WNBA record for fastest to 200 career 3-pointers, redefining the Fever score in women&#x27;s basketball. Learn how she&#x27;s changing the game.</description>
-    </item>
-    <item>
-      <title>NBA Summer League Scouting Report: Top Rookies Show Star Potential</title>
-      <link>https://asfiblog.vercel.app/blog/nba-summer-league-scouting-report-top-rookies.html</link>
-      <guid>https://asfiblog.vercel.app/blog/nba-summer-league-scouting-report-top-rookies.html</guid>
-      <pubDate>2026-07-17 00:00:00 GMT</pubDate>
-      <description>Discover how the top rookies in the NBA Summer League are already showcasing stardom-bound potential. Insights and analysis on standout performances and future stars.</description>
-    </item>
-    <item>
-      <title>Top 10 VS Code Extensions Developers Need in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/top-vs-code-extensions-developers-need-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/top-vs-code-extensions-developers-need-2026.html</guid>
-      <pubDate>2026-07-17 00:00:00 GMT</pubDate>
-      <description>Discover the top 10 VS Code extensions every developer should use in 2026 for productivity, debugging, and seamless coding. Essential tools for any tech stack.</description>
-    </item>
-    <item>
-      <title>Royal Birkdale Course Record: History and Key Facts</title>
-      <link>https://asfiblog.vercel.app/blog/royal-birkdale-course-record-history-and-key-facts.html</link>
-      <guid>https://asfiblog.vercel.app/blog/royal-birkdale-course-record-history-and-key-facts.html</guid>
-      <pubDate>2026-07-17 00:00:00 GMT</pubDate>
-      <description>The Royal Birkdale course record is held by a professional golfer who shot a historic low round. Learn about the record, its significance, and past champions.</description>
-    </item>
-    <item>
-      <title>NFC West Training Camp 2026 Preview: Key Storylines</title>
-      <link>https://asfiblog.vercel.app/blog/nfc-west-training-camp-2026-preview.html</link>
-      <guid>https://asfiblog.vercel.app/blog/nfc-west-training-camp-2026-preview.html</guid>
-      <pubDate>2026-07-17 00:00:00 GMT</pubDate>
-      <description>Previewing the top NFC West training camp storylines for 2026, including updates on the 49ers, Cardinals, Rams, and Seahawks as they prepare for the NFL season.</description>
-    </item>
-    <item>
-      <title>Best AI Resume and Cover Letter Builders in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/best-ai-resume-cover-letter-builders-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/best-ai-resume-cover-letter-builders-2026.html</guid>
-      <pubDate>2026-07-16 00:00:00 GMT</pubDate>
-      <description>Discover the best AI resume and cover letter builders in 2026 for students and professionals. Compare features, usability, and standout tools for job applications.</description>
-    </item>
-    <item>
-      <title>Top AI Chatbots Compared for 2026: Best Picks</title>
-      <link>https://asfiblog.vercel.app/blog/top-ai-chatbots-compared-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/top-ai-chatbots-compared-2026.html</guid>
-      <pubDate>2026-07-16 00:00:00 GMT</pubDate>
-      <description>Explore the top AI chatbots for 2026, comparing features, use cases, and standout capabilities to help you choose the best tool for productivity and tech needs.</description>
-    </item>
-    <item>
-      <title>Ontario seeks federal aid as wildfires force evacuations</title>
-      <link>https://asfiblog.vercel.app/blog/ontario-seeks-federal-aid-wildfires-evacuations.html</link>
-      <guid>https://asfiblog.vercel.app/blog/ontario-seeks-federal-aid-wildfires-evacuations.html</guid>
-      <pubDate>2026-07-16 00:00:00 GMT</pubDate>
-      <description>Ontario requests federal support for evacuations amid devastating wildfires in remote towns. Officials warn of worsening conditions as blazes continue to spread.</description>
-    </item>
-    <item>
-      <title>Sony faces backlash and lawsuits over PlayStation&#x27;s all-digital future</title>
-      <link>https://asfiblog.vercel.app/blog/sony-playstation-all-digital-backlash-lawsuits.html</link>
-      <guid>https://asfiblog.vercel.app/blog/sony-playstation-all-digital-backlash-lawsuits.html</guid>
-      <pubDate>2026-07-16 00:00:00 GMT</pubDate>
-      <description>Sony faces growing backlash and legal challenges over PlayStation&#x27;s shift to an all-digital future, with lawsuits and antitrust complaints mounting worldwide.</description>
-    </item>
-    <item>
-      <title>Dylan Edwards to bring new dimension to KU football offense</title>
-      <link>https://asfiblog.vercel.app/blog/dylan-edwards-ku-football-offense.html</link>
-      <guid>https://asfiblog.vercel.app/blog/dylan-edwards-ku-football-offense.html</guid>
-      <pubDate>2026-07-16 00:00:00 GMT</pubDate>
-      <description>Dylan Edwards, the dynamic running back, is set to add a new dimension to KU football&#x27;s offense this season. Learn how his skills could transform the team&#x27;s playbook.</description>
-    </item>
-    <item>
-      <title>Pakistan resists UK deportation of grooming gang leader</title>
-      <link>https://asfiblog.vercel.app/blog/pakistan-resists-uk-deportation-grooming-gang-leader.html</link>
-      <guid>https://asfiblog.vercel.app/blog/pakistan-resists-uk-deportation-grooming-gang-leader.html</guid>
-      <pubDate>2026-07-16 00:00:00 GMT</pubDate>
-      <description>Pakistan refuses UK attempts to deport Shabir Ahmed, leader of a grooming gang, amid legal and diplomatic tensions. Learn the latest on this high-profile case.</description>
-    </item>
-    <item>
-      <title>President Donald Trump Endorses Mike Lindell for Minnesota Governor</title>
-      <link>https://asfiblog.vercel.app/blog/donald-trump-endorses-mike-lindell-minnesota-governor.html</link>
-      <guid>https://asfiblog.vercel.app/blog/donald-trump-endorses-mike-lindell-minnesota-governor.html</guid>
-      <pubDate>2026-07-16 00:00:00 GMT</pubDate>
-      <description>President Donald Trump has endorsed Mike Lindell, founder of MyPillow, for Minnesota governor. Learn what this means for the election and Lindell&#x27;s political ambitions.</description>
-    </item>
-    <item>
-      <title>Astros Trade Fan Favorite Lance McCullers Jr. to Brewers</title>
-      <link>https://asfiblog.vercel.app/blog/astros-trade-lance-mccullers-jr-to-brewers.html</link>
-      <guid>https://asfiblog.vercel.app/blog/astros-trade-lance-mccullers-jr-to-brewers.html</guid>
-      <pubDate>2026-07-15 00:00:00 GMT</pubDate>
-      <description>The Houston Astros are reportedly trading fan favorite Lance McCullers Jr. and Colton Gordon to the Milwaukee Brewers for pitching depth and prospect Jadyn Fielder.</description>
-    </item>
-    <item>
-      <title>Top 10 Free AI Image Generators in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/top-10-free-ai-image-generators-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/top-10-free-ai-image-generators-2026.html</guid>
-      <pubDate>2026-07-15 00:00:00 GMT</pubDate>
-      <description>Discover the top 10 free AI image generators in 2026 for students and creators. Compare features, quality, and ease of use to find the best tool for your needs.</description>
-    </item>
-    <item>
-      <title>Wildfire Smoke from Canada to Spread Across Midwest and East</title>
-      <link>https://asfiblog.vercel.app/blog/wildfire-smoke-canada-spread-midwest-east.html</link>
-      <guid>https://asfiblog.vercel.app/blog/wildfire-smoke-canada-spread-midwest-east.html</guid>
-      <pubDate>2026-07-15 00:00:00 GMT</pubDate>
-      <description>Wildfire smoke from Canada is expected to spread across the Midwest and East, posing health risks and reducing air quality. Learn how to stay safe and track updates.</description>
-    </item>
-    <item>
-      <title>Odyssey Movie Sparks Frenzy for IMAX 70mm Tickets</title>
-      <link>https://asfiblog.vercel.app/blog/odyssey-movie-imax-70mm-tickets-frenzy.html</link>
-      <guid>https://asfiblog.vercel.app/blog/odyssey-movie-imax-70mm-tickets-frenzy.html</guid>
-      <pubDate>2026-07-15 00:00:00 GMT</pubDate>
-      <description>The Odyssey movie has ignited a surge in demand for IMAX 70mm tickets, as film enthusiasts rush to experience its epic visuals in the highest-quality format available.</description>
-    </item>
-    <item>
-      <title>Kilmarnock FC vs Raith Rovers standings and League Cup updates</title>
-      <link>https://asfiblog.vercel.app/blog/kilmarnock-fc-vs-raith-rovers-standings-league-cup.html</link>
-      <guid>https://asfiblog.vercel.app/blog/kilmarnock-fc-vs-raith-rovers-standings-league-cup.html</guid>
-      <pubDate>2026-07-14 00:00:00 GMT</pubDate>
-      <description>Latest Kilmarnock FC vs Raith Rovers standings, Scottish League Cup score updates, and key match stats. Analysis of team form, head-to-head records, and tournament implications.</description>
-    </item>
-    <item>
-      <title>Ranking the Field for the 154th Open at Royal Birkdale</title>
-      <link>https://asfiblog.vercel.app/blog/ranking-field-154th-open-royal-birkdale.html</link>
-      <guid>https://asfiblog.vercel.app/blog/ranking-field-154th-open-royal-birkdale.html</guid>
-      <pubDate>2026-07-14 00:00:00 GMT</pubDate>
-      <description>Discover the full list of 156 players competing in the 154th Open at Royal Birkdale. Get insights into rankings, conditions, and key contenders in this historic golf championship.</description>
-    </item>
-    <item>
-      <title>Top 10 Free AI Tools for Students in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/top-10-free-ai-tools-for-students-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/top-10-free-ai-tools-for-students-2026.html</guid>
-      <pubDate>2026-07-14 00:00:00 GMT</pubDate>
-      <description>Discover the top 10 free AI tools for students in 2026, from note-taking to coding assistance. Boost productivity with these powerful, no-cost resources.</description>
-    </item>
-    <item>
-      <title>Inside Israel’s Secret Operation to Install Ahmadinejad</title>
-      <link>https://asfiblog.vercel.app/blog/inside-israels-secret-operation-ahmadinejad.html</link>
-      <guid>https://asfiblog.vercel.app/blog/inside-israels-secret-operation-ahmadinejad.html</guid>
-      <pubDate>2026-07-14 00:00:00 GMT</pubDate>
-      <description>Explore Israel&#x27;s covert operation to position Ahmadinejad, Iran&#x27;s former president, as a leader amidst geopolitical tensions and intrigue.</description>
-    </item>
-    <item>
-      <title>Mejores películas Netflix: estrenos y clásicos para ver ahora</title>
-      <link>https://asfiblog.vercel.app/blog/mejores-peliculas-netflix-estrenos-clasicos-argentina.html</link>
-      <guid>https://asfiblog.vercel.app/blog/mejores-peliculas-netflix-estrenos-clasicos-argentina.html</guid>
-      <pubDate>2026-07-13 00:00:00 GMT</pubDate>
-      <description>Descubre las mejores películas en Netflix esta semana, incluyendo estrenos en Argentina y clásicos imperdibles. Actualizado con las novedades del 13 al 19 de julio.</description>
-    </item>
-    <item>
-      <title>UK counter-terror police investigate Ann Widdecombe murder</title>
-      <link>https://asfiblog.vercel.app/blog/uk-counter-terror-police-ann-widdecombe-murder.html</link>
-      <guid>https://asfiblog.vercel.app/blog/uk-counter-terror-police-ann-widdecombe-murder.html</guid>
-      <pubDate>2026-07-13 00:00:00 GMT</pubDate>
-      <description>UK counter-terrorism police lead the investigation into the suspected murder of former lawmaker Ann Widdecombe. A 28-year-old man has been arrested.</description>
-    </item>
-    <item>
-      <title>U.S.-Iran Latest: Diplomacy Continues Amid Strait of Hormuz Tensions</title>
-      <link>https://asfiblog.vercel.app/blog/us-iran-latest-diplomacy-strait-of-hormuz-tensions.html</link>
-      <guid>https://asfiblog.vercel.app/blog/us-iran-latest-diplomacy-strait-of-hormuz-tensions.html</guid>
-      <pubDate>2026-07-13 00:00:00 GMT</pubDate>
-      <description>Latest updates on U.S.-Iran tensions over the Strait of Hormuz. Tehran insists diplomacy continues despite ongoing attacks and disputes over control of the critical waterway.</description>
-    </item>
-    <item>
-      <title>Best AI Tools for Building a Portfolio Website in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/best-ai-tools-for-building-a-portfolio-website.html</link>
-      <guid>https://asfiblog.vercel.app/blog/best-ai-tools-for-building-a-portfolio-website.html</guid>
-      <pubDate>2026-07-13 00:00:00 GMT</pubDate>
-      <description>Discover the best AI tools for building a portfolio website in 2026. Compare features, ease of use, and customization options for designers, developers, and creatives.</description>
-    </item>
-    <item>
-      <title>Best AI Coding Assistants for Developers in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/best-ai-coding-assistants-for-developers-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/best-ai-coding-assistants-for-developers-2026.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Discover the best AI coding assistants for developers in 2026, featuring tools that boost productivity, accuracy, and efficiency for coders at all levels.</description>
-    </item>
-    <item>
-      <title>Mardy Fish leads celebrity golf event at Edgewood Tahoe</title>
-      <link>https://asfiblog.vercel.app/blog/mardy-fish-leads-celebrity-golf-event-edgewood-tahoe.html</link>
-      <guid>https://asfiblog.vercel.app/blog/mardy-fish-leads-celebrity-golf-event-edgewood-tahoe.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Former tennis star Mardy Fish takes the lead at the celebrity golf tournament held at Edgewood Tahoe, showcasing his transition to competitive golf.</description>
-    </item>
-    <item>
-      <title>Top 10 AI Productivity Apps for Remote Work in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/top-ai-productivity-apps-remote-work-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/top-ai-productivity-apps-remote-work-2026.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Discover the top 10 AI productivity apps for remote work in 2026, designed to streamline tasks, enhance collaboration, and boost efficiency for professionals and students.</description>
-    </item>
-    <item>
-      <title>World Cup Games Today: Semifinal Schedule France vs Spain, England vs Argentina</title>
-      <link>https://asfiblog.vercel.app/blog/world-cup-games-today-semifinal-schedule.html</link>
-      <guid>https://asfiblog.vercel.app/blog/world-cup-games-today-semifinal-schedule.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Find out if there are World Cup games today with the semifinal schedule featuring France vs Spain and England vs Argentina. Get match details, predictions, and key players.</description>
-    </item>
-    <item>
-      <title>Lindsey Graham dies after sudden illness; Trump reacts</title>
-      <link>https://asfiblog.vercel.app/blog/lindsey-graham-dies-sudden-illness-trump-reaction.html</link>
-      <guid>https://asfiblog.vercel.app/blog/lindsey-graham-dies-sudden-illness-trump-reaction.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Senator Lindsey Graham has died at 71 after a sudden illness. Donald Trump called Graham &#x27;like family,&#x27; while analysts weigh the political impact of his death.</description>
-    </item>
-    <item>
-      <title>Top Free AI Note-Taking and Study Apps in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/top-free-ai-note-taking-study-apps-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/top-free-ai-note-taking-study-apps-2026.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Discover the best free AI note-taking and study apps in 2026 for students and professionals. Boost productivity with smart tools for organizing, summarizing, and learning.</description>
-    </item>
-    <item>
-      <title>Toronto police search for suspects after deadly festival shooting</title>
-      <link>https://asfiblog.vercel.app/blog/toronto-police-search-suspects-deadly-festival-shooting.html</link>
-      <guid>https://asfiblog.vercel.app/blog/toronto-police-search-suspects-deadly-festival-shooting.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Toronto police are investigating a deadly shooting at a major Latin street festival that left 2 dead and multiple injured. Authorities seek suspects as the event was canceled.</description>
-    </item>
-    <item>
-      <title>Sen. Lindsey Graham Dies After Brief Illness</title>
-      <link>https://asfiblog.vercel.app/blog/sen-lindsey-graham-dies-after-brief-illness.html</link>
-      <guid>https://asfiblog.vercel.app/blog/sen-lindsey-graham-dies-after-brief-illness.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Sen. Lindsey Graham, a close Trump ally and foreign policy hawk, has died after a brief illness. Explore his legacy, political impact, and the GOP scramble for his Senate seat.</description>
-    </item>
-    <item>
-      <title>Top 10 AI Presentation Generators in 2026 for Stunning Slides</title>
-      <link>https://asfiblog.vercel.app/blog/top-10-ai-presentation-generators-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/top-10-ai-presentation-generators-2026.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Discover the best AI presentation generators in 2026 for students and professionals. Compare features, ease of use, and standout tools for creating impactful slide decks.</description>
-    </item>
-    <item>
-      <title>Best Free Websites to Learn Web Development in 2026</title>
-      <link>https://asfiblog.vercel.app/blog/best-free-websites-learn-web-development-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/best-free-websites-learn-web-development-2026.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Discover the top free websites to master web development in 2026. Learn coding, design, and frameworks with these expert-curated resources for beginners and pros.</description>
-    </item>
-    <item>
-      <title>Apple vs OpenAI: Experts Weigh In on Trade Secrets Lawsuit</title>
-      <link>https://asfiblog.vercel.app/blog/apple-openai-trade-secrets-lawsuit-experts-analysis.html</link>
-      <guid>https://asfiblog.vercel.app/blog/apple-openai-trade-secrets-lawsuit-experts-analysis.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Legal and tech experts analyze Apple&#x27;s lawsuit accusing OpenAI of stealing trade secrets, including alleged recruitment tactics and the broader AI industry implications.</description>
-    </item>
-    <item>
-      <title>Iran Tests Trump After Leader’s Funeral, Risking Renewed War</title>
-      <link>https://asfiblog.vercel.app/blog/iran-tests-trump-after-leaders-funeral-risking-renewed-war.html</link>
-      <guid>https://asfiblog.vercel.app/blog/iran-tests-trump-after-leaders-funeral-risking-renewed-war.html</guid>
-      <pubDate>2026-07-12 00:00:00 GMT</pubDate>
-      <description>Following the funeral of Iran&#x27;s leader, tensions escalate as Iran tests Trump&#x27;s resolve, raising fears of renewed conflict. Explore the latest developments and risks.</description>
-    </item>
-    <item>
-      <title>Kristi Noem Divorce: Details on Split After Cross-Dressing Bombshell</title>
-      <link>https://asfiblog.vercel.app/blog/kristi-noem-divorce-details-split-cross-dressing.html</link>
-      <guid>https://asfiblog.vercel.app/blog/kristi-noem-divorce-details-split-cross-dressing.html</guid>
-      <pubDate>2026-07-10 00:00:00 GMT</pubDate>
-      <description>Kristi Noem is reportedly divorcing her husband Bryon following a cross-dressing bombshell revealed by her mother. Explore the details and implications here.</description>
-    </item>
-    <item>
-      <title>Netflix Stock: Live TV and Bundles Explored Amid Retention Struggles</title>
-      <link>https://asfiblog.vercel.app/blog/netflix-stock-live-tv-bundles-retention-struggles.html</link>
-      <guid>https://asfiblog.vercel.app/blog/netflix-stock-live-tv-bundles-retention-struggles.html</guid>
-      <pubDate>2026-07-10 00:00:00 GMT</pubDate>
-      <description>Netflix stock focus shifts as the streaming giant explores live TV and bundles to combat viewer retention struggles. What this strategic pivot means for investors.</description>
-    </item>
-    <item>
-      <title>AI Agents Are Quietly Replacing the Apps You Use Every Day</title>
-      <link>https://asfiblog.vercel.app/blog/ai-agents-replacing-apps.html</link>
-      <guid>https://asfiblog.vercel.app/blog/ai-agents-replacing-apps.html</guid>
-      <pubDate>2026-07-09 00:00:00 GMT</pubDate>
-      <description>Booking, shopping, and scheduling are moving from taps to typed requests. Here&#x27;s what&#x27;s actually changing under the hood — and what it means for you.</description>
-    </item>
-    <item>
-      <title>Nasdaq Rally Leads Market Surge as Chip and AI Stocks Shine</title>
-      <link>https://asfiblog.vercel.app/blog/nasdaq-rally-chip-ai-spacex-oil-gains.html</link>
-      <guid>https://asfiblog.vercel.app/blog/nasdaq-rally-chip-ai-spacex-oil-gains.html</guid>
-      <pubDate>2026-07-10 00:00:00 GMT</pubDate>
-      <description>Nasdaq rallies as chip and AI stocks surge, SpaceX steadies after a three-day dip, while oil climbs and market futures adjust amid geopolitical tension.</description>
-    </item>
-    <item>
-      <title>Measles Exposure Map Reveals High-Risk Zones in Central Iowa</title>
-      <link>https://asfiblog.vercel.app/blog/measles-exposure-map-central-ios.html</link>
-      <guid>https://asfiblog.vercel.app/blog/measles-exposure-map-central-ios.html</guid>
-      <pubDate>2026-07-10 00:00:00 GMT</pubDate>
-      <description>A new map from KCCI identifies central Iowa locations with potential measles exposure. Learn which areas pose risks and how to protect yourself now.</description>
-    </item>
-    <item>
-      <title>Dairy Intake May Slow Biological Aging, Study Suggests</title>
-      <link>https://asfiblog.vercel.app/blog/dairy-intake-may-slow-biological-aging-study.html</link>
-      <guid>https://asfiblog.vercel.app/blog/dairy-intake-may-slow-biological-aging-study.html</guid>
-      <pubDate>2026-07-10 00:00:00 GMT</pubDate>
-      <description>Study ties daily dairy intake to slower biological aging, with lower cellular wear markers in regular consumers. Learn what it means for health and longevity.</description>
-    </item>
-    <item>
-      <title>US Home Prices Reach All-Time High Amid Rising Mortgage Rates</title>
-      <link>https://asfiblog.vercel.app/blog/us-home-prices-all-time-high-mortgage-rates.html</link>
-      <guid>https://asfiblog.vercel.app/blog/us-home-prices-all-time-high-mortgage-rates.html</guid>
-      <pubDate>2026-07-10 00:00:00 GMT</pubDate>
-      <description>Despite higher borrowing costs and fewer sales, US home prices hit record levels. Explore the factors driving this paradox in the housing market.</description>
-    </item>
-    <item>
-      <title>Sony RX10 V Superzoom Adds 4K 120p and New Design</title>
-      <link>https://asfiblog.vercel.app/blog/sony-rx10-v-superzoom-4k-120p-review.html</link>
-      <guid>https://asfiblog.vercel.app/blog/sony-rx10-v-superzoom-4k-120p-review.html</guid>
-      <pubDate>2026-07-10 00:00:00 GMT</pubDate>
-      <description>Sony RX10 V superzoom arrives with new design and 4K 120p video. We break down specs, key upgrades, and if it beats the RX10 IV for photo and video creators.</description>
-    </item>
-    <item>
-      <title>Why the 4-Day Work Week Is Back in the Conversation</title>
-      <link>https://asfiblog.vercel.app/blog/four-day-work-week-2026.html</link>
-      <guid>https://asfiblog.vercel.app/blog/four-day-work-week-2026.html</guid>
-      <pubDate>2026-07-09 00:00:00 GMT</pubDate>
-      <description>New pilot data is reviving the debate. Here&#x27;s what&#x27;s actually driving it in 2026 — and where it&#x27;s stalling.</description>
-    </item>
-    <item>
-      <title>Scientists Found a Bacteria That Eats Plastic — Here&#x27;s What That Means</title>
-      <link>https://asfiblog.vercel.app/blog/plastic-eating-bacteria-breakthrough.html</link>
-      <guid>https://asfiblog.vercel.app/blog/plastic-eating-bacteria-breakthrough.html</guid>
-      <pubDate>2026-07-09 00:00:00 GMT</pubDate>
-      <description>A lab breakthrough is being called a possible fix for one of recycling&#x27;s biggest problems. We separate the hype from the timeline.</description>
-    </item>
-    <item>
-      <title>James Webb Telescope Reveals Mysteries of Galaxy 11 Million Light-Years Away</title>
-      <link>https://asfiblog.vercel.app/blog/james-webb-telescope-galaxy-mystery.html</link>
-      <guid>https://asfiblog.vercel.app/blog/james-webb-telescope-galaxy-mystery.html</guid>
-      <pubDate>2026-07-10 00:00:00 GMT</pubDate>
-      <description>Astronomers are baffled by new James Webb Space Telescope images uncovering secrets of a distant galaxy. Discover the latest cosmic revelations here.</description>
-    </item>
-    <item>
-      <title>\</title>
-      <link>https://asfiblog.vercel.app/blog/sleep-banking-trend-explained.html</link>
-      <guid>https://asfiblog.vercel.app/blog/sleep-banking-trend-explained.html</guid>
-      <pubDate>2026-07-09 00:00:00 GMT</pubDate>
-      <description>The idea of stockpiling rest before a big week sounds appealing. Here&#x27;s what sleep science actually says about it.</description>
-    </item>
-    <item>
-      <title>Grocery Price Wars Heat Up as Shoppers Tighten Belts</title>
-      <link>https://asfiblog.vercel.app/blog/grocery-price-war-consumer-spending-cuts-2024.html</link>
-      <guid>https://asfiblog.vercel.app/blog/grocery-price-war-consumer-spending-cuts-2024.html</guid>
-      <pubDate>2026-07-10 00:00:00 GMT</pubDate>
-      <description>Grocery stores slash prices as consumers cut spending. Discover why retailers are racing to the bottom and how to maximize savings on your weekly shop.</description>
-    </item>
-    <item>
-      <title>Ladera Ranch Families Worry Over Children&#x27;s Rare Cancer Cases</title>
-      <link>https://asfiblog.vercel.app/blog/ladera-ranch-children-rare-cancer-concerns.html</link>
-      <guid>https://asfiblog.vercel.app/blog/ladera-ranch-children-rare-cancer-concerns.html</guid>
-      <pubDate>2026-07-10 00:00:00 GMT</pubDate>
-      <description>Families in Ladera Ranch express concern after multiple children diagnosed with rare cancer, raising questions about environmental factors and medical oversight.</description>
+      <pubDate>Tue, 18 Aug 2026 02:01:13 GMT</pubDate>
     </item>
   </channel>
 </rss>

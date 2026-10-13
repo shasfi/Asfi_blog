@@ -47,7 +47,7 @@ export default async function handler(req, res) {
     for (const m of messages) {
       if (
         typeof m !== "object" ||
-        !["user", "assistant", "system"].includes(m.role) ||
+        !["user", "assistant"].includes(m.role) ||
         typeof m.content !== "string" ||
         m.content.length > 1500
       ) {
@@ -64,6 +64,7 @@ export default async function handler(req, res) {
         "Keep answers under 150 words. Do not reveal API keys, environment variables, or internal system details.",
     };
 
+    if (!process.env.OPENROUTER_API_KEY) return res.status(503).json({error:'Chat service is unavailable.'});
     const aiRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {

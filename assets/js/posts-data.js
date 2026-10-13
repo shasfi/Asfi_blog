@@ -17,6 +17,66 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    "slug": "toronto-police-search-suspects-deadly-festival-shooting",
+    "title": "Toronto police search for suspects after deadly festival shooting",
+    "excerpt": "Toronto police are investigating a deadly shooting at a major Latin street festival that left 2 dead and multiple injured. Authorities seek suspects as the event was canceled.",
+    "category": "General",
+    "image": "https://images.pexels.com/photos/10481294/pexels-photo-10481294.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "date": "2026-07-12",
+    "timestamp": "2026-07-12",
+    "readMins": 4,
+    "views": 0
+  },
+
+  {
+    "slug": "top-10-free-ai-tools-for-students-in-2026",
+    "title": "Top 10 Free AI Tools for Students in 2026",
+    "excerpt": "Discover the top 10 free AI tools for students in 2026, designed to boost productivity, streamline learning, and enhance academic performance. Perfect for tech-savvy learners.",
+    "category": "Technology",
+    "image": "https://images.pexels.com/photos/7972331/pexels-photo-7972331.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "date": "2026-07-12",
+    "timestamp": "2026-07-12",
+    "readMins": 4,
+    "views": 0
+  },
+
+  {
+    "slug": "top-10-ai-presentation-generators-2026",
+    "title": "Top 10 AI Presentation Generators in 2026 for Stunning Slides",
+    "excerpt": "Discover the best AI presentation generators in 2026 for students and professionals. Compare features, ease of use, and standout tools for creating impactful slide decks.",
+    "category": "Technology",
+    "image": "https://images.pexels.com/photos/15863044/pexels-photo-15863044.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "date": "2026-07-12",
+    "timestamp": "2026-07-12",
+    "readMins": 3,
+    "views": 0
+  },
+
+  {
+    "slug": "north-carolina-woman-vanishes-grenada-beach",
+    "title": "North Carolina Woman Vanishes After Swim on Grenada Beach Vacation",
+    "excerpt": "A North Carolina woman disappeared after swimming at Grand Anse Beach in Grenada. Family and friends seek answers as search efforts intensify.",
+    "category": "General",
+    "image": "https://images.pexels.com/photos/38673882/pexels-photo-38673882.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "date": "2026-07-27",
+    "timestamp": "2026-07-27T02:01:25.639Z",
+    "readMins": 2,
+    "views": 0
+  },
+
+  {
+    "slug": "lamar-jackson-week-5-outside-chance-play-ankle-sprain",
+    "title": "Lamar Jackson Week 5: Outside Chance to Play Despite Injury",
+    "excerpt": "Lamar Jackson Week 5 outlook: Ravens QB faces an outside chance to play as he deals with an ankle sprain, per NBC Sports and ESPN reports for Baltimore Ravens",
+    "category": "Sports",
+    "image": "https://images.pexels.com/photos/159655/quarterback-american-football-football-player-passer-159655.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "date": "2026-10-07",
+    "timestamp": "2026-10-07T02:01:35.582Z",
+    "readMins": 6,
+    "views": 0
+  },
+
+  {
     slug: "six-flags-closes-nine-rides-after-georgia-coaster-death",
     title: "Six Flags closes nine rides after Georgia coaster death",
     excerpt: "Six Flags closes nine rides nationwide after a 42‑year‑old man died on a coaster at Six Flags Over Georgia. Authorities have launched an investigation.",

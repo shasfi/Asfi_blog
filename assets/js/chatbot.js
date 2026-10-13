@@ -10,13 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!toggle || !panel) return;
 
-  let history = [
-    {
-      role: "system",
-      content:
-        "You are 'The Desk', the friendly editorial assistant for Asfi Blog, a trending news and ideas publication covering technology, business, science, and health. Answer questions about the site's articles and topics helpfully and briefly (2-4 sentences unless asked for more).",
-    },
-  ];
+  let history = [];
 
   toggle.addEventListener("click", () => panel.classList.toggle("open"));
   closeBtn.addEventListener("click", () => panel.classList.remove("open"));
@@ -35,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!text) return;
 
     addMessage(text, "user");
-    history.push({ role: "user", content: text });
+    history.push({ role: "user", content: text.slice(0, 1500) });
+    history = history.slice(-10);
     input.value = "";
 
     const loadingDiv = document.createElement("div");
@@ -56,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const reply = data.reply || "Sorry, I couldn't process that right now.";
       addMessage(reply, "bot");
       history.push({ role: "assistant", content: reply });
+      history = history.slice(-10);
     } catch (err) {
       loadingDiv.remove();
       addMessage("Something went wrong. Please try again.", "bot");

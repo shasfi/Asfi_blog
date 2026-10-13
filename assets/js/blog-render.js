@@ -93,7 +93,7 @@
     const views = displayViews(post);
     return `<a href="/blog/${post.slug}.html" class="featured">
       <div class="featured__img">
-        <span class="trend-badge trend-badge--lg">🔥 #1 Trending</span>
+        <span class="trend-badge trend-badge--lg">Featured</span>
         <img src="${post.image}" alt="${post.title}" loading="lazy" />
       </div>
       <div class="featured__body">
@@ -113,7 +113,7 @@
     const gridEl = document.getElementById("trending-grid");
     if (!featuredEl || !gridEl || !POSTS.length) return;
 
-    const sorted = [...POSTS].sort((a, b) => displayViews(b) - displayViews(a));
+    const sorted = [...POSTS].sort((a, b) => displayViews(b) - displayViews(a) || (b.timestamp || b.date).localeCompare(a.timestamp || a.date));
     const top4 = sorted.slice(0, 4);
 
     featuredEl.innerHTML = featuredHtml(top4[0]);

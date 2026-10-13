@@ -1,23 +1,6 @@
 // assets/js/main.js — shared across every page
 
-// ---------- GOOGLE ANALYTICS 4 ----------
-// Loaded here (not per-page) so every page on the site reports automatically
-// since /assets/js/main.js is already included everywhere.
-(function () {
-  const GA_MEASUREMENT_ID = "G-QBFK40KM9C";
-  if (!GA_MEASUREMENT_ID) return;
-
-  const s = document.createElement("script");
-  s.async = true;
-  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(s);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { window.dataLayer.push(arguments); }
-  window.gtag = gtag;
-  gtag("js", new Date());
-  gtag("config", GA_MEASUREMENT_ID);
-})();
+// Google Analytics 4 is installed once in each page head using G-SXL9MNZFNL; do not load another tag here.
 
 // ---------- THEME TOGGLE (light/dark, persisted) ----------
 // Default is always LIGHT. The only way a visitor ever sees dark mode is if
@@ -138,24 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ---------- NEWSLETTER FORM (front-end only demo handling) ----------
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("newsletter-form");
-  if (!form) return;
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const input = form.querySelector("input[type=email]");
-    const btn = form.querySelector("button");
-    const original = btn.textContent;
-    btn.textContent = "Subscribed ✓";
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = original;
-      btn.disabled = false;
-      input.value = "";
-    }, 2500);
-  });
-});
+// Newsletter claim removed until a verified subscription provider is configured.
 
 // ---------- REAL-TIME VIEW TRACKING (runs on every page, incl. post pages) ----------
 // Records one "view" per visitor per post per browser session, via /api/views
