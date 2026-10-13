@@ -107,6 +107,53 @@ def update_home(content,articles):
     fail('Homepage editorial section marker changed, cannot insert safely')
 
 
+
+def add_social_discovery(source):
+    """Apply narrow, checked edits to generator after original editorial update."""
+    if 'fetchYouTubeUSSignals' in source:
+        return source, False
+    replacements = [
+      ('export default async function handler(req, res) {',
+       'import { fetchYouTubeUSSignals, fetchLicensedSocialSignals, socialSignalScore } from "./trend-signals.js";\n\nexport default async function handler(req, res) {'),
+      ('      const [trendsTexts, newsTexts] = await Promise.all([',
+       '      // Optional official YouTube API + authorized licensed social-data provider.\n'
+       '      // Requests run concurrently with existing Google RSS retrieval.\n'
+       '      const youtubeSignalsPromise = fetchYouTubeUSSignals(process.env.YOUTUBE_API_KEY);\n'
+       '      const licensedSignalsPromise = fetchLicensedSocialSignals(process.env.SOCIAL_SIGNAL_FEED_URL, process.env.SOCIAL_SIGNAL_FEED_TOKEN);\n'
+       '      const [trendsTexts, newsTexts] = await Promise.all(['),
+      ('      const newsPool = newsItemsPerFeed.flatMap((items,i) => items.slice(0,8).map((item,rank) => ({ ...item, feed: newsFeeds[i].label, rank })));',
+       '      const newsPool = newsItemsPerFeed.flatMap((items,i) => items.slice(0,8).map((item,rank) => ({ ...item, feed: newsFeeds[i].label, rank })));\n'
+       '      const socialSignals = [...(await youtubeSignalsPromise), ...(await licensedSignalsPromise)];\n'
+       '      console.log("Discovery: fresh US YouTube/authorized social signals:", socialSignals.length);'),
+      ('      // We cannot measure X/TikTok/YouTube virality or predict future search volume',
+       '      // The YouTube API and authorized provider supply measured platform engagement,\n'
+       '      // but cannot predict future US search volume or establish truth of claims'),
+      ('      const freshTrends = trendItems.filter(item =>\n        !usedTitlesLower.some(t => titleSimilarity(t, item.title) >= 0.66));',
+       '      const freshTrends = trendItems.filter(item =>\n        !usedTitlesLower.some(t => titleSimilarity(t, item.title) >= 0.66));\n'
+       '      // Social-only leads are candidate topics, NOT validated news. Publication\n'
+       '      // still requires independent news coverage and sufficient source detail.\n'
+       '      const socialCandidates = socialSignals.filter(item =>\n'
+       '        !usedTitlesLower.some(t => titleSimilarity(t, item.title) >= 0.66))\n'
+       '        .map(item => ({title:item.title, description:item.summary || item.title, sourceUrl:item.url,\n'
+       '          published:item.published, feed:"social-"+item.platform, sourceName:item.platform}));'),
+      ('        return freshness + us + usTopic + namedSubject + breadth + trend + searchInterest;',
+       '        const social = socialSignalScore(candidate.title,socialSignals);\n'
+       '        return freshness + us + usTopic + namedSubject + breadth + trend + searchInterest + social;'),
+      ('      const candidates = [...freshNews, ...freshTrends].sort((a,b) => sourceScore(b) - sourceScore(a));',
+       '      const candidates = [...freshNews, ...freshTrends, ...socialCandidates].sort((a,b) => sourceScore(b) - sourceScore(a));'),
+      ("        if (candidate.feed === 'trends' && relevantCoverage.length < 2) continue;",
+       "        if ((candidate.feed === 'trends' || candidate.feed?.startsWith('social-')) && relevantCoverage.length < 2) continue;"),
+      ("      trendingContext += '\\nIndependent coverage headline references (verify facts before treating claims as true):\\n'",
+       "      const matchedSocial = socialSignals.filter(signal => socialSignalScore(trendingHeadline,[signal]) > 0).slice(0,3);\n"
+       "      if (matchedSocial.length) trendingContext += '\\nMeasured social-platform video engagement (topic discovery only, NOT a fact-check or Google search-volume estimate):\\n'\n"
+       "        + matchedSocial.map(signal => `${signal.platform}: ${signal.title} (${signal.views || 'unknown'} video views; ${signal.url})`).join('\\n');\n"
+       "      trendingContext += '\\nIndependent coverage headline references (verify facts before treating claims as true):\\n'")
+    ]
+    for old,new in replacements:
+        if source.count(old)!=1:fail('Social-integration anchor missing or ambiguous: '+old[:90])
+        source=source.replace(old,new,1)
+    return source, True
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--project',required=True,help='Existing GitHub cloned Asfi_blog project directory')
@@ -145,24 +192,48 @@ def main():
         chk=subprocess.run(git+['apply','--check',str(HERE/'automation.patch')],capture_output=True,text=True)
         if chk.returncode != 0:
             fail('Automation code differs from previously supplied ZIP. No unsafe overwrite. '+chk.stderr.strip()[:550])
-    print('Preflight OK; articles:',len(ARTICLES),'| old existing archive preserved | generator patch:', 'already present' if already_updated else 'ready')
+    # The old patch is applied first if necessary. For preflight, do not mutate
+    # a checkout that has not yet received that original editorial upgrade.
+    if already_updated:
+        social_preview, social_change = add_social_discovery(gen)
+    else:
+        # The original patch is already checked above and will be applied first.
+        # These insertion anchors exist in the checked editorial patch payload.
+        editorial_patch=(HERE/'automation.patch').read_text(encoding='utf-8')
+        required_anchors=['const social', 'Priority = credible, current']
+        if 'Priority = credible, current' not in editorial_patch:
+            fail('Supplied original automation patch unexpected; stop.')
+        social_preview = None
+        social_change = True
+    signal_path=project/'api/trend-signals.js'
+    if signal_path.exists() and signal_path.read_bytes() != (HERE/'api/trend-signals.js').read_bytes():
+        fail('Existing api/trend-signals.js differs from the provided file. Manual review required.')
+    print('Preflight OK; articles:',len(ARTICLES),'| existing archive preserved | editorial generator:', 'already present' if already_updated else 'ready', '| social integration:', 'ready' if social_change else 'already present')
     print('Action:', 'APPLY changes locally' if args.apply else 'DRY RUN ONLY')
     if not args.apply:return
     backup=Path.home()/'Documents'/'AsfiBlog-Patch-Backups'/datetime.datetime.now().strftime('%Y%m%d-%H%M%S')
     backup.mkdir(parents=True,exist_ok=True)
-    for path in list(replacements)+(['api/generate-blog.js'] if not already_updated else []):
+    for path in list(replacements)+(['api/generate-blog.js'] if (not already_updated or social_change) else []):
         dest=backup/path;dest.parent.mkdir(parents=True,exist_ok=True)
         shutil.copy2(project/path,dest)
     print('Backup:',backup)
     if not already_updated:
         applied=subprocess.run(git+['apply',str(HERE/'automation.patch')],capture_output=True,text=True)
         if applied.returncode:fail('Git apply failed. Backup available: '+str(backup)+'\n'+applied.stderr)
+    updated_generator, social_was_added = add_social_discovery((project/'api/generate-blog.js').read_text(encoding='utf-8'))
+    if social_was_added:
+        (project/'api/generate-blog.js').write_text(updated_generator,encoding='utf-8',newline='\n')
+    if not signal_path.exists():
+        shutil.copy2(HERE/'api/trend-signals.js',signal_path)
     for path,content in replacements.items():
         (project/path).write_text(content,encoding='utf-8',newline='\n')
     for a in ARTICLES:
         dest=project/'blog'/f"{a['slug']}.html"
         if not dest.exists():shutil.copy2(HERE/'blog'/dest.name,dest)
-    print('LOCAL PATCH APPLIED. No GitHub push/deployment performed.')
+    test_file=project/'tests/social-signals.test.mjs'
+    test_file.parent.mkdir(exist_ok=True)
+    if not test_file.exists():shutil.copy2(HERE/'tests/social-signals.test.mjs',test_file)
+    print('LOCAL PATCH APPLIED (articles + editorials + optional YouTube/social discovery). No GitHub push/deployment performed.')
     print('Next: run npm test, then git status --short, then review before commit/push.')
 
 if __name__=='__main__':
