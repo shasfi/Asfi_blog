@@ -17,6 +17,18 @@
 
 window.ASFIBLOG_POSTS = [
   {
+    slug: "six-flags-closes-nine-rides-after-georgia-coaster-death",
+    title: "Six Flags closes nine rides after Georgia coaster death",
+    excerpt: "Six Flags closes nine rides nationwide after a 42‑year‑old man died on a coaster at Six Flags Over Georgia. Authorities have launched an investigation.",
+    category: "General",
+    image: "https://images.pexels.com/photos/9623542/pexels-photo-9623542.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    date: "2026-10-13",
+    timestamp: "2026-10-13T17:48:45.568Z",
+    readMins: 5,
+    views: 0
+  },
+
+  {
     slug: "us-and-nato-commander-vows-to-thwart-moscow-warns-kyiv",
     title: "U.S. and NATO Commander Vows to Thwart Moscow, Warns Kyiv",
     excerpt: "U.S. and NATO commander vows to thwart Moscow and warns Kyiv over refinery strikes as NATO details new defense plans for European allies amid rising tensions.",
