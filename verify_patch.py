@@ -1,24 +1,26 @@
 #!/usr/bin/env python3
-"""Run after apply_patch.py, before a push. Python 3.9+."""
-import argparse, json, re, sys
+"""Verify installed source without running ad network code or contacting the Internet."""
 from pathlib import Path
-from datetime import datetime,timezone
-p=argparse.ArgumentParser();p.add_argument('--project',required=True)
-root=Path(p.parse_args().project).resolve()
-articles=json.loads((Path(__file__).resolve().parent/'VIRAL_ARTICLES_METADATA.json').read_text(encoding='utf-8'))
-for a in articles:
-    f=root/'blog'/f'{a["slug"]}.html'
-    assert f.exists(),f
-    s=f.read_text(encoding='utf-8')
-    assert len(re.findall(r'\b[\w’\-]+\b',re.sub(r'<[^>]*>',' ',s.split('<div class="content">')[1].split('</div>')[0])))>=1100
-    assert s.count('gtag/js?id=G-SXL9MNZFNL') == 1
-    assert f'{a["slug"]}.html' in s
-    assert 'has not been independently' in s
-    assert datetime.fromisoformat(a['date'].replace('Z','+00:00')) <= datetime.now(timezone.utc)
-for filename in ('index.html','blog/index.html','assets/js/posts-data.js','sitemap.xml','rss.xml'):
-    data=(root/filename).read_text(encoding='utf-8')
-    for a in articles:assert a['slug'] in data,(filename,a['slug'])
-archive=(root/'blog/index.html').read_text()
-links=re.findall(r'href="/blog/([^"/]+)\.html"',archive.split('<!-- STATIC_ARCHIVE_START -->')[1].split('<!-- STATIC_ARCHIVE_END -->')[0]);assert len(links)==len(set(links)), 'Duplicate static archive links'
-assert len(links)==len(list((root/'blog').glob('*.html')))-1, (len(links),'archive',len(list((root/'blog').glob('*.html'))),'HTML')
-print('PASS: two verified topical articles, GA4 tags, 1,100+ words each, dates, home/catalog/archive/sitemap/RSS sync; total article pages:',len(links))
+import sys
+project=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else Path.cwd()
+main=(project/'assets/js/main.js').read_text(encoding='utf-8')
+ads=(project/'assets/js/adsterra.js').read_text(encoding='utf-8')
+privacy=(project/'privacy-policy.html').read_text(encoding='utf-8')
+posts=list((project/'blog').glob('*.html'))
+articles=[p for p in posts if p.name!='index.html']
+checks={
+  'opt-in publisher feature flag': 'window.ASFIBLOG_ADS_ENABLED = false' in main or 'window.ASFIBLOG_ADS_ENABLED = true' in main,
+  'shared ad loader': '/assets/js/adsterra.js' in main,
+  'native widget exact publisher ID': 'bc9ccbb45c50d34c46c04ff7f0cf29f8' in ads,
+  'display exact publisher key': '839c46c0eb2c23e325b33c7a671cf3bf' in ads,
+  'both supplied script URLs': 'https://bauval.org/21/' in ads and 'https://bauval.org/22/' in ads,
+  'advertising consent gate': "getChoice() !== 'accepted'" in ads,
+  'privacy disclosure updated': 'ASFI_ADSTERRA_PRIVACY_2026_10_14' in privacy,
+  'homepage uses shared main.js': '/assets/js/main.js' in (project/'index.html').read_text(encoding='utf-8'),
+  'blog archive uses shared main.js': '/assets/js/main.js' in (project/'blog/index.html').read_text(encoding='utf-8'),
+  'all existing article pages use shared main.js': all('/assets/js/main.js' in p.read_text(encoding='utf-8') for p in articles),
+  'at least one article available': bool(articles),
+}
+for label,ok in checks.items(): print(('PASS' if ok else 'FAIL')+'  '+label)
+print(f'Blog posts covered via shared script: {len(articles)}')
+if not all(checks.values()): sys.exit(1)
