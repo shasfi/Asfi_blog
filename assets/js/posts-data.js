@@ -16,8 +16,8 @@
 // -----------------------------------------------------------------------
 
 window.ASFIBLOG_POSTS = [
-  {"slug": "elon-musk-ambani-real-boss-india-starlink-dispute", "title": "Elon Musk Asks if Ambani Is India’s Real Boss", "excerpt": "Why Elon Musk questioned Mukesh Ambani’s influence over Starlink in India, what Rahul Gandhi said, and how the Indian government answered the claims.", "category": "Business", "image": "https://asfiblog.vercel.app/logo.png", "date": "2026-10-13", "timestamp": "2026-10-13T22:00:00Z", "readMins": 7, "views": 0},
-  {"slug": "elon-musk-prime-minister-ambani-starlink-india-explained", "title": "Why Elon Musk Called Ambani “Prime Minister”", "excerpt": "Elon Musk’s “Prime Minister Ambani” remark explained: what he posted, how the Starlink dispute grew, India’s official response, and what happens next.", "category": "Politics", "image": "https://asfiblog.vercel.app/logo.png", "date": "2026-10-13", "timestamp": "2026-10-13T22:01:00Z", "readMins": 7, "views": 0},
+  {"slug": "elon-musk-ambani-real-boss-india-starlink-dispute", "title": "Elon Musk Asks if Ambani Is India’s Real Boss", "excerpt": "Why Elon Musk questioned Mukesh Ambani’s influence over Starlink in India, what Rahul Gandhi said, and how the Indian government answered the claims.", "category": "Business", "image": "/assets/images/musk-ambani-starlink-india.webp", "date": "2026-10-13", "timestamp": "2026-10-13T22:00:00Z", "readMins": 7, "views": 0},
+  {"slug": "elon-musk-prime-minister-ambani-starlink-india-explained", "title": "Why Elon Musk Called Ambani “Prime Minister”", "excerpt": "Elon Musk’s “Prime Minister Ambani” remark explained: what he posted, how the Starlink dispute grew, India’s official response, and what happens next.", "category": "Politics", "image": "/assets/images/musk-ambani-prime-minister.webp", "date": "2026-10-13", "timestamp": "2026-10-13T22:01:00Z", "readMins": 7, "views": 0},
   {
     "slug": "toronto-police-search-suspects-deadly-festival-shooting",
     "title": "Toronto police search for suspects after deadly festival shooting",

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Rhetoric vs regulatory reality">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#081c34"/><stop offset="1" stop-color="#102f4d"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="1085" cy="-30" r="250" fill="#2c5074" opacity=".18"/><circle cx="-50" cy="750" r="310" fill="#2482a3" opacity=".10"/>
+  <text x="48" y="72" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#95ddf2">ASFI BLOG  /  VISUAL EXPLAINER</text>
+  <text x="48" y="143" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="white">Rhetoric vs regulatory reality</text>
+  <text x="48" y="188" font-family="Arial,sans-serif" font-size="22" fill="#c4d4e6">What a public remark can and cannot establish</text>
+  <g><rect x="48" y="282" width="260" height="282" rx="22" fill="#132741" stroke="#315074" stroke-width="2"/>
+    <circle cx="86" cy="326" r="21" fill="#95ddf2"/><text x="86" y="333" text-anchor="middle" font-size="19" font-weight="700" fill="#071626">1</text>
+    <text x="70" y="388" font-size="22" font-weight="700" fill="#fff">Online remark</text>
+    <foreignObject x="70" y="411" width="215" height="130"><div xmlns="http://www.w3.org/1999/xhtml" style="font:19px/1.45 Arial,sans-serif;color:#b8cde6">A political or business comment can draw public attention.</div></foreignObject>
+    </g><g><rect x="333" y="282" width="260" height="282" rx="22" fill="#132741" stroke="#315074" stroke-width="2"/>
+    <circle cx="371" cy="326" r="21" fill="#95ddf2"/><text x="371" y="333" text-anchor="middle" font-size="19" font-weight="700" fill="#071626">2</text>
+    <text x="355" y="388" font-size="22" font-weight="700" fill="#fff">Public debate</text>
+    <foreignObject x="355" y="411" width="215" height="130"><div xmlns="http://www.w3.org/1999/xhtml" style="font:19px/1.45 Arial,sans-serif;color:#b8cde6">Responses and coverage may expand the discussion.</div></foreignObject>
+    </g><g><rect x="618" y="282" width="260" height="282" rx="22" fill="#132741" stroke="#315074" stroke-width="2"/>
+    <circle cx="656" cy="326" r="21" fill="#95ddf2"/><text x="656" y="333" text-anchor="middle" font-size="19" font-weight="700" fill="#071626">3</text>
+    <text x="640" y="388" font-size="22" font-weight="700" fill="#fff">Official policy</text>
+    <foreignObject x="640" y="411" width="215" height="130"><div xmlns="http://www.w3.org/1999/xhtml" style="font:19px/1.45 Arial,sans-serif;color:#b8cde6">Government decisions must be checked independently.</div></foreignObject>
+    </g><g><rect x="903" y="282" width="260" height="282" rx="22" fill="#132741" stroke="#315074" stroke-width="2"/>
+    <circle cx="941" cy="326" r="21" fill="#95ddf2"/><text x="941" y="333" text-anchor="middle" font-size="19" font-weight="700" fill="#071626">4</text>
+    <text x="925" y="388" font-size="22" font-weight="700" fill="#fff">Current status</text>
+    <foreignObject x="925" y="411" width="215" height="130"><div xmlns="http://www.w3.org/1999/xhtml" style="font:19px/1.45 Arial,sans-serif;color:#b8cde6">Confirm the latest licensing and launch milestones.</div></foreignObject>
+    </g>
+  <line x1="48" y1="635" x2="1152" y2="635" stroke="#365476" stroke-width="2"/>
+  <text x="48" y="681" font-family="Arial,sans-serif" font-size="21" fill="#b5c5d6">Illustrative summary only. Confirm current requirements from official sources.</text>
+  <text x="48" y="744" font-family="Arial,sans-serif" font-size="19" fill="#95ddf2">asfiblog.vercel.app</text>
+  </svg>
