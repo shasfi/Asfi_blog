@@ -664,6 +664,7 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXL9MNZFNL"></script>
 <script src="/assets/js/consent.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3708046244881307" crossorigin="anonymous"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${post.title} — Asfi Blog</title>
