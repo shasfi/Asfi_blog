@@ -1,30 +1,9 @@
-ASFI BLOG — MUSK ARTICLE VISIBILITY REPAIR
+ASFI BLOG — TWO MUSK ARTICLES, ONE-CLICK PUBLISH + GITHUB/VERCEL VERIFY
 
-Root cause: two article HTML files may exist but catalog/archive/sitemap/RSS are missing their links.
-This is an isolated local source-code repair. It does not change cron, OpenRouter, YouTube, Adsterra, or secrets.
+1. Extract this ZIP anywhere on your Windows PC.
+2. Double-click RUN_FIX_AND_PUBLISH.bat. Project expected at E:\Projects\Asfi_blog.
+3. Script fetches latest GitHub main, updates 2 article listings, homepage, archive, sitemap, RSS, commits and pushes to GitHub; then checks that production files contain the new links.
+4. Requires clean Git working directory and existing authorized Git credentials. NEVER force-pushes, does not touch secrets or existing article HTML.
+5. If it stops, copy its last STOP/FAIL line. Do not deploy older ZIPs again.
 
-1. In PowerShell, go to your existing cloned project:
-   cd E:\Projects\Asfi_blog
-   git status -sb
-   git fetch origin
-   git rev-list HEAD..origin/main --count
-
-2. If clean and 0 commits behind, dry-run:
-   py -3 "E:\Projects\AsfiBlog_Musk_Article_Visibility_Fix\fix_visibility.py" --project "E:\Projects\Asfi_blog"
-
-3. If Preflight OK, apply:
-   py -3 "E:\Projects\AsfiBlog_Musk_Article_Visibility_Fix\fix_visibility.py" --project "E:\Projects\Asfi_blog" --apply
-
-4. Validate:
-   npm test
-   git diff --check
-   git status -sb
-
-5. Then commit, recheck remote and push (never force):
-   git add assets/js/posts-data.js blog/index.html sitemap.xml rss.xml index.html blog/elon-musk-ambani-real-boss-india-starlink-dispute.html blog/elon-musk-prime-minister-ambani-starlink-india-explained.html
-   git commit -m "Show Musk Ambani articles in archive sitemap RSS and homepage"
-   git fetch origin
-   git rev-list HEAD..origin/main --count
-   git push origin main   [ONLY if count returned 0]
-
-6. Wait for Vercel Ready. Verify homepage, archive and article direct URLs.
+SAFETY: This does not guarantee Vercel deployment or Google indexing. It explicitly checks GitHub remote commit and tries production catalog/sitemap.
