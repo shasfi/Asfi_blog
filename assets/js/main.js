@@ -152,3 +152,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }).catch(() => {}); // fail silently, never break the page
   });
 })();
+
+// ASFI_ADSTERRA_DIRECT_FIX_20261014_V4
+// Shared ad launcher for all pages that already include /assets/js/main.js.
+// Uses existing /assets/js/adsterra.js, which applies regional ad-consent rules.
+(function() {
+  if (window.__asfiAdsBootstrapped) return;
+  window.__asfiAdsBootstrapped = true;
+  window.ASFIBLOG_ADS_ENABLED = true;
+  window.ASFIBLOG_AD_BOOTSTRAP = { status: 'waiting' };
+  function initialize() {
+    var existing = document.querySelector('script[src="/assets/js/adsterra.js"]');
+    if (existing) { window.ASFIBLOG_AD_BOOTSTRAP.status = 'already-loaded'; return; }
+    var script = document.createElement('script');
+    script.src = '/assets/js/adsterra.js';
+    script.async = true;
+    script.onload = function () { window.ASFIBLOG_AD_BOOTSTRAP.status = 'loaded'; };
+    script.onerror = function () { window.ASFIBLOG_AD_BOOTSTRAP.status = 'loader-failed'; };
+    window.ASFIBLOG_AD_BOOTSTRAP.status = 'loading';
+    document.head.appendChild(script);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initialize, { once: true });
+  else initialize();
+})();
