@@ -475,16 +475,16 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
       { id: "openrouter/free", jsonMode: false },
     ];
     // Vercel function is configured for 60s; reserve time for GitHub publishing.
-    const modelDeadline = Date.now() + 43000;
+    const modelDeadline = Date.now() + 185000; // ASFI_FREE_MODEL_TIMEOUT_FIX_20261015
     const modelFailures = [];
 
     async function tryGenerate(model) {
       const remaining = modelDeadline - Date.now();
-      if (remaining < 7000) {
+      if (remaining < 14000) {
         console.warn("Free model time budget exhausted before:", model.id);
         return null;
       }
-      const requestTimeout = Math.min(remaining - 500, 36000);
+      const requestTimeout = Math.min(remaining - 6000, 72000);
       try {
         const body = {
           model: model.id,
