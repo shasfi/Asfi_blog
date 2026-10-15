@@ -466,57 +466,103 @@ Return ONLY valid JSON (no markdown, no code fences, no explanation) with EXACTL
   "faq": [{"q": "...", "a": "..."}, {"q": "...", "a": "..."}, {"q": "...", "a": "..."}, {"q": "...", "a": "..."}]
 }`;
 
+    // ASFI_FREE_MODELS_ONLY_20261015
+    // Every item has a genuinely free OpenRouter endpoint. No paid fallback.
+    // Confirmed model variants on OpenRouter, October 15 2026.
+    const FREE_MODELS = [
+      { id: "nvidia/nemotron-3.5-lightning:free", jsonMode: false },
+      { id: "google/gemma-4-26b-a4b-it:free", jsonMode: true },
+      { id: "openrouter/free", jsonMode: false },
+    ];
+    // Vercel function is configured for 60s; reserve time for GitHub publishing.
+    const modelDeadline = Date.now() + 43000;
+    const modelFailures = [];
+
     async function tryGenerate(model) {
-      const aiRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${OPENROUTER_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model,
-          messages: [{ role: "user", content: prompt }],
-          temperature: 0.7,
-        }),
-      });
-      console.log(`OpenRouter [${model}] status:`, aiRes.status);
-      const aiData = await aiRes.json();
-      let rawText = aiData.choices?.[0]?.message?.content || "";
-      rawText = extractJSON(rawText.replace(/```json|```/g, "").trim());
+      const remaining = modelDeadline - Date.now();
+      if (remaining < 7000) {
+        console.warn("Free model time budget exhausted before:", model.id);
+        return null;
+      }
+      const requestTimeout = Math.min(remaining - 500, 36000);
       try {
-        return JSON.parse(rawText);
-      } catch (e) {
-        console.log(`OpenRouter [${model}] gave unparseable output:`, rawText.slice(0, 300));
+        const body = {
+          model: model.id,
+          messages: [
+            { role: "system", content: "You are a careful news editor. Return only one complete, valid JSON object matching the requested keys. Do not put JSON in markdown. If the given sources are insufficient, return {\"insufficient_source_detail\":true}. Never invent facts or quotations." },
+            { role: "user", content: prompt },
+          ],
+          temperature: 0.35,
+          max_tokens: 5500,
+        };
+        // Gemma free supports JSON output mode; Nvidia/free router may not.
+        if (model.jsonMode) body.response_format = { type: "json_object" };
+        const aiRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${OPENROUTER_KEY}`,
+            "Content-Type": "application/json",
+            "HTTP-Referer": SITE_URL,
+            "X-Title": "Asfi Blog",
+          },
+          body: JSON.stringify(body),
+          signal: AbortSignal.timeout(requestTimeout),
+        });
+        console.log(`OpenRouter free [${model.id}] status:`, aiRes.status);
+        if (!aiRes.ok) {
+          modelFailures.push(`${model.id}: HTTP ${aiRes.status}`);
+          return null;
+        }
+        const aiData = await aiRes.json();
+        const rawContent = aiData.choices?.[0]?.message?.content;
+        let rawText = typeof rawContent === "string" ? rawContent :
+          Array.isArray(rawContent) ? rawContent.filter(p => p?.type === "text").map(p => p.text).join("\n") : "";
+        rawText = rawText.replace(/```(?:json)?\s*/gi, "").trim();
+        const objectText = rawText.match(/\{[\s\S]*\}/)?.[0] || "";
+        if (!objectText) {
+          console.warn(`OpenRouter free [${model.id}] did not return article JSON`);
+          modelFailures.push(`${model.id}: no JSON`);
+          return null;
+        }
+        try { return JSON.parse(objectText); }
+        catch (_) {
+          console.warn(`OpenRouter free [${model.id}] returned malformed JSON`);
+          modelFailures.push(`${model.id}: malformed JSON`);
+          return null;
+        }
+      } catch (error) {
+        console.warn(`OpenRouter free [${model.id}] failed:`, error.name || "request error");
+        modelFailures.push(`${model.id}: ${error.name || "request error"}`);
         return null;
       }
     }
 
-    // Fast/reliable paid models pehle — free models sabse slow/unreliable
-    // hote hain aur retry loop me time waste karte hain jo 30s cron timeout
-    // cross kar deta hai. Free models ko sirf last-resort fallback rakha hai.
-    // (Unchanged on purpose — this order stays exactly as it was.)
-    const modelsToTry = [
-      "deepseek/deepseek-chat",
-      "openai/gpt-4o-mini",
-      "meta-llama/llama-3.1-8b-instruct:free",
-      "openrouter/free",
-    ];
-
     let post = null;
-    for (const model of modelsToTry) {
-      post = await tryGenerate(model);
-      if (post?.insufficient_source_detail) {
-        return res.status(422).json({ error: 'AI reported insufficient supported facts; no article published' });
+    for (const model of FREE_MODELS) {
+      const candidate = await tryGenerate(model);
+      if (candidate?.insufficient_source_detail) {
+        return res.status(422).json({ error: "Insufficient verified source detail; no article published" });
       }
-      if (post && post.title && post.content) {
-        console.log(`STEP 2 done: got valid content from ${model}`);
-        break;
+      if (!candidate?.title || !candidate?.content) continue;
+      // A free model can return valid JSON but an unusably short article.
+      // Keep trying other *free* endpoints instead of prematurely accepting it.
+      const draftPlaintext = String(candidate.content).replace(/<[^>]+>/g, " ");
+      const draftWords = draftPlaintext.trim().split(/\s+/).filter(Boolean).length;
+      const draftHeadings = (String(candidate.content).match(/<h2\b/gi) || []).length;
+      if (draftWords < 1200 || draftHeadings < 5 || !Array.isArray(candidate.faq) || candidate.faq.length < 3) {
+        console.warn(`OpenRouter free [${model.id}] draft too short/incomplete:`, draftWords, "words,", draftHeadings, "h2 headings");
+        modelFailures.push(`${model.id}: incomplete draft`);
+        continue;
       }
+      post = candidate;
+      console.log(`STEP 2 done: usable content from FREE model ${model.id}`);
+      break;
     }
 
     if (!post) {
-      return res.status(500).json({
-        error: "All AI models failed to return valid content. Try again in a moment.",
+      return res.status(503).json({
+        error: "Free AI models returned no publishable article. No article published and no paid endpoint used.",
+        attempts: modelFailures,
       });
     }
 
