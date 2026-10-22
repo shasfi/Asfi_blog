@@ -9,6 +9,16 @@
 
   var status = window.ASFIBLOG_AD_DIAGNOSTICS = { loaderExecuted: true, mounted: [], errors: [] };
 
+  /* ---------- MODE: the one line you change ----------
+     'full'  = everything (popunder, social bar, all banners, Smartlinks)  -> use for max Adsterra earnings
+     'light' = only the top 300x250 banner + native banner at the bottom  -> gentle
+     'off'   = no Adsterra at all                                          -> use while AdSense reviews the site */
+  var ADSTERRA_MODE = 'off';
+
+  var LIGHT = ADSTERRA_MODE === 'light';
+  status.mode = ADSTERRA_MODE;
+  if (ADSTERRA_MODE !== 'full' && ADSTERRA_MODE !== 'light') { status.reason = 'disabled (mode off)'; return; }
+
   /* ---------- Your ad codes ---------- */
   var POPUNDER_URL  = 'https://abscloud.org/1/2331c8030b98d30ab8f6acad9e3675f7';
   var SOCIALBAR_URL = 'https://bauval.org/14/7fabb09521bcb8724dd6a108ccafa203';
@@ -38,8 +48,8 @@
       '.asfi-ad--160x300{min-height:328px}.asfi-ad--160x300 .asfi-ad-creative{width:160px;height:300px}' +
       '.asfi-ad--native{min-height:215px}.asfi-ad--native .asfi-ad-creative{width:100%;overflow-x:auto}' +
       '.asfi-rail{display:none;position:fixed;top:90px;width:160px;z-index:20}' +
-      '.asfi-rail--l{left:max(8px,calc((100vw - 1120px)/2 - 176px))}' +
-      '.asfi-rail--r{right:max(8px,calc((100vw - 1120px)/2 - 176px))}' +
+      '.asfi-rail--l{left:calc(50% - 736px)}' +
+      '.asfi-rail--r{right:calc(50% - 736px)}' +
       '.asfi-rail .asfi-ad{margin:0}.asfi-rail .asfi-ad--160x600{min-height:628px}.asfi-rail .asfi-ad-creative{width:160px;height:600px}' +
       '@media (min-width:1480px){.asfi-rail{display:block}}' +
       '.asfi-sponsored{display:block;box-sizing:border-box;max-width:680px;margin:24px auto;padding:14px 18px;border:1px solid rgba(128,128,128,.35);border-radius:10px;text-align:left;text-decoration:none;color:inherit}' +
@@ -58,27 +68,25 @@
     return el;
   }
 
-  /* Banner scripts read a global `atOptions` when they execute, so banners are
-     loaded strictly one after another (queue) to stop them overwriting each other. */
-  var queue = [], running = false;
-  function enqueueBanner(container, b) { queue.push({ c: container, b: b }); if (!running) next(); }
-  function next() {
-    var job = queue.shift();
-    if (!job) { running = false; return; }
-    running = true;
-    var done = false;
-    function finish(err) {
-      if (done) return; done = true;
-      if (err) status.errors.push('banner ' + job.b.w + 'x' + job.b.h);
-      setTimeout(next, 50);
-    }
-    window.atOptions = { key: job.b.key, format: 'iframe', height: job.b.h, width: job.b.w, params: {} };
-    var s = document.createElement('script');
-    s.src = bannerUrl(job.b);
-    s.onload = function () { finish(false); };
-    s.onerror = function () { finish(true); };
-    job.c.appendChild(s);
-    setTimeout(function () { finish(false); }, 4000);
+  /* Adsterra banner scripts draw with document.write, which does nothing when a script is
+     injected dynamically (you only get an empty box). So each banner runs inside its own
+     small iframe where the standard snippet executes normally. Each iframe has its own
+     atOptions, so banners can load in parallel without overwriting each other. */
+  function enqueueBanner(container, b) {
+    try {
+      var f = document.createElement('iframe');
+      f.width = b.w; f.height = b.h;
+      f.setAttribute('frameborder', '0');
+      f.setAttribute('scrolling', 'no');
+      f.setAttribute('title', 'Advertisement');
+      f.style.cssText = 'border:0;overflow:hidden;display:block;margin:0 auto;max-width:100%';
+      var opts = JSON.stringify({ key: b.key, format: 'iframe', height: b.h, width: b.w, params: {} });
+      var S = '<' + 'script', E = '<' + '/script>';
+      f.srcdoc = '<!DOCTYPE html><html><head><meta charset="utf-8"><base target="_blank">' +
+        '<style>html,body{margin:0;padding:0;overflow:hidden;background:transparent}</style></head><body>' +
+        S + '>atOptions=' + opts + ';' + E + S + ' src="' + bannerUrl(b) + '">' + E + '</body></html>';
+      container.appendChild(f);
+    } catch (e) { status.errors.push('banner ' + b.w + 'x' + b.h); }
   }
 
   // Load a banner when it's about to scroll into view (still counts early enough to be seen).
@@ -93,6 +101,7 @@
   }
 
   function mountBanner(parent, ref, b, where) {
+    if (LIGHT && b !== B300x250) return null;
     var ad = box(b.w + 'x' + b.h);
     if (where === 'after') ref.after(ad); else if (where === 'before') ref.before(ad); else parent.appendChild(ad);
     lazyBanner(ad, b);
@@ -117,6 +126,7 @@
   }
 
   function sponsoredLink(url, headline) {
+    if (LIGHT) return document.createDocumentFragment();
     var a = document.createElement('a');
     a.className = 'asfi-sponsored';
     a.href = url; a.target = '_blank'; a.rel = 'sponsored noopener nofollow';
@@ -139,8 +149,10 @@
     addCss();
 
     // 1) Popunder + Social Bar on every page
-    injectScript(POPUNDER_URL);
-    injectScript(SOCIALBAR_URL);
+    if (!LIGHT) {
+      injectScript(POPUNDER_URL);
+      injectScript(SOCIALBAR_URL);
+    }
 
     var article = main.querySelector('article.post');
     var content = article && article.querySelector('.content');
@@ -160,7 +172,7 @@
     }
 
     // 3) 160x600 sticky side rails on wide screens (always in view while scrolling)
-    if (window.matchMedia && window.matchMedia('(min-width:1480px)').matches) {
+    if (!LIGHT && window.matchMedia && window.matchMedia('(min-width:1480px)').matches) {
       ['l', 'r'].forEach(function (side) {
         var rail = document.createElement('div');
         rail.className = 'asfi-rail asfi-rail--' + side;
@@ -179,7 +191,7 @@
       if (paras.length >= 4) {
         var p1 = pick(0.25), p2 = pick(0.5), p3 = pick(0.75);
         mountBanner(null, p1, B160x300, 'after');
-        if (p2 !== p1) p2.after(sponsoredLink(SMARTLINKS[0], 'Trending now: popular picks readers are opening today'));
+        if (p2 !== p1) p2.after(sponsoredLink(SMARTLINKS[2], 'Sponsored: popular picks readers are opening today'));
         if (p3 !== p2 && p3 !== p1) mountBanner(null, p3, B160x300, 'after');
       } else {
         mountBanner(null, content, B160x300, 'after');
@@ -191,12 +203,23 @@
     } else {
       // Home / listing / info pages
       var sections = main.querySelectorAll(':scope > section, :scope > .wrap > section');
-      var mid = sections[Math.floor(sections.length / 2)];
-      if (mid) mountBanner(null, mid, B160x300, 'after');
-      else mountBanner(main, null, B160x300, 'append');
-      var firstSec = sections[0];
-      if (firstSec) firstSec.after(sponsoredLink(SMARTLINKS[1], 'Sponsored: more recommended reads'));
+      var h2s = main.querySelectorAll(':scope > h2');
+      if (sections.length) {
+        var mid = sections[Math.floor(sections.length / 2)];
+        mountBanner(null, mid, B160x300, 'after');
+        sections[0].after(sponsoredLink(SMARTLINKS[1], 'Sponsored: more recommended reads'));
+      } else if (h2s.length >= 2) {
+        // text pages: ads between the headings
+        mountBanner(null, h2s[Math.floor(h2s.length / 2)], B160x300, 'before');
+        h2s[1].before(sponsoredLink(SMARTLINKS[1], 'Sponsored: more recommended reads'));
+      } else {
+        mountBanner(main, null, B160x300, 'append');
+      }
     }
+
+    // Sponsored button right under the top banner on every page
+    var topAd = document.querySelector('.asfi-ad--300x250');
+    if (topAd) topAd.after(sponsoredLink(SMARTLINKS[0], 'Sponsored: trending offers readers are opening today'));
 
     // 4) Native at the very bottom, plus a Smartlink just above the footer
     mountNative(main);
