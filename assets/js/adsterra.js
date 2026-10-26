@@ -30,8 +30,8 @@
   var B300x250 = { key: '839c46c0eb2c23e325b33c7a671cf3bf', w: 300, h: 250 };   // existing
   var B160x300 = { key: 'cbbf57bc2c86b1c2220f5b2417c34c81', w: 160, h: 300 };
   var B160x600 = { key: 'cd7558a76256e477b9bb8a92cc0d4612', w: 160, h: 600 };
-  var NATIVE_ID  = 'bc9ccbb45c50d34c46c04ff7f0cf29f8';                           // existing
-  var NATIVE_URL = 'https://bauval.org/21/' + NATIVE_ID;
+//  var NATIVE_ID  = 'bc9ccbb45c50d34c46c04ff7f0cf29f8';                           // existing
+//  var NATIVE_URL = 'https://bauval.org/21/' + NATIVE_ID;
 
   /* ---------- helpers ---------- */
   function bannerUrl(b) { return 'https://bauval.org/22/' + b.key; }
