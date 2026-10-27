@@ -13,7 +13,7 @@
      'full'  = everything (popunder, social bar, all banners, Smartlinks)  -> use for max Adsterra earnings
      'light' = only the top 300x250 banner + native banner at the bottom  -> gentle
      'off'   = no Adsterra at all                                          -> use while AdSense reviews the site */
-  var ADSTERRA_MODE = 'full';
+  var ADSTERRA_MODE = 'off';
 
   var LIGHT = ADSTERRA_MODE === 'light';
   status.mode = ADSTERRA_MODE;
